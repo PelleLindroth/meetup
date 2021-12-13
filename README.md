@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Meetup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Inlämningsuppgift för Designprinciper och Designmönster, ITHS Stockholm 2021**</br>
+av Pelle Lindroth
 
-## Available Scripts
+## User stories
+### All users
+- As a user I want to<br/>
+**<em>see a chronological list of upcoming and past events</em>**<br/>
+so I can<br/>
+**<em>get an overview of what's happening in the near future and what has happened in the past</em>**
 
-In the project directory, you can run:
+- As a user I want to<br/>
+**<em>be able to click on an event to see its details</em>**<br/>
+so I can<br/>
+**<em>investigate the event further and sign up</em>**
 
-### `yarn start`
+- As a user I want to<br/> 
+**<em>clearly see what events have already occured</em>**<br/>
+so I don’t have to<br/>
+**<em>check the details of the date or try to sign up to past events</em>**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- As a user I want to<br/> 
+**<em>be able to filter and search events</em>**<br/>
+so I can<br/>
+**<em>find meetups that meet my interests and my location</em>**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- As a user I want to<br/> 
+**<em>be able to sign up for events</em>**<br/>
+so I can<br/>
+**<em>let the arrangers know I'm coming and attend the event on the given date</em>**
 
-### `yarn test`
+- As a user I want to<br/> 
+**<em>be able to log in</em>**<br/>
+so I can<br/> 
+**<em>get extended functionality</em>**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Logged in users
+- As a logged in user I want to<br/>
+**<em>be able to comment on an event I have attended</em>**<br/>
+so i can<br/>
+**<em>voice my opinion and communicate wth other attendees</em>**
 
-### `yarn build`
+- As a logged in user I want to<br/>
+**<em>be able to rate an event I have attended</em>**<br/>
+so i can<br/>
+**<em>give feedback to the arranger and guide other users</em>**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a logged in user I want to<br/>
+**<em>be able to create my own event</em>**<br/>
+so i can<br/>
+**<em>show it to other people that might be interested</em>**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- As a logged in user I want to<br/>
+**<em>be able to log out</em>**<br/>
+so i can<br/>
+**<em>log in with another account</em>**
+<hr>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Use Case Diagram
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Alt text](/src/assets/meetup_ucd.png?raw=true "Use case diagram for Meetup app")
