@@ -6,7 +6,9 @@ import Home from './views/Home'
 import SingleMeetup from './views/SingleMeetup'
 import Login from './views/Login'
 import Header from './components/Header'
+import Profile from './views/Profile'
 import { User } from './db/users'
+import styles from './App/App.module.scss'
 
 function App() {
   const [meetups, setMeetups] = useState<Meetup[]>([])
@@ -19,8 +21,8 @@ function App() {
   }, [])
 
   return (
-    <>
-      <Header />
+    <div className={styles.wrapper}>
+      <Header user={user} setUser={setUser} />
       <Routes>
         <Route
           path="/"
@@ -31,8 +33,9 @@ function App() {
           element={<SingleMeetup setMeetups={setMeetups} />}
         />
         {!user && <Route path="/login" element={<Login setUser={setUser} />} />}
+        {user && <Route path="/profile/:id" element={<Profile />} />}
       </Routes>
-    </>
+    </div>
   )
 }
 
