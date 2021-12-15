@@ -5,6 +5,7 @@ import { renderWithRouter } from '../../utils/testing-utils'
 import Home from './Home'
 import MeetupCard from '../../components/MeetupCard'
 import { getMockMeetups } from '../../db'
+import userEvent from '@testing-library/user-event'
 
 describe('Home', () => {
   it('mounts Home view correctly with meetups', () => {
@@ -75,15 +76,55 @@ describe('Home', () => {
     expect(searchBox).toBeInTheDocument()
     expect(searchBox).toHaveTextContent('')
   })
-  // it('renders a filter select input with "view all" as default', () => {})
+  it('renders a filter select input with "all" as default', () => {
+    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+
+    const selectInput = screen.getByRole('combobox')
+
+    expect(selectInput).toBeInTheDocument()
+    expect(selectInput).toHaveValue('all')
+  })
+  it('shows filtered events when typing in search field', () => {
+    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+
+    const searchBox = screen.getByRole('searchbox')
+
+    userEvent.type(searchBox, 'pizza')
+
+    const meetupList = screen.getAllByRole('listitem')
+
+    expect(meetupList).toHaveLength(1)
+    expect(meetupList[0]).toHaveTextContent(/pizza/i)
+  })
+  it('shows only past events when pastEvents filter is active', () => {
+    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+
+    const filterSelect = screen.getByRole('combobox')
+
+    userEvent.selectOptions(filterSelect, 'past')
+
+    const meetupList = screen.getAllByRole('listitem')
+
+    expect(meetupList).toHaveLength(1)
+    expect(meetupList[0]).toHaveTextContent(/pizza/i)
+  })
+  it('shows only upcoming events when upcomingEvents filter is active', () => {
+    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+
+    const filterSelect = screen.getByRole('combobox')
+
+    userEvent.selectOptions(filterSelect, 'upcoming')
+
+    const meetupList = screen.getAllByRole('listitem')
+
+    expect(meetupList).toHaveLength(3)
+    expect(meetupList[0]).toHaveTextContent(/rust/i)
+  })
 })
 
 // User
-// shows filtered events when typing in search field
-// shows only past events when pastEvents filter is active
-// shows only upcoming events when upcomingEvents filter is active
 
-// Logged in User
+// Logged in User (integration)
 
 // renders sign up button on all upcoming events
 // renders Comment and Leave Review buttons on past events that the user has attended
