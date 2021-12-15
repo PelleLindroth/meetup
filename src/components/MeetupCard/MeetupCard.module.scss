@@ -1,0 +1,61 @@
+.cardWrapper {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  padding: 0;
+
+  .cardHeader {
+    color: white;
+    height: 2rem;
+    padding: 0.2rem 0.5rem;
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .cardBody {
+    align-items: center;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+
+    .leftColumn {
+      .icon {
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        width: 1.5rem;
+      }
+
+      .dateRow,
+      .locationRow {
+        align-items: center;
+        font-size: 0.8rem;
+        display: flex;
+
+        h3 {
+          margin: 0.5rem;
+        }
+      }
+
+      .capacityRow {
+        .available {
+          color: #14c747;
+          font-style: italic;
+        }
+
+        .unavailable {
+          color: #c80000;
+          font-style: italic;
+        }
+      }
+    }
+
+    .rightColumn {
+      .arrowIcon {
+        height: 1.7rem;
+        margin-right: 1.8rem;
+        width: 2.2rem;
+      }
+    }
+  }
+}
