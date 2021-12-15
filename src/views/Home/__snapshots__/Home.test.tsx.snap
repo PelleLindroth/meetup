@@ -102,6 +102,57 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
   }
   setMeetups={[MockFunction]}
 >
+  <SearchArea
+    searchFilter="all"
+    searchPhrase=""
+    setSearchFilter={[Function]}
+    setSearchPhrase={[Function]}
+  >
+    <section
+      className="searchArea"
+    >
+      <div
+        className="searchBox"
+      >
+        <div
+          className="imageWrapper"
+        >
+          <img
+            alt="Search icon"
+            src="search.png"
+          />
+        </div>
+        <input
+          onChange={[Function]}
+          placeholder="What do you want to do?"
+          type="search"
+          value=""
+        />
+      </div>
+      <select
+        id="search-filter"
+        name="search-filter"
+        onChange={[Function]}
+        value="all"
+      >
+        <option
+          value="all"
+        >
+          Search all events
+        </option>
+        <option
+          value="upcoming"
+        >
+          Search upcoming events
+        </option>
+        <option
+          value="past"
+        >
+          Search past events
+        </option>
+      </select>
+    </section>
+  </SearchArea>
   <section>
     <h2>
       UPCOMING EVENTS
@@ -265,13 +316,17 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   </h3>
                 </div>
                 <p
+                  className="capacityRow"
                   title="capacity"
                 >
-                  Capacity:
-                   
-                  <em>
-                    unlimited
-                  </em>
+                  <strong>
+                    Capacity: 
+                  </strong>
+                  <span
+                    className="available"
+                  >
+                    Unlimited
+                  </span>
                 </p>
               </div>
               <div
@@ -380,13 +435,20 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   </h3>
                 </div>
                 <p
+                  className="capacityRow"
                   title="capacity"
                 >
-                  Capacity:
-                   
-                  <em>
-                    43883, 39567 available
-                  </em>
+                  <strong>
+                    Capacity: 
+                  </strong>
+                  <span>
+                    43883, 
+                  </span>
+                  <span
+                    className="available"
+                  >
+                    39567 available
+                  </span>
                 </p>
               </div>
               <div
@@ -494,13 +556,17 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   </h3>
                 </div>
                 <p
+                  className="capacityRow"
                   title="capacity"
                 >
-                  Capacity:
-                   
-                  <em>
-                    unlimited
-                  </em>
+                  <strong>
+                    Capacity: 
+                  </strong>
+                  <span
+                    className="available"
+                  >
+                    Unlimited
+                  </span>
                 </p>
               </div>
               <div
@@ -649,13 +715,17 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   </h3>
                 </div>
                 <p
+                  className="capacityRow"
                   title="capacity"
                 >
-                  Capacity:
-                   
-                  <em>
-                    unlimited
-                  </em>
+                  <strong>
+                    Capacity: 
+                  </strong>
+                  <span
+                    className="available"
+                  >
+                    Unlimited
+                  </span>
                 </p>
               </div>
               <div
@@ -766,13 +836,17 @@ exports[`Home renders separate meetup card for every meetup with title, date, lo
           </h3>
         </div>
         <p
+          className="capacityRow"
           title="capacity"
         >
-          Capacity:
-           
-          <em>
-            unlimited
-          </em>
+          <strong>
+            Capacity: 
+          </strong>
+          <span
+            className="available"
+          >
+            Unlimited
+          </span>
         </p>
       </div>
       <div
