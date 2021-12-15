@@ -1,11 +1,6 @@
-import { Meetup } from '../../db/meetups'
 import MeetupCard from '../MeetupCard'
 import styles from './MeetupList.module.scss'
-
-type MeetupListProps = {
-  meetups: Meetup[]
-  upcoming?: boolean
-}
+import { MeetupListProps } from './types'
 
 const MeetupList = (props: MeetupListProps) => {
   const { meetups, upcoming } = props

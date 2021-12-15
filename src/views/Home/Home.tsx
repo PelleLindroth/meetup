@@ -1,10 +1,5 @@
-import { Meetup } from '../../db/meetups'
 import MeetupList from '../../components/MeetupList'
-
-type HomeProps = {
-  meetups: Meetup[]
-  setMeetups: React.Dispatch<React.SetStateAction<Meetup[]>>
-}
+import { HomeProps } from './types'
 
 const Home = (props: HomeProps) => {
   const { meetups } = props

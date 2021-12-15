@@ -1,10 +1,6 @@
 import { useParams } from 'react-router'
 import { getMeetupById } from '../../db'
-import { Meetup } from '../../db/meetups'
-
-type SingleMeetupProps = {
-  setMeetups: React.Dispatch<React.SetStateAction<Meetup[]>>
-}
+import { SingleMeetupProps } from './types'
 
 const SingleMeetup = (props: SingleMeetupProps) => {
   const { id } = useParams()

@@ -1,15 +1,10 @@
 import { Link } from 'react-router-dom'
-import { Meetup } from '../../db/meetups'
 import Cloud from '../../assets/icons/cloud.png'
 import Time from '../../assets/icons/time.png'
 import Pin from '../../assets/icons/pin.png'
 import Arrow from '../../assets/icons/arrow.png'
 import styles from './MeetupCard.module.scss'
-
-type MeetupCardProps = {
-  meetup: Meetup
-  upcoming?: boolean
-}
+import { MeetupCardProps } from './types'
 
 const MeetupCard = (props: MeetupCardProps) => {
   const { meetup, upcoming } = props
