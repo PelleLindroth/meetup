@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders login form with two empty inputs and a button 1`] = `
+<Login
+  setUser={[MockFunction]}
+>
+  <section
+    className="login"
+  >
+    <h1>
+      Log in
+    </h1>
+    <form
+      name="login"
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        autoComplete="current-password"
+        id="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        autoComplete="current-password"
+        id="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <div
+        className="errorWrapper"
+      />
+      <button
+        disabled={true}
+      >
+        Submit
+      </button>
+    </form>
+  </section>
+</Login>
+`;
