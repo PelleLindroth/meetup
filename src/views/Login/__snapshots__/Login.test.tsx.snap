@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login renders login form with two empty inputs and a button 1`] = `
+exports[`Login Unit Tests renders login form with two empty inputs and a button 1`] = `
 <Login
   setUser={[MockFunction]}
 >

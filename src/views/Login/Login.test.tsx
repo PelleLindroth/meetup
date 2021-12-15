@@ -4,8 +4,9 @@ import { MemoryRouter } from 'react-router'
 import { renderWithRouter } from '../../utils/testing-utils'
 import Login from './index'
 import userEvent from '@testing-library/user-event'
+import { getMockUsers } from '../../db'
 
-describe('Login', () => {
+describe('Login Unit Tests', () => {
   it('renders login form with two empty inputs and a button', () => {
     const wrapper = mount(
       <MemoryRouter>
@@ -25,8 +26,21 @@ describe('Login', () => {
 
     expect(loginButton).toBeDisabled()
   })
-  it('calls setUser once if email and password are correct', () => {
+  it('enables login button when both input fields have text', () => {
+    renderWithRouter(<Login setUser={jest.fn()} />)
+
+    const emailInput = screen.getByRole('textbox', { name: /email/i })
+    const passwordInput = screen.getByLabelText(/password/i)
+    const loginButton = screen.getByRole('button', { name: /submit/i })
+
+    userEvent.type(emailInput, 'tjalle')
+    userEvent.type(passwordInput, 'grillkorv')
+
+    expect(loginButton).toBeEnabled()
+  })
+  it('calls setUser once with user object if credentials are valid', () => {
     const setUserSpy = jest.fn()
+    const mockUsers = getMockUsers()
 
     renderWithRouter(<Login setUser={setUserSpy} />)
 
@@ -34,12 +48,26 @@ describe('Login', () => {
     const passwordInput = screen.getByLabelText(/password/i)
     const loginButton = screen.getByRole('button', { name: /submit/i })
 
-    userEvent.type(emailInput, 'kenta@yahoo.com')
-    userEvent.type(passwordInput, 'bananpaj')
+    userEvent.type(emailInput, mockUsers[0].email)
+    userEvent.type(passwordInput, mockUsers[0].password)
     userEvent.click(loginButton)
 
-    expect(setUserSpy).toHaveBeenCalled()
+    expect(setUserSpy).toHaveBeenCalledTimes(1)
+    expect(setUserSpy).toHaveBeenCalledWith(mockUsers[0])
+  })
+  it('displays an error message if credentials are invalid', () => {
+    renderWithRouter(<Login setUser={jest.fn()} />)
+
+    const emailInput = screen.getByRole('textbox', { name: /email/i })
+    const passwordInput = screen.getByLabelText(/password/i)
+    const loginButton = screen.getByRole('button', { name: /submit/i })
+
+    userEvent.type(emailInput, 'rolle@ica.se')
+    userEvent.type(passwordInput, 'palsternacka123')
+    userEvent.click(loginButton)
+
+    const errorMessage = screen.getByText(/invalid/i)
+
+    expect(errorMessage).toBeInTheDocument()
   })
 })
-
-// it displays an error message if credentials are invalid
