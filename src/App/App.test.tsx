@@ -16,17 +16,6 @@ describe('App unit tests', () => {
 
     expect(wrapper.find(App)).toMatchSnapshot()
   })
-  it('renders a Header with logo and login button', () => {
-    renderWithRouter(<App />)
-
-    const header = screen.getByRole('banner')
-    const logo = screen.getByAltText('logo')
-    const loginButton = screen.getByRole('button', { name: /log in/i })
-
-    expect(header).toBeInTheDocument()
-    expect(logo).toBeInTheDocument()
-    expect(loginButton).toBeInTheDocument()
-  })
   it('initially renders Home view with 2 lists with a total of 4 meetups', () => {
     const wrapper = mount(
       <MemoryRouter>
@@ -52,6 +41,8 @@ describe('App integration tests', () => {
     expect(loginForm).toBeInTheDocument()
   })
 })
+
+describe('Header Integration tests', () => {})
 
 // App
 
