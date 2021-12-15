@@ -1,28 +1,87 @@
 .header {
-  align-items: center;
   background-color: #dcddde;
-  display: flex;
   height: 4.5rem;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
 
-  img {
-    height: 4rem;
-  }
+  .innerContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 800px;
 
-  .loginButton {
-    background-color: #14c747;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 1rem;
-    outline: none;
-    padding: 0.4rem 1.7rem;
-    text-transform: uppercase;
+    img {
+      height: 4rem;
+    }
+
+    .loginButton {
+      background-color: #14c747;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      margin-right: 1rem;
+      outline: none;
+      padding: 0.4rem 1.7rem;
+      text-transform: uppercase;
+    }
+
+    .profileWrapper {
+      align-items: center;
+      display: flex;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 1rem;
+      text-decoration: none;
+      position: static;
+
+      img {
+        height: 2rem;
+      }
+
+      p {
+        color: #333;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+
+      .profileMenu {
+        align-items: center;
+        background-color: #dcddde;
+        display: flex;
+        flex-direction: column;
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+        position: fixed;
+        right: 0;
+        top: 3.5rem;
+        width: 6.5rem;
+
+        .viewProfileButton,
+        .logoutButton {
+          font-size: 0.9rem;
+          font-weight: 700;
+          margin-top: 0.5rem;
+
+          text-decoration: none;
+        }
+
+        .viewProfileButton {
+          color: #333;
+        }
+
+        .logoutButton {
+          border: none;
+          border-radius: 3px;
+          outline: none;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
   }
 }
