@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import styles from './Login.module.scss'
 import { User } from '../../db/users'
 import { validateUser } from '../../db'
@@ -12,6 +13,7 @@ const Login = (props: LoginProps) => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [error, setError] = useState<boolean>(false)
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -21,7 +23,7 @@ const Login = (props: LoginProps) => {
 
     if (user) {
       setUser(user)
-      // navigate to '/'
+      navigate('/', { replace: true })
     } else {
       setError(true)
     }
