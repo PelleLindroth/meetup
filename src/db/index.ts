@@ -61,3 +61,11 @@ export const validateUser = (email: string, password: string): User | null => {
     return null
   }
 }
+
+export const getUserById = (id: string): User | undefined => {
+  return users.find((user) => user.id === id)
+}
+
+export const getMockUsers = () => {
+  return users
+}
