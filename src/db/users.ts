@@ -48,12 +48,3 @@ export const users: User[] = [
     attended: [],
   },
 ]
-
-export const validateUser = (email: string, password: string) => {
-  const user = users.find((user) => user.email === email)
-  if (user) {
-    return user.password === password ? user : null
-  } else {
-    return null
-  }
-}

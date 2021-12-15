@@ -36,12 +36,12 @@ interface Comment {
   submittedAt: Date
 }
 
-const meetups: Meetup[] = [
+export const meetups: Meetup[] = [
   {
     id: '1',
     title: 'Pizza Picnic',
     description: 'We meet in the park with pizzas and hang out all night',
-    date: new Date(1639403497148),
+    date: new Date(1630170000000),
     location: {
       street: 'Vitabergsparken',
       city: 'Stockholm',
@@ -58,7 +58,7 @@ const meetups: Meetup[] = [
     id: '2',
     title: 'Rust course',
     description: 'Learn a new programming language from the ground up',
-    date: new Date(1639403497148),
+    date: new Date(1641808800000),
     online: true,
     url: 'https://www.udemy.com/course/rust-lang/',
     capacity: null,
@@ -70,7 +70,7 @@ const meetups: Meetup[] = [
     id: '3',
     title: 'Sevilla - Real Sociedad',
     description: 'A classic football match between the south and the north',
-    date: new Date(1639403497148),
+    date: new Date(1652457600000),
     location: {
       street: 'C. Sevilla Fútbol Club',
       city: '41005 Sevilla',
@@ -88,7 +88,7 @@ const meetups: Meetup[] = [
     title: 'Kite festival',
     description:
       'Classic Kite festival at Gärdet, bring your own kite or just watch the pros',
-    date: new Date(1639403497148),
+    date: new Date(1656774000000),
     location: {
       street: 'Gärdet',
       city: 'Stockholm',
@@ -101,11 +101,3 @@ const meetups: Meetup[] = [
     comments: [],
   },
 ]
-
-export const getAllMeetups = (): Meetup[] => {
-  return meetups
-}
-
-export const getMeetupById = (id: string): Meetup | undefined => {
-  return meetups.find((meetup) => meetup.id === id)
-}
