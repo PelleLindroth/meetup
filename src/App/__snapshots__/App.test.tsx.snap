@@ -1,0 +1,794 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App unit tests renders App correctly 1`] = `
+<App>
+  <Header>
+    <header
+      className="header"
+    >
+      <Link
+        to="/"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt="logo"
+            src="logo.png"
+          />
+        </a>
+      </Link>
+      <Link
+        to="/login"
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          <button
+            className="loginButton"
+          >
+            Log in
+          </button>
+        </a>
+      </Link>
+    </header>
+  </Header>
+  <Routes>
+    <Home
+      meetups={
+        Array [
+          Object {
+            "arranger": Object {
+              "attended": Array [],
+              "attending": Array [],
+              "email": "tjalle@yahoo.com",
+              "firstName": "Tjalle",
+              "id": "1",
+              "lastName": "Bergkvist",
+              "password": "grillkorv",
+            },
+            "capacity": null,
+            "comments": Array [],
+            "date": 2021-08-28T17:00:00.000Z,
+            "description": "We meet in the park with pizzas and hang out all night",
+            "id": "1",
+            "location": Object {
+              "city": "Stockholm",
+              "country": "Sweden",
+              "street": "Vitabergsparken",
+            },
+            "online": false,
+            "reviews": Array [],
+            "title": "Pizza Picnic",
+            "url": "https://www.udemy.com/course/rust-lang/",
+          },
+          Object {
+            "arranger": Object {
+              "attended": Array [],
+              "attending": Array [],
+              "email": "babsan@yahoo.com",
+              "firstName": "Barbro",
+              "id": "3",
+              "lastName": "Lundborg",
+              "password": "password123",
+            },
+            "capacity": null,
+            "comments": Array [],
+            "date": 2022-01-10T10:00:00.000Z,
+            "description": "Learn a new programming language from the ground up",
+            "id": "2",
+            "online": true,
+            "reviews": Array [],
+            "title": "Rust course",
+            "url": "https://www.udemy.com/course/rust-lang/",
+          },
+          Object {
+            "arranger": Object {
+              "attended": Array [],
+              "attending": Array [],
+              "email": "kenta@yahoo.com",
+              "firstName": "Kenta",
+              "id": "2",
+              "lastName": "Andersson",
+              "password": "bananpaj",
+            },
+            "availableSeats": 39567,
+            "capacity": 43883,
+            "comments": Array [],
+            "date": 2022-05-13T16:00:00.000Z,
+            "description": "A classic football match between the south and the north",
+            "id": "3",
+            "location": Object {
+              "city": "41005 Sevilla",
+              "country": "Spain",
+              "street": "C. Sevilla Fútbol Club",
+            },
+            "online": false,
+            "reviews": Array [],
+            "title": "Sevilla - Real Sociedad",
+          },
+          Object {
+            "arranger": Object {
+              "attended": Array [],
+              "attending": Array [],
+              "email": "loffe@yahoo.com",
+              "firstName": "Janne",
+              "id": "4",
+              "lastName": "Karlsson",
+              "password": "storstark",
+            },
+            "capacity": null,
+            "comments": Array [],
+            "date": 2022-07-02T15:00:00.000Z,
+            "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
+            "id": "4",
+            "location": Object {
+              "city": "Stockholm",
+              "country": "Sweden",
+              "street": "Gärdet",
+            },
+            "online": false,
+            "reviews": Array [],
+            "title": "Kite festival",
+          },
+        ]
+      }
+      setMeetups={[Function]}
+    >
+      <SearchArea
+        searchFilter="all"
+        searchPhrase=""
+        setSearchFilter={[Function]}
+        setSearchPhrase={[Function]}
+      >
+        <section
+          className="searchArea"
+        >
+          <div
+            className="searchBox"
+          >
+            <div
+              className="imageWrapper"
+            >
+              <img
+                alt="Search icon"
+                src="search.png"
+              />
+            </div>
+            <input
+              onChange={[Function]}
+              placeholder="What do you want to do?"
+              type="search"
+              value=""
+            />
+          </div>
+          <select
+            id="search-filter"
+            name="search-filter"
+            onChange={[Function]}
+            value="all"
+          >
+            <option
+              value="all"
+            >
+              Search all events
+            </option>
+            <option
+              value="upcoming"
+            >
+              Search upcoming events
+            </option>
+            <option
+              value="past"
+            >
+              Search past events
+            </option>
+          </select>
+        </section>
+      </SearchArea>
+      <section>
+        <h2>
+          UPCOMING EVENTS
+        </h2>
+        <MeetupList
+          meetups={
+            Array [
+              Object {
+                "arranger": Object {
+                  "attended": Array [],
+                  "attending": Array [],
+                  "email": "babsan@yahoo.com",
+                  "firstName": "Barbro",
+                  "id": "3",
+                  "lastName": "Lundborg",
+                  "password": "password123",
+                },
+                "capacity": null,
+                "comments": Array [],
+                "date": 2022-01-10T10:00:00.000Z,
+                "description": "Learn a new programming language from the ground up",
+                "id": "2",
+                "online": true,
+                "reviews": Array [],
+                "title": "Rust course",
+                "url": "https://www.udemy.com/course/rust-lang/",
+              },
+              Object {
+                "arranger": Object {
+                  "attended": Array [],
+                  "attending": Array [],
+                  "email": "kenta@yahoo.com",
+                  "firstName": "Kenta",
+                  "id": "2",
+                  "lastName": "Andersson",
+                  "password": "bananpaj",
+                },
+                "availableSeats": 39567,
+                "capacity": 43883,
+                "comments": Array [],
+                "date": 2022-05-13T16:00:00.000Z,
+                "description": "A classic football match between the south and the north",
+                "id": "3",
+                "location": Object {
+                  "city": "41005 Sevilla",
+                  "country": "Spain",
+                  "street": "C. Sevilla Fútbol Club",
+                },
+                "online": false,
+                "reviews": Array [],
+                "title": "Sevilla - Real Sociedad",
+              },
+              Object {
+                "arranger": Object {
+                  "attended": Array [],
+                  "attending": Array [],
+                  "email": "loffe@yahoo.com",
+                  "firstName": "Janne",
+                  "id": "4",
+                  "lastName": "Karlsson",
+                  "password": "storstark",
+                },
+                "capacity": null,
+                "comments": Array [],
+                "date": 2022-07-02T15:00:00.000Z,
+                "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
+                "id": "4",
+                "location": Object {
+                  "city": "Stockholm",
+                  "country": "Sweden",
+                  "street": "Gärdet",
+                },
+                "online": false,
+                "reviews": Array [],
+                "title": "Kite festival",
+              },
+            ]
+          }
+          upcoming={true}
+        >
+          <ul
+            className="meetupList"
+            data-testid="upcoming-events"
+          >
+            <MeetupCard
+              key="2"
+              meetup={
+                Object {
+                  "arranger": Object {
+                    "attended": Array [],
+                    "attending": Array [],
+                    "email": "babsan@yahoo.com",
+                    "firstName": "Barbro",
+                    "id": "3",
+                    "lastName": "Lundborg",
+                    "password": "password123",
+                  },
+                  "capacity": null,
+                  "comments": Array [],
+                  "date": 2022-01-10T10:00:00.000Z,
+                  "description": "Learn a new programming language from the ground up",
+                  "id": "2",
+                  "online": true,
+                  "reviews": Array [],
+                  "title": "Rust course",
+                  "url": "https://www.udemy.com/course/rust-lang/",
+                }
+              }
+              upcoming={true}
+            >
+              <li
+                className="cardWrapper"
+              >
+                <div
+                  className="cardHeader"
+                  style={
+                    Object {
+                      "backgroundColor": "#0E81C9",
+                    }
+                  }
+                  title="upcoming-event-header"
+                >
+                  <h2>
+                    Rust course
+                  </h2>
+                </div>
+                <div
+                  className="cardBody"
+                >
+                  <div
+                    className="leftColumn"
+                  >
+                    <div
+                      className="dateRow"
+                    >
+                      <img
+                        alt="Time icon"
+                        className="icon"
+                        src="time.png"
+                      />
+                      <h3
+                        title="date"
+                      >
+                        10 January 2022, 11:00
+                         
+                        CET
+                      </h3>
+                    </div>
+                    <div
+                      className="locationRow"
+                    >
+                      <img
+                        alt="Cloud icon"
+                        className="icon"
+                        src="cloud.png"
+                      />
+                      <h3
+                        title="location"
+                      >
+                        Online event
+                      </h3>
+                    </div>
+                    <p
+                      className="capacityRow"
+                      title="capacity"
+                    >
+                      <strong>
+                        Capacity: 
+                      </strong>
+                      <span
+                        className="available"
+                      >
+                        Unlimited
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className="rightColumn"
+                  >
+                    <Link
+                      to="/meetup/2"
+                    >
+                      <a
+                        href="/meetup/2"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Arrow icon"
+                          className="arrowIcon"
+                          src="arrow.png"
+                          title="See meetup details"
+                        />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            </MeetupCard>
+            <MeetupCard
+              key="3"
+              meetup={
+                Object {
+                  "arranger": Object {
+                    "attended": Array [],
+                    "attending": Array [],
+                    "email": "kenta@yahoo.com",
+                    "firstName": "Kenta",
+                    "id": "2",
+                    "lastName": "Andersson",
+                    "password": "bananpaj",
+                  },
+                  "availableSeats": 39567,
+                  "capacity": 43883,
+                  "comments": Array [],
+                  "date": 2022-05-13T16:00:00.000Z,
+                  "description": "A classic football match between the south and the north",
+                  "id": "3",
+                  "location": Object {
+                    "city": "41005 Sevilla",
+                    "country": "Spain",
+                    "street": "C. Sevilla Fútbol Club",
+                  },
+                  "online": false,
+                  "reviews": Array [],
+                  "title": "Sevilla - Real Sociedad",
+                }
+              }
+              upcoming={true}
+            >
+              <li
+                className="cardWrapper"
+              >
+                <div
+                  className="cardHeader"
+                  style={
+                    Object {
+                      "backgroundColor": "#0E81C9",
+                    }
+                  }
+                  title="upcoming-event-header"
+                >
+                  <h2>
+                    Sevilla - Real Sociedad
+                  </h2>
+                </div>
+                <div
+                  className="cardBody"
+                >
+                  <div
+                    className="leftColumn"
+                  >
+                    <div
+                      className="dateRow"
+                    >
+                      <img
+                        alt="Time icon"
+                        className="icon"
+                        src="time.png"
+                      />
+                      <h3
+                        title="date"
+                      >
+                        13 May 2022, 18:00
+                         
+                        CET
+                      </h3>
+                    </div>
+                    <div
+                      className="locationRow"
+                    >
+                      <img
+                        alt="Pin icon"
+                        className="icon"
+                        src="pin.png"
+                      />
+                      <h3
+                        title="location"
+                      >
+                        C. Sevilla Fútbol Club, 41005 Sevilla
+                      </h3>
+                    </div>
+                    <p
+                      className="capacityRow"
+                      title="capacity"
+                    >
+                      <strong>
+                        Capacity: 
+                      </strong>
+                      <span>
+                        43883, 
+                      </span>
+                      <span
+                        className="available"
+                      >
+                        39567 available
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className="rightColumn"
+                  >
+                    <Link
+                      to="/meetup/3"
+                    >
+                      <a
+                        href="/meetup/3"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Arrow icon"
+                          className="arrowIcon"
+                          src="arrow.png"
+                          title="See meetup details"
+                        />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            </MeetupCard>
+            <MeetupCard
+              key="4"
+              meetup={
+                Object {
+                  "arranger": Object {
+                    "attended": Array [],
+                    "attending": Array [],
+                    "email": "loffe@yahoo.com",
+                    "firstName": "Janne",
+                    "id": "4",
+                    "lastName": "Karlsson",
+                    "password": "storstark",
+                  },
+                  "capacity": null,
+                  "comments": Array [],
+                  "date": 2022-07-02T15:00:00.000Z,
+                  "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
+                  "id": "4",
+                  "location": Object {
+                    "city": "Stockholm",
+                    "country": "Sweden",
+                    "street": "Gärdet",
+                  },
+                  "online": false,
+                  "reviews": Array [],
+                  "title": "Kite festival",
+                }
+              }
+              upcoming={true}
+            >
+              <li
+                className="cardWrapper"
+              >
+                <div
+                  className="cardHeader"
+                  style={
+                    Object {
+                      "backgroundColor": "#0E81C9",
+                    }
+                  }
+                  title="upcoming-event-header"
+                >
+                  <h2>
+                    Kite festival
+                  </h2>
+                </div>
+                <div
+                  className="cardBody"
+                >
+                  <div
+                    className="leftColumn"
+                  >
+                    <div
+                      className="dateRow"
+                    >
+                      <img
+                        alt="Time icon"
+                        className="icon"
+                        src="time.png"
+                      />
+                      <h3
+                        title="date"
+                      >
+                        02 July 2022, 17:00
+                         
+                        CET
+                      </h3>
+                    </div>
+                    <div
+                      className="locationRow"
+                    >
+                      <img
+                        alt="Pin icon"
+                        className="icon"
+                        src="pin.png"
+                      />
+                      <h3
+                        title="location"
+                      >
+                        Gärdet, Stockholm
+                      </h3>
+                    </div>
+                    <p
+                      className="capacityRow"
+                      title="capacity"
+                    >
+                      <strong>
+                        Capacity: 
+                      </strong>
+                      <span
+                        className="available"
+                      >
+                        Unlimited
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className="rightColumn"
+                  >
+                    <Link
+                      to="/meetup/4"
+                    >
+                      <a
+                        href="/meetup/4"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Arrow icon"
+                          className="arrowIcon"
+                          src="arrow.png"
+                          title="See meetup details"
+                        />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            </MeetupCard>
+          </ul>
+        </MeetupList>
+        <h2>
+          PAST EVENTS
+        </h2>
+        <MeetupList
+          meetups={
+            Array [
+              Object {
+                "arranger": Object {
+                  "attended": Array [],
+                  "attending": Array [],
+                  "email": "tjalle@yahoo.com",
+                  "firstName": "Tjalle",
+                  "id": "1",
+                  "lastName": "Bergkvist",
+                  "password": "grillkorv",
+                },
+                "capacity": null,
+                "comments": Array [],
+                "date": 2021-08-28T17:00:00.000Z,
+                "description": "We meet in the park with pizzas and hang out all night",
+                "id": "1",
+                "location": Object {
+                  "city": "Stockholm",
+                  "country": "Sweden",
+                  "street": "Vitabergsparken",
+                },
+                "online": false,
+                "reviews": Array [],
+                "title": "Pizza Picnic",
+                "url": "https://www.udemy.com/course/rust-lang/",
+              },
+            ]
+          }
+        >
+          <ul
+            className="meetupList"
+            data-testid="past-events"
+          >
+            <MeetupCard
+              key="1"
+              meetup={
+                Object {
+                  "arranger": Object {
+                    "attended": Array [],
+                    "attending": Array [],
+                    "email": "tjalle@yahoo.com",
+                    "firstName": "Tjalle",
+                    "id": "1",
+                    "lastName": "Bergkvist",
+                    "password": "grillkorv",
+                  },
+                  "capacity": null,
+                  "comments": Array [],
+                  "date": 2021-08-28T17:00:00.000Z,
+                  "description": "We meet in the park with pizzas and hang out all night",
+                  "id": "1",
+                  "location": Object {
+                    "city": "Stockholm",
+                    "country": "Sweden",
+                    "street": "Vitabergsparken",
+                  },
+                  "online": false,
+                  "reviews": Array [],
+                  "title": "Pizza Picnic",
+                  "url": "https://www.udemy.com/course/rust-lang/",
+                }
+              }
+              upcoming={false}
+            >
+              <li
+                className="cardWrapper"
+              >
+                <div
+                  className="cardHeader"
+                  style={
+                    Object {
+                      "backgroundColor": "#DCDDDE",
+                    }
+                  }
+                  title="past-event-header"
+                >
+                  <h2>
+                    Pizza Picnic
+                  </h2>
+                </div>
+                <div
+                  className="cardBody"
+                >
+                  <div
+                    className="leftColumn"
+                  >
+                    <div
+                      className="dateRow"
+                    >
+                      <img
+                        alt="Time icon"
+                        className="icon"
+                        src="time.png"
+                      />
+                      <h3
+                        title="date"
+                      >
+                        28 August 2021, 19:00
+                         
+                        CET
+                      </h3>
+                    </div>
+                    <div
+                      className="locationRow"
+                    >
+                      <img
+                        alt="Pin icon"
+                        className="icon"
+                        src="pin.png"
+                      />
+                      <h3
+                        title="location"
+                      >
+                        Vitabergsparken, Stockholm
+                      </h3>
+                    </div>
+                    <p
+                      className="capacityRow"
+                      title="capacity"
+                    >
+                      <strong>
+                        Capacity: 
+                      </strong>
+                      <span
+                        className="available"
+                      >
+                        Unlimited
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className="rightColumn"
+                  >
+                    <Link
+                      to="/meetup/1"
+                    >
+                      <a
+                        href="/meetup/1"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Arrow icon"
+                          className="arrowIcon"
+                          src="arrow.png"
+                          title="See meetup details"
+                        />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            </MeetupCard>
+          </ul>
+        </MeetupList>
+      </section>
+    </Home>
+  </Routes>
+</App>
+`;
