@@ -28,10 +28,7 @@ function App() {
           path="/"
           element={<Home meetups={meetups} setMeetups={setMeetups} />}
         />
-        <Route
-          path="/meetup/:id"
-          element={<SingleMeetup setMeetups={setMeetups} />}
-        />
+        <Route path="/meetup/:id" element={<SingleMeetup user={user} />} />
         {!user && <Route path="/login" element={<Login setUser={setUser} />} />}
         {user && <Route path="/profile/:id" element={<Profile />} />}
       </Routes>
