@@ -9,7 +9,7 @@ export interface Meetup {
   url?: string
   online: boolean
   capacity: number | null
-  availableSeats?: number
+  attending: number
   arranger: User
   reviews: Review[]
   comments: Comment[]
@@ -50,6 +50,7 @@ export const meetups: Meetup[] = [
     online: false,
     url: 'https://www.udemy.com/course/rust-lang/',
     capacity: null,
+    attending: 54,
     arranger: users[0],
     reviews: [],
     comments: [],
@@ -62,6 +63,7 @@ export const meetups: Meetup[] = [
     online: true,
     url: 'https://www.udemy.com/course/rust-lang/',
     capacity: null,
+    attending: 234,
     arranger: users[2],
     reviews: [],
     comments: [],
@@ -78,7 +80,7 @@ export const meetups: Meetup[] = [
     },
     online: false,
     capacity: 43883,
-    availableSeats: 39567,
+    attending: 23478,
     arranger: users[1],
     reviews: [],
     comments: [],
@@ -96,6 +98,7 @@ export const meetups: Meetup[] = [
     },
     online: false,
     capacity: null,
+    attending: 126,
     arranger: users[3],
     reviews: [],
     comments: [],

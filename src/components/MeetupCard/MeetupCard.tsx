@@ -53,11 +53,11 @@ const MeetupCard = (props: MeetupCardProps) => {
                 <span>{`${meetup.capacity}, `}</span>
                 <span
                   className={
-                    meetup.availableSeats! > 0
+                    meetup.capacity - meetup.attending > 0
                       ? styles.available
                       : styles.unavailable
                   }
-                >{`${meetup.availableSeats} available`}</span>
+                >{`${meetup.capacity - meetup.attending} available`}</span>
               </>
             ) : (
               <span className={styles.available}>Unlimited</span>

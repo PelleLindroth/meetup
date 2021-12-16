@@ -59,6 +59,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 "lastName": "Bergkvist",
                 "password": "grillkorv",
               },
+              "attending": 54,
               "capacity": null,
               "comments": Array [],
               "date": 2021-08-28T17:00:00.000Z,
@@ -84,6 +85,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 "lastName": "Lundborg",
                 "password": "password123",
               },
+              "attending": 234,
               "capacity": null,
               "comments": Array [],
               "date": 2022-01-10T10:00:00.000Z,
@@ -104,7 +106,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 "lastName": "Andersson",
                 "password": "bananpaj",
               },
-              "availableSeats": 39567,
+              "attending": 23478,
               "capacity": 43883,
               "comments": Array [],
               "date": 2022-05-13T16:00:00.000Z,
@@ -129,6 +131,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 "lastName": "Karlsson",
                 "password": "storstark",
               },
+              "attending": 126,
               "capacity": null,
               "comments": Array [],
               "date": 2022-07-02T15:00:00.000Z,
@@ -215,6 +218,7 @@ exports[`App unit tests renders App correctly 1`] = `
                     "lastName": "Lundborg",
                     "password": "password123",
                   },
+                  "attending": 234,
                   "capacity": null,
                   "comments": Array [],
                   "date": 2022-01-10T10:00:00.000Z,
@@ -235,7 +239,7 @@ exports[`App unit tests renders App correctly 1`] = `
                     "lastName": "Andersson",
                     "password": "bananpaj",
                   },
-                  "availableSeats": 39567,
+                  "attending": 23478,
                   "capacity": 43883,
                   "comments": Array [],
                   "date": 2022-05-13T16:00:00.000Z,
@@ -260,6 +264,7 @@ exports[`App unit tests renders App correctly 1`] = `
                     "lastName": "Karlsson",
                     "password": "storstark",
                   },
+                  "attending": 126,
                   "capacity": null,
                   "comments": Array [],
                   "date": 2022-07-02T15:00:00.000Z,
@@ -295,6 +300,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "lastName": "Lundborg",
                       "password": "password123",
                     },
+                    "attending": 234,
                     "capacity": null,
                     "comments": Array [],
                     "date": 2022-01-10T10:00:00.000Z,
@@ -409,7 +415,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "lastName": "Andersson",
                       "password": "bananpaj",
                     },
-                    "availableSeats": 39567,
+                    "attending": 23478,
                     "capacity": 43883,
                     "comments": Array [],
                     "date": 2022-05-13T16:00:00.000Z,
@@ -492,7 +498,7 @@ exports[`App unit tests renders App correctly 1`] = `
                         <span
                           className="available"
                         >
-                          39567 available
+                          20405 available
                         </span>
                       </p>
                     </div>
@@ -531,6 +537,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "lastName": "Karlsson",
                       "password": "storstark",
                     },
+                    "attending": 126,
                     "capacity": null,
                     "comments": Array [],
                     "date": 2022-07-02T15:00:00.000Z,
@@ -654,6 +661,7 @@ exports[`App unit tests renders App correctly 1`] = `
                     "lastName": "Bergkvist",
                     "password": "grillkorv",
                   },
+                  "attending": 54,
                   "capacity": null,
                   "comments": Array [],
                   "date": 2021-08-28T17:00:00.000Z,
@@ -689,6 +697,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "lastName": "Bergkvist",
                       "password": "grillkorv",
                     },
+                    "attending": 54,
                     "capacity": null,
                     "comments": Array [],
                     "date": 2021-08-28T17:00:00.000Z,
