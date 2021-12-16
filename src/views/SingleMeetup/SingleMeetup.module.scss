@@ -1,0 +1,198 @@
+.meetup {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  .upcomingHeader {
+    color: #0e81c9;
+    margin: 0;
+    margin: 0 0 0.3rem 0;
+  }
+
+  .pastHeader {
+    color: #dcddde;
+    margin: 0;
+    margin: 0 0 0.3rem 0;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+  }
+
+  .details,
+  .arranger,
+  .capacity,
+  .loginInfo,
+  .reviews,
+  .comments {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+
+    .locationRow,
+    .dateRow {
+      align-items: center;
+      display: flex;
+
+      img {
+        margin-right: 0.3rem;
+        width: 1.7rem;
+      }
+
+      .note {
+        color: #c80000;
+        font-size: 0.7rem;
+      }
+    }
+
+    .arrangerHeaderRow {
+      align-items: center;
+      display: flex;
+      margin-top: 1rem;
+
+      img {
+        margin-right: 0.3rem;
+        width: 1.7rem;
+      }
+      h3 {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+
+    .capacityRow {
+      align-items: center;
+      display: flex;
+
+      img {
+        margin-right: 0.3rem;
+        width: 1.7rem;
+      }
+    }
+
+    .capacityInfo {
+      p {
+        margin: 0 0 0.3rem 0;
+      }
+
+      .available {
+        color: #14c747;
+      }
+
+      .attendedRow {
+        align-items: center;
+        display: flex;
+
+        img {
+          margin-right: 0.3rem;
+          opacity: 0.8;
+          width: 1.7rem;
+        }
+      }
+    }
+  }
+
+  .loginInfo {
+    background-color: #dcddde;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3,
+    p {
+      margin: 0 0 0.3rem 0;
+    }
+
+    button {
+      background-color: #14c747;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-top: 0.3rem;
+      outline: none;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .reviews {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    .reviewRow {
+      align-items: center;
+      display: flex;
+
+      img {
+        margin-right: 0.3rem;
+        opacity: 0.8;
+        width: 1.7rem;
+      }
+    }
+
+    button {
+      background-color: #0e81c9;
+      border: none;
+      color: #fff;
+      margin: auto;
+      outline: none;
+      padding: 0.3rem 0.5rem;
+    }
+  }
+
+  .comments {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    .commentHeaderRow {
+      align-items: center;
+      display: flex;
+      margin-bottom: 1rem;
+
+      img {
+        margin-right: 0.3rem;
+        width: 1.7rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+
+    .commentList {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .commentCard {
+        background-color: #f5f5f0;
+        border-radius: 0 1rem 1rem 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        margin-top: 0.7rem;
+        padding: 0.5rem;
+
+        .commentText {
+          font-weight: 700;
+          text-align: left;
+        }
+
+        .commentSignature {
+          text-align: right;
+        }
+      }
+    }
+
+    button {
+      background-color: #0e81c9;
+      border: none;
+      color: #fff;
+      margin: 1rem auto;
+      outline: none;
+      padding: 0.3rem 0.5rem;
+    }
+  }
+}
