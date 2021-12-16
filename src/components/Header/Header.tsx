@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/logo.png'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import { User } from '../../db/users'
 import UserIcon from '../../assets/icons/user.png'
 import { useState } from 'react'
@@ -13,11 +13,13 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
   const { user, setUser } = props
-  const location = useLocation()
   const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     setUser(null)
+    navigate('/', { replace: true })
   }
 
   return (
@@ -31,7 +33,7 @@ const Header = (props: HeaderProps) => {
             <button className={styles.loginButton}>Log in</button>
           </Link>
         )}
-        {user && location.pathname !== `/profile/${user.id}` && (
+        {user && (
           <div
             className={styles.profileWrapper}
             title="Profile menu"
@@ -41,12 +43,14 @@ const Header = (props: HeaderProps) => {
             <p>{`${user.firstName} ${user.lastName}`}</p>
             {showProfileMenu && (
               <nav className={styles.profileMenu}>
-                <Link
-                  className={styles.viewProfileButton}
-                  to={`/profile/${user!.id}`}
-                >
-                  View profile
-                </Link>
+                {location.pathname !== `/profile/${user.id}` && (
+                  <Link
+                    className={styles.viewProfileButton}
+                    to={`/profile/${user!.id}`}
+                  >
+                    View profile
+                  </Link>
+                )}
                 <button onClick={handleLogout} className={styles.logoutButton}>
                   Log out
                 </button>
