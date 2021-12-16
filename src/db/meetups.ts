@@ -25,14 +25,12 @@ interface Review {
   id: string
   meetupId: string
   rating: number
-  submittedAt: Date
 }
 
 interface Comment {
   id: string
-  meetupId: string
-  title: string
-  body: string
+  userId: string
+  text: string
   submittedAt: Date
 }
 
@@ -52,8 +50,32 @@ export const meetups: Meetup[] = [
     capacity: null,
     attending: 54,
     arranger: users[0],
-    reviews: [],
-    comments: [],
+    reviews: [
+      {
+        id: '1',
+        meetupId: '1',
+        rating: 4,
+      },
+      {
+        id: '2',
+        meetupId: '1',
+        rating: 5,
+      },
+    ],
+    comments: [
+      {
+        id: '1',
+        userId: '2',
+        text: 'Great day!',
+        submittedAt: new Date(1639666713837),
+      },
+      {
+        id: '2',
+        userId: '1',
+        text: 'Yes, it was, thanks!',
+        submittedAt: new Date(1639666762526),
+      },
+    ],
   },
   {
     id: '2',

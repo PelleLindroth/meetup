@@ -7,7 +7,8 @@ export interface User {
   email: string
   password: string
   attending: Meetup[]
-  attended: Meetup[]
+  attended: string[]
+  reviewed: string[]
 }
 
 export const users: User[] = [
@@ -18,7 +19,8 @@ export const users: User[] = [
     email: 'tjalle@yahoo.com',
     password: 'grillkorv',
     attending: [],
-    attended: [],
+    attended: ['1'],
+    reviewed: ['1'],
   },
   {
     id: '2',
@@ -27,7 +29,8 @@ export const users: User[] = [
     email: 'kenta@yahoo.com',
     password: 'bananpaj',
     attending: [],
-    attended: [],
+    attended: ['1'],
+    reviewed: ['1'],
   },
   {
     id: '3',
@@ -37,6 +40,7 @@ export const users: User[] = [
     password: 'password123',
     attending: [],
     attended: [],
+    reviewed: [],
   },
   {
     id: '4',
@@ -45,6 +49,7 @@ export const users: User[] = [
     email: 'loffe@yahoo.com',
     password: 'storstark',
     attending: [],
-    attended: [],
+    attended: ['1'],
+    reviewed: [],
   },
 ]
