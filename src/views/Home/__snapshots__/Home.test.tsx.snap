@@ -6,17 +6,35 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
     Array [
       Object {
         "arranger": Object {
-          "attended": Array [],
+          "attended": Array [
+            "1",
+          ],
           "attending": Array [],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
         },
         "attending": 54,
         "capacity": null,
-        "comments": Array [],
+        "comments": Array [
+          Object {
+            "id": "1",
+            "submittedAt": 2021-12-16T14:58:33.837Z,
+            "text": "Great day!",
+            "userId": "1",
+          },
+          Object {
+            "id": "2",
+            "submittedAt": 2021-12-16T14:59:22.526Z,
+            "text": "Yes, it was",
+            "userId": "2",
+          },
+        ],
         "date": 2021-08-28T17:00:00.000Z,
         "description": "We meet in the park with pizzas and hang out all night",
         "id": "1",
@@ -26,7 +44,18 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           "street": "Vitabergsparken",
         },
         "online": false,
-        "reviews": Array [],
+        "reviews": Array [
+          Object {
+            "id": "1",
+            "meetupId": "1",
+            "rating": 4,
+          },
+          Object {
+            "id": "2",
+            "meetupId": "1",
+            "rating": 5,
+          },
+        ],
         "title": "Pizza Picnic",
         "url": "https://www.udemy.com/course/rust-lang/",
       },
@@ -39,6 +68,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
+          "reviewed": Array [],
         },
         "attending": 234,
         "capacity": null,
@@ -53,13 +83,18 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
       },
       Object {
         "arranger": Object {
-          "attended": Array [],
+          "attended": Array [
+            "1",
+          ],
           "attending": Array [],
           "email": "kenta@yahoo.com",
           "firstName": "Kenta",
           "id": "2",
           "lastName": "Andersson",
           "password": "bananpaj",
+          "reviewed": Array [
+            "1",
+          ],
         },
         "attending": 23478,
         "capacity": 43883,
@@ -78,13 +113,16 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
       },
       Object {
         "arranger": Object {
-          "attended": Array [],
+          "attended": Array [
+            "1",
+          ],
           "attending": Array [],
           "email": "loffe@yahoo.com",
           "firstName": "Janne",
           "id": "4",
           "lastName": "Karlsson",
           "password": "storstark",
+          "reviewed": Array [],
         },
         "attending": 126,
         "capacity": null,
@@ -172,6 +210,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
               "id": "3",
               "lastName": "Lundborg",
               "password": "password123",
+              "reviewed": Array [],
             },
             "attending": 234,
             "capacity": null,
@@ -186,13 +225,18 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           },
           Object {
             "arranger": Object {
-              "attended": Array [],
+              "attended": Array [
+                "1",
+              ],
               "attending": Array [],
               "email": "kenta@yahoo.com",
               "firstName": "Kenta",
               "id": "2",
               "lastName": "Andersson",
               "password": "bananpaj",
+              "reviewed": Array [
+                "1",
+              ],
             },
             "attending": 23478,
             "capacity": 43883,
@@ -211,13 +255,16 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           },
           Object {
             "arranger": Object {
-              "attended": Array [],
+              "attended": Array [
+                "1",
+              ],
               "attending": Array [],
               "email": "loffe@yahoo.com",
               "firstName": "Janne",
               "id": "4",
               "lastName": "Karlsson",
               "password": "storstark",
+              "reviewed": Array [],
             },
             "attending": 126,
             "capacity": null,
@@ -254,6 +301,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                 "id": "3",
                 "lastName": "Lundborg",
                 "password": "password123",
+                "reviewed": Array [],
               },
               "attending": 234,
               "capacity": null,
@@ -362,13 +410,18 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           meetup={
             Object {
               "arranger": Object {
-                "attended": Array [],
+                "attended": Array [
+                  "1",
+                ],
                 "attending": Array [],
                 "email": "kenta@yahoo.com",
                 "firstName": "Kenta",
                 "id": "2",
                 "lastName": "Andersson",
                 "password": "bananpaj",
+                "reviewed": Array [
+                  "1",
+                ],
               },
               "attending": 23478,
               "capacity": 43883,
@@ -430,7 +483,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   className="locationRow"
                 >
                   <img
-                    alt="Pin icon"
+                    alt="Map pin icon"
                     className="icon"
                     src="pin.png"
                   />
@@ -484,13 +537,16 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           meetup={
             Object {
               "arranger": Object {
-                "attended": Array [],
+                "attended": Array [
+                  "1",
+                ],
                 "attending": Array [],
                 "email": "loffe@yahoo.com",
                 "firstName": "Janne",
                 "id": "4",
                 "lastName": "Karlsson",
                 "password": "storstark",
+                "reviewed": Array [],
               },
               "attending": 126,
               "capacity": null,
@@ -552,7 +608,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   className="locationRow"
                 >
                   <img
-                    alt="Pin icon"
+                    alt="Map pin icon"
                     className="icon"
                     src="pin.png"
                   />
@@ -608,17 +664,35 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         Array [
           Object {
             "arranger": Object {
-              "attended": Array [],
+              "attended": Array [
+                "1",
+              ],
               "attending": Array [],
               "email": "tjalle@yahoo.com",
               "firstName": "Tjalle",
               "id": "1",
               "lastName": "Bergkvist",
               "password": "grillkorv",
+              "reviewed": Array [
+                "1",
+              ],
             },
             "attending": 54,
             "capacity": null,
-            "comments": Array [],
+            "comments": Array [
+              Object {
+                "id": "1",
+                "submittedAt": 2021-12-16T14:58:33.837Z,
+                "text": "Great day!",
+                "userId": "1",
+              },
+              Object {
+                "id": "2",
+                "submittedAt": 2021-12-16T14:59:22.526Z,
+                "text": "Yes, it was",
+                "userId": "2",
+              },
+            ],
             "date": 2021-08-28T17:00:00.000Z,
             "description": "We meet in the park with pizzas and hang out all night",
             "id": "1",
@@ -628,7 +702,18 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
               "street": "Vitabergsparken",
             },
             "online": false,
-            "reviews": Array [],
+            "reviews": Array [
+              Object {
+                "id": "1",
+                "meetupId": "1",
+                "rating": 4,
+              },
+              Object {
+                "id": "2",
+                "meetupId": "1",
+                "rating": 5,
+              },
+            ],
             "title": "Pizza Picnic",
             "url": "https://www.udemy.com/course/rust-lang/",
           },
@@ -644,17 +729,35 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           meetup={
             Object {
               "arranger": Object {
-                "attended": Array [],
+                "attended": Array [
+                  "1",
+                ],
                 "attending": Array [],
                 "email": "tjalle@yahoo.com",
                 "firstName": "Tjalle",
                 "id": "1",
                 "lastName": "Bergkvist",
                 "password": "grillkorv",
+                "reviewed": Array [
+                  "1",
+                ],
               },
               "attending": 54,
               "capacity": null,
-              "comments": Array [],
+              "comments": Array [
+                Object {
+                  "id": "1",
+                  "submittedAt": 2021-12-16T14:58:33.837Z,
+                  "text": "Great day!",
+                  "userId": "1",
+                },
+                Object {
+                  "id": "2",
+                  "submittedAt": 2021-12-16T14:59:22.526Z,
+                  "text": "Yes, it was",
+                  "userId": "2",
+                },
+              ],
               "date": 2021-08-28T17:00:00.000Z,
               "description": "We meet in the park with pizzas and hang out all night",
               "id": "1",
@@ -664,7 +767,18 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                 "street": "Vitabergsparken",
               },
               "online": false,
-              "reviews": Array [],
+              "reviews": Array [
+                Object {
+                  "id": "1",
+                  "meetupId": "1",
+                  "rating": 4,
+                },
+                Object {
+                  "id": "2",
+                  "meetupId": "1",
+                  "rating": 5,
+                },
+              ],
               "title": "Pizza Picnic",
               "url": "https://www.udemy.com/course/rust-lang/",
             }
@@ -713,7 +827,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                   className="locationRow"
                 >
                   <img
-                    alt="Pin icon"
+                    alt="Map pin icon"
                     className="icon"
                     src="pin.png"
                   />
@@ -778,6 +892,7 @@ exports[`Home renders separate meetup card for every meetup with title, date, lo
         "id": "3",
         "lastName": "Lundborg",
         "password": "password123",
+        "reviewed": Array [],
       },
       "attending": 234,
       "capacity": null,
