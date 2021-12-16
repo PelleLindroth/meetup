@@ -41,7 +41,7 @@ const MeetupCard = (props: MeetupCardProps) => {
               </>
             ) : (
               <>
-                <img src={Pin} alt="Pin icon" className={styles.icon} />
+                <img src={Pin} alt="Map pin icon" className={styles.icon} />
                 <h3 title="location">{`${meetup.location?.street}, ${meetup.location?.city}`}</h3>
               </>
             )}
