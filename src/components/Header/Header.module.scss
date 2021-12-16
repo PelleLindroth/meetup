@@ -38,7 +38,7 @@
       justify-content: center;
       margin-right: 1rem;
       text-decoration: none;
-      position: static;
+      position: relative;
 
       img {
         height: 2rem;
@@ -53,13 +53,12 @@
       .profileMenu {
         align-items: center;
         background-color: #dcddde;
+        border-radius: 0 0 0.2rem 0.2rem;
         display: flex;
         flex-direction: column;
-        margin-right: 0.5rem;
-        padding: 0.5rem;
+        margin-top: 9rem;
+        padding: 0 0.5rem 0.5rem;
         position: fixed;
-        right: 0;
-        top: 3.5rem;
         width: 6.5rem;
 
         .viewProfileButton,
