@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import SearchArea from '../../components/SearchArea/SearchArea'
-import MeetupList from '../../components/MeetupList'
+import SearchArea from './components/SearchArea/SearchArea'
+import MeetupList from './components/MeetupList'
 import { HomeProps } from './types'
 
 const Home = (props: HomeProps) => {

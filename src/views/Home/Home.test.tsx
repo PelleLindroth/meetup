@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react'
 import { Link, MemoryRouter } from 'react-router-dom'
 import { renderWithRouter } from '../../utils/testing-utils'
 import Home from './Home'
-import MeetupCard from '../../components/MeetupCard'
+import MeetupCard from './components/MeetupCard'
 import { getMockMeetups } from '../../db'
 import userEvent from '@testing-library/user-event'
 

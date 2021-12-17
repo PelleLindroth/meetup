@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import Logo from '../../assets/logo.png'
-import { useLocation, useNavigate } from 'react-router'
-import { User } from '../../db/users'
-import UserIcon from '../../assets/icons/user.png'
 import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
+import { User } from '../db/users'
+import Logo from '../assets/logo.png'
+import UserIcon from '../assets/icons/user.png'
 import styles from './Header.module.scss'
 
 type HeaderProps = {

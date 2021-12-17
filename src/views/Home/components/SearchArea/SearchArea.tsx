@@ -1,4 +1,4 @@
-import Search from '../../assets/icons/search.png'
+import Search from '../../../../assets/icons/search.png'
 import styles from './SearchArea.module.scss'
 import { SearchAreaProps } from './types'
 

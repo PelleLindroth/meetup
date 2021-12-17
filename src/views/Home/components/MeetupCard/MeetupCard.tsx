@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import Cloud from '../../assets/icons/cloud.png'
-import Time from '../../assets/icons/time.png'
-import Pin from '../../assets/icons/pin.png'
-import Arrow from '../../assets/icons/arrow.png'
+import Cloud from '../../../../assets/icons/cloud.png'
+import Time from '../../../../assets/icons/time.png'
+import Pin from '../../../../assets/icons/pin.png'
+import Arrow from '../../../../assets/icons/arrow.png'
 import styles from './MeetupCard.module.scss'
 import { MeetupCardProps } from './types'
 

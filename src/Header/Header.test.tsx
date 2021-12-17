@@ -1,7 +1,7 @@
-import { renderWithRouter } from '../../utils/testing-utils'
+import { renderWithRouter } from '../utils/testing-utils'
 import { screen } from '@testing-library/react'
-import Header from '../../components/Header'
-import { getMockUsers } from '../../db/'
+import Header from '.'
+import { getMockUsers } from '../db'
 import userEvent from '@testing-library/user-event'
 
 describe('Header unit tests', () => {
