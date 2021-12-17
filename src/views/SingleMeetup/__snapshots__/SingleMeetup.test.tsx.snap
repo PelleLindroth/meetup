@@ -76,7 +76,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         id="meetup-details"
       >
         <div
-          className="locationRow"
+          className="headerRow"
           title="location"
         >
           <img
@@ -88,7 +88,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           </p>
         </div>
         <div
-          className="dateRow"
+          className="headerRow"
           title="date"
         >
           <img
@@ -132,7 +132,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         className="arranger"
       >
         <div
-          className="arrangerHeaderRow"
+          className="headerRow"
         >
           <img
             alt="User icon"
@@ -182,7 +182,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         className="capacity"
       >
         <div
-          className="capacityRow"
+          className="headerRow"
         >
           <img
             alt="House icon"
@@ -249,7 +249,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         className="comments"
       >
         <div
-          className="commentHeaderRow"
+          className="headerRow"
         >
           <img
             alt="Comment icon"
@@ -278,7 +278,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           Log in for a better experience
         </h3>
         <p>
-          Logged in users can register for events, as well as comment and rate them!
+          Logged in users can register for upcoming events and rate events they visited!
         </p>
         <button
           onClick={[Function]}
@@ -483,7 +483,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         id="meetup-details"
       >
         <div
-          className="locationRow"
+          className="headerRow"
           title="location"
         >
           <img
@@ -495,7 +495,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           </p>
         </div>
         <div
-          className="dateRow"
+          className="headerRow"
           title="date"
         >
           <img
@@ -585,7 +585,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         className="arranger"
       >
         <div
-          className="arrangerHeaderRow"
+          className="headerRow"
         >
           <img
             alt="User icon"
@@ -779,16 +779,25 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         className="reviews"
       >
         <div
-          className="reviewRow"
+          className="headerRow"
         >
           <img
             alt="Star icon"
             src="star-empty.png"
           />
-          <p>
-            This event has a 4.5 score out of 5 possible after 2 votes
-          </p>
+          <h3>
+            Ratings
+          </h3>
         </div>
+        <p>
+          This event has a 
+          <span
+            className="rating"
+          >
+            4.5
+          </span>
+           score out of 5 possible after 2 votes
+        </p>
         <p>
           You already rated this event
         </p>
@@ -883,7 +892,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         className="comments"
       >
         <div
-          className="commentHeaderRow"
+          className="headerRow"
         >
           <img
             alt="Comment icon"

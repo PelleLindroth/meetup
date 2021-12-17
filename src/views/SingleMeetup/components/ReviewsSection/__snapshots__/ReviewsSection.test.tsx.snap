@@ -73,16 +73,25 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
     className="reviews"
   >
     <div
-      className="reviewRow"
+      className="headerRow"
     >
       <img
         alt="Star icon"
         src="star-empty.png"
       />
-      <p>
-        This event has a 4.5 score out of 5 possible after 2 votes
-      </p>
+      <h3>
+        Ratings
+      </h3>
     </div>
+    <p>
+      This event has a 
+      <span
+        className="rating"
+      >
+        4.5
+      </span>
+       score out of 5 possible after 2 votes
+    </p>
   </section>
 </ReviewsSection>
 `;
