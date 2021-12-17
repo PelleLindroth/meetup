@@ -9,7 +9,7 @@ const DetailsSection = (props: DetailsSectionProps) => {
 
   return (
     <section id="meetup-details" className={styles.details}>
-      <div title="location" className={styles.locationRow}>
+      <div title="location" className={styles.headerRow}>
         <img src={PinIcon} alt="Map pin icon" />
         <p>
           {meetup.online
@@ -17,7 +17,7 @@ const DetailsSection = (props: DetailsSectionProps) => {
             : `${meetup!.location!.street}, ${meetup!.location!.city}`}
         </p>
       </div>
-      <div title="date" className={styles.dateRow}>
+      <div title="date" className={styles.headerRow}>
         <img src={TimeIcon} alt="Time icon" />
         <p>
           {formatDate(meetup.date)}{' '}

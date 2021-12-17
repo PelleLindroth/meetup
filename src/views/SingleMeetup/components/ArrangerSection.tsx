@@ -6,7 +6,7 @@ const ArrangerSection = (props: ArrangerSectionprops) => {
   const { meetup } = props
   return (
     <section className={styles.arranger}>
-      <div className={styles.arrangerHeaderRow}>
+      <div className={styles.headerRow}>
         <img src={UserIcon} alt="User icon" />
         <h3>Arranger:</h3>
       </div>

@@ -8,7 +8,7 @@ const CapacitySection = (props: CapacitySectionProps) => {
   return (
     <section className={styles.capacity}>
       {isUpcomingEvent && (
-        <div className={styles.capacityRow}>
+        <div className={styles.headerRow}>
           <img src={HouseIcon} alt="House icon" />
           <p className={styles.capacityInfo}>
             <strong>Capacity: </strong>
@@ -24,12 +24,16 @@ const CapacitySection = (props: CapacitySectionProps) => {
         {meetup.capacity ? (
           <div className={styles.attendedRow}>
             <img src={UserGroupIcon} alt="User group icon" />
-            <p>
-              <strong>Attending: </strong> {` ${meetup.attending}, `}
-              <span className={styles.available}>
-                <em>{` ${meetup.capacity - meetup.attending} available`}</em>
-              </span>
-            </p>
+            {isUpcomingEvent ? (
+              <p>
+                <strong>Attending: </strong> {` ${meetup.attending}, `}
+                <span className={styles.available}>
+                  <em>{` ${meetup.capacity - meetup.attending} available`}</em>
+                </span>
+              </p>
+            ) : (
+              `${meetup.attending} people attended this event`
+            )}
           </div>
         ) : (
           <div className={styles.attendedRow}>
