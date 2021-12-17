@@ -1,24 +1,32 @@
-import { renderWithPath } from '../../utils/testing-utils'
+import { renderWithPath, mountWithPath } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { getMeetupById, getUserById } from '../../db'
 import { formatDate } from '../../utils'
-// import { mountWithPath } from '../../utils/testing-utils'
 import SingleMeetup from './index'
+
+const mockedUsedNavigate = jest.fn()
+
+jest.mock('react-router', () => ({
+  ...(jest.requireActual('react-router') as any),
+  useNavigate: () => mockedUsedNavigate,
+}))
 
 describe('SingleMeetup unit tests for anonymous user', () => {
   const upcomingOnlineEvent = getMeetupById('2')
   const upcomingIRLEvent = getMeetupById('4')
   const upcomingLimitedCapacityEvent = getMeetupById('3')
   const pastEvent = getMeetupById('1')
-  // it('renders Single Meetup view correctly (smoke test)', () => {
-  //   const wrapper = mountWithPath(
-  //     <SingleMeetup />,
-  //     `/meetup/${upcomingOnlineEvent!.id}`,
-  //     'meetup/:id'
-  //   )
 
-  //   expect(wrapper.find(SingleMeetup)).toMatchSnapshot()
-  // })
+  it('renders Single Meetup view correctly for anonymous user (smoke test)', () => {
+    const wrapper = mountWithPath(
+      <SingleMeetup user={null} />,
+      `/meetup/${upcomingOnlineEvent!.id}`,
+      'meetup/:id'
+    )
+
+    expect(wrapper.find(SingleMeetup)).toMatchSnapshot()
+  })
   it('renders upcoming event with correct title', () => {
     renderWithPath(
       <SingleMeetup user={null} />,
@@ -177,53 +185,38 @@ describe('SingleMeetup unit tests for anonymous user', () => {
     expect(loginPrompt).toBeInTheDocument()
     expect(goToLoginButton).toBeInTheDocument()
   })
-  it('renders a review score for for past event', () => {
-    renderWithPath(
-      <SingleMeetup user={null} />,
-      `/meetup/${pastEvent!.id}`,
-      'meetup/:id'
-    )
-
-    const score = screen.getByText(/score/i)
-
-    expect(score).toHaveTextContent(
-      'This event has a 4.5 score out of 5 possible after 2 votes'
-    )
-  })
-  it('does not render a review score for for upcoming event', () => {
+  it('calls navigate when goToLoginButton is clicked', () => {
     renderWithPath(
       <SingleMeetup user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
 
-    const score = screen.queryByText(/score/i)
+    const goToLoginButton = screen.getByRole('button', { name: /login/i })
 
-    expect(score).not.toBeInTheDocument()
-  })
-  it('renders a list of comments for each event', () => {
-    renderWithPath(
-      <SingleMeetup user={null} />,
-      `/meetup/${pastEvent!.id}`,
-      'meetup/:id'
-    )
-    const commentsHeader = screen.getByRole('heading', { name: /comments/i })
-    const comments = screen.getAllByRole('listitem')
+    userEvent.click(goToLoginButton)
 
-    expect(commentsHeader).toBeInTheDocument()
-    expect(comments).toHaveLength(2)
-    expect(comments[0]).toHaveTextContent(/great day/i)
+    expect(mockedUsedNavigate).toHaveBeenCalledTimes(1)
+    expect(mockedUsedNavigate).toHaveBeenCalledWith('/login')
   })
 })
 
 describe('SingleMeetup unit tests for logged in user', () => {
   const upcomingOnlineEvent = getMeetupById('2')
   const upcomingIRLEvent = getMeetupById('4')
-  // const upcomingLimitedCapacityEvent = getMeetupById('3')
   const pastEvent = getMeetupById('1')
   const user1 = getUserById('1')
-  // const user2 = getUserById('2')
+  const user2 = getUserById('4')
 
+  it('renders Single Meetup view correctly for logged in user (smoke test)', () => {
+    const wrapper = mountWithPath(
+      <SingleMeetup user={user1!} />,
+      `/meetup/${pastEvent!.id}`,
+      'meetup/:id'
+    )
+
+    expect(wrapper.find(SingleMeetup)).toMatchSnapshot()
+  })
   it('renders a "Sign up for Event" button on upcoming events', () => {
     renderWithPath(
       <SingleMeetup user={user1!} />,
@@ -259,15 +252,26 @@ describe('SingleMeetup unit tests for logged in user', () => {
       'You have signed up for this event!'
     )
   })
+  it('renders Rate button in reviews section if user attended and has not submitted a rating', () => {
+    renderWithPath(
+      <SingleMeetup user={user2!} />,
+      `/meetup/${pastEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const rateButton = screen.getByRole('button', { name: /rate/i })
+
+    expect(rateButton).toBeInTheDocument()
+  })
+  it('renders "Already rated" text in reviews section if user attended and already submitted a rating', () => {
+    renderWithPath(
+      <SingleMeetup user={user1!} />,
+      `/meetup/${pastEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const alreadyRatedText = screen.getByText(/already rated/i)
+
+    expect(alreadyRatedText).toBeInTheDocument()
+  })
 })
-
-// Logged in user:
-
-// Upcoming events:
-// renders add review button in reviews section if user attended and has not submitted a review
-// renders "already reviewed" text in reviews section if user attended and already submitted a review
-
-// Past events:
-// Add comment button if attended
-// Add review button if attended no review submitted
-// Message if attended and review submitted
