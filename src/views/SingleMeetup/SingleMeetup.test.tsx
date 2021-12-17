@@ -1,6 +1,6 @@
 import { renderWithPath } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
-import { getMeetupById } from '../../db'
+import { getMeetupById, getUserById } from '../../db'
 import { formatDate } from '../../utils'
 // import { mountWithPath } from '../../utils/testing-utils'
 import SingleMeetup from './index'
@@ -139,12 +139,12 @@ describe('SingleMeetup unit tests for anonymous user', () => {
 
     const regexp = new RegExp(`${upcomingLimitedCapacityEvent?.attending}`)
     const attendingInfo = screen.getByText(regexp)
-    const avilableSeats = screen.getByText(/available seats/i)
+    const avilable = screen.getByText(/available/i)
 
     expect(attendingInfo).toHaveTextContent(
       `${upcomingLimitedCapacityEvent!.attending}`
     )
-    expect(avilableSeats).toHaveTextContent(
+    expect(avilable).toHaveTextContent(
       `${
         upcomingLimitedCapacityEvent!.capacity! -
         upcomingLimitedCapacityEvent!.attending
@@ -201,29 +201,71 @@ describe('SingleMeetup unit tests for anonymous user', () => {
 
     expect(score).not.toBeInTheDocument()
   })
-  it('renders a list of comments for past event', () => {
+  it('renders a list of comments for each event', () => {
     renderWithPath(
       <SingleMeetup user={null} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
+    const commentsHeader = screen.getByRole('heading', { name: /comments/i })
+    const comments = screen.getAllByRole('listitem')
 
-    const comments = screen.getAllByRole('listitem', { name: /comment/ })
-
+    expect(commentsHeader).toBeInTheDocument()
     expect(comments).toHaveLength(2)
     expect(comments[0]).toHaveTextContent(/great day/i)
   })
 })
 
-describe('SingleMeetup unit tests for logged in user', () => {})
+describe('SingleMeetup unit tests for logged in user', () => {
+  const upcomingOnlineEvent = getMeetupById('2')
+  const upcomingIRLEvent = getMeetupById('4')
+  // const upcomingLimitedCapacityEvent = getMeetupById('3')
+  const pastEvent = getMeetupById('1')
+  const user1 = getUserById('1')
+  // const user2 = getUserById('2')
 
-// Past event:
-// does not render a list of comments for upcoming event
+  it('renders a "Sign up for Event" button on upcoming events', () => {
+    renderWithPath(
+      <SingleMeetup user={user1!} />,
+      `/meetup/${upcomingIRLEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const signUpButton = screen.getByRole('button', { name: /sign up/i })
+
+    expect(signUpButton).toBeInTheDocument()
+  })
+  it('does not render sign up button on past events', () => {
+    renderWithPath(
+      <SingleMeetup user={user1!} />,
+      `/meetup/${pastEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const signUpButton = screen.queryByRole('button', { name: /sign up/i })
+
+    expect(signUpButton).not.toBeInTheDocument()
+  })
+  it('shows "signed up" message on upcoming events that user is signed up for', () => {
+    renderWithPath(
+      <SingleMeetup user={user1!} />,
+      `/meetup/${upcomingOnlineEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const signedUpMessage = screen.getByText(/signed up/i)
+
+    expect(signedUpMessage).toHaveTextContent(
+      'You have signed up for this event!'
+    )
+  })
+})
 
 // Logged in user:
 
 // Upcoming events:
-// Sign up for event button
+// renders add review button in reviews section if user attended and has not submitted a review
+// renders "already reviewed" text in reviews section if user attended and already submitted a review
 
 // Past events:
 // Add comment button if attended
