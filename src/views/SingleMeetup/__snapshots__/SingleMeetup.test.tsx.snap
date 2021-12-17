@@ -1,0 +1,963 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view correctly for anonymous user (smoke test) 1`] = `
+<SingleMeetup
+  user={null}
+>
+  <main
+    className="meetup"
+  >
+    <MeetupHeader
+      isUpcomingEvent={true}
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [],
+            "attending": Array [],
+            "email": "babsan@yahoo.com",
+            "firstName": "Barbro",
+            "id": "3",
+            "lastName": "Lundborg",
+            "password": "password123",
+            "reviewed": Array [],
+          },
+          "attending": 234,
+          "capacity": null,
+          "comments": Array [],
+          "date": 2022-01-10T10:00:00.000Z,
+          "description": "Learn a new programming language from the ground up",
+          "id": "2",
+          "online": true,
+          "reviews": Array [],
+          "title": "Rust course",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+      user={null}
+    >
+      <h1
+        className="upcomingHeader"
+      >
+        Rust course
+      </h1>
+      <h2>
+        Learn a new programming language from the ground up
+      </h2>
+    </MeetupHeader>
+    <DetailsSection
+      isUpcomingEvent={true}
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [],
+            "attending": Array [],
+            "email": "babsan@yahoo.com",
+            "firstName": "Barbro",
+            "id": "3",
+            "lastName": "Lundborg",
+            "password": "password123",
+            "reviewed": Array [],
+          },
+          "attending": 234,
+          "capacity": null,
+          "comments": Array [],
+          "date": 2022-01-10T10:00:00.000Z,
+          "description": "Learn a new programming language from the ground up",
+          "id": "2",
+          "online": true,
+          "reviews": Array [],
+          "title": "Rust course",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+    >
+      <section
+        className="details"
+        id="meetup-details"
+      >
+        <div
+          className="locationRow"
+          title="location"
+        >
+          <img
+            alt="Map pin icon"
+            src="pin.png"
+          />
+          <p>
+            Online event
+          </p>
+        </div>
+        <div
+          className="dateRow"
+          title="date"
+        >
+          <img
+            alt="Time icon"
+            src="time.png"
+          />
+          <p>
+            10 January 2022, 11:00
+             
+          </p>
+        </div>
+      </section>
+    </DetailsSection>
+    <ArrangerSection
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [],
+            "attending": Array [],
+            "email": "babsan@yahoo.com",
+            "firstName": "Barbro",
+            "id": "3",
+            "lastName": "Lundborg",
+            "password": "password123",
+            "reviewed": Array [],
+          },
+          "attending": 234,
+          "capacity": null,
+          "comments": Array [],
+          "date": 2022-01-10T10:00:00.000Z,
+          "description": "Learn a new programming language from the ground up",
+          "id": "2",
+          "online": true,
+          "reviews": Array [],
+          "title": "Rust course",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+    >
+      <section
+        className="arranger"
+      >
+        <div
+          className="arrangerHeaderRow"
+        >
+          <img
+            alt="User icon"
+            src="user.png"
+          />
+          <h3>
+            Arranger:
+          </h3>
+        </div>
+        <p>
+          Barbro Lundborg
+        </p>
+        <p>
+          Email: 
+          babsan@yahoo.com
+        </p>
+      </section>
+    </ArrangerSection>
+    <CapacitySection
+      isUpcomingEvent={true}
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [],
+            "attending": Array [],
+            "email": "babsan@yahoo.com",
+            "firstName": "Barbro",
+            "id": "3",
+            "lastName": "Lundborg",
+            "password": "password123",
+            "reviewed": Array [],
+          },
+          "attending": 234,
+          "capacity": null,
+          "comments": Array [],
+          "date": 2022-01-10T10:00:00.000Z,
+          "description": "Learn a new programming language from the ground up",
+          "id": "2",
+          "online": true,
+          "reviews": Array [],
+          "title": "Rust course",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+    >
+      <section
+        className="capacity"
+      >
+        <div
+          className="capacityRow"
+        >
+          <img
+            alt="House icon"
+            src="house.png"
+          />
+          <p
+            className="capacityInfo"
+          >
+            <strong>
+              Capacity: 
+            </strong>
+            This is an online event with unlimited capacity
+          </p>
+        </div>
+        <div
+          className="capacityInfo"
+        >
+          <div
+            className="attendedRow"
+          >
+            <img
+              alt="User group icon"
+              src="user-group.png"
+            />
+            <p>
+              <strong>
+                Attending: 
+              </strong>
+               
+               234
+            </p>
+          </div>
+        </div>
+      </section>
+    </CapacitySection>
+    <CommentsSection
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [],
+            "attending": Array [],
+            "email": "babsan@yahoo.com",
+            "firstName": "Barbro",
+            "id": "3",
+            "lastName": "Lundborg",
+            "password": "password123",
+            "reviewed": Array [],
+          },
+          "attending": 234,
+          "capacity": null,
+          "comments": Array [],
+          "date": 2022-01-10T10:00:00.000Z,
+          "description": "Learn a new programming language from the ground up",
+          "id": "2",
+          "online": true,
+          "reviews": Array [],
+          "title": "Rust course",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+      user={null}
+    >
+      <section
+        className="comments"
+      >
+        <div
+          className="commentHeaderRow"
+        >
+          <img
+            alt="Comment icon"
+            src="chat.png"
+          />
+          <h3>
+            Comments
+          </h3>
+        </div>
+        <p>
+          This event has no comments yet
+        </p>
+        <button
+          onClick={[Function]}
+        >
+          Add comment
+        </button>
+      </section>
+    </CommentsSection>
+    <LoginInfoSection>
+      <section
+        className="loginInfo"
+        title="Log in to attend, comment and review Meetups"
+      >
+        <h3>
+          Log in for a better experience
+        </h3>
+        <p>
+          Logged in users can register for events, as well as comment and rate them!
+        </p>
+        <button
+          onClick={[Function]}
+        >
+          Go to Login page
+        </button>
+      </section>
+    </LoginInfoSection>
+  </main>
+</SingleMeetup>
+`;
+
+exports[`SingleMeetup unit tests for logged in user renders Single Meetup view correctly for logged in user (smoke test) 1`] = `
+<SingleMeetup
+  user={
+    Object {
+      "attended": Array [
+        "1",
+      ],
+      "attending": Array [
+        "2",
+      ],
+      "email": "tjalle@yahoo.com",
+      "firstName": "Tjalle",
+      "id": "1",
+      "lastName": "Bergkvist",
+      "password": "grillkorv",
+      "reviewed": Array [
+        "1",
+      ],
+    }
+  }
+>
+  <main
+    className="meetup"
+  >
+    <MeetupHeader
+      isUpcomingEvent={false}
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [
+              "1",
+            ],
+            "attending": Array [
+              "2",
+            ],
+            "email": "tjalle@yahoo.com",
+            "firstName": "Tjalle",
+            "id": "1",
+            "lastName": "Bergkvist",
+            "password": "grillkorv",
+            "reviewed": Array [
+              "1",
+            ],
+          },
+          "attending": 54,
+          "capacity": null,
+          "comments": Array [
+            Object {
+              "id": "1",
+              "submittedAt": 2021-12-16T14:58:33.837Z,
+              "text": "Great day!",
+              "userId": "2",
+            },
+            Object {
+              "id": "2",
+              "submittedAt": 2021-12-16T14:59:22.526Z,
+              "text": "Yes, it was, thanks!",
+              "userId": "1",
+            },
+            Object {
+              "id": "3",
+              "submittedAt": 2021-12-17T12:34:42.949Z,
+              "text": "Damn, I missed this",
+              "userId": null,
+            },
+          ],
+          "date": 2021-08-28T17:00:00.000Z,
+          "description": "We meet in the park with pizzas and hang out all night",
+          "id": "1",
+          "location": Object {
+            "city": "Stockholm",
+            "country": "Sweden",
+            "street": "Vitabergsparken",
+          },
+          "online": false,
+          "reviews": Array [
+            Object {
+              "id": "1",
+              "meetupId": "1",
+              "rating": 4,
+            },
+            Object {
+              "id": "2",
+              "meetupId": "1",
+              "rating": 5,
+            },
+          ],
+          "title": "Pizza Picnic",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+      user={
+        Object {
+          "attended": Array [
+            "1",
+          ],
+          "attending": Array [
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        }
+      }
+    >
+      <h1
+        className="pastHeader"
+      >
+        Pizza Picnic
+      </h1>
+      <h2>
+        We meet in the park with pizzas and hang out all night
+      </h2>
+    </MeetupHeader>
+    <DetailsSection
+      isUpcomingEvent={false}
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [
+              "1",
+            ],
+            "attending": Array [
+              "2",
+            ],
+            "email": "tjalle@yahoo.com",
+            "firstName": "Tjalle",
+            "id": "1",
+            "lastName": "Bergkvist",
+            "password": "grillkorv",
+            "reviewed": Array [
+              "1",
+            ],
+          },
+          "attending": 54,
+          "capacity": null,
+          "comments": Array [
+            Object {
+              "id": "1",
+              "submittedAt": 2021-12-16T14:58:33.837Z,
+              "text": "Great day!",
+              "userId": "2",
+            },
+            Object {
+              "id": "2",
+              "submittedAt": 2021-12-16T14:59:22.526Z,
+              "text": "Yes, it was, thanks!",
+              "userId": "1",
+            },
+            Object {
+              "id": "3",
+              "submittedAt": 2021-12-17T12:34:42.949Z,
+              "text": "Damn, I missed this",
+              "userId": null,
+            },
+          ],
+          "date": 2021-08-28T17:00:00.000Z,
+          "description": "We meet in the park with pizzas and hang out all night",
+          "id": "1",
+          "location": Object {
+            "city": "Stockholm",
+            "country": "Sweden",
+            "street": "Vitabergsparken",
+          },
+          "online": false,
+          "reviews": Array [
+            Object {
+              "id": "1",
+              "meetupId": "1",
+              "rating": 4,
+            },
+            Object {
+              "id": "2",
+              "meetupId": "1",
+              "rating": 5,
+            },
+          ],
+          "title": "Pizza Picnic",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+    >
+      <section
+        className="details"
+        id="meetup-details"
+      >
+        <div
+          className="locationRow"
+          title="location"
+        >
+          <img
+            alt="Map pin icon"
+            src="pin.png"
+          />
+          <p>
+            Vitabergsparken, Stockholm
+          </p>
+        </div>
+        <div
+          className="dateRow"
+          title="date"
+        >
+          <img
+            alt="Time icon"
+            src="time.png"
+          />
+          <p>
+            28 August 2021, 19:00
+             
+            <em
+              className="note"
+            >
+              (Event already took place)
+            </em>
+          </p>
+        </div>
+      </section>
+    </DetailsSection>
+    <ArrangerSection
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [
+              "1",
+            ],
+            "attending": Array [
+              "2",
+            ],
+            "email": "tjalle@yahoo.com",
+            "firstName": "Tjalle",
+            "id": "1",
+            "lastName": "Bergkvist",
+            "password": "grillkorv",
+            "reviewed": Array [
+              "1",
+            ],
+          },
+          "attending": 54,
+          "capacity": null,
+          "comments": Array [
+            Object {
+              "id": "1",
+              "submittedAt": 2021-12-16T14:58:33.837Z,
+              "text": "Great day!",
+              "userId": "2",
+            },
+            Object {
+              "id": "2",
+              "submittedAt": 2021-12-16T14:59:22.526Z,
+              "text": "Yes, it was, thanks!",
+              "userId": "1",
+            },
+            Object {
+              "id": "3",
+              "submittedAt": 2021-12-17T12:34:42.949Z,
+              "text": "Damn, I missed this",
+              "userId": null,
+            },
+          ],
+          "date": 2021-08-28T17:00:00.000Z,
+          "description": "We meet in the park with pizzas and hang out all night",
+          "id": "1",
+          "location": Object {
+            "city": "Stockholm",
+            "country": "Sweden",
+            "street": "Vitabergsparken",
+          },
+          "online": false,
+          "reviews": Array [
+            Object {
+              "id": "1",
+              "meetupId": "1",
+              "rating": 4,
+            },
+            Object {
+              "id": "2",
+              "meetupId": "1",
+              "rating": 5,
+            },
+          ],
+          "title": "Pizza Picnic",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+    >
+      <section
+        className="arranger"
+      >
+        <div
+          className="arrangerHeaderRow"
+        >
+          <img
+            alt="User icon"
+            src="user.png"
+          />
+          <h3>
+            Arranger:
+          </h3>
+        </div>
+        <p>
+          Tjalle Bergkvist
+        </p>
+        <p>
+          Email: 
+          tjalle@yahoo.com
+        </p>
+      </section>
+    </ArrangerSection>
+    <CapacitySection
+      isUpcomingEvent={false}
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [
+              "1",
+            ],
+            "attending": Array [
+              "2",
+            ],
+            "email": "tjalle@yahoo.com",
+            "firstName": "Tjalle",
+            "id": "1",
+            "lastName": "Bergkvist",
+            "password": "grillkorv",
+            "reviewed": Array [
+              "1",
+            ],
+          },
+          "attending": 54,
+          "capacity": null,
+          "comments": Array [
+            Object {
+              "id": "1",
+              "submittedAt": 2021-12-16T14:58:33.837Z,
+              "text": "Great day!",
+              "userId": "2",
+            },
+            Object {
+              "id": "2",
+              "submittedAt": 2021-12-16T14:59:22.526Z,
+              "text": "Yes, it was, thanks!",
+              "userId": "1",
+            },
+            Object {
+              "id": "3",
+              "submittedAt": 2021-12-17T12:34:42.949Z,
+              "text": "Damn, I missed this",
+              "userId": null,
+            },
+          ],
+          "date": 2021-08-28T17:00:00.000Z,
+          "description": "We meet in the park with pizzas and hang out all night",
+          "id": "1",
+          "location": Object {
+            "city": "Stockholm",
+            "country": "Sweden",
+            "street": "Vitabergsparken",
+          },
+          "online": false,
+          "reviews": Array [
+            Object {
+              "id": "1",
+              "meetupId": "1",
+              "rating": 4,
+            },
+            Object {
+              "id": "2",
+              "meetupId": "1",
+              "rating": 5,
+            },
+          ],
+          "title": "Pizza Picnic",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+    >
+      <section
+        className="capacity"
+      >
+        <div
+          className="capacityInfo"
+        >
+          <div
+            className="attendedRow"
+          >
+            <img
+              alt="User group icon"
+              src="user-group.png"
+            />
+            54 people attended this event
+          </div>
+        </div>
+      </section>
+    </CapacitySection>
+    <ReviewsSection
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [
+              "1",
+            ],
+            "attending": Array [
+              "2",
+            ],
+            "email": "tjalle@yahoo.com",
+            "firstName": "Tjalle",
+            "id": "1",
+            "lastName": "Bergkvist",
+            "password": "grillkorv",
+            "reviewed": Array [
+              "1",
+            ],
+          },
+          "attending": 54,
+          "capacity": null,
+          "comments": Array [
+            Object {
+              "id": "1",
+              "submittedAt": 2021-12-16T14:58:33.837Z,
+              "text": "Great day!",
+              "userId": "2",
+            },
+            Object {
+              "id": "2",
+              "submittedAt": 2021-12-16T14:59:22.526Z,
+              "text": "Yes, it was, thanks!",
+              "userId": "1",
+            },
+            Object {
+              "id": "3",
+              "submittedAt": 2021-12-17T12:34:42.949Z,
+              "text": "Damn, I missed this",
+              "userId": null,
+            },
+          ],
+          "date": 2021-08-28T17:00:00.000Z,
+          "description": "We meet in the park with pizzas and hang out all night",
+          "id": "1",
+          "location": Object {
+            "city": "Stockholm",
+            "country": "Sweden",
+            "street": "Vitabergsparken",
+          },
+          "online": false,
+          "reviews": Array [
+            Object {
+              "id": "1",
+              "meetupId": "1",
+              "rating": 4,
+            },
+            Object {
+              "id": "2",
+              "meetupId": "1",
+              "rating": 5,
+            },
+          ],
+          "title": "Pizza Picnic",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+      user={
+        Object {
+          "attended": Array [
+            "1",
+          ],
+          "attending": Array [
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        }
+      }
+    >
+      <section
+        className="reviews"
+      >
+        <div
+          className="reviewRow"
+        >
+          <img
+            alt="Star icon"
+            src="star-empty.png"
+          />
+          <p>
+            This event has a 4.5 score out of 5 possible after 2 votes
+          </p>
+        </div>
+        <p>
+          You already rated this event
+        </p>
+      </section>
+    </ReviewsSection>
+    <CommentsSection
+      meetup={
+        Object {
+          "arranger": Object {
+            "attended": Array [
+              "1",
+            ],
+            "attending": Array [
+              "2",
+            ],
+            "email": "tjalle@yahoo.com",
+            "firstName": "Tjalle",
+            "id": "1",
+            "lastName": "Bergkvist",
+            "password": "grillkorv",
+            "reviewed": Array [
+              "1",
+            ],
+          },
+          "attending": 54,
+          "capacity": null,
+          "comments": Array [
+            Object {
+              "id": "1",
+              "submittedAt": 2021-12-16T14:58:33.837Z,
+              "text": "Great day!",
+              "userId": "2",
+            },
+            Object {
+              "id": "2",
+              "submittedAt": 2021-12-16T14:59:22.526Z,
+              "text": "Yes, it was, thanks!",
+              "userId": "1",
+            },
+            Object {
+              "id": "3",
+              "submittedAt": 2021-12-17T12:34:42.949Z,
+              "text": "Damn, I missed this",
+              "userId": null,
+            },
+          ],
+          "date": 2021-08-28T17:00:00.000Z,
+          "description": "We meet in the park with pizzas and hang out all night",
+          "id": "1",
+          "location": Object {
+            "city": "Stockholm",
+            "country": "Sweden",
+            "street": "Vitabergsparken",
+          },
+          "online": false,
+          "reviews": Array [
+            Object {
+              "id": "1",
+              "meetupId": "1",
+              "rating": 4,
+            },
+            Object {
+              "id": "2",
+              "meetupId": "1",
+              "rating": 5,
+            },
+          ],
+          "title": "Pizza Picnic",
+          "url": "https://www.udemy.com/course/rust-lang/",
+        }
+      }
+      user={
+        Object {
+          "attended": Array [
+            "1",
+          ],
+          "attending": Array [
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        }
+      }
+    >
+      <section
+        className="comments"
+      >
+        <div
+          className="commentHeaderRow"
+        >
+          <img
+            alt="Comment icon"
+            src="chat.png"
+          />
+          <h3>
+            Comments
+          </h3>
+        </div>
+        <ul
+          className="commentList"
+        >
+          <li
+            className="commentCard false"
+            key="1"
+            title="comment"
+          >
+            <p
+              className="commentText"
+            >
+              Great day!
+            </p>
+            <p
+              className="commentSignature"
+            >
+              <em>
+                - Kenta Andersson, 16 December 2021, 15:58
+              </em>
+            </p>
+          </li>
+          <li
+            className="commentCard you"
+            key="2"
+            title="comment"
+          >
+            <p
+              className="commentText"
+            >
+              Yes, it was, thanks!
+            </p>
+            <p
+              className="commentSignature"
+            >
+              <em>
+                - You, 16 December 2021, 15:59
+              </em>
+            </p>
+          </li>
+          <li
+            className="commentCard false"
+            key="3"
+            title="comment"
+          >
+            <p
+              className="commentText"
+            >
+              Damn, I missed this
+            </p>
+            <p
+              className="commentSignature"
+            >
+              <em>
+                - Anonymous, 17 December 2021, 13:34
+              </em>
+            </p>
+          </li>
+        </ul>
+        <button
+          onClick={[Function]}
+        >
+          Add comment
+        </button>
+      </section>
+    </CommentsSection>
+  </main>
+</SingleMeetup>
+`;

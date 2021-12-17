@@ -24,7 +24,7 @@ describe('App unit tests', () => {
     )
 
     expect(wrapper.find(Home).find('ul')).toHaveLength(2)
-    expect(wrapper.find(Home).find('li')).toHaveLength(4)
+    expect(wrapper.find(Home).find('li')).toHaveLength(5)
   })
 })
 

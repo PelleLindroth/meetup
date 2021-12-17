@@ -81,6 +81,12 @@ exports[`App unit tests renders App correctly 1`] = `
                   "text": "Yes, it was, thanks!",
                   "userId": "1",
                 },
+                Object {
+                  "id": "3",
+                  "submittedAt": 2021-12-17T12:34:42.949Z,
+                  "text": "Damn, I missed this",
+                  "userId": null,
+                },
               ],
               "date": 2021-08-28T17:00:00.000Z,
               "description": "We meet in the park with pizzas and hang out all night",
@@ -105,6 +111,32 @@ exports[`App unit tests renders App correctly 1`] = `
               ],
               "title": "Pizza Picnic",
               "url": "https://www.udemy.com/course/rust-lang/",
+            },
+            Object {
+              "arranger": Object {
+                "attended": Array [],
+                "attending": Array [],
+                "email": "babsan@yahoo.com",
+                "firstName": "Barbro",
+                "id": "3",
+                "lastName": "Lundborg",
+                "password": "password123",
+                "reviewed": Array [],
+              },
+              "attending": 356,
+              "capacity": 500,
+              "comments": Array [],
+              "date": 2021-10-31T18:00:00.000Z,
+              "description": "Halloween party in the street, all night long",
+              "id": "5",
+              "location": Object {
+                "city": "Stockholm",
+                "country": "Sweden",
+                "street": "Strandvägen",
+              },
+              "online": false,
+              "reviews": Array [],
+              "title": "Halloween Street Party",
             },
             Object {
               "arranger": Object {
@@ -741,6 +773,12 @@ exports[`App unit tests renders App correctly 1`] = `
                       "text": "Yes, it was, thanks!",
                       "userId": "1",
                     },
+                    Object {
+                      "id": "3",
+                      "submittedAt": 2021-12-17T12:34:42.949Z,
+                      "text": "Damn, I missed this",
+                      "userId": null,
+                    },
                   ],
                   "date": 2021-08-28T17:00:00.000Z,
                   "description": "We meet in the park with pizzas and hang out all night",
@@ -765,6 +803,32 @@ exports[`App unit tests renders App correctly 1`] = `
                   ],
                   "title": "Pizza Picnic",
                   "url": "https://www.udemy.com/course/rust-lang/",
+                },
+                Object {
+                  "arranger": Object {
+                    "attended": Array [],
+                    "attending": Array [],
+                    "email": "babsan@yahoo.com",
+                    "firstName": "Barbro",
+                    "id": "3",
+                    "lastName": "Lundborg",
+                    "password": "password123",
+                    "reviewed": Array [],
+                  },
+                  "attending": 356,
+                  "capacity": 500,
+                  "comments": Array [],
+                  "date": 2021-10-31T18:00:00.000Z,
+                  "description": "Halloween party in the street, all night long",
+                  "id": "5",
+                  "location": Object {
+                    "city": "Stockholm",
+                    "country": "Sweden",
+                    "street": "Strandvägen",
+                  },
+                  "online": false,
+                  "reviews": Array [],
+                  "title": "Halloween Street Party",
                 },
               ]
             }
@@ -807,6 +871,12 @@ exports[`App unit tests renders App correctly 1`] = `
                         "submittedAt": 2021-12-16T14:59:22.526Z,
                         "text": "Yes, it was, thanks!",
                         "userId": "1",
+                      },
+                      Object {
+                        "id": "3",
+                        "submittedAt": 2021-12-17T12:34:42.949Z,
+                        "text": "Damn, I missed this",
+                        "userId": null,
                       },
                     ],
                     "date": 2021-08-28T17:00:00.000Z,
@@ -910,6 +980,129 @@ exports[`App unit tests renders App correctly 1`] = `
                       >
                         <a
                           href="/meetup/1"
+                          onClick={[Function]}
+                        >
+                          <img
+                            alt="Arrow icon"
+                            className="arrowIcon"
+                            src="arrow.png"
+                            title="See meetup details"
+                          />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </li>
+              </MeetupCard>
+              <MeetupCard
+                key="5"
+                meetup={
+                  Object {
+                    "arranger": Object {
+                      "attended": Array [],
+                      "attending": Array [],
+                      "email": "babsan@yahoo.com",
+                      "firstName": "Barbro",
+                      "id": "3",
+                      "lastName": "Lundborg",
+                      "password": "password123",
+                      "reviewed": Array [],
+                    },
+                    "attending": 356,
+                    "capacity": 500,
+                    "comments": Array [],
+                    "date": 2021-10-31T18:00:00.000Z,
+                    "description": "Halloween party in the street, all night long",
+                    "id": "5",
+                    "location": Object {
+                      "city": "Stockholm",
+                      "country": "Sweden",
+                      "street": "Strandvägen",
+                    },
+                    "online": false,
+                    "reviews": Array [],
+                    "title": "Halloween Street Party",
+                  }
+                }
+                upcoming={false}
+              >
+                <li
+                  className="cardWrapper"
+                >
+                  <div
+                    className="cardHeader"
+                    style={
+                      Object {
+                        "backgroundColor": "#DCDDDE",
+                      }
+                    }
+                    title="past-event-header"
+                  >
+                    <h2>
+                      Halloween Street Party
+                    </h2>
+                  </div>
+                  <div
+                    className="cardBody"
+                  >
+                    <div
+                      className="leftColumn"
+                    >
+                      <div
+                        className="dateRow"
+                      >
+                        <img
+                          alt="Time icon"
+                          className="icon"
+                          src="time.png"
+                        />
+                        <h3
+                          title="date"
+                        >
+                          31 October 2021, 19:00
+                           
+                          CET
+                        </h3>
+                      </div>
+                      <div
+                        className="locationRow"
+                      >
+                        <img
+                          alt="Map pin icon"
+                          className="icon"
+                          src="pin.png"
+                        />
+                        <h3
+                          title="location"
+                        >
+                          Strandvägen, Stockholm
+                        </h3>
+                      </div>
+                      <p
+                        className="capacityRow"
+                        title="capacity"
+                      >
+                        <strong>
+                          Capacity: 
+                        </strong>
+                        <span>
+                          500, 
+                        </span>
+                        <span
+                          className="available"
+                        >
+                          144 available
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      className="rightColumn"
+                    >
+                      <Link
+                        to="/meetup/5"
+                      >
+                        <a
+                          href="/meetup/5"
                           onClick={[Function]}
                         >
                           <img
