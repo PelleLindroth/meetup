@@ -1,12 +1,10 @@
-import { Meetup } from './meetups'
-
 export interface User {
   id: string
   firstName: string
   lastName: string
   email: string
   password: string
-  attending: Meetup[]
+  attending: string[]
   attended: string[]
   reviewed: string[]
 }
@@ -18,7 +16,7 @@ export const users: User[] = [
     lastName: 'Bergkvist',
     email: 'tjalle@yahoo.com',
     password: 'grillkorv',
-    attending: [],
+    attending: ['2'],
     attended: ['1'],
     reviewed: ['1'],
   },
