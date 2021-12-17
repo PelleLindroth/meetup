@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test) 1`] = `
+<ReviewsSection
+  meetup={
+    Object {
+      "arranger": Object {
+        "attended": Array [
+          "1",
+        ],
+        "attending": Array [
+          "2",
+        ],
+        "email": "tjalle@yahoo.com",
+        "firstName": "Tjalle",
+        "id": "1",
+        "lastName": "Bergkvist",
+        "password": "grillkorv",
+        "reviewed": Array [
+          "1",
+        ],
+      },
+      "attending": 54,
+      "capacity": null,
+      "comments": Array [
+        Object {
+          "id": "1",
+          "submittedAt": 2021-12-16T14:58:33.837Z,
+          "text": "Great day!",
+          "userId": "2",
+        },
+        Object {
+          "id": "2",
+          "submittedAt": 2021-12-16T14:59:22.526Z,
+          "text": "Yes, it was, thanks!",
+          "userId": "1",
+        },
+        Object {
+          "id": "3",
+          "submittedAt": 2021-12-17T12:34:42.949Z,
+          "text": "Damn, I missed this",
+          "userId": null,
+        },
+      ],
+      "date": 2021-08-28T17:00:00.000Z,
+      "description": "We meet in the park with pizzas and hang out all night",
+      "id": "1",
+      "location": Object {
+        "city": "Stockholm",
+        "country": "Sweden",
+        "street": "Vitabergsparken",
+      },
+      "online": false,
+      "reviews": Array [
+        Object {
+          "id": "1",
+          "meetupId": "1",
+          "rating": 4,
+        },
+        Object {
+          "id": "2",
+          "meetupId": "1",
+          "rating": 5,
+        },
+      ],
+      "title": "Pizza Picnic",
+      "url": "https://www.udemy.com/course/rust-lang/",
+    }
+  }
+  user={null}
+>
+  <section
+    className="reviews"
+  >
+    <div
+      className="reviewRow"
+    >
+      <img
+        alt="Star icon"
+        src="star-empty.png"
+      />
+      <p>
+        This event has a 4.5 score out of 5 possible after 2 votes
+      </p>
+    </div>
+  </section>
+</ReviewsSection>
+`;
