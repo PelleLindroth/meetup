@@ -5,7 +5,7 @@ import CommentIcon from '../../../assets/icons/chat.png'
 import styles from '../SingleMeetup.module.scss'
 
 const CommentsSection = (props: CommentsSectionProps) => {
-  const { meetup, user } = props
+  const { meetup } = props
 
   return (
     <section className={styles.comments}>
@@ -38,9 +38,7 @@ const CommentsSection = (props: CommentsSectionProps) => {
       ) : (
         <p>This event has no comments yet</p>
       )}
-      {user && user.attended.includes(meetup.id) && (
-        <button>Add comment</button>
-      )}
+      <button>Add comment</button>
     </section>
   )
 }
