@@ -64,7 +64,6 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
         },
       ],
       "title": "Pizza Picnic",
-      "url": "https://www.udemy.com/course/rust-lang/",
     }
   }
   user={null}

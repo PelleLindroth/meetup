@@ -379,7 +379,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
-          "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
       user={
@@ -474,7 +473,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
-          "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
     >
@@ -577,7 +575,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
-          "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
     >
@@ -668,7 +665,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
-          "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
     >
@@ -753,7 +749,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
-          "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
       user={
@@ -866,7 +861,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
-          "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
       user={

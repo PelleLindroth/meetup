@@ -110,7 +110,6 @@ exports[`App unit tests renders App correctly 1`] = `
                 },
               ],
               "title": "Pizza Picnic",
-              "url": "https://www.udemy.com/course/rust-lang/",
             },
             Object {
               "arranger": Object {
@@ -802,7 +801,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     },
                   ],
                   "title": "Pizza Picnic",
-                  "url": "https://www.udemy.com/course/rust-lang/",
                 },
                 Object {
                   "arranger": Object {
@@ -901,7 +899,6 @@ exports[`App unit tests renders App correctly 1`] = `
                       },
                     ],
                     "title": "Pizza Picnic",
-                    "url": "https://www.udemy.com/course/rust-lang/",
                   }
                 }
                 upcoming={false}

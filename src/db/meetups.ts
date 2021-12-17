@@ -46,7 +46,6 @@ export const meetups: Meetup[] = [
       country: 'Sweden',
     },
     online: false,
-    url: 'https://www.udemy.com/course/rust-lang/',
     capacity: null,
     attending: 54,
     arranger: users[0],

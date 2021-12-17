@@ -65,7 +65,6 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           },
         ],
         "title": "Pizza Picnic",
-        "url": "https://www.udemy.com/course/rust-lang/",
       },
       Object {
         "arranger": Object {
@@ -757,7 +756,6 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
               },
             ],
             "title": "Pizza Picnic",
-            "url": "https://www.udemy.com/course/rust-lang/",
           },
           Object {
             "arranger": Object {
@@ -856,7 +854,6 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                 },
               ],
               "title": "Pizza Picnic",
-              "url": "https://www.udemy.com/course/rust-lang/",
             }
           }
           upcoming={false}
