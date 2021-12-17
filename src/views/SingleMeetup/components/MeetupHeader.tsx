@@ -2,7 +2,7 @@ import { MeetupHeaderProps } from '../types'
 import styles from '../SingleMeetup.module.scss'
 
 const MeetupHeader = (props: MeetupHeaderProps) => {
-  const { isUpcomingEvent, meetup } = props
+  const { meetup, user, isUpcomingEvent } = props
   return (
     <>
       <h1
@@ -11,6 +11,14 @@ const MeetupHeader = (props: MeetupHeaderProps) => {
         {meetup.title}
       </h1>
       <h2>{meetup.description}</h2>
+      {isUpcomingEvent && user && !user.attending.includes(meetup.id) && (
+        <button className={styles.signUpButton}>Sign up for this event</button>
+      )}
+      {isUpcomingEvent && user && user.attending.includes(meetup.id) && (
+        <div className={styles.signedUpMessage}>
+          <p>You have signed up for this event!</p>
+        </div>
+      )}
     </>
   )
 }

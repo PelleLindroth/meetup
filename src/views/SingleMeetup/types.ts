@@ -7,6 +7,7 @@ export type SingleMeetupProps = {
 
 export type MeetupHeaderProps = {
   meetup: Meetup
+  user: User | null
   isUpcomingEvent: boolean
 }
 
@@ -31,5 +32,4 @@ export type CapacitySectionProps = {
 
 export type CommentsSectionProps = {
   meetup: Meetup
-  user: User | null
 }

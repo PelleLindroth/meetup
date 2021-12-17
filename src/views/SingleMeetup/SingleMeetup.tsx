@@ -24,15 +24,19 @@ const SingleMeetup = (props: SingleMeetupProps) => {
   const isUpcomingEvent = meetup.date.getTime() > Date.now()
 
   return (
-    <div className={styles.meetup}>
-      <MeetupHeader meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
+    <main className={styles.meetup}>
+      <MeetupHeader
+        meetup={meetup}
+        isUpcomingEvent={isUpcomingEvent}
+        user={user}
+      />
       <DetailsSection meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
       <ArrangerSection meetup={meetup} />
       <CapacitySection meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
       {!isUpcomingEvent && <ReviewsSection user={user} meetup={meetup} />}
-      <CommentsSection meetup={meetup} user={user} />
+      <CommentsSection meetup={meetup} />
       {!user && <LoginInfoSection />}
-    </div>
+    </main>
   )
 }
 
