@@ -21,6 +21,25 @@
     margin: 0 0 1rem 0;
   }
 
+  .signUpButton {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .signedUpMessage {
+    background-color: #14c747;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 0.2rem 0.5rem;
+
+    p {
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+
   .details,
   .arranger,
   .capacity,
@@ -85,6 +104,7 @@
       .attendedRow {
         align-items: center;
         display: flex;
+        margin-bottom: 1rem;
 
         img {
           margin-right: 0.3rem;
@@ -147,10 +167,10 @@
     padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
+
     .commentHeaderRow {
       align-items: center;
       display: flex;
-      margin-bottom: 1rem;
 
       img {
         margin-right: 0.3rem;
