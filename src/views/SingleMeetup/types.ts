@@ -32,4 +32,18 @@ export type CapacitySectionProps = {
 
 export type CommentsSectionProps = {
   meetup: Meetup
+  user: User | null
+}
+
+export type CommentFormProps = {
+  meetupId: string
+  user: User | null
+  setShowCommentForm: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export type RatingFormProps = {
+  meetup: Meetup
+  user: User
+  setMedianRating: React.Dispatch<React.SetStateAction<number>>
+  setShowSelectInput: React.Dispatch<React.SetStateAction<boolean>>
 }
