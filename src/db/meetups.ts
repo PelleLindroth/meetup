@@ -21,15 +21,15 @@ interface Address {
   country: string
 }
 
-interface Review {
+export interface Review {
   id: string
   meetupId: string
   rating: number
 }
 
-interface Comment {
+export interface Comment {
   id: string
-  userId: string
+  userId: string | null
   text: string
   submittedAt: Date
 }
@@ -74,6 +74,12 @@ export const meetups: Meetup[] = [
         userId: '1',
         text: 'Yes, it was, thanks!',
         submittedAt: new Date(1639666762526),
+      },
+      {
+        id: '3',
+        userId: null,
+        text: 'Damn, I missed this',
+        submittedAt: new Date(1639744482949),
       },
     ],
   },
@@ -122,6 +128,23 @@ export const meetups: Meetup[] = [
     capacity: null,
     attending: 126,
     arranger: users[3],
+    reviews: [],
+    comments: [],
+  },
+  {
+    id: '5',
+    title: 'Halloween Street Party',
+    description: 'Halloween party in the street, all night long',
+    date: new Date(1635703200000),
+    location: {
+      street: 'Strandvägen',
+      city: 'Stockholm',
+      country: 'Sweden',
+    },
+    online: false,
+    capacity: 500,
+    attending: 356,
+    arranger: users[2],
     reviews: [],
     comments: [],
   },

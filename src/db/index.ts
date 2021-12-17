@@ -1,4 +1,5 @@
-import { meetups, Meetup } from './meetups'
+import { uid } from 'uid'
+import { meetups, Meetup, Comment, Review } from './meetups'
 import { users, User } from './users'
 
 export const getAllMeetups = (): Meetup[] => {
@@ -34,6 +35,29 @@ export const getMockMeetups = () => {
   })
 
   return meetups
+}
+
+export const addComment = (meetupId: string, comment: Comment) => {
+  const meetup = getMeetupById(meetupId)
+
+  if (meetup) {
+    meetup.comments.push(comment)
+  }
+}
+
+export const addReview = (meetupId: string, userId: string, rating: number) => {
+  const meetup = getMeetupById(meetupId)
+  const user = getUserById(userId)
+  if (!meetup || !user) return
+
+  const review: Review = {
+    id: uid(),
+    meetupId,
+    rating,
+  }
+
+  meetup.reviews.push(review)
+  user.reviewed.push(meetup.id)
 }
 
 export const saveMeetupToLocalStorage = (meetup: Meetup) => {

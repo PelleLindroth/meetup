@@ -34,7 +34,7 @@ const SingleMeetup = (props: SingleMeetupProps) => {
       <ArrangerSection meetup={meetup} />
       <CapacitySection meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
       {!isUpcomingEvent && <ReviewsSection user={user} meetup={meetup} />}
-      <CommentsSection meetup={meetup} />
+      <CommentsSection meetup={meetup} user={user} />
       {!user && <LoginInfoSection />}
     </main>
   )
