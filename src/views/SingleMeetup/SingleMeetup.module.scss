@@ -9,7 +9,7 @@
     color: #fff;
     margin: 0 auto;
     outline: none;
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem;
   }
 
   .upcomingHeader {
@@ -33,12 +33,15 @@
   .signUpButton {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 1rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem;
   }
 
   .signedUpMessage {
+    align-items: center;
     background-color: #14c747;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 1rem;
     outline: none;
     padding: 0.2rem 0.5rem;
@@ -46,6 +49,12 @@
     p {
       color: #fff;
       font-weight: 700;
+    }
+
+    button {
+      background-color: #b7b7b7;
+      margin: 0;
+      padding: 0.2rem 0.5rem;
     }
   }
 
@@ -178,6 +187,7 @@
       textarea {
         height: 5rem;
         font-family: inherit;
+        margin-bottom: 0.5rem;
         outline: none;
         resize: none;
         padding: 0.5rem;
