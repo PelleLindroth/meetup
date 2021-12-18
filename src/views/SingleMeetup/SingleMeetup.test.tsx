@@ -27,30 +27,6 @@ describe('SingleMeetup unit tests for anonymous user', () => {
 
     expect(wrapper.find(SingleMeetup)).toMatchSnapshot()
   })
-  it('renders upcoming event with correct title', () => {
-    renderWithPath(
-      <SingleMeetup user={null} />,
-      `/meetup/${upcomingOnlineEvent!.id}`,
-      'meetup/:id'
-    )
-    const title = screen.getByRole('heading', {
-      name: `${upcomingOnlineEvent!.title}`,
-    })
-
-    expect(title).toBeInTheDocument()
-  })
-  it('renders upcoming event with correct description', () => {
-    renderWithPath(
-      <SingleMeetup user={null} />,
-      `/meetup/${upcomingOnlineEvent!.id}`,
-      'meetup/:id'
-    )
-    const description = screen.getByRole('heading', {
-      name: `${upcomingOnlineEvent!.description}`,
-    })
-
-    expect(description).toBeInTheDocument()
-  })
   it('renders upcoming event with correct date', () => {
     renderWithPath(
       <SingleMeetup user={null} />,
@@ -202,8 +178,6 @@ describe('SingleMeetup unit tests for anonymous user', () => {
 })
 
 describe('SingleMeetup unit tests for logged in user', () => {
-  const upcomingOnlineEvent = getMeetupById('2')
-  const upcomingIRLEvent = getMeetupById('4')
   const pastEvent = getMeetupById('1')
   const user1 = getUserById('1')
   const user2 = getUserById('4')
@@ -216,41 +190,6 @@ describe('SingleMeetup unit tests for logged in user', () => {
     )
 
     expect(wrapper.find(SingleMeetup)).toMatchSnapshot()
-  })
-  it('renders a "Sign up for Event" button on upcoming events', () => {
-    renderWithPath(
-      <SingleMeetup user={user1!} />,
-      `/meetup/${upcomingIRLEvent!.id}`,
-      'meetup/:id'
-    )
-
-    const signUpButton = screen.getByRole('button', { name: /sign up/i })
-
-    expect(signUpButton).toBeInTheDocument()
-  })
-  it('does not render sign up button on past events', () => {
-    renderWithPath(
-      <SingleMeetup user={user1!} />,
-      `/meetup/${pastEvent!.id}`,
-      'meetup/:id'
-    )
-
-    const signUpButton = screen.queryByRole('button', { name: /sign up/i })
-
-    expect(signUpButton).not.toBeInTheDocument()
-  })
-  it('shows "signed up" message on upcoming events that user is signed up for', () => {
-    renderWithPath(
-      <SingleMeetup user={user1!} />,
-      `/meetup/${upcomingOnlineEvent!.id}`,
-      'meetup/:id'
-    )
-
-    const signedUpMessage = screen.getByText(/signed up/i)
-
-    expect(signedUpMessage).toHaveTextContent(
-      'You have signed up for this event!'
-    )
   })
   it('renders Rate button in reviews section if user attended and has not submitted a rating', () => {
     renderWithPath(
