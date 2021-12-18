@@ -60,6 +60,15 @@ export const addReview = (meetupId: string, userId: string, rating: number) => {
   user.reviewed.push(meetup.id)
 }
 
+export const signUpForEvent = (meetup: Meetup, user: User) => {
+  user.attending.push(meetup.id)
+  meetup.attending++
+}
+export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
+  user.attending = user.attending.filter((item) => item !== meetup.id)
+  meetup.attending--
+}
+
 export const saveMeetupToLocalStorage = (meetup: Meetup) => {
   const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
 
