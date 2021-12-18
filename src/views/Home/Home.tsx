@@ -17,7 +17,9 @@ const Home = (props: HomeProps) => {
         setSearchFilter={setSearchFilter}
       />
       <section>
-        <h2>UPCOMING EVENTS</h2>
+        {(searchFilter === 'upcoming' || searchFilter === 'all') && (
+          <h2>UPCOMING EVENTS</h2>
+        )}
         <MeetupList
           meetups={meetups.filter(
             (meetup) =>
@@ -27,7 +29,10 @@ const Home = (props: HomeProps) => {
           )}
           upcoming
         />
-        <h2>PAST EVENTS</h2>
+        {(searchFilter === 'past' || searchFilter === 'all') && (
+          <h2>PAST EVENTS</h2>
+        )}
+
         <MeetupList
           meetups={meetups.filter(
             (meetup) =>
