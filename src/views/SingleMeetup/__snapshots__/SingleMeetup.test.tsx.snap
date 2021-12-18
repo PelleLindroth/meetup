@@ -35,14 +35,16 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       }
       user={null}
     >
-      <h1
-        className="upcomingHeader"
-      >
-        Rust course
-      </h1>
-      <h2>
-        Learn a new programming language from the ground up
-      </h2>
+      <section>
+        <h1
+          className="upcomingHeader"
+        >
+          Rust course
+        </h1>
+        <h2>
+          Learn a new programming language from the ground up
+        </h2>
+      </section>
     </MeetupHeader>
     <DetailsSection
       isUpcomingEvent={true}
@@ -400,14 +402,16 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         }
       }
     >
-      <h1
-        className="pastHeader"
-      >
-        Pizza Picnic
-      </h1>
-      <h2>
-        We meet in the park with pizzas and hang out all night
-      </h2>
+      <section>
+        <h1
+          className="pastHeader"
+        >
+          Pizza Picnic
+        </h1>
+        <h2>
+          We meet in the park with pizzas and hang out all night
+        </h2>
+      </section>
     </MeetupHeader>
     <DetailsSection
       isUpcomingEvent={false}
