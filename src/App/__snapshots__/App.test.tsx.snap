@@ -51,10 +51,8 @@ exports[`App unit tests renders App correctly 1`] = `
           Array [
             Object {
               "arranger": Object {
-                "attended": Array [
-                  "1",
-                ],
                 "attending": Array [
+                  "1",
                   "2",
                 ],
                 "email": "tjalle@yahoo.com",
@@ -112,7 +110,6 @@ exports[`App unit tests renders App correctly 1`] = `
             },
             Object {
               "arranger": Object {
-                "attended": Array [],
                 "attending": Array [],
                 "email": "babsan@yahoo.com",
                 "firstName": "Barbro",
@@ -137,7 +134,6 @@ exports[`App unit tests renders App correctly 1`] = `
             },
             Object {
               "arranger": Object {
-                "attended": Array [],
                 "attending": Array [],
                 "email": "babsan@yahoo.com",
                 "firstName": "Barbro",
@@ -159,10 +155,9 @@ exports[`App unit tests renders App correctly 1`] = `
             },
             Object {
               "arranger": Object {
-                "attended": Array [
+                "attending": Array [
                   "1",
                 ],
-                "attending": Array [],
                 "email": "kenta@yahoo.com",
                 "firstName": "Kenta",
                 "id": "2",
@@ -188,16 +183,18 @@ exports[`App unit tests renders App correctly 1`] = `
             },
             Object {
               "arranger": Object {
-                "attended": Array [
+                "attending": Array [
+                  "1",
+                  "2",
+                ],
+                "email": "tjalle@yahoo.com",
+                "firstName": "Tjalle",
+                "id": "1",
+                "lastName": "Bergkvist",
+                "password": "grillkorv",
+                "reviewed": Array [
                   "1",
                 ],
-                "attending": Array [],
-                "email": "loffe@yahoo.com",
-                "firstName": "Janne",
-                "id": "4",
-                "lastName": "Karlsson",
-                "password": "storstark",
-                "reviewed": Array [],
               },
               "attending": 126,
               "capacity": null,
@@ -277,7 +274,6 @@ exports[`App unit tests renders App correctly 1`] = `
               Array [
                 Object {
                   "arranger": Object {
-                    "attended": Array [],
                     "attending": Array [],
                     "email": "babsan@yahoo.com",
                     "firstName": "Barbro",
@@ -299,10 +295,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 },
                 Object {
                   "arranger": Object {
-                    "attended": Array [
+                    "attending": Array [
                       "1",
                     ],
-                    "attending": Array [],
                     "email": "kenta@yahoo.com",
                     "firstName": "Kenta",
                     "id": "2",
@@ -328,16 +323,18 @@ exports[`App unit tests renders App correctly 1`] = `
                 },
                 Object {
                   "arranger": Object {
-                    "attended": Array [
+                    "attending": Array [
+                      "1",
+                      "2",
+                    ],
+                    "email": "tjalle@yahoo.com",
+                    "firstName": "Tjalle",
+                    "id": "1",
+                    "lastName": "Bergkvist",
+                    "password": "grillkorv",
+                    "reviewed": Array [
                       "1",
                     ],
-                    "attending": Array [],
-                    "email": "loffe@yahoo.com",
-                    "firstName": "Janne",
-                    "id": "4",
-                    "lastName": "Karlsson",
-                    "password": "storstark",
-                    "reviewed": Array [],
                   },
                   "attending": 126,
                   "capacity": null,
@@ -366,7 +363,6 @@ exports[`App unit tests renders App correctly 1`] = `
                 meetup={
                   Object {
                     "arranger": Object {
-                      "attended": Array [],
                       "attending": Array [],
                       "email": "babsan@yahoo.com",
                       "firstName": "Barbro",
@@ -390,6 +386,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 upcoming={true}
               >
                 <li
+                  aria-label="meetup-card"
                   className="cardWrapper"
                 >
                   <div
@@ -482,10 +479,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 meetup={
                   Object {
                     "arranger": Object {
-                      "attended": Array [
+                      "attending": Array [
                         "1",
                       ],
-                      "attending": Array [],
                       "email": "kenta@yahoo.com",
                       "firstName": "Kenta",
                       "id": "2",
@@ -513,6 +509,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 upcoming={true}
               >
                 <li
+                  aria-label="meetup-card"
                   className="cardWrapper"
                 >
                   <div
@@ -608,16 +605,18 @@ exports[`App unit tests renders App correctly 1`] = `
                 meetup={
                   Object {
                     "arranger": Object {
-                      "attended": Array [
+                      "attending": Array [
+                        "1",
+                        "2",
+                      ],
+                      "email": "tjalle@yahoo.com",
+                      "firstName": "Tjalle",
+                      "id": "1",
+                      "lastName": "Bergkvist",
+                      "password": "grillkorv",
+                      "reviewed": Array [
                         "1",
                       ],
-                      "attending": Array [],
-                      "email": "loffe@yahoo.com",
-                      "firstName": "Janne",
-                      "id": "4",
-                      "lastName": "Karlsson",
-                      "password": "storstark",
-                      "reviewed": Array [],
                     },
                     "attending": 126,
                     "capacity": null,
@@ -637,6 +636,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 upcoming={true}
               >
                 <li
+                  aria-label="meetup-card"
                   className="cardWrapper"
                 >
                   <div
@@ -734,10 +734,8 @@ exports[`App unit tests renders App correctly 1`] = `
               Array [
                 Object {
                   "arranger": Object {
-                    "attended": Array [
-                      "1",
-                    ],
                     "attending": Array [
+                      "1",
                       "2",
                     ],
                     "email": "tjalle@yahoo.com",
@@ -795,7 +793,6 @@ exports[`App unit tests renders App correctly 1`] = `
                 },
                 Object {
                   "arranger": Object {
-                    "attended": Array [],
                     "attending": Array [],
                     "email": "babsan@yahoo.com",
                     "firstName": "Barbro",
@@ -830,10 +827,8 @@ exports[`App unit tests renders App correctly 1`] = `
                 meetup={
                   Object {
                     "arranger": Object {
-                      "attended": Array [
-                        "1",
-                      ],
                       "attending": Array [
+                        "1",
                         "2",
                       ],
                       "email": "tjalle@yahoo.com",
@@ -893,6 +888,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 upcoming={false}
               >
                 <li
+                  aria-label="meetup-card"
                   className="cardWrapper"
                 >
                   <div
@@ -985,7 +981,6 @@ exports[`App unit tests renders App correctly 1`] = `
                 meetup={
                   Object {
                     "arranger": Object {
-                      "attended": Array [],
                       "attending": Array [],
                       "email": "babsan@yahoo.com",
                       "firstName": "Barbro",
@@ -1012,6 +1007,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 upcoming={false}
               >
                 <li
+                  aria-label="meetup-card"
                   className="cardWrapper"
                 >
                   <div

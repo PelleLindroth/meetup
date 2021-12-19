@@ -1,5 +1,6 @@
 import { mount } from 'enzyme'
-import { screen } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
+import { getUserById } from '../db'
 import { renderWithRouter } from '../utils/testing-utils'
 import { MemoryRouter } from 'react-router'
 import App from '../App'
@@ -29,23 +30,114 @@ describe('App unit tests', () => {
 })
 
 describe('App integration tests', () => {
-  it('renders login view when log in button is clicked', async () => {
+  const user = getUserById('1')
+
+  it('renders login view with form when log in button is clicked', () => {
     renderWithRouter(<App />)
 
-    const loginButton = screen.getByRole('button', { name: /log in/i })
+    userEvent.click(screen.getByRole('button', { name: /log in/i }))
 
-    userEvent.click(loginButton)
+    expect(screen.getByRole('form')).toBeInTheDocument()
+  })
+  it('renders login button in header when log out button is clicked after logging in', async () => {
+    renderWithRouter(<App />)
 
-    const loginForm = await screen.findByRole('form')
+    userEvent.click(screen.getByRole('button', { name: /log in/i }))
 
-    expect(loginForm).toBeInTheDocument()
+    const emailInput = screen.getByRole('textbox', { name: /email/i })
+    const passwordInput = screen.getByLabelText('password')
+    const submitButton = screen.getByRole('button', { name: /submit/i })
+
+    userEvent.type(emailInput, user!.email)
+    userEvent.type(passwordInput, user!.password)
+    userEvent.click(submitButton)
+    userEvent.click(screen.getByText(`${user!.firstName} ${user!.lastName}`))
+    userEvent.click(screen.getByRole('button', { name: /log out/i }))
+
+    expect(screen.getByRole('button', { name: /log in/i })).toBeInTheDocument()
   })
 })
 
-describe('Header Integration tests', () => {})
+describe('Happy paths', () => {
+  const user = getUserById('1')
 
-// App
+  test('happy path for creating new meetup', () => {
+    renderWithRouter(<App />)
 
-// Home view
-// shows meetup details on separate page when clicking arrow link
-// renders existing comments and reviews on past events on detail page
+    // Log in
+    userEvent.click(screen.getByRole('button', { name: /log in/i }))
+    userEvent.type(screen.getByRole('textbox', { name: /email/i }), user!.email)
+    userEvent.type(screen.getByLabelText('password'), user!.password)
+    userEvent.click(screen.getByRole('button', { name: /submit/i }))
+
+    // Click on Create new meetup
+    userEvent.click(screen.getByText(`${user!.firstName} ${user!.lastName}`))
+    userEvent.click(screen.getByText(/create meetup/i))
+
+    // Fill out Meetup form
+    userEvent.type(
+      screen.getByRole('textbox', { name: /title/i }),
+      'New meetup'
+    )
+    userEvent.type(
+      screen.getByRole('textbox', { name: /description/i }),
+      'A short description'
+    )
+    userEvent.type(
+      screen.getByRole('textbox', { name: /street/i }),
+      'Main street 321'
+    )
+    userEvent.type(screen.getByRole('textbox', { name: /city/i }), 'Smallville')
+    userEvent.type(
+      screen.getByRole('spinbutton', {
+        name: 'capacity-input',
+      }),
+      '60'
+    )
+
+    // Click on create button
+    userEvent.click(screen.getByRole('button', { name: /create/i }))
+
+    // Find new meetup on profile page
+    expect(screen.getByText('New meetup')).toBeInTheDocument()
+
+    // Click logo to return to Home view
+    userEvent.click(screen.getByRole('img', { name: /logo/i }))
+
+    // Find new meetup on Home view
+    expect(screen.getByText('New meetup')).toBeInTheDocument()
+  })
+  test('happy path to register for Sevilla - Real Sociedad meetup', async () => {
+    renderWithRouter(<App />)
+
+    // Log in
+    userEvent.click(screen.getByRole('button', { name: /log in/i }))
+    userEvent.type(screen.getByRole('textbox', { name: /email/i }), user!.email)
+    userEvent.type(screen.getByLabelText('password'), user!.password)
+    userEvent.click(screen.getByRole('button', { name: /submit/i }))
+
+    // Click on second upcoming Meetup link
+    const upcomingMeetupsList = await screen.findByTestId('upcoming-events')
+    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[1])
+
+    // Click on Sign up for this event button
+    userEvent.click(screen.getByRole('button', { name: /sign up/i }))
+
+    // Find "You have signed up for this event" text
+    expect(
+      screen.getByText('You have signed up for this event!')
+    ).toBeInTheDocument()
+
+    // Click on profile name in Header
+    userEvent.click(screen.getByText(`${user!.firstName} ${user!.lastName}`))
+
+    // Click on View Profile
+    userEvent.click(screen.getByText(/view profile/i))
+
+    // Find event under "Upcoming events you\'re attending"
+    const upcomingAttendingList = await screen.findByTestId('upcoming-events')
+    within(upcomingAttendingList).getByRole('heading', {
+      name: /sevilla - real sociedad/i,
+    })
+  })
+})

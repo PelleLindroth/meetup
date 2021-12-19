@@ -31,9 +31,14 @@ function App() {
         />
         <Route path="/meetup/:id" element={<SingleMeetup user={user} />} />
         {!user && <Route path="/login" element={<Login setUser={setUser} />} />}
-        {user && <Route path="/profile/:id" element={<Profile />} />}
         {user && (
-          <Route path="/create" element={<CreateMeetup user={user} />} />
+          <Route path="/profile/:id" element={<Profile meetups={meetups} />} />
+        )}
+        {user && (
+          <Route
+            path="/create"
+            element={<CreateMeetup user={user} setMeetups={setMeetups} />}
+          />
         )}
       </Routes>
     </div>
