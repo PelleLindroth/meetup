@@ -12,7 +12,6 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [],
             "attending": Array [],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
@@ -51,7 +50,6 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [],
             "attending": Array [],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
@@ -108,7 +106,6 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [],
             "attending": Array [],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
@@ -158,7 +155,6 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [],
             "attending": Array [],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
@@ -224,7 +220,6 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [],
             "attending": Array [],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
@@ -297,10 +292,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
 <SingleMeetup
   user={
     Object {
-      "attended": Array [
-        "1",
-      ],
       "attending": Array [
+        "1",
         "2",
       ],
       "email": "tjalle@yahoo.com",
@@ -322,10 +315,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [
-              "1",
-            ],
             "attending": Array [
+              "1",
               "2",
             ],
             "email": "tjalle@yahoo.com",
@@ -384,10 +375,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       user={
         Object {
-          "attended": Array [
-            "1",
-          ],
           "attending": Array [
+            "1",
             "2",
           ],
           "email": "tjalle@yahoo.com",
@@ -417,10 +406,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [
-              "1",
-            ],
             "attending": Array [
+              "1",
               "2",
             ],
             "email": "tjalle@yahoo.com",
@@ -518,10 +505,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [
-              "1",
-            ],
             "attending": Array [
+              "1",
               "2",
             ],
             "email": "tjalle@yahoo.com",
@@ -607,10 +592,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [
-              "1",
-            ],
             "attending": Array [
+              "1",
               "2",
             ],
             "email": "tjalle@yahoo.com",
@@ -690,10 +673,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [
-              "1",
-            ],
             "attending": Array [
+              "1",
               "2",
             ],
             "email": "tjalle@yahoo.com",
@@ -752,10 +733,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       user={
         Object {
-          "attended": Array [
-            "1",
-          ],
           "attending": Array [
+            "1",
             "2",
           ],
           "email": "tjalle@yahoo.com",
@@ -801,10 +780,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       meetup={
         Object {
           "arranger": Object {
-            "attended": Array [
-              "1",
-            ],
             "attending": Array [
+              "1",
               "2",
             ],
             "email": "tjalle@yahoo.com",
@@ -863,10 +840,8 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       user={
         Object {
-          "attended": Array [
-            "1",
-          ],
           "attending": Array [
+            "1",
             "2",
           ],
           "email": "tjalle@yahoo.com",
