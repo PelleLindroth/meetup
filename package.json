@@ -38,8 +38,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:full": "react-scripts test --verbose --coverage watchAll=false",
+    "test": "react-scripts test --maxWorkers=25% ",
+    "test:full": "react-scripts test --verbose --coverage --maxWorkers=25% watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
