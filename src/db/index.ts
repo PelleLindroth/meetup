@@ -60,6 +60,10 @@ export const addReview = (meetupId: string, userId: string, rating: number) => {
   user.reviewed.push(meetup.id)
 }
 
+export const addMeetup = (meetup: Meetup) => {
+  meetups.push(meetup)
+}
+
 export const signUpForEvent = (meetup: Meetup, user: User) => {
   user.attending.push(meetup.id)
   meetup.attending++
