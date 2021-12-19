@@ -148,6 +148,11 @@ describe('SingleMeetup unit tests for anonymous user', () => {
       `${pastEvent?.attending} people attended this event`
     )
   })
+  it('renders message if no meetup is found', () => {
+    renderWithPath(<SingleMeetup user={null} />, '/meetup/123', 'meetup/:id')
+
+    expect(screen.getByText(/meetup not found/i)).toBeInTheDocument()
+  })
   it('renders section with login prompt and "Go to Login" button for anonymous users', () => {
     renderWithPath(
       <SingleMeetup user={null} />,
