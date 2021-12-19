@@ -2,12 +2,11 @@
 
 exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke test) 1`] = `
 <CreateMeetup
+  setMeetups={[MockFunction]}
   user={
     Object {
-      "attended": Array [
-        "1",
-      ],
       "attending": Array [
+        "1",
         "2",
       ],
       "email": "tjalle@yahoo.com",
@@ -855,6 +854,7 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
         className="buttons"
       >
         <button
+          onClick={[Function]}
           type="button"
         >
           Cancel
