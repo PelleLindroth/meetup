@@ -30,17 +30,17 @@ so I can<br/>
 so I can<br/>
 **<em>let the arrangers know I'm coming and attend the event on the given date</em>**
 
+- As a user I want to<br/>
+**<em>be able to comment on an event I have attended</em>**<br/>
+so i can<br/>
+**<em>voice my opinion and communicate wth other attendees</em>**
+
 - As a user I want to<br/> 
 **<em>be able to log in</em>**<br/>
 so I can<br/> 
 **<em>get extended functionality</em>**
 
 ### Logged in users
-- As a logged in user I want to<br/>
-**<em>be able to comment on an event I have attended</em>**<br/>
-so i can<br/>
-**<em>voice my opinion and communicate wth other attendees</em>**
-
 - As a logged in user I want to<br/>
 **<em>be able to rate an event I have attended</em>**<br/>
 so i can<br/>
