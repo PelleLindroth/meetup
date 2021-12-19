@@ -1,0 +1,48 @@
+.createMeetup {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    .inputRow {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      label {
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+      }
+
+      input,
+      textarea {
+        border: none;
+        font-family: inherit;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      .textInput {
+        padding: 0.5rem;
+      }
+
+      .titleInput {
+        font-weight: 700;
+      }
+
+      textarea {
+        height: 3rem;
+        resize: none;
+      }
+    }
+  }
+}
