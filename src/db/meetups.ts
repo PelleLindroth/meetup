@@ -122,7 +122,7 @@ export const meetups: Meetup[] = [
     online: false,
     capacity: null,
     attending: 126,
-    arranger: users[3],
+    arranger: users[0],
     reviews: [],
     comments: [],
   },
