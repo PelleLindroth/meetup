@@ -18,7 +18,7 @@ const SingleMeetup = (props: SingleMeetupProps) => {
   const { user } = props
 
   if (!meetup) {
-    return <h2>Meetup not found</h2>
+    return <h2 className={styles.meetup}>Meetup not found</h2>
   }
 
   const isUpcomingEvent = meetup.date.getTime() > Date.now()
