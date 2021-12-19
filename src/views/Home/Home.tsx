@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createMeetupList } from '../../utils'
 import SearchArea from './components/SearchArea/SearchArea'
 import MeetupList from './components/MeetupList'
 import { HomeProps } from './types'
@@ -21,11 +22,11 @@ const Home = (props: HomeProps) => {
           <h2>UPCOMING EVENTS</h2>
         )}
         <MeetupList
-          meetups={meetups.filter(
-            (meetup) =>
-              meetup.date.getTime() > Date.now() &&
-              meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
-              (searchFilter === 'upcoming' || searchFilter === 'all')
+          meetups={createMeetupList(
+            meetups,
+            'upcoming',
+            searchPhrase,
+            searchFilter
           )}
           upcoming
         />
@@ -34,11 +35,11 @@ const Home = (props: HomeProps) => {
         )}
 
         <MeetupList
-          meetups={meetups.filter(
-            (meetup) =>
-              meetup.date.getTime() < Date.now() &&
-              meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
-              (searchFilter === 'past' || searchFilter === 'all')
+          meetups={createMeetupList(
+            meetups,
+            'past',
+            searchPhrase,
+            searchFilter
           )}
         />
       </section>

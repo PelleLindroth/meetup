@@ -15,6 +15,31 @@ const sortChronologically = (array: Meetup[]) => {
   return array.sort((a, b) => a.date.getTime() - b.date.getTime())
 }
 
+export const createMeetupList = (
+  meetups: Meetup[],
+  listType: string,
+  searchPhrase: string,
+  searchFilter: string
+) => {
+  const meetupList = meetups.filter((meetup) => {
+    if (listType === 'past') {
+      return (
+        meetup.date.getTime() < Date.now() &&
+        meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
+        (searchFilter === listType || searchFilter === 'all')
+      )
+    } else {
+      return (
+        meetup.date.getTime() > Date.now() &&
+        meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
+        (searchFilter === listType || searchFilter === 'all')
+      )
+    }
+  })
+
+  return sortChronologically(meetupList)
+}
+
 export const createUserLists = (user: User, meetups: Meetup[]) => {
   return {
     ownUpcoming: sortChronologically(
