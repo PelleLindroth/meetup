@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Meetup } from './db/meetups'
 import { getAllMeetups } from './db'
-import Home from './views/Home'
-import SingleMeetup from './views/SingleMeetup'
-import Login from './views/Login'
 import Header from './Header'
+import Home from './views/Home'
+import Login from './views/Login'
+import SingleMeetup from './views/SingleMeetup'
+import CreateMeetup from './views/CreateMeetup'
 import Profile from './views/Profile'
 import { User } from './db/users'
 import styles from './App/App.module.scss'
@@ -31,6 +32,9 @@ function App() {
         <Route path="/meetup/:id" element={<SingleMeetup user={user} />} />
         {!user && <Route path="/login" element={<Login setUser={setUser} />} />}
         {user && <Route path="/profile/:id" element={<Profile />} />}
+        {user && (
+          <Route path="/create" element={<CreateMeetup user={user} />} />
+        )}
       </Routes>
     </div>
   )
