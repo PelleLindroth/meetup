@@ -45,12 +45,18 @@ const Header = (props: HeaderProps) => {
               <nav className={styles.profileMenu}>
                 {location.pathname !== `/profile/${user.id}` && (
                   <Link
-                    className={styles.viewProfileButton}
+                    className={styles.linkButton}
                     to={`/profile/${user!.id}`}
                   >
                     View profile
                   </Link>
                 )}
+                {location.pathname !== '/create' && (
+                  <Link className={styles.linkButton} to={'/create'}>
+                    Create meetup
+                  </Link>
+                )}
+
                 <button onClick={handleLogout} className={styles.logoutButton}>
                   Log out
                 </button>
