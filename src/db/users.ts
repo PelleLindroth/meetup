@@ -5,7 +5,6 @@ export interface User {
   email: string
   password: string
   attending: string[]
-  attended: string[]
   reviewed: string[]
 }
 
@@ -16,8 +15,7 @@ export const users: User[] = [
     lastName: 'Bergkvist',
     email: 'tjalle@yahoo.com',
     password: 'grillkorv',
-    attending: ['2'],
-    attended: ['1'],
+    attending: ['1', '2'],
     reviewed: ['1'],
   },
   {
@@ -26,8 +24,7 @@ export const users: User[] = [
     lastName: 'Andersson',
     email: 'kenta@yahoo.com',
     password: 'bananpaj',
-    attending: [],
-    attended: ['1'],
+    attending: ['1'],
     reviewed: ['1'],
   },
   {
@@ -37,7 +34,6 @@ export const users: User[] = [
     email: 'babsan@yahoo.com',
     password: 'password123',
     attending: [],
-    attended: [],
     reviewed: [],
   },
   {
@@ -46,8 +42,7 @@ export const users: User[] = [
     lastName: 'Karlsson',
     email: 'loffe@yahoo.com',
     password: 'storstark',
-    attending: [],
-    attended: ['1'],
+    attending: ['1'],
     reviewed: [],
   },
 ]
