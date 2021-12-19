@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { uid } from 'uid'
 import { useNavigate } from 'react-router'
 import DateTimePicker from 'react-datetime-picker'
-import { addMeetup } from '../../db'
+import { getAllMeetups } from '../../db'
 import { Meetup } from '../../db/meetups'
 import { CreateMeetupProps } from './types'
 import styles from './CreateMeetup.module.scss'
@@ -10,7 +10,8 @@ import './create-meetup.scss'
 
 const CreateMeetup = (props: CreateMeetupProps) => {
   const navigate = useNavigate()
-  const { user } = props
+  const meetups = getAllMeetups()
+  const { user, setMeetups } = props
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [date, setDate] = useState(new Date())
@@ -59,7 +60,11 @@ const CreateMeetup = (props: CreateMeetupProps) => {
       }
     }
 
-    addMeetup(meetup)
+    setMeetups([...meetups, meetup])
+    navigate(`/profile/${user.id}`)
+  }
+
+  const handleCancel = () => {
     navigate(`/profile/${user.id}`)
   }
 
@@ -171,7 +176,9 @@ const CreateMeetup = (props: CreateMeetupProps) => {
           </div>
         )}
         <div className={styles.buttons}>
-          <button type="button">Cancel</button>
+          <button onClick={handleCancel} type="button">
+            Cancel
+          </button>
           <button disabled={emptyFields()}>Create</button>
         </div>
       </form>
