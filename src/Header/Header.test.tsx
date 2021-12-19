@@ -5,6 +5,8 @@ import { getMockUsers } from '../db'
 import userEvent from '@testing-library/user-event'
 
 describe('Header unit tests', () => {
+  const users = getMockUsers()
+  const user = users[0]
   it('renders a Header with logo and Login button if user is not logged in', () => {
     renderWithRouter(<Header user={null} setUser={jest.fn()} />)
 
@@ -17,28 +19,20 @@ describe('Header unit tests', () => {
     expect(loginButton).toBeInTheDocument()
   })
   it('renders a Header with logo and Profile link if user is logged in', () => {
-    const users = getMockUsers()
-    const mockUser = users[0]
-    renderWithRouter(<Header user={mockUser} setUser={jest.fn()} />)
+    renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
     const header = screen.getByRole('banner')
     const logo = screen.getByRole('img', { name: /logo/i })
-    const profileLink = screen.getByText(
-      `${mockUser.firstName} ${mockUser.lastName}`
-    )
+    const profileLink = screen.getByText(`${user.firstName} ${user.lastName}`)
 
     expect(header).toBeInTheDocument()
     expect(logo).toBeInTheDocument()
     expect(profileLink).toBeInTheDocument()
   })
   it('displays a menu with a link and a logout button when Profile link is clicked', () => {
-    const users = getMockUsers()
-    const mockUser = users[0]
-    renderWithRouter(<Header user={mockUser} setUser={jest.fn()} />)
+    renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
-    const profile = screen.getByText(
-      `${mockUser.firstName} ${mockUser.lastName}`
-    )
+    const profile = screen.getByText(`${user.firstName} ${user.lastName}`)
 
     userEvent.click(profile)
 
@@ -51,13 +45,9 @@ describe('Header unit tests', () => {
     expect(logoutButton).toBeInTheDocument()
   })
   it('hides menu when Profile link is clicked twice', () => {
-    const users = getMockUsers()
-    const mockUser = users[0]
-    renderWithRouter(<Header user={mockUser} setUser={jest.fn()} />)
+    renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
-    const profile = screen.getByText(
-      `${mockUser.firstName} ${mockUser.lastName}`
-    )
+    const profile = screen.getByText(`${user.firstName} ${user.lastName}`)
 
     userEvent.click(profile)
     userEvent.click(profile)
