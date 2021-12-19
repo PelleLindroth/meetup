@@ -10,7 +10,7 @@ const MeetupCard = (props: MeetupCardProps) => {
   const { meetup, upcoming } = props
 
   return (
-    <li className={styles.cardWrapper}>
+    <li aria-label="meetup-card" className={styles.cardWrapper}>
       <div
         title={upcoming ? 'upcoming-event-header' : 'past-event-header'}
         style={{ backgroundColor: upcoming ? '#0E81C9' : '#DCDDDE' }}
