@@ -20,7 +20,8 @@ exports[`Login Unit Tests renders login form with two empty inputs and a button 
         Email
       </label>
       <input
-        autoComplete="current-password"
+        aria-label="email"
+        autoComplete="current-email"
         id="email"
         onChange={[Function]}
         placeholder="Email"
@@ -33,9 +34,9 @@ exports[`Login Unit Tests renders login form with two empty inputs and a button 
         Password
       </label>
       <input
+        aria-label="password"
         autoComplete="current-password"
         id="password"
-        name="password"
         onChange={[Function]}
         placeholder="Password"
         type="password"

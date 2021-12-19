@@ -35,7 +35,8 @@ const Login = (props: LoginProps) => {
       <form onSubmit={handleSubmit} name="login">
         <label htmlFor="email">Email</label>
         <input
-          autoComplete="current-password"
+          aria-label="email"
+          autoComplete="current-email"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.currentTarget.value)}
@@ -44,9 +45,9 @@ const Login = (props: LoginProps) => {
         />
         <label htmlFor="password">Password</label>
         <input
+          aria-label="password"
           autoComplete="current-password"
           id="password"
-          name="password"
           value={password}
           onChange={(e) => setPassword(e.currentTarget.value)}
           type="password"
