@@ -3,7 +3,7 @@ import { User, users } from './users'
 export interface Meetup {
   id: string
   title: string
-  description?: string
+  description: string
   date: Date
   location?: Address
   url?: string
@@ -18,7 +18,6 @@ export interface Meetup {
 interface Address {
   street: string
   city: string
-  country: string
 }
 
 export interface Review {
@@ -43,7 +42,6 @@ export const meetups: Meetup[] = [
     location: {
       street: 'Vitabergsparken',
       city: 'Stockholm',
-      country: 'Sweden',
     },
     online: false,
     capacity: null,
@@ -103,7 +101,6 @@ export const meetups: Meetup[] = [
     location: {
       street: 'C. Sevilla Fútbol Club',
       city: '41005 Sevilla',
-      country: 'Spain',
     },
     online: false,
     capacity: 43883,
@@ -121,7 +118,6 @@ export const meetups: Meetup[] = [
     location: {
       street: 'Gärdet',
       city: 'Stockholm',
-      country: 'Sweden',
     },
     online: false,
     capacity: null,
@@ -138,7 +134,6 @@ export const meetups: Meetup[] = [
     location: {
       street: 'Strandvägen',
       city: 'Stockholm',
-      country: 'Sweden',
     },
     online: false,
     capacity: 500,

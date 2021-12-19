@@ -47,7 +47,6 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
       "id": "1",
       "location": Object {
         "city": "Stockholm",
-        "country": "Sweden",
         "street": "Vitabergsparken",
       },
       "online": false,

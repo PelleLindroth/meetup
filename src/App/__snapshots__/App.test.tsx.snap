@@ -93,7 +93,6 @@ exports[`App unit tests renders App correctly 1`] = `
               "id": "1",
               "location": Object {
                 "city": "Stockholm",
-                "country": "Sweden",
                 "street": "Vitabergsparken",
               },
               "online": false,
@@ -130,7 +129,6 @@ exports[`App unit tests renders App correctly 1`] = `
               "id": "5",
               "location": Object {
                 "city": "Stockholm",
-                "country": "Sweden",
                 "street": "Strandvägen",
               },
               "online": false,
@@ -182,7 +180,6 @@ exports[`App unit tests renders App correctly 1`] = `
               "id": "3",
               "location": Object {
                 "city": "41005 Sevilla",
-                "country": "Spain",
                 "street": "C. Sevilla Fútbol Club",
               },
               "online": false,
@@ -210,7 +207,6 @@ exports[`App unit tests renders App correctly 1`] = `
               "id": "4",
               "location": Object {
                 "city": "Stockholm",
-                "country": "Sweden",
                 "street": "Gärdet",
               },
               "online": false,
@@ -324,7 +320,6 @@ exports[`App unit tests renders App correctly 1`] = `
                   "id": "3",
                   "location": Object {
                     "city": "41005 Sevilla",
-                    "country": "Spain",
                     "street": "C. Sevilla Fútbol Club",
                   },
                   "online": false,
@@ -352,7 +347,6 @@ exports[`App unit tests renders App correctly 1`] = `
                   "id": "4",
                   "location": Object {
                     "city": "Stockholm",
-                    "country": "Sweden",
                     "street": "Gärdet",
                   },
                   "online": false,
@@ -509,7 +503,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     "id": "3",
                     "location": Object {
                       "city": "41005 Sevilla",
-                      "country": "Spain",
                       "street": "C. Sevilla Fútbol Club",
                     },
                     "online": false,
@@ -634,7 +627,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     "id": "4",
                     "location": Object {
                       "city": "Stockholm",
-                      "country": "Sweden",
                       "street": "Gärdet",
                     },
                     "online": false,
@@ -784,7 +776,6 @@ exports[`App unit tests renders App correctly 1`] = `
                   "id": "1",
                   "location": Object {
                     "city": "Stockholm",
-                    "country": "Sweden",
                     "street": "Vitabergsparken",
                   },
                   "online": false,
@@ -821,7 +812,6 @@ exports[`App unit tests renders App correctly 1`] = `
                   "id": "5",
                   "location": Object {
                     "city": "Stockholm",
-                    "country": "Sweden",
                     "street": "Strandvägen",
                   },
                   "online": false,
@@ -882,7 +872,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     "id": "1",
                     "location": Object {
                       "city": "Stockholm",
-                      "country": "Sweden",
                       "street": "Vitabergsparken",
                     },
                     "online": false,
@@ -1013,7 +1002,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     "id": "5",
                     "location": Object {
                       "city": "Stockholm",
-                      "country": "Sweden",
                       "street": "Strandvägen",
                     },
                     "online": false,

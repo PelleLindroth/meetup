@@ -364,7 +364,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "id": "1",
           "location": Object {
             "city": "Stockholm",
-            "country": "Sweden",
             "street": "Vitabergsparken",
           },
           "online": false,
@@ -460,7 +459,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "id": "1",
           "location": Object {
             "city": "Stockholm",
-            "country": "Sweden",
             "street": "Vitabergsparken",
           },
           "online": false,
@@ -562,7 +560,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "id": "1",
           "location": Object {
             "city": "Stockholm",
-            "country": "Sweden",
             "street": "Vitabergsparken",
           },
           "online": false,
@@ -652,7 +649,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "id": "1",
           "location": Object {
             "city": "Stockholm",
-            "country": "Sweden",
             "street": "Vitabergsparken",
           },
           "online": false,
@@ -736,7 +732,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "id": "1",
           "location": Object {
             "city": "Stockholm",
-            "country": "Sweden",
             "street": "Vitabergsparken",
           },
           "online": false,
@@ -848,7 +843,6 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "id": "1",
           "location": Object {
             "city": "Stockholm",
-            "country": "Sweden",
             "street": "Vitabergsparken",
           },
           "online": false,
