@@ -5,10 +5,8 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
   meetup={
     Object {
       "arranger": Object {
-        "attended": Array [
-          "1",
-        ],
         "attending": Array [
+          "1",
           "2",
         ],
         "email": "tjalle@yahoo.com",

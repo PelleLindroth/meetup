@@ -34,7 +34,7 @@ const ReviewsSection = (props: ReviewsSectionProps) => {
         <p>This event has no ratings yet</p>
       )}
       {user &&
-        user.attended.includes(meetup.id) &&
+        user.attending.includes(meetup.id) &&
         (!user.reviewed.includes(meetup.id) ? (
           <>
             {showSelectInput ? (
