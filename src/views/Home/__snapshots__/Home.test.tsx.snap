@@ -73,30 +73,6 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           "password": "password123",
           "reviewed": Array [],
         },
-        "attending": 356,
-        "capacity": 500,
-        "comments": Array [],
-        "date": 2021-10-31T18:00:00.000Z,
-        "description": "Halloween party in the street, all night long",
-        "id": "5",
-        "location": Object {
-          "city": "Stockholm",
-          "street": "Strandvägen",
-        },
-        "online": false,
-        "reviews": Array [],
-        "title": "Halloween Street Party",
-      },
-      Object {
-        "arranger": Object {
-          "attending": Array [],
-          "email": "babsan@yahoo.com",
-          "firstName": "Barbro",
-          "id": "3",
-          "lastName": "Lundborg",
-          "password": "password123",
-          "reviewed": Array [],
-        },
         "attending": 234,
         "capacity": null,
         "comments": Array [],
@@ -164,6 +140,30 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         "online": false,
         "reviews": Array [],
         "title": "Kite festival",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [],
+          "email": "babsan@yahoo.com",
+          "firstName": "Barbro",
+          "id": "3",
+          "lastName": "Lundborg",
+          "password": "password123",
+          "reviewed": Array [],
+        },
+        "attending": 356,
+        "capacity": 500,
+        "comments": Array [],
+        "date": 2021-10-31T18:00:00.000Z,
+        "description": "Halloween party in the street, all night long",
+        "id": "5",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Strandvägen",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Halloween Street Party",
       },
     ]
   }
@@ -840,7 +840,6 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
               "title": "Pizza Picnic",
             }
           }
-          upcoming={false}
         >
           <li
             aria-label="meetup-card"
@@ -959,7 +958,6 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
               "title": "Halloween Street Party",
             }
           }
-          upcoming={false}
         >
           <li
             aria-label="meetup-card"

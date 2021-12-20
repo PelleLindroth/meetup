@@ -885,7 +885,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     "title": "Pizza Picnic",
                   }
                 }
-                upcoming={false}
               >
                 <li
                   aria-label="meetup-card"
@@ -1004,7 +1003,6 @@ exports[`App unit tests renders App correctly 1`] = `
                     "title": "Halloween Street Party",
                   }
                 }
-                upcoming={false}
               >
                 <li
                   aria-label="meetup-card"
