@@ -19,6 +19,23 @@
       height: 4rem;
     }
 
+    .timeButton {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-right: 0.5rem;
+      max-width: 5rem;
+
+      img {
+        height: 1.5rem;
+      }
+
+      p {
+        color: #333;
+        font-size: 0.7rem;
+        margin: 0;
+      }
+    }
     .loginButton {
       background-color: #14c747;
       border: none;
@@ -82,6 +99,47 @@
           outline: none;
           padding: 0.5rem 1rem;
         }
+      }
+    }
+  }
+
+  .setTimeModal {
+    align-items: center;
+    background-color: #dcddde;
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1.5rem 0;
+
+    label {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .modalButtons {
+      display: flex;
+      margin-top: 0.8rem;
+
+      button {
+        border: none;
+        border-radius: 3px;
+        margin: 0 0.2rem;
+        outline: none;
+        padding: 0.2rem 0.5rem;
+      }
+
+      .mainButton {
+        background-color: #0e81c9;
+        color: #fff;
+      }
+
+      .cancelButton {
+        background-color: transparent;
+        color: #333;
+        border: 1px solid #333;
       }
     }
   }

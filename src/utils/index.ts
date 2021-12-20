@@ -19,18 +19,19 @@ export const createMeetupList = (
   meetups: Meetup[],
   listType: string,
   searchPhrase: string,
-  searchFilter: string
+  searchFilter: string,
+  customDate: Date
 ) => {
   const meetupList = meetups.filter((meetup) => {
     if (listType === 'past') {
       return (
-        meetup.date.getTime() < Date.now() &&
+        meetup.date.getTime() <= customDate.getTime() &&
         meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
         (searchFilter === listType || searchFilter === 'all')
       )
     } else {
       return (
-        meetup.date.getTime() > Date.now() &&
+        meetup.date.getTime() > customDate.getTime() &&
         meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
         (searchFilter === listType || searchFilter === 'all')
       )
