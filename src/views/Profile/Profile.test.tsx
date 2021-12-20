@@ -1,11 +1,11 @@
 import { renderWithPath } from '../../utils/testing-utils'
 import { screen, within } from '@testing-library/react'
 import Profile from '.'
-import { getAllMeetups, getUserById } from '../../db'
+import { getMockMeetups, getUserById } from '../../db'
 
 describe('Profile unit tests', () => {
   const user = getUserById('1')
-  const meetups = getAllMeetups()
+  const meetups = getMockMeetups()
 
   it("shows welcome message with user's first name", () => {
     renderWithPath(
