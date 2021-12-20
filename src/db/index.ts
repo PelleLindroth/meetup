@@ -4,6 +4,13 @@ import { users, User } from './users'
 
 export const getAllMeetups = (): Meetup[] => {
   const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
+  storedMeetups.forEach((meetup) => {
+    meetup.date = new Date(meetup.date)
+    meetup.comments.forEach((comment) => {
+      comment.submittedAt = new Date(comment.submittedAt)
+    })
+  })
+
   let returnedMeetups: Meetup[] = []
 
   if (storedMeetups) {
@@ -37,11 +44,22 @@ export const getMockMeetups = () => {
   return meetups
 }
 
+const updateMeetup = (meetup: Meetup) => {
+  let meetups = getAllMeetups()
+
+  const index = meetups.findIndex((item) => item.id === meetup.id)
+
+  meetups.splice(index, 1, meetup)
+
+  localStorage.setItem('meetups', JSON.stringify(meetups))
+}
+
 export const addComment = (meetupId: string, comment: Comment) => {
   const meetup = getMeetupById(meetupId)
 
   if (meetup) {
     meetup.comments.push(comment)
+    updateMeetup(meetup)
   }
 }
 
@@ -57,20 +75,25 @@ export const addReview = (meetupId: string, userId: string, rating: number) => {
   }
 
   meetup.reviews.push(review)
+  updateMeetup(meetup)
   user.reviewed.push(meetup.id)
 }
 
 export const addMeetup = (meetup: Meetup) => {
   meetups.push(meetup)
+  saveMeetupToLocalStorage(meetup)
 }
 
 export const signUpForEvent = (meetup: Meetup, user: User) => {
   user.attending.push(meetup.id)
   meetup.attending++
+  updateMeetup(meetup)
 }
+
 export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
   user.attending = user.attending.filter((item) => item !== meetup.id)
   meetup.attending--
+  updateMeetup(meetup)
 }
 
 export const saveMeetupToLocalStorage = (meetup: Meetup) => {
@@ -86,6 +109,7 @@ export const saveMeetupToLocalStorage = (meetup: Meetup) => {
 }
 
 export const getMeetupById = (id: string): Meetup | undefined => {
+  const meetups = getAllMeetups()
   return meetups.find((meetup) => meetup.id === id)
 }
 
