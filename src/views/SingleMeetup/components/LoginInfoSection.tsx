@@ -11,8 +11,8 @@ const LoginInfoSection = () => {
     >
       <h3>Log in for a better experience</h3>
       <p>
-        Logged in users can register for upcoming events and rate events they
-        visited!
+        Logged in users can create their own events, register for upcoming
+        events and rate events they visited!
       </p>
       <button onClick={() => navigate('/login')}>Go to Login page</button>
     </section>
