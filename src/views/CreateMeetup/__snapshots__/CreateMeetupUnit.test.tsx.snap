@@ -2,6 +2,7 @@
 
 exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke test) 1`] = `
 <CreateMeetup
+  meetups={Array []}
   setMeetups={[MockFunction]}
   user={
     Object {

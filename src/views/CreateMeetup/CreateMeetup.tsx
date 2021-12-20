@@ -2,16 +2,15 @@ import React, { useState } from 'react'
 import { uid } from 'uid'
 import { useNavigate } from 'react-router'
 import DateTimePicker from 'react-datetime-picker'
-import { getAllMeetups } from '../../db'
+import { addMeetup } from '../../db'
 import { Meetup } from '../../db/meetups'
 import { CreateMeetupProps } from './types'
 import styles from './CreateMeetup.module.scss'
 import './create-meetup.scss'
 
 const CreateMeetup = (props: CreateMeetupProps) => {
+  const { user, meetups, setMeetups } = props
   const navigate = useNavigate()
-  const meetups = getAllMeetups()
-  const { user, setMeetups } = props
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [date, setDate] = useState(new Date())
@@ -61,6 +60,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
     }
 
     setMeetups([...meetups, meetup])
+    addMeetup(meetup)
     navigate(`/profile/${user.id}`)
   }
 
