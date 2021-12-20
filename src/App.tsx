@@ -37,7 +37,13 @@ function App() {
         {user && (
           <Route
             path="/create"
-            element={<CreateMeetup user={user} setMeetups={setMeetups} />}
+            element={
+              <CreateMeetup
+                user={user}
+                meetups={meetups}
+                setMeetups={setMeetups}
+              />
+            }
           />
         )}
       </Routes>
