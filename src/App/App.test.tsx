@@ -7,6 +7,8 @@ import App from '../App'
 import Home from '../views/Home'
 import userEvent from '@testing-library/user-event'
 
+jest.mock('../db')
+
 describe('App unit tests', () => {
   it('renders App correctly', () => {
     const wrapper = mount(
@@ -88,12 +90,13 @@ describe('Happy paths', () => {
       'Main street 321'
     )
     userEvent.type(screen.getByRole('textbox', { name: /city/i }), 'Smallville')
-    userEvent.type(
-      screen.getByRole('spinbutton', {
-        name: 'capacity-input',
-      }),
-      '60'
-    )
+
+    const capacityInput = screen.getByRole('spinbutton', {
+      name: 'capacity-input',
+    })
+    userEvent.clear(capacityInput)
+    userEvent.type(capacityInput, '60')
+    expect(capacityInput).toHaveValue(60)
 
     // Click on create button
     userEvent.click(screen.getByRole('button', { name: /create/i }))

@@ -6,11 +6,11 @@ import { formatDate } from '../../utils'
 import SingleMeetup from './index'
 
 const mockedUsedNavigate = jest.fn()
-
 jest.mock('react-router', () => ({
   ...(jest.requireActual('react-router') as any),
   useNavigate: () => mockedUsedNavigate,
 }))
+jest.mock('../../db')
 
 describe('SingleMeetup unit tests for anonymous user', () => {
   const upcomingOnlineEvent = getMeetupById('2')

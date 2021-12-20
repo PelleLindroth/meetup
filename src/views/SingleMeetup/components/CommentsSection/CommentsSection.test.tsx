@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event'
 import { getMeetupById, getUserById } from '../../../../db'
 import CommentsSection from '.'
 
+jest.mock('../../../../db')
+
 describe('Comments section unit test', () => {
   const upcomingEvent = getMeetupById('2')
   const pastEvent = getMeetupById('1')

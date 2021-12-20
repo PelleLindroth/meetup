@@ -12,7 +12,7 @@ describe('Create Meetup unit tests', () => {
     jest.setSystemTime(new Date(2021, 11, 24))
 
     const wrapper = mountWithPath(
-      <CreateMeetup setMeetups={jest.fn()} user={user!} />,
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />,
       '/create',
       '/create'
     )
@@ -22,14 +22,18 @@ describe('Create Meetup unit tests', () => {
     jest.useRealTimers()
   })
   it('renders a form with inputs and a submit button', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const createForm = screen.getByRole('form', { name: /create/ })
 
     expect(createForm).toBeInTheDocument()
   })
   it('renders empty inputs for title and description', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const titleInput = screen.getByRole('textbox', { name: /title/i })
     const descriptionInput = screen.getByRole('textbox', {
@@ -43,7 +47,9 @@ describe('Create Meetup unit tests', () => {
     jest.useFakeTimers('modern')
     jest.setSystemTime(new Date(2021, 11, 24))
 
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const date = screen.getByLabelText('Date')
 
@@ -52,7 +58,9 @@ describe('Create Meetup unit tests', () => {
     jest.useRealTimers()
   })
   it('renders unchecked checkbox for online event and empty text inputs for street and city', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const onlineCheckbox = screen.getByRole('checkbox', { name: /online/i })
 
@@ -66,7 +74,9 @@ describe('Create Meetup unit tests', () => {
     expect(cityInput).toHaveTextContent('')
   })
   it('renders checked checkbox for max capacity and number input for max attendants with 100 as default', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const maxCapacityCheckbox = screen.getByRole('checkbox', {
       name: /max capacity/i,
@@ -76,10 +86,13 @@ describe('Create Meetup unit tests', () => {
     })
 
     expect(maxCapacityCheckbox).toBeChecked()
+
     expect(maxCapacityInput).toHaveValue(100)
   })
   it('renders an enabled cancel button and a disabled create button', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const cancelButton = screen.getByRole('button', { name: /cancel/i })
     const createButton = screen.getByRole('button', { name: /create/i })
@@ -88,7 +101,9 @@ describe('Create Meetup unit tests', () => {
     expect(createButton).toBeDisabled()
   })
   it('shows url text input and hides address inputs if "online event" is checked', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const onlineCheckbox = screen.getByRole('checkbox', { name: /online/i })
 
@@ -104,7 +119,9 @@ describe('Create Meetup unit tests', () => {
     expect(cityInput).not.toBeInTheDocument()
   })
   it('hides number input for max capacity if "max capacity" is unchecked', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const maxCapacityCheckbox = screen.getByRole('checkbox', {
       name: /max capacity/i,
@@ -118,7 +135,9 @@ describe('Create Meetup unit tests', () => {
     expect(maxCapacityInput).not.toBeInTheDocument()
   })
   it('enables create button if no inputs on screen are empty', () => {
-    renderWithRouter(<CreateMeetup setMeetups={jest.fn()} user={user!} />)
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
 
     const textInputs = screen.getAllByRole('textbox')
 

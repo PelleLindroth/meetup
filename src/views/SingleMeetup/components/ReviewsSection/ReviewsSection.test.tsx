@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event'
 import { getMeetupById, getUserById } from '../../../../db'
 import ReviewsSection from './index'
 
+jest.mock('../../../../db')
+
 describe('ReviewsSection unit tests', () => {
   const kiteEvent = getMeetupById('4')
   const halloweenEvent = getMeetupById('5')
