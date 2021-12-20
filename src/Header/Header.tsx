@@ -1,26 +1,16 @@
 import { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router'
+import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
-import { User } from '../db/users'
+import { HeaderProps } from './types'
+import SubMenu from './components/SubMenu'
 import Logo from '../assets/logo.png'
 import UserIcon from '../assets/icons/user.png'
 import styles from './Header.module.scss'
-
-type HeaderProps = {
-  user: User | null
-  setUser: React.Dispatch<React.SetStateAction<User | null>>
-}
 
 const Header = (props: HeaderProps) => {
   const { user, setUser } = props
   const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false)
   const location = useLocation()
-  const navigate = useNavigate()
-
-  const handleLogout = () => {
-    setUser(null)
-    navigate('/', { replace: true })
-  }
 
   return (
     <header className={styles.header}>
@@ -41,27 +31,7 @@ const Header = (props: HeaderProps) => {
           >
             <img src={UserIcon} alt="User profile icon" />
             <p>{`${user.firstName} ${user.lastName}`}</p>
-            {showProfileMenu && (
-              <nav className={styles.profileMenu}>
-                {location.pathname !== `/profile/${user.id}` && (
-                  <Link
-                    className={styles.linkButton}
-                    to={`/profile/${user!.id}`}
-                  >
-                    View profile
-                  </Link>
-                )}
-                {location.pathname !== '/create' && (
-                  <Link className={styles.linkButton} to={'/create'}>
-                    Create meetup
-                  </Link>
-                )}
-
-                <button onClick={handleLogout} className={styles.logoutButton}>
-                  Log out
-                </button>
-              </nav>
-            )}
+            {showProfileMenu && <SubMenu user={user} setUser={setUser} />}
           </div>
         )}
       </div>
