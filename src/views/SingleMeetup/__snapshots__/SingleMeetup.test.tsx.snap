@@ -2,6 +2,171 @@
 
 exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view correctly for anonymous user (smoke test) 1`] = `
 <SingleMeetup
+  meetups={
+    Array [
+      Object {
+        "arranger": Object {
+          "attending": Array [
+            "1",
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        },
+        "attending": 54,
+        "capacity": null,
+        "comments": Array [
+          Object {
+            "id": "1",
+            "submittedAt": 2021-12-16T14:58:33.837Z,
+            "text": "Great day!",
+            "userId": "2",
+          },
+          Object {
+            "id": "2",
+            "submittedAt": 2021-12-16T14:59:22.526Z,
+            "text": "Yes, it was, thanks!",
+            "userId": "1",
+          },
+          Object {
+            "id": "3",
+            "submittedAt": 2021-12-17T12:34:42.949Z,
+            "text": "Damn, I missed this",
+            "userId": null,
+          },
+        ],
+        "date": 2021-08-28T17:00:00.000Z,
+        "description": "We meet in the park with pizzas and hang out all night",
+        "id": "1",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Vitabergsparken",
+        },
+        "online": false,
+        "reviews": Array [
+          Object {
+            "id": "1",
+            "meetupId": "1",
+            "rating": 4,
+          },
+          Object {
+            "id": "2",
+            "meetupId": "1",
+            "rating": 5,
+          },
+        ],
+        "title": "Pizza Picnic",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [],
+          "email": "babsan@yahoo.com",
+          "firstName": "Barbro",
+          "id": "3",
+          "lastName": "Lundborg",
+          "password": "password123",
+          "reviewed": Array [],
+        },
+        "attending": 356,
+        "capacity": 500,
+        "comments": Array [],
+        "date": 2021-10-31T18:00:00.000Z,
+        "description": "Halloween party in the street, all night long",
+        "id": "5",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Strandvägen",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Halloween Street Party",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [],
+          "email": "babsan@yahoo.com",
+          "firstName": "Barbro",
+          "id": "3",
+          "lastName": "Lundborg",
+          "password": "password123",
+          "reviewed": Array [],
+        },
+        "attending": 234,
+        "capacity": null,
+        "comments": Array [],
+        "date": 2022-01-10T10:00:00.000Z,
+        "description": "Learn a new programming language from the ground up",
+        "id": "2",
+        "online": true,
+        "reviews": Array [],
+        "title": "Rust course",
+        "url": "https://www.udemy.com/course/rust-lang/",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [
+            "1",
+          ],
+          "email": "kenta@yahoo.com",
+          "firstName": "Kenta",
+          "id": "2",
+          "lastName": "Andersson",
+          "password": "bananpaj",
+          "reviewed": Array [
+            "1",
+          ],
+        },
+        "attending": 23478,
+        "capacity": 43883,
+        "comments": Array [],
+        "date": 2022-05-13T16:00:00.000Z,
+        "description": "A classic football match between the south and the north",
+        "id": "3",
+        "location": Object {
+          "city": "41005 Sevilla",
+          "street": "C. Sevilla Fútbol Club",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Sevilla - Real Sociedad",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [
+            "1",
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        },
+        "attending": 126,
+        "capacity": null,
+        "comments": Array [],
+        "date": 2022-07-02T15:00:00.000Z,
+        "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
+        "id": "4",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Gärdet",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Kite festival",
+      },
+    ]
+  }
   user={null}
 >
   <main
@@ -295,6 +460,171 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
 
 exports[`SingleMeetup unit tests for logged in user renders Single Meetup view correctly for logged in user (smoke test) 1`] = `
 <SingleMeetup
+  meetups={
+    Array [
+      Object {
+        "arranger": Object {
+          "attending": Array [
+            "1",
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        },
+        "attending": 54,
+        "capacity": null,
+        "comments": Array [
+          Object {
+            "id": "1",
+            "submittedAt": 2021-12-16T14:58:33.837Z,
+            "text": "Great day!",
+            "userId": "2",
+          },
+          Object {
+            "id": "2",
+            "submittedAt": 2021-12-16T14:59:22.526Z,
+            "text": "Yes, it was, thanks!",
+            "userId": "1",
+          },
+          Object {
+            "id": "3",
+            "submittedAt": 2021-12-17T12:34:42.949Z,
+            "text": "Damn, I missed this",
+            "userId": null,
+          },
+        ],
+        "date": 2021-08-28T17:00:00.000Z,
+        "description": "We meet in the park with pizzas and hang out all night",
+        "id": "1",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Vitabergsparken",
+        },
+        "online": false,
+        "reviews": Array [
+          Object {
+            "id": "1",
+            "meetupId": "1",
+            "rating": 4,
+          },
+          Object {
+            "id": "2",
+            "meetupId": "1",
+            "rating": 5,
+          },
+        ],
+        "title": "Pizza Picnic",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [],
+          "email": "babsan@yahoo.com",
+          "firstName": "Barbro",
+          "id": "3",
+          "lastName": "Lundborg",
+          "password": "password123",
+          "reviewed": Array [],
+        },
+        "attending": 356,
+        "capacity": 500,
+        "comments": Array [],
+        "date": 2021-10-31T18:00:00.000Z,
+        "description": "Halloween party in the street, all night long",
+        "id": "5",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Strandvägen",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Halloween Street Party",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [],
+          "email": "babsan@yahoo.com",
+          "firstName": "Barbro",
+          "id": "3",
+          "lastName": "Lundborg",
+          "password": "password123",
+          "reviewed": Array [],
+        },
+        "attending": 234,
+        "capacity": null,
+        "comments": Array [],
+        "date": 2022-01-10T10:00:00.000Z,
+        "description": "Learn a new programming language from the ground up",
+        "id": "2",
+        "online": true,
+        "reviews": Array [],
+        "title": "Rust course",
+        "url": "https://www.udemy.com/course/rust-lang/",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [
+            "1",
+          ],
+          "email": "kenta@yahoo.com",
+          "firstName": "Kenta",
+          "id": "2",
+          "lastName": "Andersson",
+          "password": "bananpaj",
+          "reviewed": Array [
+            "1",
+          ],
+        },
+        "attending": 23478,
+        "capacity": 43883,
+        "comments": Array [],
+        "date": 2022-05-13T16:00:00.000Z,
+        "description": "A classic football match between the south and the north",
+        "id": "3",
+        "location": Object {
+          "city": "41005 Sevilla",
+          "street": "C. Sevilla Fútbol Club",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Sevilla - Real Sociedad",
+      },
+      Object {
+        "arranger": Object {
+          "attending": Array [
+            "1",
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
+        },
+        "attending": 126,
+        "capacity": null,
+        "comments": Array [],
+        "date": 2022-07-02T15:00:00.000Z,
+        "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
+        "id": "4",
+        "location": Object {
+          "city": "Stockholm",
+          "street": "Gärdet",
+        },
+        "online": false,
+        "reviews": Array [],
+        "title": "Kite festival",
+      },
+    ]
+  }
   user={
     Object {
       "attending": Array [

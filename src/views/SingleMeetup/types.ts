@@ -2,6 +2,7 @@ import { User } from '../../db/users'
 import { Meetup } from '../../db/meetups'
 
 export type SingleMeetupProps = {
+  meetups: Meetup[]
   user: User | null
 }
 

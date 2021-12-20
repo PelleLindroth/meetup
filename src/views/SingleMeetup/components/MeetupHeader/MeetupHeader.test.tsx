@@ -1,6 +1,6 @@
 import { renderWithPath } from '../../../../utils/testing-utils'
 import { screen } from '@testing-library/react'
-import { getMeetupById, getUserById } from '../../../../db'
+import { getMeetupById, getMockMeetups, getUserById } from '../../../../db'
 import MeetupHeader from './index'
 import SingleMeetup from '../..'
 import userEvent from '@testing-library/user-event'
@@ -93,10 +93,11 @@ describe('Meetup header integration tests', () => {
   const upcomingIRLEvent = getMeetupById('4')
   const upcomingOnlineEvent = getMeetupById('2')
   const user = getUserById('1')
+  const meetups = getMockMeetups()
 
   it('shows "signed up" message on upcoming events that user is signed up for', () => {
     renderWithPath(
-      <SingleMeetup user={user!} />,
+      <SingleMeetup meetups={meetups} user={user!} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -109,7 +110,7 @@ describe('Meetup header integration tests', () => {
   })
   it('renders "cancel" button on signed up message', () => {
     renderWithPath(
-      <SingleMeetup user={user!} />,
+      <SingleMeetup meetups={meetups} user={user!} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -120,7 +121,7 @@ describe('Meetup header integration tests', () => {
   })
   it('renders "Signed in" message and removes "Sign up" button after clickng it', async () => {
     renderWithPath(
-      <SingleMeetup user={user!} />,
+      <SingleMeetup meetups={meetups} user={user!} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -139,7 +140,7 @@ describe('Meetup header integration tests', () => {
   })
   it('renders "Sign up" button and removes "Signed in" message after canceling', () => {
     renderWithPath(
-      <SingleMeetup user={user!} />,
+      <SingleMeetup meetups={meetups} user={user!} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )

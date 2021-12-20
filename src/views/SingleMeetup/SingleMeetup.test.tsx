@@ -1,7 +1,7 @@
 import { renderWithPath, mountWithPath } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { getMeetupById, getUserById } from '../../db'
+import { getMeetupById, getUserById, getMockMeetups } from '../../db'
 import { formatDate } from '../../utils'
 import SingleMeetup from './index'
 
@@ -17,10 +17,11 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   const upcomingIRLEvent = getMeetupById('4')
   const upcomingLimitedCapacityEvent = getMeetupById('3')
   const pastEvent = getMeetupById('1')
+  const meetups = getMockMeetups()
 
   it('renders Single Meetup view correctly for anonymous user (smoke test)', () => {
     const wrapper = mountWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -29,7 +30,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming event with correct date', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -39,7 +40,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming irl event with correct location', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -53,7 +54,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming online event with correct location information', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -63,7 +64,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming event with name and email of arranger', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -81,7 +82,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming online event with unlimited capacity correctly', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -93,7 +94,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming irl event with unlimited capacity correctly', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -103,7 +104,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming event with limited capacity correctly', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingLimitedCapacityEvent!.id}`,
       'meetup/:id'
     )
@@ -116,7 +117,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming limited capacity event with correct number of people attending and available seats', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingLimitedCapacityEvent!.id}`,
       'meetup/:id'
     )
@@ -137,7 +138,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders past event with final number of attenders', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -149,13 +150,17 @@ describe('SingleMeetup unit tests for anonymous user', () => {
     )
   })
   it('renders message if no meetup is found', () => {
-    renderWithPath(<SingleMeetup user={null} />, '/meetup/123', 'meetup/:id')
+    renderWithPath(
+      <SingleMeetup meetups={meetups} user={null} />,
+      '/meetup/123',
+      'meetup/:id'
+    )
 
     expect(screen.getByText(/meetup not found/i)).toBeInTheDocument()
   })
   it('renders section with login prompt and "Go to Login" button for anonymous users', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -168,7 +173,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('calls navigate when goToLoginButton is clicked', () => {
     renderWithPath(
-      <SingleMeetup user={null} />,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -186,10 +191,11 @@ describe('SingleMeetup unit tests for logged in user', () => {
   const pastEvent = getMeetupById('1')
   const user1 = getUserById('1')
   const user2 = getUserById('4')
+  const meetups = getMockMeetups()
 
   it('renders Single Meetup view correctly for logged in user (smoke test)', () => {
     const wrapper = mountWithPath(
-      <SingleMeetup user={user1!} />,
+      <SingleMeetup meetups={meetups} user={user1!} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -198,7 +204,7 @@ describe('SingleMeetup unit tests for logged in user', () => {
   })
   it('renders Rate button in reviews section if user attended and has not submitted a rating', () => {
     renderWithPath(
-      <SingleMeetup user={user2!} />,
+      <SingleMeetup meetups={meetups} user={user2!} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -209,7 +215,7 @@ describe('SingleMeetup unit tests for logged in user', () => {
   })
   it('renders "Already rated" text in reviews section if user attended and already submitted a rating', () => {
     renderWithPath(
-      <SingleMeetup user={user1!} />,
+      <SingleMeetup meetups={meetups} user={user1!} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )

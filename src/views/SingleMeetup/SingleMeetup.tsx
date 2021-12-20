@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { getMeetupById } from '../../db'
 import {
   MeetupHeader,
   DetailsSection,
@@ -14,9 +13,9 @@ import { SingleMeetupProps } from './types'
 import styles from './SingleMeetup.module.scss'
 
 const SingleMeetup = (props: SingleMeetupProps) => {
+  const { user, meetups } = props
   const { id } = useParams()
-  const meetup = getMeetupById(id!)
-  const { user } = props
+  const meetup = meetups.find((item) => item.id === id)
   const [attending, setAttending] = useState<boolean>(false)
 
   useEffect(() => {
