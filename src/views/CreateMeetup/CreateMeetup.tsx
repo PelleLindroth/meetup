@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { uid } from 'uid'
 import { useNavigate } from 'react-router'
 import DateTimePicker from 'react-datetime-picker'
@@ -13,7 +13,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const navigate = useNavigate()
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState<Date>(new Date())
   const [url, setUrl] = useState<string>('')
   const [street, setStreet] = useState<string>('')
   const [city, setCity] = useState<string>('')
@@ -21,17 +21,16 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const [hasMaxCapacity, setHasMaxCapacity] = useState<boolean>(true)
   const [maxCapacity, setMaxCapacity] = useState<number>(100)
 
+  useEffect(() => {
+    setDate(new Date())
+  }, [])
+
   const emptyFields = () => {
     const noLocationFields = () => {
       return !url.length && (!street.length || !city.length)
     }
 
-    return (
-      !title.length ||
-      !description.length ||
-      noLocationFields() ||
-      date === null
-    )
+    return !title.length || !description.length || noLocationFields()
   }
 
   const handleCreateMeetup = (e: React.SyntheticEvent) => {
@@ -48,6 +47,10 @@ const CreateMeetup = (props: CreateMeetupProps) => {
       arranger: user,
       reviews: [],
       comments: [],
+    }
+
+    if (!meetup.date) {
+      meetup.date = new Date()
     }
 
     if (isOnlineEvent) {
