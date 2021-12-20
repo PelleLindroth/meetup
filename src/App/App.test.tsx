@@ -11,6 +11,8 @@ jest.mock('../db')
 
 describe('App unit tests', () => {
   it('renders App correctly', () => {
+    jest.useFakeTimers('modern')
+    jest.setSystemTime(new Date(2021, 11, 24))
     const wrapper = mount(
       <MemoryRouter>
         <App />
@@ -18,6 +20,8 @@ describe('App unit tests', () => {
     )
 
     expect(wrapper.find(App)).toMatchSnapshot()
+
+    jest.useRealTimers()
   })
   it('initially renders Home view with 2 lists with a total of 4 meetups', () => {
     const wrapper = mount(
@@ -121,7 +125,7 @@ describe('Happy paths', () => {
 
     // Click on third upcoming Meetup link
     const upcomingMeetupsList = await screen.findByTestId('upcoming-events')
-    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[2])
+    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[1])
 
     // // Click on Sign up for this event button
     userEvent.click(screen.getByRole('button', { name: /sign up/i }))

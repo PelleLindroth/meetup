@@ -29,6 +29,18 @@ exports[`App unit tests renders App correctly 1`] = `
                 />
               </a>
             </Link>
+            <div
+              className="timeButton"
+              onClick={[Function]}
+            >
+              <img
+                alt="Time icon"
+                src="time.png"
+              />
+              <p>
+                24 December 2021, 00:00
+              </p>
+            </div>
             <Link
               to="/login"
             >

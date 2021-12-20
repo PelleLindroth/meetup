@@ -10,7 +10,7 @@ export const DateContext = React.createContext<DateContextInterface | null>(
 )
 
 const DateContextProvider: React.FC = (props) => {
-  const [customDate, setCustomDate] = useState<Date>(new Date(1640637076000))
+  const [customDate, setCustomDate] = useState<Date>(new Date())
 
   const dateContext: DateContextInterface = {
     customDate,

@@ -1,30 +1,46 @@
 import { mount } from 'enzyme'
 import { screen } from '@testing-library/react'
 import { Link, MemoryRouter } from 'react-router-dom'
+import { DateContext, DateContextInterface } from '../../contexts/DateContext'
 import { renderWithRouter } from '../../utils/testing-utils'
 import Home from './Home'
 import MeetupCard from './components/MeetupCard'
 import { getMockMeetups } from '../../db'
 import userEvent from '@testing-library/user-event'
 
+const mockDateContext: DateContextInterface = {
+  customDate: new Date(1640354400000),
+  setCustomDate: jest.fn(),
+}
+
 describe('Home', () => {
   it('mounts Home view correctly with meetups', () => {
     const wrapper = mount(
-      <MemoryRouter>
-        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
-      </MemoryRouter>
+      <DateContext.Provider value={mockDateContext}>
+        <MemoryRouter>
+          <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+        </MemoryRouter>
+      </DateContext.Provider>
     )
     expect(wrapper.find(Home)).toMatchSnapshot()
   })
   it('renders a list of meetups', async () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const meetupList = screen.getAllByRole('listitem')
 
     expect(meetupList).toHaveLength(5)
   })
   it('renders upcoming meetups chronologically (ascending)', async () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const dates = screen.getAllByTitle('date')
 
@@ -32,7 +48,11 @@ describe('Home', () => {
     expect(dates[2]).toHaveTextContent('02 July 2022')
   })
   it('renders an Upcoming Events list and a Past Events list according to current date', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const upcomingEventsList = screen.getByTestId('upcoming-events')
     const pastEventsList = screen.getByTestId('past-events')
@@ -43,7 +63,11 @@ describe('Home', () => {
     expect(pastEventsList.childNodes).toHaveLength(2)
   })
   it('separates upcoming and past events by background color on card headers', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const upcomingEventHeaders = screen.getAllByTitle('upcoming-event-header')
     const pastEventHeaders = screen.getAllByTitle('past-event-header')
@@ -53,9 +77,11 @@ describe('Home', () => {
   })
   it('renders separate meetup card for every meetup with title, date, location, capacity and an img link to detail page', () => {
     const wrapper = mount(
-      <MemoryRouter>
-        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
-      </MemoryRouter>
+      <DateContext.Provider value={mockDateContext}>
+        <MemoryRouter>
+          <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+        </MemoryRouter>
+      </DateContext.Provider>
     )
     const meetupCard = wrapper.find(MeetupCard).at(0)
 
@@ -69,7 +95,11 @@ describe('Home', () => {
     expect(meetupCard).toMatchSnapshot()
   })
   it('renders a search input field, empty by default', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const searchBox = screen.getByRole('searchbox')
 
@@ -77,7 +107,11 @@ describe('Home', () => {
     expect(searchBox).toHaveTextContent('')
   })
   it('renders a filter select input with "all" as default', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const selectInput = screen.getByRole('combobox')
 
@@ -85,7 +119,11 @@ describe('Home', () => {
     expect(selectInput).toHaveValue('all')
   })
   it('shows filtered events when typing in search field', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const searchBox = screen.getByRole('searchbox')
 
@@ -97,7 +135,11 @@ describe('Home', () => {
     expect(meetupList[0]).toHaveTextContent(/pizza/i)
   })
   it('shows only past events when pastEvents filter is active', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const filterSelect = screen.getByRole('combobox')
 
@@ -109,7 +151,11 @@ describe('Home', () => {
     expect(meetupList[0]).toHaveTextContent(/pizza/i)
   })
   it('shows only upcoming events when upcomingEvents filter is active', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(
+      <DateContext.Provider value={mockDateContext}>
+        <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      </DateContext.Provider>
+    )
 
     const filterSelect = screen.getByRole('combobox')
 
