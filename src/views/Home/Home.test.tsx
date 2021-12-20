@@ -64,7 +64,7 @@ describe('Home', () => {
       '10 January 2022, 11:00 CET'
     )
     expect(meetupCard.find('h3').at(1).text()).toMatch(/online event/i)
-    expect(meetupCard.find('p').text()).toMatch(/capacity/i)
+    expect(meetupCard.find('p').text()).toMatch('Capacity: Unlimited')
     expect(meetupCard.find(Link).find('.arrowIcon').type()).toBe('img')
     expect(meetupCard).toMatchSnapshot()
   })
@@ -121,14 +121,3 @@ describe('Home', () => {
     expect(meetupList[0]).toHaveTextContent(/rust/i)
   })
 })
-
-// User
-
-// Logged in User (integration)
-
-// renders sign up button on all upcoming events
-// renders Comment and Leave Review buttons on past events that the user has attended
-// does not render Comment or Leave Review buttons on past events that the user has not attended
-// renders a Create New Meetup Button
-// shows New Meetup Form when Create New Button is clicked
-// renders new Meetup corectly in Meetup list when form is submitted
