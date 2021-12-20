@@ -6,6 +6,8 @@ export type SingleMeetupProps = {
 }
 
 export type MeetupHeaderProps = {
+  attending: boolean
+  setAttending: React.Dispatch<React.SetStateAction<boolean>>
   meetup: Meetup
   user: User | null
   isUpcomingEvent: boolean
@@ -17,7 +19,10 @@ export type ReviewsSectionProps = {
 }
 
 export type DetailsSectionProps = {
+  attending: boolean
+  setAttending: React.Dispatch<React.SetStateAction<boolean>>
   meetup: Meetup
+  user: User | null
   isUpcomingEvent: boolean
 }
 

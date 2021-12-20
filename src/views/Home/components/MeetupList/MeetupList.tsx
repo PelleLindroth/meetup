@@ -19,11 +19,7 @@ const MeetupList = (props: MeetupListProps) => {
       className={styles.meetupList}
     >
       {meetups.map((meetup) => (
-        <MeetupCard
-          key={meetup.id}
-          meetup={meetup}
-          upcoming={upcoming ? true : false}
-        />
+        <MeetupCard key={meetup.id} meetup={meetup} upcoming={upcoming} />
       ))}
     </ul>
   )

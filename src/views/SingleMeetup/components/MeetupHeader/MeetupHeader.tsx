@@ -1,17 +1,9 @@
-import { useEffect, useState } from 'react'
 import { signUpForEvent, cancelSignUpForEvent } from '../../../../db'
 import { MeetupHeaderProps } from '../../types'
 import styles from '../../SingleMeetup.module.scss'
 
 const MeetupHeader = (props: MeetupHeaderProps) => {
-  const { meetup, user, isUpcomingEvent } = props
-  const [attending, setAttending] = useState<boolean>(false)
-
-  useEffect(() => {
-    if (user) {
-      setAttending(user.attending.includes(meetup.id))
-    }
-  }, [meetup.id, user])
+  const { meetup, user, isUpcomingEvent, attending, setAttending } = props
 
   const handleSignUp = () => {
     signUpForEvent(meetup, user!)

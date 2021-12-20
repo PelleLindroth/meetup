@@ -5,7 +5,7 @@ import TimeIcon from '../../../assets/icons/time.png'
 import styles from '../SingleMeetup.module.scss'
 
 const DetailsSection = (props: DetailsSectionProps) => {
-  const { meetup, isUpcomingEvent } = props
+  const { meetup, attending, isUpcomingEvent } = props
 
   return (
     <section id="meetup-details" className={styles.details}>
@@ -13,7 +13,9 @@ const DetailsSection = (props: DetailsSectionProps) => {
         <img src={PinIcon} alt="Map pin icon" />
         <p>
           {meetup.online
-            ? 'Online event'
+            ? attending
+              ? meetup.url
+              : 'Online event'
             : `${meetup!.location!.street}, ${meetup!.location!.city}`}
         </p>
       </div>

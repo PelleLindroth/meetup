@@ -8,6 +8,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     className="meetup"
   >
     <MeetupHeader
+      attending={false}
       isUpcomingEvent={true}
       meetup={
         Object {
@@ -32,6 +33,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
+      setAttending={[Function]}
       user={null}
     >
       <section>
@@ -46,6 +48,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       </section>
     </MeetupHeader>
     <DetailsSection
+      attending={false}
       isUpcomingEvent={true}
       meetup={
         Object {
@@ -70,6 +73,8 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           "url": "https://www.udemy.com/course/rust-lang/",
         }
       }
+      setAttending={[Function]}
+      user={null}
     >
       <section
         className="details"
@@ -275,7 +280,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           Log in for a better experience
         </h3>
         <p>
-          Logged in users can register for upcoming events and rate events they visited!
+          Logged in users can create their own events, register for upcoming events and rate events they visited!
         </p>
         <button
           onClick={[Function]}
@@ -311,6 +316,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     className="meetup"
   >
     <MeetupHeader
+      attending={true}
       isUpcomingEvent={false}
       meetup={
         Object {
@@ -373,6 +379,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           "title": "Pizza Picnic",
         }
       }
+      setAttending={[Function]}
       user={
         Object {
           "attending": Array [
@@ -402,6 +409,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       </section>
     </MeetupHeader>
     <DetailsSection
+      attending={true}
       isUpcomingEvent={false}
       meetup={
         Object {
@@ -462,6 +470,23 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+        }
+      }
+      setAttending={[Function]}
+      user={
+        Object {
+          "attending": Array [
+            "1",
+            "2",
+          ],
+          "email": "tjalle@yahoo.com",
+          "firstName": "Tjalle",
+          "id": "1",
+          "lastName": "Bergkvist",
+          "password": "grillkorv",
+          "reviewed": Array [
+            "1",
+          ],
         }
       }
     >

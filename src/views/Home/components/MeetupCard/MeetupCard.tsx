@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router'
 import Cloud from '../../../../assets/icons/cloud.png'
 import Time from '../../../../assets/icons/time.png'
 import Pin from '../../../../assets/icons/pin.png'
@@ -7,6 +8,7 @@ import styles from './MeetupCard.module.scss'
 import { MeetupCardProps } from './types'
 
 const MeetupCard = (props: MeetupCardProps) => {
+  const location = useLocation()
   const { meetup, upcoming } = props
 
   return (
@@ -37,7 +39,11 @@ const MeetupCard = (props: MeetupCardProps) => {
             {meetup.online ? (
               <>
                 <img src={Cloud} alt="Cloud icon" className={styles.icon} />
-                <h3 title="location">Online event</h3>
+                <h3 title="location">
+                  {location.pathname.match(/^\/profile\/[0-9]$/)
+                    ? meetup.url
+                    : 'Online event'}
+                </h3>
               </>
             ) : (
               <>

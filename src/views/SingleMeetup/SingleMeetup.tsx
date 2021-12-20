@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { getMeetupById } from '../../db'
 import {
@@ -16,6 +17,13 @@ const SingleMeetup = (props: SingleMeetupProps) => {
   const { id } = useParams()
   const meetup = getMeetupById(id!)
   const { user } = props
+  const [attending, setAttending] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (user && meetup) {
+      setAttending(user.attending.includes(meetup.id))
+    }
+  }, [meetup, meetup?.id, user])
 
   if (!meetup) {
     return <h2 className={styles.meetup}>Meetup not found</h2>
@@ -29,8 +37,16 @@ const SingleMeetup = (props: SingleMeetupProps) => {
         meetup={meetup}
         isUpcomingEvent={isUpcomingEvent}
         user={user}
+        attending={attending}
+        setAttending={setAttending}
       />
-      <DetailsSection meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
+      <DetailsSection
+        meetup={meetup}
+        user={user}
+        isUpcomingEvent={isUpcomingEvent}
+        attending={attending}
+        setAttending={setAttending}
+      />
       <ArrangerSection meetup={meetup} />
       <CapacitySection meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
       {!isUpcomingEvent && <ReviewsSection user={user} meetup={meetup} />}
