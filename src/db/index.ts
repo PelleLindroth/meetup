@@ -1,4 +1,3 @@
-import { uid } from 'uid'
 import { meetups, Meetup, Comment, Review } from './meetups'
 import { users, User } from './users'
 
@@ -63,16 +62,10 @@ export const addComment = (meetupId: string, comment: Comment) => {
   }
 }
 
-export const addReview = (meetupId: string, userId: string, rating: number) => {
+export const addReview = (meetupId: string, userId: string, review: Review) => {
   const meetup = getMeetupById(meetupId)
   const user = getUserById(userId)
   if (!meetup || !user) return
-
-  const review: Review = {
-    id: uid(),
-    meetupId,
-    rating,
-  }
 
   meetup.reviews.push(review)
   updateMeetup(meetup)

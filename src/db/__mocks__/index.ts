@@ -1,4 +1,4 @@
-import { meetups, Meetup, Review, Comment } from '../meetups'
+import { meetups, Meetup } from '../meetups'
 import { users, User } from '../users'
 
 export const getAllMeetups = () => {
@@ -33,28 +33,9 @@ export const getMockMeetups = () => {
   return meetups
 }
 
-export const addComment = (meetupId: string, comment: Comment) => {
-  const meetup = getMeetupById(meetupId)
+export const addComment = jest.fn()
 
-  if (meetup) {
-    meetup.comments.push(comment)
-  }
-}
-
-export const addReview = (meetupId: string, userId: string, rating: number) => {
-  const meetup = getMeetupById(meetupId)
-  const user = getUserById(userId)
-  if (!meetup || !user) return
-
-  const review: Review = {
-    id: `${Math.floor(Math.random() * 10)}`,
-    meetupId,
-    rating,
-  }
-
-  meetup.reviews.push(review)
-  user.reviewed.push(meetup.id)
-}
+export const addReview = jest.fn()
 
 export const addMeetup = (meetup: Meetup) => {
   meetups.push(meetup)
