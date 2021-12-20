@@ -420,8 +420,7 @@ exports[`App unit tests renders App correctly 1`] = `
                           title="date"
                         >
                           10 January 2022, 11:00
-                           
-                          CET
+                           CET
                         </h3>
                       </div>
                       <div
@@ -543,8 +542,7 @@ exports[`App unit tests renders App correctly 1`] = `
                           title="date"
                         >
                           13 May 2022, 18:00
-                           
-                          CET
+                           CET
                         </h3>
                       </div>
                       <div
@@ -670,8 +668,7 @@ exports[`App unit tests renders App correctly 1`] = `
                           title="date"
                         >
                           02 July 2022, 17:00
-                           
-                          CET
+                           CET
                         </h3>
                       </div>
                       <div
@@ -921,8 +918,7 @@ exports[`App unit tests renders App correctly 1`] = `
                           title="date"
                         >
                           28 August 2021, 19:00
-                           
-                          CET
+                           CET
                         </h3>
                       </div>
                       <div
@@ -1039,8 +1035,7 @@ exports[`App unit tests renders App correctly 1`] = `
                           title="date"
                         >
                           31 October 2021, 19:00
-                           
-                          CET
+                           CET
                         </h3>
                       </div>
                       <div
