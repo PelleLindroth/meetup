@@ -41,7 +41,7 @@ export type CommentsSectionProps = {
 }
 
 export type CommentFormProps = {
-  meetupId: string
+  meetup: Meetup
   user: User | null
   setShowCommentForm: React.Dispatch<React.SetStateAction<boolean>>
 }

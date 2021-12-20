@@ -6,7 +6,7 @@ import { addComment } from '../../../../../db'
 import styles from '../../../SingleMeetup.module.scss'
 
 const CommentForm = (props: CommentFormProps) => {
-  const { user, meetupId, setShowCommentForm } = props
+  const { user, meetup, setShowCommentForm } = props
   const [commentBody, setCommentBody] = useState<string>('')
 
   const handleSubmitComment = (e: React.SyntheticEvent) => {
@@ -19,7 +19,8 @@ const CommentForm = (props: CommentFormProps) => {
       submittedAt: new Date(),
     }
 
-    addComment(meetupId, comment)
+    meetup.comments.push(comment)
+    addComment(meetup.id, comment)
     setShowCommentForm(false)
   }
 

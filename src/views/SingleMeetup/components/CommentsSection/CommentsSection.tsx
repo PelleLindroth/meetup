@@ -58,7 +58,7 @@ const CommentsSection = (props: CommentsSectionProps) => {
       )}
       {showCommentForm ? (
         <CommentForm
-          meetupId={meetup.id}
+          meetup={meetup}
           user={user}
           setShowCommentForm={setShowCommentForm}
         />
