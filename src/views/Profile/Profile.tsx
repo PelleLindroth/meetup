@@ -1,17 +1,20 @@
+import { useContext } from 'react'
 import { useParams } from 'react-router'
 import { getUserById } from '../../db'
 import { createUserLists } from '../../utils'
+import { DateContext } from '../../contexts/DateContext'
 import { Meetup } from '../../db/meetups'
 import MeetupList from '../Home/components/MeetupList'
 import styles from './Profile.module.scss'
 
 const Profile = (props: { meetups: Meetup[] }) => {
+  const { customDate } = useContext(DateContext)!
   const { id } = useParams()
   const user = getUserById(id!)
   const { meetups } = props
 
   const { ownUpcoming, ownPast, upcomingAttending, pastAttended } =
-    createUserLists(user!, meetups)
+    createUserLists(user!, meetups, customDate)
 
   return (
     <main>

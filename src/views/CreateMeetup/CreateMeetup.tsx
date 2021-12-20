@@ -1,29 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { uid } from 'uid'
 import { useNavigate } from 'react-router'
-import DateTimePicker from 'react-datetime-picker'
+import { DateContext } from '../../contexts/DateContext'
 import { addMeetup } from '../../db'
 import { Meetup } from '../../db/meetups'
 import { CreateMeetupProps } from './types'
+import DateTimePicker from 'react-datetime-picker'
 import styles from './CreateMeetup.module.scss'
 import './create-meetup.scss'
 
 const CreateMeetup = (props: CreateMeetupProps) => {
   const { user, meetups, setMeetups } = props
+  const { customDate } = useContext(DateContext)!
   const navigate = useNavigate()
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
-  const [date, setDate] = useState<Date>(new Date())
+  const [date, setDate] = useState<Date>(customDate)
   const [url, setUrl] = useState<string>('')
   const [street, setStreet] = useState<string>('')
   const [city, setCity] = useState<string>('')
   const [isOnlineEvent, setIsOnlineEvent] = useState<boolean>(false)
   const [hasMaxCapacity, setHasMaxCapacity] = useState<boolean>(true)
   const [maxCapacity, setMaxCapacity] = useState<number>(100)
-
-  useEffect(() => {
-    setDate(new Date())
-  }, [])
 
   const emptyFields = () => {
     const noLocationFields = () => {
@@ -50,7 +48,9 @@ const CreateMeetup = (props: CreateMeetupProps) => {
     }
 
     if (!meetup.date) {
-      meetup.date = new Date()
+      console.log('yeeeep')
+
+      meetup.date = customDate
     }
 
     if (isOnlineEvent) {
@@ -100,9 +100,9 @@ const CreateMeetup = (props: CreateMeetupProps) => {
           <label>Date</label>
           <DateTimePicker
             disableClock={true}
-            minDate={new Date()}
+            minDate={customDate}
             onChange={setDate}
-            value={date}
+            value={date!}
             nativeInputAriaLabel="Date"
           />
         </div>
