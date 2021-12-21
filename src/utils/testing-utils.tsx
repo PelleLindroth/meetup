@@ -28,6 +28,13 @@ export const renderWithPath = (ui: ReactElement, entry: string, path: string) =>
     </DateContext.Provider>
   )
 
+export const mountWithRouter = (ui: ReactElement) =>
+  mount(
+    <DateContext.Provider value={mockDateContext}>
+      <MemoryRouter>{ui}</MemoryRouter>
+    </DateContext.Provider>
+  )
+
 export const mountWithPath = (ui: ReactElement, entry: string, path: string) =>
   mount(
     <DateContext.Provider value={mockDateContext}>
