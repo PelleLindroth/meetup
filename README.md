@@ -5,6 +5,9 @@ av Pelle Lindroth
 
 <hr>
 
+**Publicerad app:**
+https://meetup-e53f4.firebaseapp.com/
+
 **Inloggningar**
 
 1. Email: tjalle@yahoo.com<br/>
