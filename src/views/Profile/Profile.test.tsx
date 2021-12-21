@@ -1,13 +1,7 @@
 import { renderWithPath } from '../../utils/testing-utils'
 import { screen, within } from '@testing-library/react'
-import { DateContext, DateContextInterface } from '../../contexts/DateContext'
 import Profile from '.'
 import { getMockMeetups, getUserById } from '../../db'
-
-const mockDateContext: DateContextInterface = {
-  customDate: new Date(),
-  setCustomDate: jest.fn(),
-}
 
 describe('Profile unit tests', () => {
   const user = getUserById('1')
@@ -15,9 +9,7 @@ describe('Profile unit tests', () => {
 
   it("shows welcome message with user's first name", () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <Profile meetups={meetups} />
-      </DateContext.Provider>,
+      <Profile meetups={meetups} />,
       `/profile/${user!.id}`,
       '/profile/:id'
     )
@@ -28,9 +20,7 @@ describe('Profile unit tests', () => {
   })
   it("renders lists of user's own upcoming and past meetups first", () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <Profile meetups={meetups} />
-      </DateContext.Provider>,
+      <Profile meetups={meetups} />,
       `/profile/${user!.id}`,
       '/profile/:id'
     )
@@ -43,9 +33,7 @@ describe('Profile unit tests', () => {
   })
   it('then renders list of upcoming meetups user is attending', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <Profile meetups={meetups} />
-      </DateContext.Provider>,
+      <Profile meetups={meetups} />,
       `/profile/${user!.id}`,
       '/profile/:id'
     )
@@ -56,9 +44,7 @@ describe('Profile unit tests', () => {
   })
   it('finally renders list of past meetups user has attended', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <Profile meetups={meetups} />
-      </DateContext.Provider>,
+      <Profile meetups={meetups} />,
       `/profile/${user!.id}`,
       '/profile/:id'
     )
@@ -69,9 +55,7 @@ describe('Profile unit tests', () => {
   })
   it('renders meetup cards for each meetup with link to meetup detail page', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <Profile meetups={meetups} />
-      </DateContext.Provider>,
+      <Profile meetups={meetups} />,
       `/profile/${user!.id}`,
       '/profile/:id'
     )
@@ -85,9 +69,7 @@ describe('Profile unit tests', () => {
   })
   it('renders all lists chronologically', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <Profile meetups={meetups} />
-      </DateContext.Provider>,
+      <Profile meetups={meetups} />,
       `/profile/${user!.id}`,
       '/profile/:id'
     )

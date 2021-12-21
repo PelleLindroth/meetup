@@ -1,14 +1,8 @@
 import { getUserById } from '../../db'
-import { DateContext, DateContextInterface } from '../../contexts/DateContext'
 import { renderWithRouter, mountWithPath } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import CreateMeetup from '.'
-
-const mockDateContext: DateContextInterface = {
-  customDate: new Date(1640354400000),
-  setCustomDate: jest.fn(),
-}
 
 describe('Create Meetup unit tests', () => {
   const user = getUserById('1')
@@ -17,9 +11,7 @@ describe('Create Meetup unit tests', () => {
     jest.useFakeTimers('modern')
     jest.setSystemTime(new Date(2021, 11, 24))
     const wrapper = mountWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>,
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />,
       '/create',
       '/create'
     )
@@ -28,9 +20,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('renders a form with inputs and a submit button', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const createForm = screen.getByRole('form', { name: /create/ })
@@ -41,9 +31,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('renders empty inputs for title and description', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const titleInput = screen.getByRole('textbox', { name: /title/i })
@@ -56,9 +44,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('renders Datetimepicker with Christmas Eve 2021 as default', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const date = screen.getByLabelText('Date')
@@ -67,9 +53,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('renders unchecked checkbox for online event and empty text inputs for street and city', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const onlineCheckbox = screen.getByRole('checkbox', { name: /online/i })
@@ -85,9 +69,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('renders checked checkbox for max capacity and number input for max attendants with 100 as default', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const maxCapacityCheckbox = screen.getByRole('checkbox', {
@@ -103,9 +85,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('renders an enabled cancel button and a disabled create button', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const cancelButton = screen.getByRole('button', { name: /cancel/i })
@@ -116,9 +96,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('shows url text input and hides address inputs if "online event" is checked', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const onlineCheckbox = screen.getByRole('checkbox', { name: /online/i })
@@ -136,9 +114,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('hides number input for max capacity if "max capacity" is unchecked', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const maxCapacityCheckbox = screen.getByRole('checkbox', {
@@ -154,9 +130,7 @@ describe('Create Meetup unit tests', () => {
   })
   it('enables create button if no inputs on screen are empty', () => {
     renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
-      </DateContext.Provider>
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
     )
 
     const textInputs = screen.getAllByRole('textbox')

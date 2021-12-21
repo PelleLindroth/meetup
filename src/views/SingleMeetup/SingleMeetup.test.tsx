@@ -1,15 +1,9 @@
 import { renderWithPath, mountWithPath } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { DateContext, DateContextInterface } from '../../contexts/DateContext'
 import { getMeetupById, getUserById, getMockMeetups } from '../../db'
 import { formatDate } from '../../utils'
 import SingleMeetup from './index'
-
-const mockDateContext: DateContextInterface = {
-  customDate: new Date(1640354400000),
-  setCustomDate: jest.fn(),
-}
 
 const mockedUsedNavigate = jest.fn()
 jest.mock('react-router', () => ({
@@ -27,9 +21,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
 
   it('renders Single Meetup view correctly for anonymous user (smoke test)', () => {
     const wrapper = mountWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -38,9 +30,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming event with correct date', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -50,9 +40,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming irl event with correct location', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -66,9 +54,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming online event with correct location information', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -78,9 +64,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming event with name and email of arranger', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -98,9 +82,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming online event with unlimited capacity correctly', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -112,9 +94,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming irl event with unlimited capacity correctly', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -124,9 +104,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming event with limited capacity correctly', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingLimitedCapacityEvent!.id}`,
       'meetup/:id'
     )
@@ -139,9 +117,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders upcoming limited capacity event with correct number of people attending and available seats', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingLimitedCapacityEvent!.id}`,
       'meetup/:id'
     )
@@ -162,9 +138,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders past event with final number of attenders', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -177,9 +151,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders message if no meetup is found', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       '/meetup/123',
       'meetup/:id'
     )
@@ -188,9 +160,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('renders section with login prompt and "Go to Login" button for anonymous users', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -203,9 +173,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   })
   it('calls navigate when goToLoginButton is clicked', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={null} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={null} />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -227,9 +195,7 @@ describe('SingleMeetup unit tests for logged in user', () => {
 
   it('renders Single Meetup view correctly for logged in user (smoke test)', () => {
     const wrapper = mountWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={user1!} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={user1!} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -238,9 +204,7 @@ describe('SingleMeetup unit tests for logged in user', () => {
   })
   it('renders Rate button in reviews section if user attended and has not submitted a rating', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={user2!} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={user2!} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -251,9 +215,7 @@ describe('SingleMeetup unit tests for logged in user', () => {
   })
   it('renders "Already rated" text in reviews section if user attended and already submitted a rating', () => {
     renderWithPath(
-      <DateContext.Provider value={mockDateContext}>
-        <SingleMeetup meetups={meetups} user={user1!} />
-      </DateContext.Provider>,
+      <SingleMeetup meetups={meetups} user={user1!} />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )

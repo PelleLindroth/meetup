@@ -1,18 +1,12 @@
-import { mount } from 'enzyme'
 import { screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router'
-import { renderWithRouter } from '../../utils/testing-utils'
+import { mountWithRouter, renderWithRouter } from '../../utils/testing-utils'
 import Login from './index'
 import userEvent from '@testing-library/user-event'
 import { getMockUsers } from '../../db'
 
 describe('Login Unit Tests', () => {
   it('renders login form with two empty inputs and a button', () => {
-    const wrapper = mount(
-      <MemoryRouter>
-        <Login setUser={jest.fn()} />
-      </MemoryRouter>
-    )
+    const wrapper = mountWithRouter(<Login setUser={jest.fn()} />)
 
     expect(wrapper.find(Login)).toMatchSnapshot()
     expect(wrapper.find(Login).find('input').at(0).text()).toBe('')

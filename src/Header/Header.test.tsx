@@ -1,24 +1,14 @@
 import { renderWithRouter } from '../utils/testing-utils'
 import { screen } from '@testing-library/react'
-import { DateContext, DateContextInterface } from '../contexts/DateContext'
 import Header from '.'
 import { getMockUsers } from '../db'
 import userEvent from '@testing-library/user-event'
-
-const mockDateContext: DateContextInterface = {
-  customDate: new Date(1640354400000),
-  setCustomDate: jest.fn(),
-}
 
 describe('Header unit tests', () => {
   const users = getMockUsers()
   const user = users[0]
   it('renders a Header with logo and Login button if user is not logged in', () => {
-    renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <Header user={null} setUser={jest.fn()} />
-      </DateContext.Provider>
-    )
+    renderWithRouter(<Header user={null} setUser={jest.fn()} />)
 
     const header = screen.getByRole('banner')
     const logo = screen.getByAltText('logo')
@@ -29,11 +19,7 @@ describe('Header unit tests', () => {
     expect(loginButton).toBeInTheDocument()
   })
   it('renders a Header with logo and Profile link if user is logged in', () => {
-    renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <Header user={user} setUser={jest.fn()} />
-      </DateContext.Provider>
-    )
+    renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
     const header = screen.getByRole('banner')
     const logo = screen.getByRole('img', { name: /logo/i })
@@ -44,11 +30,7 @@ describe('Header unit tests', () => {
     expect(profileLink).toBeInTheDocument()
   })
   it('displays a menu with a link and a logout button when Profile link is clicked', () => {
-    renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <Header user={user} setUser={jest.fn()} />
-      </DateContext.Provider>
-    )
+    renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
     const profile = screen.getByText(`${user.firstName} ${user.lastName}`)
 
@@ -63,11 +45,7 @@ describe('Header unit tests', () => {
     expect(logoutButton).toBeInTheDocument()
   })
   it('hides menu when Profile link is clicked twice', () => {
-    renderWithRouter(
-      <DateContext.Provider value={mockDateContext}>
-        <Header user={user} setUser={jest.fn()} />
-      </DateContext.Provider>
-    )
+    renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
     const profile = screen.getByText(`${user.firstName} ${user.lastName}`)
 
