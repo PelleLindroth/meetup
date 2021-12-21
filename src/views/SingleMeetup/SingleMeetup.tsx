@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import { DateContext } from '../../contexts/DateContext'
 import {
   MeetupHeader,
   DetailsSection,
@@ -14,6 +15,7 @@ import styles from './SingleMeetup.module.scss'
 
 const SingleMeetup = (props: SingleMeetupProps) => {
   const { user, meetups } = props
+  const { customDate } = useContext(DateContext)!
   const { id } = useParams()
   const meetup = meetups.find((item) => item.id === id)
   const [attending, setAttending] = useState<boolean>(false)
@@ -28,7 +30,7 @@ const SingleMeetup = (props: SingleMeetupProps) => {
     return <h2 className={styles.meetup}>Meetup not found</h2>
   }
 
-  const isUpcomingEvent = meetup.date.getTime() > Date.now()
+  const isUpcomingEvent = meetup.date.getTime() > customDate.getTime()
 
   return (
     <main className={styles.meetup}>
