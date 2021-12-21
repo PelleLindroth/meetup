@@ -7,7 +7,7 @@ import { formatDate } from '../utils'
 import DateTimePicker from 'react-datetime-picker'
 import SubMenu from './components/SubMenu'
 import Logo from '../assets/logo.png'
-import TimeIcon from '../assets/icons/time.png'
+import TimeIcon from '../assets/icons/time-white.png'
 import UserIcon from '../assets/icons/user.png'
 import styles from './Header.module.scss'
 import '../views/CreateMeetup/create-meetup.scss'
@@ -31,13 +31,6 @@ const Header = (props: HeaderProps) => {
         <Link to="/">
           <img src={Logo} alt="logo" />
         </Link>
-        <div
-          className={styles.timeButton}
-          onClick={() => setShowSetTimeModal(true)}
-        >
-          <img src={TimeIcon} alt="Time icon" />
-          <p>{formatDate(customDate)}</p>
-        </div>
         {location.pathname !== '/login' && !user && (
           <Link to="/login">
             <button className={styles.loginButton}>Log in</button>
@@ -55,6 +48,18 @@ const Header = (props: HeaderProps) => {
           </div>
         )}
       </div>
+      {location.pathname === '/' && (
+        <div
+          className={styles.timeBar}
+          onClick={() => setShowSetTimeModal(true)}
+          title="Set custom time"
+        >
+          <div className={styles.innerContainer}>
+            <img src={TimeIcon} alt="Time icon" />
+            <p>{formatDate(customDate)}</p>
+          </div>
+        </div>
+      )}
       {showSetTimeModal && (
         <section className={styles.setTimeModal}>
           <label>Set a custom date and time</label>
