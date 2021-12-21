@@ -3,18 +3,21 @@ import { users, User } from './users'
 
 export const getAllMeetups = (): Meetup[] => {
   const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
-  storedMeetups.forEach((meetup) => {
-    meetup.date = new Date(meetup.date)
-    meetup.comments.forEach((comment) => {
-      comment.submittedAt = new Date(comment.submittedAt)
-    })
-  })
-
-  let returnedMeetups: Meetup[] = []
+  const returnedMeetups: Meetup[] = []
 
   if (storedMeetups) {
+    storedMeetups.forEach((meetup) => {
+      meetup.date = new Date(meetup.date)
+      meetup.comments.forEach((comment) => {
+        comment.submittedAt = new Date(comment.submittedAt)
+      })
+    })
+
     returnedMeetups.push(...storedMeetups)
-  } else returnedMeetups.push(...meetups)
+  } else {
+    localStorage.setItem('meetups', JSON.stringify(meetups))
+    returnedMeetups.push(...meetups)
+  }
 
   returnedMeetups.sort((a, b) => {
     if (a.date.getTime() > b.date.getTime()) {
