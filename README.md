@@ -1,5 +1,7 @@
 # Meetup
 
+[![Tests](https://github.com/PelleLindroth/meetup/actions/workflows/tests.yml/badge.svg)](https://github.com/PelleLindroth/meetup/actions/workflows/tests.yml)
+
 **Inlämningsuppgift för Designprinciper och Designmönster, ITHS Stockholm 2021**</br>
 av Pelle Lindroth
 
