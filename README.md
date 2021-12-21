@@ -3,7 +3,24 @@
 **Inlämningsuppgift för Designprinciper och Designmönster, ITHS Stockholm 2021**</br>
 av Pelle Lindroth
 
-## User stories
+<hr>
+
+**Inloggningar**
+
+1. Email: tjalle@yahoo.com<br/>
+   Password: grillkorv
+2. Email: kenta@yahoo.com<br/>
+   Password: bananpaj
+3. Email: babsan@yahoo.com<br/>
+   Password: password123
+4. Email: loffe@yahoo.com<br/>
+   Password: storstark
+
+**Test med verbose och coverage:**<br/>
+```npm run test:full```
+<hr>
+
+## **User stories**
 ### All users
 - As a user I want to<br/>
 **<em>see a chronological list of upcoming and past events</em>**<br/>
@@ -57,6 +74,6 @@ so i can<br/>
 **<em>log in with another account</em>**
 <hr>
 
-## Use Case Diagram
+## **Use Case Diagram**
 
 ![Alt text](/src/assets/meetup_ucd.png?raw=true "Use case diagram for Meetup app")
