@@ -40,7 +40,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --maxWorkers=25% ",
-    "test-ci": "react-scripts test --exit",
+    "test-ci": "react-scripts test",
     "test:full": "react-scripts test --verbose --coverage --maxWorkers=25% watchAll=false",
     "eject": "react-scripts eject"
   },
