@@ -11,8 +11,8 @@ import './create-meetup.scss'
 
 const CreateMeetup = (props: CreateMeetupProps) => {
   const { user, meetups, setMeetups } = props
-  const { customDate } = useContext(DateContext)!
   const navigate = useNavigate()
+  const { customDate } = useContext(DateContext)!
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [date, setDate] = useState<Date>(customDate)
@@ -28,7 +28,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
       return !url.length && (!street.length || !city.length)
     }
 
-    return !title.length || !description.length || noLocationFields()
+    return !title.length || !description.length || noLocationFields() || !date
   }
 
   const handleCreateMeetup = (e: React.SyntheticEvent) => {
@@ -47,11 +47,9 @@ const CreateMeetup = (props: CreateMeetupProps) => {
       comments: [],
     }
 
-    if (!meetup.date) {
-      console.log('yeeeep')
-
-      meetup.date = customDate
-    }
+    // if (!meetup.date) {
+    //   meetup.date = customDate
+    // }
 
     if (isOnlineEvent) {
       meetup.url = url
