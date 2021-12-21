@@ -1,24 +1,35 @@
 import { renderWithPath } from '../../../../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import { getMeetupById, getMockMeetups, getUserById } from '../../../../db'
+import {
+  DateContext,
+  DateContextInterface,
+} from '../../../../contexts/DateContext'
 import MeetupHeader from './index'
 import SingleMeetup from '../..'
 import userEvent from '@testing-library/user-event'
 
 jest.mock('../../../../db')
 
+const mockDateContext: DateContextInterface = {
+  customDate: new Date(1640354400000),
+  setCustomDate: jest.fn(),
+}
+
 describe('MeetupHeader unit tests (anonymous)', () => {
   const upcomingOnlineEvent = getMeetupById('2')
 
   it('renders upcoming event with correct title', () => {
     renderWithPath(
-      <MeetupHeader
-        attending={false}
-        setAttending={jest.fn()}
-        user={null}
-        meetup={upcomingOnlineEvent!}
-        isUpcomingEvent={true}
-      />,
+      <DateContext.Provider value={mockDateContext}>
+        <MeetupHeader
+          attending={false}
+          setAttending={jest.fn()}
+          user={null}
+          meetup={upcomingOnlineEvent!}
+          isUpcomingEvent={true}
+        />
+      </DateContext.Provider>,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -30,13 +41,15 @@ describe('MeetupHeader unit tests (anonymous)', () => {
   })
   it('renders upcoming event with correct description', () => {
     renderWithPath(
-      <MeetupHeader
-        attending={false}
-        setAttending={jest.fn()}
-        user={null}
-        meetup={upcomingOnlineEvent!}
-        isUpcomingEvent={true}
-      />,
+      <DateContext.Provider value={mockDateContext}>
+        <MeetupHeader
+          attending={false}
+          setAttending={jest.fn()}
+          user={null}
+          meetup={upcomingOnlineEvent!}
+          isUpcomingEvent={true}
+        />
+      </DateContext.Provider>,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -55,13 +68,15 @@ describe('MeetupHeader unit tests (logged in)', () => {
 
   it('renders a "Sign up for Event" button on upcoming events', () => {
     renderWithPath(
-      <MeetupHeader
-        attending={false}
-        setAttending={jest.fn()}
-        user={user!}
-        meetup={upcomingIRLEvent!}
-        isUpcomingEvent={true}
-      />,
+      <DateContext.Provider value={mockDateContext}>
+        <MeetupHeader
+          attending={false}
+          setAttending={jest.fn()}
+          user={user!}
+          meetup={upcomingIRLEvent!}
+          isUpcomingEvent={true}
+        />
+      </DateContext.Provider>,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -72,13 +87,15 @@ describe('MeetupHeader unit tests (logged in)', () => {
   })
   it('does not render sign up button on past events', () => {
     renderWithPath(
-      <MeetupHeader
-        attending={false}
-        setAttending={jest.fn()}
-        user={user!}
-        meetup={pastEvent!}
-        isUpcomingEvent={false}
-      />,
+      <DateContext.Provider value={mockDateContext}>
+        <MeetupHeader
+          attending={false}
+          setAttending={jest.fn()}
+          user={user!}
+          meetup={pastEvent!}
+          isUpcomingEvent={false}
+        />
+      </DateContext.Provider>,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
     )
@@ -97,7 +114,9 @@ describe('Meetup header integration tests', () => {
 
   it('shows "signed up" message on upcoming events that user is signed up for', () => {
     renderWithPath(
-      <SingleMeetup meetups={meetups} user={user!} />,
+      <DateContext.Provider value={mockDateContext}>
+        <SingleMeetup meetups={meetups} user={user!} />
+      </DateContext.Provider>,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -110,7 +129,9 @@ describe('Meetup header integration tests', () => {
   })
   it('renders "cancel" button on signed up message', () => {
     renderWithPath(
-      <SingleMeetup meetups={meetups} user={user!} />,
+      <DateContext.Provider value={mockDateContext}>
+        <SingleMeetup meetups={meetups} user={user!} />
+      </DateContext.Provider>,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
@@ -121,7 +142,9 @@ describe('Meetup header integration tests', () => {
   })
   it('renders "Signed in" message and removes "Sign up" button after clickng it', async () => {
     renderWithPath(
-      <SingleMeetup meetups={meetups} user={user!} />,
+      <DateContext.Provider value={mockDateContext}>
+        <SingleMeetup meetups={meetups} user={user!} />
+      </DateContext.Provider>,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
     )
@@ -140,7 +163,9 @@ describe('Meetup header integration tests', () => {
   })
   it('renders "Sign up" button and removes "Signed in" message after canceling', () => {
     renderWithPath(
-      <SingleMeetup meetups={meetups} user={user!} />,
+      <DateContext.Provider value={mockDateContext}>
+        <SingleMeetup meetups={meetups} user={user!} />
+      </DateContext.Provider>,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
     )
