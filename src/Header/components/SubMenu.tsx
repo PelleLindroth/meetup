@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { HeaderProps } from '../types'
+import { clearStoredUser } from '../../db'
 import styles from '../Header.module.scss'
 
 const SubMenu = (props: HeaderProps) => {
@@ -10,6 +11,7 @@ const SubMenu = (props: HeaderProps) => {
 
   const handleLogout = () => {
     setUser(null)
+    clearStoredUser()
     navigate('/', { replace: true })
   }
 

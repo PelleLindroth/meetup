@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Meetup } from './db/meetups'
-import { getAllMeetups } from './db'
+import { getAllMeetups, getStoredUser } from './db'
 import DateContextProvider from './contexts/DateContext'
 import Header from './Header'
 import Home from './views/Home'
@@ -20,6 +20,10 @@ function App() {
     const dbMeetups = getAllMeetups()
 
     setMeetups(dbMeetups)
+
+    const user = getStoredUser()
+
+    setUser(user)
   }, [])
 
   return (

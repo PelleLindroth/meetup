@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import styles from './Login.module.scss'
 import { User } from '../../db/users'
-import { validateUser } from '../../db'
+import { validateUser, storeUser } from '../../db'
 
 type LoginProps = {
   setUser: React.Dispatch<React.SetStateAction<User | null>>
@@ -23,6 +23,7 @@ const Login = (props: LoginProps) => {
 
     if (user) {
       setUser(user)
+      storeUser(user.id)
       navigate('/', { replace: true })
     } else {
       setError(true)

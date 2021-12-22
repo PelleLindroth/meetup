@@ -119,6 +119,26 @@ export const validateUser = (email: string, password: string): User | null => {
   }
 }
 
+export const storeUser = (userId: string) => {
+  localStorage.setItem('user', userId)
+}
+
+export const getStoredUser = (): User | null => {
+  const storedUserId = localStorage.getItem('user')
+
+  if (storedUserId) {
+    const user = getUserById(storedUserId)
+
+    return user || null
+  }
+
+  return null
+}
+
+export const clearStoredUser = () => {
+  localStorage.removeItem('user')
+}
+
 export const getUserById = (id: string): User | undefined => {
   return users.find((user) => user.id === id)
 }
