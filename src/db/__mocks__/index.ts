@@ -2,7 +2,7 @@ import { meetups, Meetup } from '../meetups'
 import { users, User } from '../users'
 
 export const getAllMeetups = () => {
-  meetups.sort((a, b) => {
+  return meetups.sort((a, b) => {
     if (a.date.getTime() > b.date.getTime()) {
       return 1
     } else if (b.date.getTime() > a.date.getTime()) {
@@ -11,8 +11,6 @@ export const getAllMeetups = () => {
       return 0
     }
   })
-
-  return meetups
 }
 
 export const storeUser = jest.fn()
@@ -20,6 +18,10 @@ export const storeUser = jest.fn()
 export const getStoredUser = jest.fn()
 
 export const clearStoredUser = jest.fn()
+
+export const storeUserAttending = jest.fn()
+
+export const getUserAttending = jest.fn()
 
 export const getUserById = (id: string): User | undefined => {
   return users.find((user) => user.id === id)

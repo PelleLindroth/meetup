@@ -120,7 +120,38 @@ export const validateUser = (email: string, password: string): User | null => {
 }
 
 export const storeUser = (userId: string) => {
-  localStorage.setItem('user', userId)
+  const user = getUserById(userId)
+
+  if (user) {
+    localStorage.setItem('user', user.id)
+    storeUserAttending(user.id, user.attending)
+  }
+}
+
+export const storeUserAttending = (userId: string, meetupIds: string[]) => {
+  const userAttendingLists: {
+    [key: string]: string[]
+  } = JSON.parse(localStorage.getItem('attendingLists')!)
+
+  if (userAttendingLists) {
+    userAttendingLists[userId] = meetupIds
+    localStorage.setItem('attendingLists', JSON.stringify(userAttendingLists))
+  } else {
+    localStorage.setItem(
+      'attendingLists',
+      JSON.stringify({ [userId]: [...meetupIds] })
+    )
+  }
+}
+
+export const getUserAttending = (userId: string) => {
+  const userAttendingLists: {
+    [key: string]: string[]
+  } = JSON.parse(localStorage.getItem('attendingLists')!)
+
+  if (userAttendingLists[userId]) {
+    return userAttendingLists[userId]
+  }
 }
 
 export const getStoredUser = (): User | null => {
