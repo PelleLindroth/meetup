@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import { mountWithRouter, renderWithRouter } from '../../utils/testing-utils'
 import Login from './index'
 import userEvent from '@testing-library/user-event'
-import { getMockUsers } from '../../db'
+import { getUsers } from '../../db'
 
 describe('Login Unit Tests', () => {
   it('renders login form with two empty inputs and a button', () => {
@@ -34,7 +34,7 @@ describe('Login Unit Tests', () => {
   })
   it('calls setUser once with user object if credentials are valid', () => {
     const setUserSpy = jest.fn()
-    const mockUsers = getMockUsers()
+    const mockUsers = getUsers()
 
     renderWithRouter(<Login setUser={setUserSpy} />)
 

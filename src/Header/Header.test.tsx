@@ -1,11 +1,11 @@
 import { renderWithRouter } from '../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import Header from '.'
-import { getMockUsers } from '../db'
+import { getUsers } from '../db'
 import userEvent from '@testing-library/user-event'
 
 describe('Header unit tests', () => {
-  const users = getMockUsers()
+  const users = getUsers()
   const user = users[0]
   it('renders a Header with logo and Login button if user is not logged in', () => {
     renderWithRouter(<Header user={null} setUser={jest.fn()} />)

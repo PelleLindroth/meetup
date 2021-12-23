@@ -1,7 +1,7 @@
 import { renderWithPath, mountWithPath } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { getMeetupById, getUserById, getMockMeetups } from '../../db'
+import { getMeetupById, getUserById, getAllMeetups } from '../../db'
 import { formatDate } from '../../utils'
 import SingleMeetup from './index'
 
@@ -17,7 +17,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   const upcomingIRLEvent = getMeetupById('4')
   const upcomingLimitedCapacityEvent = getMeetupById('3')
   const pastEvent = getMeetupById('1')
-  const meetups = getMockMeetups()
+  const meetups = getAllMeetups()
 
   it('renders Single Meetup view correctly for anonymous user (smoke test)', () => {
     const wrapper = mountWithPath(
@@ -191,7 +191,7 @@ describe('SingleMeetup unit tests for logged in user', () => {
   const pastEvent = getMeetupById('1')
   const user1 = getUserById('1')
   const user2 = getUserById('4')
-  const meetups = getMockMeetups()
+  const meetups = getAllMeetups()
 
   it('renders Single Meetup view correctly for logged in user (smoke test)', () => {
     const wrapper = mountWithPath(

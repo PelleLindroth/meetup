@@ -1,6 +1,6 @@
 import { renderWithPath } from '../../../../utils/testing-utils'
 import { screen } from '@testing-library/react'
-import { getMeetupById, getMockMeetups, getUserById } from '../../../../db'
+import { getMeetupById, getAllMeetups, getUserById } from '../../../../db'
 import MeetupHeader from './index'
 import SingleMeetup from '../..'
 import userEvent from '@testing-library/user-event'
@@ -93,7 +93,7 @@ describe('Meetup header integration tests', () => {
   const upcomingIRLEvent = getMeetupById('4')
   const upcomingOnlineEvent = getMeetupById('2')
   const user = getUserById('1')
-  const meetups = getMockMeetups()
+  const meetups = getAllMeetups()
 
   it('shows "signed up" message on upcoming events that user is signed up for', () => {
     renderWithPath(

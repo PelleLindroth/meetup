@@ -3,26 +3,26 @@ import { Link } from 'react-router-dom'
 import { renderWithRouter, mountWithRouter } from '../../utils/testing-utils'
 import Home from './Home'
 import MeetupCard from './components/MeetupCard'
-import { getMockMeetups } from '../../db'
+import { getAllMeetups } from '../../db'
 import userEvent from '@testing-library/user-event'
 
 describe('Home', () => {
   it('mounts Home view correctly with meetups', () => {
     const wrapper = mountWithRouter(
-      <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      <Home meetups={getAllMeetups()} setMeetups={jest.fn()} />
     )
 
     expect(wrapper.find(Home)).toMatchSnapshot()
   })
   it('renders a list of meetups', async () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const meetupList = screen.getAllByRole('listitem')
 
     expect(meetupList).toHaveLength(5)
   })
   it('renders upcoming meetups chronologically (ascending)', async () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const dates = screen.getAllByTitle('date')
 
@@ -30,7 +30,7 @@ describe('Home', () => {
     expect(dates[2]).toHaveTextContent('02 July 2022')
   })
   it('renders an Upcoming Events list and a Past Events list according to current date', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const upcomingEventsList = screen.getByTestId('upcoming-events')
     const pastEventsList = screen.getByTestId('past-events')
@@ -41,7 +41,7 @@ describe('Home', () => {
     expect(pastEventsList.childNodes).toHaveLength(2)
   })
   it('separates upcoming and past events by background color on card headers', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const upcomingEventHeaders = screen.getAllByTitle('upcoming-event-header')
     const pastEventHeaders = screen.getAllByTitle('past-event-header')
@@ -51,7 +51,7 @@ describe('Home', () => {
   })
   it('renders separate meetup card for every meetup with title, date, location, capacity and an img link to detail page', () => {
     const wrapper = mountWithRouter(
-      <Home meetups={getMockMeetups()} setMeetups={jest.fn()} />
+      <Home meetups={getAllMeetups()} setMeetups={jest.fn()} />
     )
 
     const meetupCard = wrapper.find(MeetupCard).at(0)
@@ -66,7 +66,7 @@ describe('Home', () => {
     expect(meetupCard).toMatchSnapshot()
   })
   it('renders a search input field, empty by default', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const searchBox = screen.getByRole('searchbox')
 
@@ -74,7 +74,7 @@ describe('Home', () => {
     expect(searchBox).toHaveTextContent('')
   })
   it('renders a filter select input with "all" as default', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const selectInput = screen.getByRole('combobox')
 
@@ -82,7 +82,7 @@ describe('Home', () => {
     expect(selectInput).toHaveValue('all')
   })
   it('shows filtered events when typing in search field', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const searchBox = screen.getByRole('searchbox')
 
@@ -94,7 +94,7 @@ describe('Home', () => {
     expect(meetupList[0]).toHaveTextContent(/pizza/i)
   })
   it('shows only past events when pastEvents filter is active', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const filterSelect = screen.getByRole('combobox')
 
@@ -106,7 +106,7 @@ describe('Home', () => {
     expect(meetupList[0]).toHaveTextContent(/pizza/i)
   })
   it('shows only upcoming events when upcomingEvents filter is active', () => {
-    renderWithRouter(<Home meetups={getMockMeetups()} setMeetups={jest.fn()} />)
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const filterSelect = screen.getByRole('combobox')
 
