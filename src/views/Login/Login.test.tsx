@@ -4,6 +4,8 @@ import Login from './index'
 import userEvent from '@testing-library/user-event'
 import { getUsers } from '../../db'
 
+jest.mock('../../db')
+
 describe('Login Unit Tests', () => {
   it('renders login form with two empty inputs and a button', () => {
     const wrapper = mountWithRouter(<Login setUser={jest.fn()} />)
