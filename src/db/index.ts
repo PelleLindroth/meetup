@@ -1,17 +1,13 @@
 import { meetups, Meetup, Comment, Review } from './meetups'
 import { users, User } from './users'
+import { parseDates, sortMeetupsChronologically } from './dbutils'
 
 export const getAllMeetups = (): Meetup[] => {
   const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
   const returnedMeetups: Meetup[] = []
 
   if (storedMeetups) {
-    storedMeetups.forEach((meetup) => {
-      meetup.date = new Date(meetup.date)
-      meetup.comments.forEach((comment) => {
-        comment.submittedAt = new Date(comment.submittedAt)
-      })
-    })
+    parseDates(storedMeetups)
 
     returnedMeetups.push(...storedMeetups)
   } else {
@@ -19,41 +15,13 @@ export const getAllMeetups = (): Meetup[] => {
     returnedMeetups.push(...meetups)
   }
 
-  returnedMeetups.sort((a, b) => {
-    if (a.date.getTime() > b.date.getTime()) {
-      return 1
-    } else if (b.date.getTime() > a.date.getTime()) {
-      return -1
-    } else {
-      return 0
-    }
-  })
+  sortMeetupsChronologically(returnedMeetups)
 
   return returnedMeetups
 }
 
-export const getMockMeetups = () => {
-  meetups.sort((a, b) => {
-    if (a.date.getTime() > b.date.getTime()) {
-      return 1
-    } else if (b.date.getTime() > a.date.getTime()) {
-      return -1
-    } else {
-      return 0
-    }
-  })
-
-  return meetups
-}
-
-const updateMeetup = (meetup: Meetup) => {
-  let meetups = getAllMeetups()
-
-  const index = meetups.findIndex((item) => item.id === meetup.id)
-
-  meetups.splice(index, 1, meetup)
-
-  localStorage.setItem('meetups', JSON.stringify(meetups))
+export const getMeetupById = (id: string): Meetup | undefined => {
+  return meetups.find((meetup) => meetup.id === id)
 }
 
 export const addComment = (meetupId: string, comment: Comment) => {
@@ -61,7 +29,7 @@ export const addComment = (meetupId: string, comment: Comment) => {
 
   if (meetup) {
     meetup.comments.push(comment)
-    updateMeetup(meetup)
+    updateMeetupInLocalStorage(meetup)
   }
 }
 
@@ -71,42 +39,13 @@ export const addReview = (meetupId: string, userId: string, review: Review) => {
   if (!meetup || !user) return
 
   meetup.reviews.push(review)
-  updateMeetup(meetup)
+  updateMeetupInLocalStorage(meetup)
   user.reviewed.push(meetup.id)
 }
 
 export const addMeetup = (meetup: Meetup) => {
   meetups.push(meetup)
   saveMeetupToLocalStorage(meetup)
-}
-
-export const signUpForEvent = (meetup: Meetup, user: User) => {
-  user.attending.push(meetup.id)
-  meetup.attending++
-  updateMeetup(meetup)
-}
-
-export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
-  user.attending = user.attending.filter((item) => item !== meetup.id)
-  meetup.attending--
-  updateMeetup(meetup)
-}
-
-export const saveMeetupToLocalStorage = (meetup: Meetup) => {
-  const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
-
-  if (storedMeetups) {
-    storedMeetups.push(meetup)
-
-    localStorage.setItem('meetups', JSON.stringify(storedMeetups))
-  } else {
-    localStorage.setItem('meetups', JSON.stringify([meetup]))
-  }
-}
-
-export const getMeetupById = (id: string): Meetup | undefined => {
-  const meetups = getAllMeetups()
-  return meetups.find((meetup) => meetup.id === id)
 }
 
 export const validateUser = (email: string, password: string): User | null => {
@@ -119,38 +58,46 @@ export const validateUser = (email: string, password: string): User | null => {
   }
 }
 
+export const signUpForEvent = (meetup: Meetup, user: User) => {
+  user.attending.push(meetup.id)
+  meetup.attending++
+  updateMeetupInLocalStorage(meetup)
+}
+
+export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
+  user.attending = user.attending.filter((item) => item !== meetup.id)
+  meetup.attending--
+  updateMeetupInLocalStorage(meetup)
+}
+
+const updateMeetupInLocalStorage = (meetup: Meetup) => {
+  let meetups = getAllMeetups()
+
+  const index = meetups.findIndex((item) => item.id === meetup.id)
+
+  meetups.splice(index, 1, meetup)
+
+  localStorage.setItem('meetups', JSON.stringify(meetups))
+}
+
+const saveMeetupToLocalStorage = (meetup: Meetup) => {
+  const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
+
+  if (storedMeetups) {
+    storedMeetups.push(meetup)
+
+    localStorage.setItem('meetups', JSON.stringify(storedMeetups))
+  } else {
+    localStorage.setItem('meetups', JSON.stringify([meetup]))
+  }
+}
+
 export const storeUser = (userId: string) => {
   const user = getUserById(userId)
 
   if (user) {
     localStorage.setItem('user', user.id)
     storeUserAttending(user.id, user.attending)
-  }
-}
-
-export const storeUserAttending = (userId: string, meetupIds: string[]) => {
-  const userAttendingLists: {
-    [key: string]: string[]
-  } = JSON.parse(localStorage.getItem('attendingLists')!)
-
-  if (userAttendingLists) {
-    userAttendingLists[userId] = meetupIds
-    localStorage.setItem('attendingLists', JSON.stringify(userAttendingLists))
-  } else {
-    localStorage.setItem(
-      'attendingLists',
-      JSON.stringify({ [userId]: [...meetupIds] })
-    )
-  }
-}
-
-export const getUserAttending = (userId: string) => {
-  const userAttendingLists: {
-    [key: string]: string[]
-  } = JSON.parse(localStorage.getItem('attendingLists')!)
-
-  if (userAttendingLists[userId]) {
-    return userAttendingLists[userId]
   }
 }
 
@@ -174,6 +121,60 @@ export const getUserById = (id: string): User | undefined => {
   return users.find((user) => user.id === id)
 }
 
-export const getMockUsers = () => {
+export const getUsers = () => {
   return users
+}
+
+export const storeUserAttending = (userId: string, meetupIds: string[]) => {
+  const userAttendingLists: {
+    [key: string]: string[]
+  } = JSON.parse(localStorage.getItem('attendingLists')!)
+
+  if (userAttendingLists) {
+    userAttendingLists[userId] = meetupIds
+    localStorage.setItem('attendingLists', JSON.stringify(userAttendingLists))
+  } else {
+    localStorage.setItem(
+      'attendingLists',
+      JSON.stringify({ [userId]: [...meetupIds] })
+    )
+  }
+}
+
+export const getUserAttending = (userId: string): string[] => {
+  const userAttendingLists: {
+    [key: string]: string[]
+  } = JSON.parse(localStorage.getItem('attendingLists')!)
+
+  if (userAttendingLists[userId]) {
+    return userAttendingLists[userId]
+  } else {
+    return getUserById(userId)?.attending!
+  }
+}
+
+export const storeUserReviewed = (userId: string, meetupIds: string[]) => {
+  const userReviedLists: {
+    [key: string]: string[]
+  } = JSON.parse(localStorage.getItem('reviewedLists')!)
+
+  if (userReviedLists) {
+    userReviedLists[userId] = meetupIds
+    localStorage.setItem('reviewedLists', JSON.stringify(userReviedLists))
+  } else {
+    localStorage.setItem(
+      'reviewedLists',
+      JSON.stringify({ [userId]: [...meetupIds] })
+    )
+  }
+}
+
+export const getUserReviewed = (userId: string) => {
+  const userReviewedLists: {
+    [key: string]: string[]
+  } = JSON.parse(localStorage.getItem('reviewedLists')!)
+
+  if (userReviewedLists[userId]) {
+    return userReviewedLists[userId]
+  }
 }

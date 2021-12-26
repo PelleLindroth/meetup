@@ -1,16 +1,11 @@
 import { meetups, Meetup } from '../meetups'
 import { users, User } from '../users'
+import { sortMeetupsChronologically } from '../dbutils'
 
 export const getAllMeetups = () => {
-  return meetups.sort((a, b) => {
-    if (a.date.getTime() > b.date.getTime()) {
-      return 1
-    } else if (b.date.getTime() > a.date.getTime()) {
-      return -1
-    } else {
-      return 0
-    }
-  })
+  sortMeetupsChronologically(meetups)
+
+  return meetups
 }
 
 export const getMeetupById = (id: string): Meetup | undefined => {
@@ -61,7 +56,9 @@ export const getUsers = () => {
 
 export const storeUserAttending = jest.fn()
 
-export const getUserAttending = jest.fn()
+export const getUserAttending = (userId: string): string[] => {
+  return getUserById(userId)?.attending!
+}
 
 export const storeUserReviewed = jest.fn()
 
