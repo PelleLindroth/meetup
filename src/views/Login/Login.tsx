@@ -2,7 +2,12 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import styles from './Login.module.scss'
 import { User } from '../../db/users'
-import { validateUser, storeUser, getUserAttending } from '../../db'
+import {
+  validateUser,
+  storeUser,
+  getUserAttending,
+  getUserReviewed,
+} from '../../db'
 
 type LoginProps = {
   setUser: React.Dispatch<React.SetStateAction<User | null>>
@@ -23,6 +28,8 @@ const Login = (props: LoginProps) => {
 
     if (user) {
       user.attending = [...getUserAttending(user.id)]
+      user.reviewed = [...getUserReviewed(user!.id)]
+
       setUser(user)
       storeUser(user.id)
       navigate('/', { replace: true })

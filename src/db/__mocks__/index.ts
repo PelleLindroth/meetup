@@ -57,9 +57,11 @@ export const getUsers = () => {
 export const storeUserAttending = jest.fn()
 
 export const getUserAttending = (userId: string): string[] => {
-  return getUserById(userId)?.attending!
+  return getUserById(userId)!.attending
 }
 
 export const storeUserReviewed = jest.fn()
 
-export const getUserReviewed = jest.fn()
+export const getUserReviewed = (userId: string): string[] => {
+  return getUserById(userId)!.reviewed
+}

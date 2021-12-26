@@ -169,12 +169,14 @@ export const storeUserReviewed = (userId: string, meetupIds: string[]) => {
   }
 }
 
-export const getUserReviewed = (userId: string) => {
+export const getUserReviewed = (userId: string): string[] => {
   const userReviewedLists: {
     [key: string]: string[]
   } = JSON.parse(localStorage.getItem('reviewedLists')!)
 
   if (userReviewedLists[userId]) {
     return userReviewedLists[userId]
+  } else {
+    return getUserById(userId)?.reviewed!
   }
 }
