@@ -2,12 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import styles from './Login.module.scss'
 import { User } from '../../db/users'
-import {
-  validateUser,
-  storeUser,
-  getUserAttending,
-  getUserReviewed,
-} from '../../db'
+import { validateUser, storeUser, getUserDetails } from '../../db'
 
 type LoginProps = {
   setUser: React.Dispatch<React.SetStateAction<User | null>>
@@ -27,8 +22,10 @@ const Login = (props: LoginProps) => {
     const user = validateUser(email, password)
 
     if (user) {
-      user.attending = [...getUserAttending(user.id)]
-      user.reviewed = [...getUserReviewed(user!.id)]
+      const { attending, reviewed } = getUserDetails(user.id)
+
+      user.attending = [...attending]
+      user.reviewed = [...reviewed]
 
       setUser(user)
       storeUser(user.id)

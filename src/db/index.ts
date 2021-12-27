@@ -1,6 +1,6 @@
 import { meetups, Meetup, Comment, Review } from './meetups'
 import { users, User } from './users'
-import { parseDates, sortMeetupsChronologically } from './dbutils'
+import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
 export const getAllMeetups = (): Meetup[] => {
   const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
@@ -97,8 +97,9 @@ export const storeUser = (userId: string) => {
 
   if (user) {
     localStorage.setItem('user', user.id)
-    storeUserAttending(user.id, user.attending)
-    storeUserReviewed(user.id, user.reviewed)
+
+    storeUserDetails('attending', user.id, user.attending)
+    storeUserDetails('reviewed', user.id, user.reviewed)
   }
 }
 
@@ -126,64 +127,56 @@ export const getUsers = () => {
   return users
 }
 
-export const storeUserAttending = (userId: string, meetupIds: string[]) => {
-  const userAttendingLists: {
-    [key: string]: string[]
-  } = JSON.parse(localStorage.getItem('attendingLists')!)
+export const storeUserDetails = (
+  detail: 'attending' | 'reviewed',
+  userId: string,
+  meetupIds: string[]
+) => {
+  const userDetails:
+    | {
+        [key: string]: string[]
+      }
+    | undefined = JSON.parse(localStorage.getItem(detail)!)
 
-  if (userAttendingLists) {
-    userAttendingLists[userId] = meetupIds
-    localStorage.setItem('attendingLists', JSON.stringify(userAttendingLists))
+  if (userDetails) {
+    userDetails[userId] = meetupIds
+    localStorage.setItem(detail, JSON.stringify(userDetails))
   } else {
-    localStorage.setItem(
-      'attendingLists',
-      JSON.stringify({ [userId]: [...meetupIds] })
-    )
+    localStorage.setItem(detail, JSON.stringify({ [userId]: [...meetupIds] }))
   }
 }
 
-export const getUserAttending = (userId: string): string[] => {
+export const getUserDetails = (
+  userId: string
+): { reviewed: string[]; attending: string[] } => {
   const userAttendingLists:
     | {
         [key: string]: string[]
       }
-    | undefined = JSON.parse(localStorage.getItem('attendingLists')!)
+    | undefined = JSON.parse(localStorage.getItem('attending')!)
 
-  if (userAttendingLists && userAttendingLists[userId]) {
-    return userAttendingLists[userId]
-  } else {
-    return getUserById(userId)?.attending!
-  }
-}
-
-export const storeUserReviewed = (userId: string, meetupIds: string[]) => {
   const userReviewedLists:
     | {
         [key: string]: string[]
       }
-    | undefined = JSON.parse(localStorage.getItem('reviewedLists')!)
+    | undefined = JSON.parse(localStorage.getItem('reviewed')!)
 
-  if (userReviewedLists) {
-    userReviewedLists[userId] = meetupIds
-    localStorage.setItem('reviewedLists', JSON.stringify(userReviewedLists))
+  if (
+    userAttendingLists &&
+    userAttendingLists[userId] &&
+    userReviewedLists &&
+    userReviewedLists[userId]
+  ) {
+    return {
+      attending: userAttendingLists[userId],
+      reviewed: userReviewedLists[userId],
+    }
   } else {
-    localStorage.setItem(
-      'reviewedLists',
-      JSON.stringify({ [userId]: [...meetupIds] })
-    )
-  }
-}
+    const { attending, reviewed } = getUserById(userId!)!
 
-export const getUserReviewed = (userId: string): string[] => {
-  const userReviewedLists:
-    | {
-        [key: string]: string[]
-      }
-    | undefined = JSON.parse(localStorage.getItem('reviewedLists')!)
-
-  if (userReviewedLists && userReviewedLists[userId]) {
-    return userReviewedLists[userId]
-  } else {
-    return getUserById(userId)?.reviewed!
+    return {
+      attending,
+      reviewed,
+    }
   }
 }

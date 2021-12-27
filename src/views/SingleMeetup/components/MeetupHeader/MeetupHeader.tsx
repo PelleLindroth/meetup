@@ -1,7 +1,7 @@
 import {
   signUpForEvent,
   cancelSignUpForEvent,
-  storeUserAttending,
+  storeUserDetails,
 } from '../../../../db'
 import { MeetupHeaderProps } from '../../types'
 import styles from '../../SingleMeetup.module.scss'
@@ -12,13 +12,13 @@ const MeetupHeader = (props: MeetupHeaderProps) => {
   const handleSignUp = () => {
     signUpForEvent(meetup, user!)
     setAttending(true)
-    storeUserAttending(user!.id, user!.attending)
+    storeUserDetails('attending', user!.id, user!.attending)
   }
 
   const handleCancel = () => {
     cancelSignUpForEvent(meetup, user!)
     setAttending(false)
-    storeUserAttending(user!.id, user!.attending)
+    storeUserDetails('attending', user!.id, user!.attending)
   }
 
   return (

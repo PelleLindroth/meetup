@@ -1,6 +1,6 @@
 import { meetups, Meetup } from '../meetups'
 import { users, User } from '../users'
-import { sortMeetupsChronologically } from '../dbutils'
+import { sortMeetupsChronologically } from '../../utils/db-utils'
 
 export const getAllMeetups = () => {
   sortMeetupsChronologically(meetups)
@@ -54,14 +54,15 @@ export const getUsers = () => {
   return users
 }
 
-export const storeUserAttending = jest.fn()
+export const storeUserDetails = jest.fn()
 
-export const getUserAttending = (userId: string): string[] => {
-  return getUserById(userId)!.attending
-}
+export const getUserDetails = (
+  userId: string
+): { reviewed: string[]; attending: string[] } => {
+  const { attending, reviewed } = getUserById(userId!)!
 
-export const storeUserReviewed = jest.fn()
-
-export const getUserReviewed = (userId: string): string[] => {
-  return getUserById(userId)!.reviewed
+  return {
+    attending,
+    reviewed,
+  }
 }
