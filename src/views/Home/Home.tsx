@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { createMeetupList } from '../../utils'
+import { createMeetupList, list } from '../../utils'
 import { DateContext } from '../../contexts/DateContext'
 import SearchArea from './components/SearchArea/SearchArea'
 import MeetupList from './components/MeetupList'
@@ -9,7 +9,7 @@ const Home = (props: HomeProps) => {
   const { meetups } = props
   const { customDate } = useContext(DateContext)!
   const [searchPhrase, setSearchPhrase] = useState<string>('')
-  const [searchFilter, setSearchFilter] = useState<string>('all')
+  const [searchFilter, setSearchFilter] = useState<list>('all')
 
   return (
     <>

@@ -1,6 +1,7 @@
 import Search from '../../../../assets/icons/search.png'
 import styles from './SearchArea.module.scss'
 import { SearchAreaProps } from './types'
+import { list } from '../../../../utils'
 
 const SearchArea = (props: SearchAreaProps) => {
   const { searchPhrase, setSearchPhrase, searchFilter, setSearchFilter } = props
@@ -20,7 +21,7 @@ const SearchArea = (props: SearchAreaProps) => {
       </div>
       <select
         value={searchFilter}
-        onChange={(e) => setSearchFilter(e.target.value)}
+        onChange={(e) => setSearchFilter(e.target.value as list)}
         name="search-filter"
         id="search-filter"
       >
