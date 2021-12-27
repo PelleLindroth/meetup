@@ -98,6 +98,7 @@ export const storeUser = (userId: string) => {
   if (user) {
     localStorage.setItem('user', user.id)
     storeUserAttending(user.id, user.attending)
+    storeUserReviewed(user.id, user.reviewed)
   }
 }
 
@@ -142,11 +143,13 @@ export const storeUserAttending = (userId: string, meetupIds: string[]) => {
 }
 
 export const getUserAttending = (userId: string): string[] => {
-  const userAttendingLists: {
-    [key: string]: string[]
-  } = JSON.parse(localStorage.getItem('attendingLists')!)
+  const userAttendingLists:
+    | {
+        [key: string]: string[]
+      }
+    | undefined = JSON.parse(localStorage.getItem('attendingLists')!)
 
-  if (userAttendingLists[userId]) {
+  if (userAttendingLists && userAttendingLists[userId]) {
     return userAttendingLists[userId]
   } else {
     return getUserById(userId)?.attending!
@@ -154,13 +157,15 @@ export const getUserAttending = (userId: string): string[] => {
 }
 
 export const storeUserReviewed = (userId: string, meetupIds: string[]) => {
-  const userReviedLists: {
-    [key: string]: string[]
-  } = JSON.parse(localStorage.getItem('reviewedLists')!)
+  const userReviewedLists:
+    | {
+        [key: string]: string[]
+      }
+    | undefined = JSON.parse(localStorage.getItem('reviewedLists')!)
 
-  if (userReviedLists) {
-    userReviedLists[userId] = meetupIds
-    localStorage.setItem('reviewedLists', JSON.stringify(userReviedLists))
+  if (userReviewedLists) {
+    userReviewedLists[userId] = meetupIds
+    localStorage.setItem('reviewedLists', JSON.stringify(userReviewedLists))
   } else {
     localStorage.setItem(
       'reviewedLists',
@@ -170,11 +175,13 @@ export const storeUserReviewed = (userId: string, meetupIds: string[]) => {
 }
 
 export const getUserReviewed = (userId: string): string[] => {
-  const userReviewedLists: {
-    [key: string]: string[]
-  } = JSON.parse(localStorage.getItem('reviewedLists')!)
+  const userReviewedLists:
+    | {
+        [key: string]: string[]
+      }
+    | undefined = JSON.parse(localStorage.getItem('reviewedLists')!)
 
-  if (userReviewedLists[userId]) {
+  if (userReviewedLists && userReviewedLists[userId]) {
     return userReviewedLists[userId]
   } else {
     return getUserById(userId)?.reviewed!
