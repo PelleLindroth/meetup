@@ -1,4 +1,4 @@
-import { Meetup } from './meetups'
+import { Meetup } from '../db/meetups'
 
 export const parseDates = (meetups: Meetup[]) => {
   meetups.forEach((meetup) => {
