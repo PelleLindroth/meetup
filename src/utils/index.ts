@@ -11,15 +11,17 @@ export const formatDate = (date: Date) => {
   }).format(date)}`
 }
 
-const sortChronologically = (array: Meetup[]) => {
-  return array.sort((a, b) => a.date.getTime() - b.date.getTime())
+const sortMeetupsChronologically = (meetups: Meetup[]) => {
+  return meetups.sort((a, b) => a.date.getTime() - b.date.getTime())
 }
+
+export type list = 'upcoming' | 'past' | 'all'
 
 export const createMeetupList = (
   meetups: Meetup[],
-  listType: string,
+  listType: list,
   searchPhrase: string,
-  searchFilter: string,
+  searchFilter: list,
   customDate: Date
 ) => {
   const meetupList = meetups.filter((meetup) => {
@@ -38,7 +40,7 @@ export const createMeetupList = (
     }
   })
 
-  return sortChronologically(meetupList)
+  return sortMeetupsChronologically(meetupList)
 }
 
 export const createUserLists = (
@@ -47,28 +49,28 @@ export const createUserLists = (
   customDate: Date
 ) => {
   return {
-    ownUpcoming: sortChronologically(
+    ownUpcoming: sortMeetupsChronologically(
       meetups.filter(
         (meetup: Meetup) =>
           meetup.arranger.id === user!.id &&
           meetup.date.getTime() > customDate.getTime()
       )
     ),
-    ownPast: sortChronologically(
+    ownPast: sortMeetupsChronologically(
       meetups.filter(
         (meetup: Meetup) =>
           meetup.arranger.id === user!.id &&
           meetup.date.getTime() <= customDate.getTime()
       )
     ),
-    upcomingAttending: sortChronologically(
+    upcomingAttending: sortMeetupsChronologically(
       meetups.filter(
         (meetup: Meetup) =>
           user!.attending.includes(meetup.id) &&
           meetup.date.getTime() > customDate.getTime()
       )
     ),
-    pastAttended: sortChronologically(
+    pastAttended: sortMeetupsChronologically(
       meetups.filter(
         (meetup: Meetup) =>
           user!.attending.includes(meetup.id) &&
