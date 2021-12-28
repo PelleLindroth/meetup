@@ -1,4 +1,4 @@
-import { User } from './User'
+import { UserImpl } from './User'
 import { users } from '../seed'
 
 export interface Meetup {
@@ -11,7 +11,7 @@ export interface Meetup {
   online: boolean
   capacity: number | null
   attending: number
-  arranger: User
+  arranger: UserImpl
   reviews: Review[]
   comments: Comment[]
 }
