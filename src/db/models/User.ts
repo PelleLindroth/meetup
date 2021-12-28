@@ -57,6 +57,18 @@ export class UserImpl implements User {
         attending: this.attending,
         reviewed: this.reviewed,
       }
+
+      localStorage.setItem('details', JSON.stringify(userDetails))
+    } else {
+      localStorage.setItem(
+        'details',
+        JSON.stringify({
+          [this.id]: {
+            attending: this.attending,
+            reviewed: this.reviewed,
+          },
+        })
+      )
     }
   }
 

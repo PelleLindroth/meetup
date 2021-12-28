@@ -1,5 +1,5 @@
-import { User } from './users'
-import users from './seed'
+import { User } from './User'
+import users from '../seed'
 
 export interface Meetup {
   id: string

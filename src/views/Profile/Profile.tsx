@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { getUserById } from '../../db'
 import { createUserLists } from '../../utils'
 import { DateContext } from '../../contexts/DateContext'
-import { Meetup } from '../../db/meetups'
+import { Meetup } from '../../db/models/Meetup'
 import MeetupList from '../Home/components/MeetupList'
 import styles from './Profile.module.scss'
 

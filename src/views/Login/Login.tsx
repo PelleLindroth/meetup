@@ -1,12 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import styles from './Login.module.scss'
-import { User } from '../../db/users'
 import { validateUser, storeUser, getUserDetails } from '../../db'
-
-type LoginProps = {
-  setUser: React.Dispatch<React.SetStateAction<User | null>>
-}
+import { LoginProps } from './types'
 
 const Login = (props: LoginProps) => {
   const { setUser } = props

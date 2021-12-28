@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Meetup } from './db/meetups'
+import { Meetup } from './db/models/Meetup'
 import { getAllMeetups, getStoredUser } from './db'
 import DateContextProvider from './contexts/DateContext'
 import Header from './Header'
@@ -9,12 +9,12 @@ import Login from './views/Login'
 import SingleMeetup from './views/SingleMeetup'
 import CreateMeetup from './views/CreateMeetup'
 import Profile from './views/Profile'
-import { User } from './db/users'
+import { UserImpl } from './db/models/User'
 import styles from './App/App.module.scss'
 
 function App() {
   const [meetups, setMeetups] = useState<Meetup[]>([])
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<UserImpl | null>(null)
 
   useEffect(() => {
     const dbMeetups = getAllMeetups()

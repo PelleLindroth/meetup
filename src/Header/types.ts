@@ -1,6 +1,6 @@
-import { User } from '../db/users'
+import { UserImpl } from '../db/models/User'
 
 export type HeaderProps = {
-  user: User | null
-  setUser: React.Dispatch<React.SetStateAction<User | null>>
+  user: UserImpl | null
+  setUser: React.Dispatch<React.SetStateAction<UserImpl | null>>
 }

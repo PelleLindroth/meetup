@@ -1,5 +1,5 @@
-import { meetups, Meetup, Comment, Review } from './meetups'
-import { User, UserDetails, UserImpl } from './users'
+import { meetups, Meetup, Comment, Review } from './models/Meetup'
+import { UserDetails, UserImpl } from './models/User'
 import users from './seed'
 import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
@@ -40,8 +40,8 @@ export const addReview = (meetupId: string, userId: string, review: Review) => {
   if (!meetup || !user) return
 
   meetup.reviews.push(review)
-  updateMeetupInLocalStorage(meetup)
   user.addReviewed(meetup.id)
+  updateMeetupInLocalStorage(meetup)
 }
 
 export const addMeetup = (meetup: Meetup) => {
@@ -63,7 +63,6 @@ export const signUpForEvent = (meetup: Meetup, user: UserImpl) => {
 }
 
 export const cancelSignUpForEvent = (meetup: Meetup, user: UserImpl) => {
-  // user.attending = user.attending.filter((item) => item !== meetup.id)
   user.cancelAttending(meetup.id)
   meetup.attending--
   updateMeetupInLocalStorage(meetup)
@@ -96,14 +95,10 @@ export const storeUser = (userId: string) => {
 
   if (user) {
     user.store()
-    // localStorage.setItem('user', user.id)
-
-    // storeUserDetails('attending', user.id, user.attending)
-    // storeUserDetails('reviewed', user.id, user.reviewed)
   }
 }
 
-export const getStoredUser = (): User | null => {
+export const getStoredUser = (): UserImpl | null => {
   const storedUserId = localStorage.getItem('user')
 
   if (storedUserId) {
@@ -119,7 +114,7 @@ export const clearStoredUser = () => {
   localStorage.removeItem('user')
 }
 
-export const getUserById = (id: string): User | undefined => {
+export const getUserById = (id: string): UserImpl | undefined => {
   return users.getById(id)
 }
 

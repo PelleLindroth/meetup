@@ -1,5 +1,5 @@
-import { meetups, Meetup } from '../meetups'
-import { UserImpl, UserDetails } from '../users'
+import { meetups, Meetup } from '../models/Meetup'
+import { UserImpl, UserDetails } from '../models/User'
 import users from '../seed'
 import { sortMeetupsChronologically } from '../../utils/db-utils'
 

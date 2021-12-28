@@ -12,13 +12,13 @@ const MeetupHeader = (props: MeetupHeaderProps) => {
   const handleSignUp = () => {
     signUpForEvent(meetup, user!)
     setAttending(true)
-    storeUserDetails('attending', user!.id, user!.attending)
+    storeUserDetails(user!.id)
   }
 
   const handleCancel = () => {
     cancelSignUpForEvent(meetup, user!)
     setAttending(false)
-    storeUserDetails('attending', user!.id, user!.attending)
+    storeUserDetails(user!.id)
   }
 
   return (

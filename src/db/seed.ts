@@ -1,4 +1,4 @@
-import { UserBank, UserImpl } from './users'
+import { UserBank, UserImpl } from './models/User'
 
 const user1 = new UserImpl(
   'Tjalle',
@@ -10,15 +10,17 @@ const user1 = new UserImpl(
 user1.addAttending('1')
 user1.addAttending('2')
 user1.addReviewed('1')
+
 const user2 = new UserImpl(
   'Kenta',
   'Andersson',
-  'tjalle@yahoo.com',
-  'grillkorv',
+  'kenta@yahoo.com',
+  'bananpaj',
   '2'
 )
 user2.addAttending('1')
 user2.addReviewed('1')
+
 const user3 = new UserImpl(
   'Barbro',
   'Lundborg',
@@ -26,6 +28,7 @@ const user3 = new UserImpl(
   'password123',
   '3'
 )
+
 const user4 = new UserImpl(
   'Janne',
   'Karlsson',
