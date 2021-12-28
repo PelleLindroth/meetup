@@ -18,7 +18,7 @@ const Profile = (props: { meetups: Meetup[] }) => {
 
   return (
     <main>
-      <div className={styles.profile}>{`Welcome ${user?.firstName}!`}</div>
+      <div className={styles.profile}>{`Welcome ${user!.firstName}!`}</div>
       {!!ownUpcoming.length && (
         <section>
           <h2>Upcoming meetups you're arranging</h2>

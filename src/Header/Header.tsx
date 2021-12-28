@@ -43,7 +43,7 @@ const Header = (props: HeaderProps) => {
             onClick={() => setShowProfileMenu(!showProfileMenu)}
           >
             <img src={UserIcon} alt="User profile icon" />
-            <p>{`${user.firstName} ${user.lastName}`}</p>
+            <p>{`${user.getFullName()}`}</p>
             {showProfileMenu && <SubMenu user={user} setUser={setUser} />}
           </div>
         )}

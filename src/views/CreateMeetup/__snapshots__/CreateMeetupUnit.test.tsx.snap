@@ -24,7 +24,7 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
         "1",
       ],
       "saveDetailsToLocalStorage": [Function],
-      "saveToLocalStorage": [Function],
+      "saveIdToLocalStorage": [Function],
     }
   }
 >

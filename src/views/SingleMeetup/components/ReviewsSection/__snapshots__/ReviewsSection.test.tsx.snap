@@ -23,7 +23,7 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
           "1",
         ],
         "saveDetailsToLocalStorage": [Function],
-        "saveToLocalStorage": [Function],
+        "saveIdToLocalStorage": [Function],
       },
       "attending": 54,
       "capacity": null,

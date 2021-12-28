@@ -94,7 +94,8 @@ export const storeUser = (userId: string) => {
   const user = users.getById(userId)
 
   if (user) {
-    user.saveToLocalStorage()
+    user.saveIdToLocalStorage()
+    user.saveDetailsToLocalStorage()
   }
 }
 
@@ -126,7 +127,7 @@ export const storeUserDetails = (userId: string) => {
   const user = users.getById(userId)
 
   if (user) {
-    user.saveToLocalStorage()
+    user.saveDetailsToLocalStorage()
   }
 }
 
