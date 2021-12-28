@@ -42,31 +42,29 @@ export class UserImpl implements User {
     this.id = id || uid()
   }
 
-  saveToLocalStorage = () => {
+  saveIdToLocalStorage = () => {
     localStorage.setItem('user', this.id)
-    this.saveDetailsToLocalStorage()
   }
 
   saveDetailsToLocalStorage = () => {
-    const userDetails: UserDetailsCollection | null = JSON.parse(
+    const storedUserDetails: UserDetailsCollection | null = JSON.parse(
       localStorage.getItem('details')!
     )
 
-    if (userDetails) {
-      userDetails[this.id] = {
-        attending: this.attending,
-        reviewed: this.reviewed,
-      }
+    const currentUserDetails = {
+      attending: this.attending,
+      reviewed: this.reviewed,
+    }
 
-      localStorage.setItem('details', JSON.stringify(userDetails))
+    if (storedUserDetails) {
+      storedUserDetails[this.id] = currentUserDetails
+
+      localStorage.setItem('details', JSON.stringify(storedUserDetails))
     } else {
       localStorage.setItem(
         'details',
         JSON.stringify({
-          [this.id]: {
-            attending: this.attending,
-            reviewed: this.reviewed,
-          },
+          [this.id]: currentUserDetails,
         })
       )
     }
