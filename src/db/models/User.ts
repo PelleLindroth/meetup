@@ -9,7 +9,7 @@ type UserDetailsCollection = {
   [key: string]: UserDetails
 }
 
-export interface User {
+interface User {
   id: string
   firstName: string
   lastName: string
