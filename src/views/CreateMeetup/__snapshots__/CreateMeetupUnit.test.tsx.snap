@@ -23,8 +23,8 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
       "reviewed": Array [
         "1",
       ],
-      "store": [Function],
-      "storeDetails": [Function],
+      "saveDetailsToLocalStorage": [Function],
+      "saveToLocalStorage": [Function],
     }
   }
 >

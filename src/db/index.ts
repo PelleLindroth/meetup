@@ -1,6 +1,6 @@
 import { meetups, Meetup, Comment, Review } from './models/Meetup'
 import { UserDetails, UserImpl } from './models/User'
-import users from './seed'
+import { users } from './seed'
 import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
 export const getAllMeetups = (): Meetup[] => {
@@ -94,7 +94,7 @@ export const storeUser = (userId: string) => {
   const user = users.getById(userId)
 
   if (user) {
-    user.store()
+    user.saveToLocalStorage()
   }
 }
 
@@ -126,7 +126,7 @@ export const storeUserDetails = (userId: string) => {
   const user = users.getById(userId)
 
   if (user) {
-    user.store()
+    user.saveToLocalStorage()
   }
 }
 

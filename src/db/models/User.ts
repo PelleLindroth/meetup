@@ -42,12 +42,12 @@ export class UserImpl implements User {
     this.id = id || uid()
   }
 
-  store = () => {
+  saveToLocalStorage = () => {
     localStorage.setItem('user', this.id)
-    this.storeDetails()
+    this.saveDetailsToLocalStorage()
   }
 
-  storeDetails = () => {
+  saveDetailsToLocalStorage = () => {
     const userDetails: UserDetailsCollection | null = JSON.parse(
       localStorage.getItem('details')!
     )

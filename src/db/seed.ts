@@ -45,4 +45,4 @@ users.add(user2)
 users.add(user3)
 users.add(user4)
 
-export default users
+export { users }

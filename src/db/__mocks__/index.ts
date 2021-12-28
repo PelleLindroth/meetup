@@ -1,6 +1,6 @@
 import { meetups, Meetup } from '../models/Meetup'
 import { UserImpl, UserDetails } from '../models/User'
-import users from '../seed'
+import { users } from '../seed'
 import { sortMeetupsChronologically } from '../../utils/db-utils'
 
 export const getAllMeetups = () => {

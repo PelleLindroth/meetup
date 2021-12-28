@@ -22,8 +22,8 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
         "reviewed": Array [
           "1",
         ],
-        "store": [Function],
-        "storeDetails": [Function],
+        "saveDetailsToLocalStorage": [Function],
+        "saveToLocalStorage": [Function],
       },
       "attending": 54,
       "capacity": null,
