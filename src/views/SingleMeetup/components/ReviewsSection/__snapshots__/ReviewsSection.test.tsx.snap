@@ -4,19 +4,26 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
 <ReviewsSection
   meetup={
     Object {
-      "arranger": Object {
+      "arranger": UserImpl {
+        "addAttending": [Function],
+        "addReviewed": [Function],
         "attending": Array [
           "1",
           "2",
         ],
+        "cancelAttending": [Function],
         "email": "tjalle@yahoo.com",
         "firstName": "Tjalle",
+        "getDetails": [Function],
+        "getFullName": [Function],
         "id": "1",
         "lastName": "Bergkvist",
         "password": "grillkorv",
         "reviewed": Array [
           "1",
         ],
+        "store": [Function],
+        "storeDetails": [Function],
       },
       "attending": 54,
       "capacity": null,

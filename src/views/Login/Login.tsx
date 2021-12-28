@@ -22,7 +22,7 @@ const Login = (props: LoginProps) => {
     const user = validateUser(email, password)
 
     if (user) {
-      const { attending, reviewed } = getUserDetails(user.id)
+      const { attending, reviewed } = getUserDetails(user.id)!
 
       user.attending = [...attending]
       user.reviewed = [...reviewed]

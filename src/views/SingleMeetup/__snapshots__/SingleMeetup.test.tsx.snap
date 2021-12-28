@@ -5,19 +5,26 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
   meetups={
     Array [
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 54,
         "capacity": null,
@@ -64,14 +71,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "title": "Pizza Picnic",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 356,
         "capacity": 500,
@@ -88,14 +102,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "title": "Halloween Street Party",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 234,
         "capacity": null,
@@ -109,18 +130,25 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "url": "https://www.udemy.com/course/rust-lang/",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
           ],
-          "email": "kenta@yahoo.com",
+          "cancelAttending": [Function],
+          "email": "tjalle@yahoo.com",
           "firstName": "Kenta",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "2",
           "lastName": "Andersson",
-          "password": "bananpaj",
+          "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 23478,
         "capacity": 43883,
@@ -137,19 +165,26 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "title": "Sevilla - Real Sociedad",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 126,
         "capacity": null,
@@ -177,14 +212,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       isUpcomingEvent={true}
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 234,
           "capacity": null,
@@ -217,14 +259,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       isUpcomingEvent={true}
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 234,
           "capacity": null,
@@ -275,14 +324,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     <ArrangerSection
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 234,
           "capacity": null,
@@ -324,14 +380,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       isUpcomingEvent={true}
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 234,
           "capacity": null,
@@ -389,14 +452,21 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     <CommentsSection
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 234,
           "capacity": null,
@@ -463,19 +533,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
   meetups={
     Array [
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 54,
         "capacity": null,
@@ -522,14 +599,21 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "title": "Pizza Picnic",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 356,
         "capacity": 500,
@@ -546,14 +630,21 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "title": "Halloween Street Party",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 234,
         "capacity": null,
@@ -567,18 +658,25 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "url": "https://www.udemy.com/course/rust-lang/",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
           ],
-          "email": "kenta@yahoo.com",
+          "cancelAttending": [Function],
+          "email": "tjalle@yahoo.com",
           "firstName": "Kenta",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "2",
           "lastName": "Andersson",
-          "password": "bananpaj",
+          "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 23478,
         "capacity": 43883,
@@ -595,19 +693,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "title": "Sevilla - Real Sociedad",
       },
       Object {
-        "arranger": Object {
+        "arranger": UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         },
         "attending": 126,
         "capacity": null,
@@ -626,19 +731,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     ]
   }
   user={
-    Object {
+    UserImpl {
+      "addAttending": [Function],
+      "addReviewed": [Function],
       "attending": Array [
         "1",
         "2",
       ],
+      "cancelAttending": [Function],
       "email": "tjalle@yahoo.com",
       "firstName": "Tjalle",
+      "getDetails": [Function],
+      "getFullName": [Function],
       "id": "1",
       "lastName": "Bergkvist",
       "password": "grillkorv",
       "reviewed": Array [
         "1",
       ],
+      "store": [Function],
+      "storeDetails": [Function],
     }
   }
 >
@@ -650,19 +762,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       isUpcomingEvent={false}
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -711,19 +830,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       setAttending={[Function]}
       user={
-        Object {
+        UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         }
       }
     >
@@ -743,19 +869,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       isUpcomingEvent={false}
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -804,19 +937,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       setAttending={[Function]}
       user={
-        Object {
+        UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         }
       }
     >
@@ -859,19 +999,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <ArrangerSection
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -946,19 +1093,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       isUpcomingEvent={false}
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -1027,19 +1181,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <ReviewsSection
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -1087,19 +1248,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         }
       }
       user={
-        Object {
+        UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         }
       }
     >
@@ -1134,19 +1302,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <CommentsSection
       meetup={
         Object {
-          "arranger": Object {
+          "arranger": UserImpl {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "store": [Function],
+            "storeDetails": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -1194,19 +1369,26 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         }
       }
       user={
-        Object {
+        UserImpl {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "store": [Function],
+          "storeDetails": [Function],
         }
       }
     >

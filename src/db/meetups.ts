@@ -1,4 +1,5 @@
-import { User, users } from './users'
+import { User } from './users'
+import users from './seed'
 
 export interface Meetup {
   id: string
@@ -46,7 +47,7 @@ export const meetups: Meetup[] = [
     online: false,
     capacity: null,
     attending: 54,
-    arranger: users[0],
+    arranger: users.getById('1')!,
     reviews: [
       {
         id: '1',
@@ -89,7 +90,7 @@ export const meetups: Meetup[] = [
     url: 'https://www.udemy.com/course/rust-lang/',
     capacity: null,
     attending: 234,
-    arranger: users[2],
+    arranger: users.getById('3')!,
     reviews: [],
     comments: [],
   },
@@ -105,7 +106,7 @@ export const meetups: Meetup[] = [
     online: false,
     capacity: 43883,
     attending: 23478,
-    arranger: users[1],
+    arranger: users.getById('2')!,
     reviews: [],
     comments: [],
   },
@@ -122,7 +123,7 @@ export const meetups: Meetup[] = [
     online: false,
     capacity: null,
     attending: 126,
-    arranger: users[0],
+    arranger: users.getById('1')!,
     reviews: [],
     comments: [],
   },
@@ -138,7 +139,7 @@ export const meetups: Meetup[] = [
     online: false,
     capacity: 500,
     attending: 356,
-    arranger: users[2],
+    arranger: users.getById('3')!,
     reviews: [],
     comments: [],
   },

@@ -1,5 +1,6 @@
 import { meetups, Meetup, Comment, Review } from './meetups'
-import { users, User } from './users'
+import { User, UserDetails, UserImpl } from './users'
+import users from './seed'
 import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
 export const getAllMeetups = (): Meetup[] => {
@@ -35,12 +36,12 @@ export const addComment = (meetupId: string, comment: Comment) => {
 
 export const addReview = (meetupId: string, userId: string, review: Review) => {
   const meetup = getMeetupById(meetupId)
-  const user = getUserById(userId)
+  const user = users.getById(userId)
   if (!meetup || !user) return
 
   meetup.reviews.push(review)
   updateMeetupInLocalStorage(meetup)
-  user.reviewed.push(meetup.id)
+  user.addReviewed(meetup.id)
 }
 
 export const addMeetup = (meetup: Meetup) => {
@@ -48,24 +49,22 @@ export const addMeetup = (meetup: Meetup) => {
   saveMeetupToLocalStorage(meetup)
 }
 
-export const validateUser = (email: string, password: string): User | null => {
-  const user = users.find((user) => user.email === email)
-
-  if (user) {
-    return user.password === password ? user : null
-  } else {
-    return null
-  }
+export const validateUser = (
+  email: string,
+  password: string
+): UserImpl | null => {
+  return users.validate(email, password)
 }
 
-export const signUpForEvent = (meetup: Meetup, user: User) => {
-  user.attending.push(meetup.id)
+export const signUpForEvent = (meetup: Meetup, user: UserImpl) => {
+  user.addAttending(meetup.id)
   meetup.attending++
   updateMeetupInLocalStorage(meetup)
 }
 
-export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
-  user.attending = user.attending.filter((item) => item !== meetup.id)
+export const cancelSignUpForEvent = (meetup: Meetup, user: UserImpl) => {
+  // user.attending = user.attending.filter((item) => item !== meetup.id)
+  user.cancelAttending(meetup.id)
   meetup.attending--
   updateMeetupInLocalStorage(meetup)
 }
@@ -93,13 +92,14 @@ const saveMeetupToLocalStorage = (meetup: Meetup) => {
 }
 
 export const storeUser = (userId: string) => {
-  const user = getUserById(userId)
+  const user = users.getById(userId)
 
   if (user) {
-    localStorage.setItem('user', user.id)
+    user.store()
+    // localStorage.setItem('user', user.id)
 
-    storeUserDetails('attending', user.id, user.attending)
-    storeUserDetails('reviewed', user.id, user.reviewed)
+    // storeUserDetails('attending', user.id, user.attending)
+    // storeUserDetails('reviewed', user.id, user.reviewed)
   }
 }
 
@@ -107,7 +107,7 @@ export const getStoredUser = (): User | null => {
   const storedUserId = localStorage.getItem('user')
 
   if (storedUserId) {
-    const user = getUserById(storedUserId)
+    const user = users.getById(storedUserId)
 
     return user || null
   }
@@ -120,63 +120,27 @@ export const clearStoredUser = () => {
 }
 
 export const getUserById = (id: string): User | undefined => {
-  return users.find((user) => user.id === id)
+  return users.getById(id)
 }
 
 export const getUsers = () => {
-  return users
+  return users.getAll()
 }
 
-export const storeUserDetails = (
-  detail: 'attending' | 'reviewed',
-  userId: string,
-  meetupIds: string[]
-) => {
-  const userDetails:
-    | {
-        [key: string]: string[]
-      }
-    | undefined = JSON.parse(localStorage.getItem(detail)!)
+export const storeUserDetails = (userId: string) => {
+  const user = users.getById(userId)
 
-  if (userDetails) {
-    userDetails[userId] = meetupIds
-    localStorage.setItem(detail, JSON.stringify(userDetails))
-  } else {
-    localStorage.setItem(detail, JSON.stringify({ [userId]: [...meetupIds] }))
+  if (user) {
+    user.store()
   }
 }
 
-export const getUserDetails = (
-  userId: string
-): { reviewed: string[]; attending: string[] } => {
-  const userAttendingLists:
-    | {
-        [key: string]: string[]
-      }
-    | undefined = JSON.parse(localStorage.getItem('attending')!)
+export const getUserDetails = (userId: string): UserDetails | null => {
+  const user = users.getById(userId)
 
-  const userReviewedLists:
-    | {
-        [key: string]: string[]
-      }
-    | undefined = JSON.parse(localStorage.getItem('reviewed')!)
-
-  if (
-    userAttendingLists &&
-    userAttendingLists[userId] &&
-    userReviewedLists &&
-    userReviewedLists[userId]
-  ) {
-    return {
-      attending: userAttendingLists[userId],
-      reviewed: userReviewedLists[userId],
-    }
+  if (user) {
+    return user.getDetails()
   } else {
-    const { attending, reviewed } = getUserById(userId!)!
-
-    return {
-      attending,
-      reviewed,
-    }
+    return null
   }
 }
