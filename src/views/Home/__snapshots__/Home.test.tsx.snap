@@ -5,7 +5,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
   meetups={
     Array [
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -71,7 +71,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         "title": "Pizza Picnic",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [],
@@ -102,7 +102,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         "title": "Halloween Street Party",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [],
@@ -130,7 +130,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         "url": "https://www.udemy.com/course/rust-lang/",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -165,7 +165,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         "title": "Sevilla - Real Sociedad",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -263,7 +263,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
       meetups={
         Array [
           Object {
-            "arranger": UserImpl {
+            "arranger": User {
               "addAttending": [Function],
               "addReviewed": [Function],
               "attending": Array [],
@@ -291,7 +291,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
             "url": "https://www.udemy.com/course/rust-lang/",
           },
           Object {
-            "arranger": UserImpl {
+            "arranger": User {
               "addAttending": [Function],
               "addReviewed": [Function],
               "attending": Array [
@@ -326,7 +326,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
             "title": "Sevilla - Real Sociedad",
           },
           Object {
-            "arranger": UserImpl {
+            "arranger": User {
               "addAttending": [Function],
               "addReviewed": [Function],
               "attending": Array [
@@ -373,7 +373,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           key="2"
           meetup={
             Object {
-              "arranger": UserImpl {
+              "arranger": User {
                 "addAttending": [Function],
                 "addReviewed": [Function],
                 "attending": Array [],
@@ -495,7 +495,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           key="3"
           meetup={
             Object {
-              "arranger": UserImpl {
+              "arranger": User {
                 "addAttending": [Function],
                 "addReviewed": [Function],
                 "attending": Array [
@@ -627,7 +627,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           key="4"
           meetup={
             Object {
-              "arranger": UserImpl {
+              "arranger": User {
                 "addAttending": [Function],
                 "addReviewed": [Function],
                 "attending": Array [
@@ -762,7 +762,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
       meetups={
         Array [
           Object {
-            "arranger": UserImpl {
+            "arranger": User {
               "addAttending": [Function],
               "addReviewed": [Function],
               "attending": Array [
@@ -828,7 +828,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
             "title": "Pizza Picnic",
           },
           Object {
-            "arranger": UserImpl {
+            "arranger": User {
               "addAttending": [Function],
               "addReviewed": [Function],
               "attending": Array [],
@@ -869,7 +869,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           key="1"
           meetup={
             Object {
-              "arranger": UserImpl {
+              "arranger": User {
                 "addAttending": [Function],
                 "addReviewed": [Function],
                 "attending": Array [
@@ -1028,7 +1028,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           key="5"
           meetup={
             Object {
-              "arranger": UserImpl {
+              "arranger": User {
                 "addAttending": [Function],
                 "addReviewed": [Function],
                 "attending": Array [],

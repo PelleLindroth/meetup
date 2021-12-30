@@ -1,4 +1,4 @@
-import { UserImpl } from '../db/models/User'
+import { User } from '../db/models/User'
 import { Meetup } from '../db/models/Meetup'
 
 export const formatDate = (date: Date) => {
@@ -44,7 +44,7 @@ export const createMeetupList = (
 }
 
 export const createUserLists = (
-  user: UserImpl,
+  user: User,
   meetups: Meetup[],
   customDate: Date
 ) => {

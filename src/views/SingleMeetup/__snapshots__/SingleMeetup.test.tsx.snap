@@ -5,7 +5,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
   meetups={
     Array [
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -71,7 +71,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "title": "Pizza Picnic",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [],
@@ -102,7 +102,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "title": "Halloween Street Party",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [],
@@ -130,7 +130,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "url": "https://www.udemy.com/course/rust-lang/",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -165,7 +165,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "title": "Sevilla - Real Sociedad",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -212,7 +212,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       isUpcomingEvent={true}
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [],
@@ -259,7 +259,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       isUpcomingEvent={true}
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [],
@@ -324,7 +324,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     <ArrangerSection
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [],
@@ -380,7 +380,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       isUpcomingEvent={true}
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [],
@@ -452,7 +452,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     <CommentsSection
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [],
@@ -533,7 +533,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
   meetups={
     Array [
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -599,7 +599,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "title": "Pizza Picnic",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [],
@@ -630,7 +630,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "title": "Halloween Street Party",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [],
@@ -658,7 +658,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "url": "https://www.udemy.com/course/rust-lang/",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -693,7 +693,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "title": "Sevilla - Real Sociedad",
       },
       Object {
-        "arranger": UserImpl {
+        "arranger": User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -731,7 +731,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     ]
   }
   user={
-    UserImpl {
+    User {
       "addAttending": [Function],
       "addReviewed": [Function],
       "attending": Array [
@@ -762,7 +762,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       isUpcomingEvent={false}
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [
@@ -830,7 +830,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       setAttending={[Function]}
       user={
-        UserImpl {
+        User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -869,7 +869,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       isUpcomingEvent={false}
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [
@@ -937,7 +937,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       }
       setAttending={[Function]}
       user={
-        UserImpl {
+        User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -999,7 +999,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <ArrangerSection
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [
@@ -1093,7 +1093,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       isUpcomingEvent={false}
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [
@@ -1181,7 +1181,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <ReviewsSection
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [
@@ -1248,7 +1248,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         }
       }
       user={
-        UserImpl {
+        User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [
@@ -1302,7 +1302,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <CommentsSection
       meetup={
         Object {
-          "arranger": UserImpl {
+          "arranger": User {
             "addAttending": [Function],
             "addReviewed": [Function],
             "attending": Array [
@@ -1369,7 +1369,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         }
       }
       user={
-        UserImpl {
+        User {
           "addAttending": [Function],
           "addReviewed": [Function],
           "attending": Array [

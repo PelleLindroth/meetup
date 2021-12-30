@@ -5,7 +5,7 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
   meetups={Array []}
   setMeetups={[MockFunction]}
   user={
-    UserImpl {
+    User {
       "addAttending": [Function],
       "addReviewed": [Function],
       "attending": Array [

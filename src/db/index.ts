@@ -1,5 +1,5 @@
 import { meetups, Meetup, Comment, Review } from './models/Meetup'
-import { UserDetails, UserImpl } from './models/User'
+import { UserDetails, User } from './models/User'
 import { users } from './seed'
 import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
@@ -49,20 +49,17 @@ export const addMeetup = (meetup: Meetup) => {
   saveMeetupToLocalStorage(meetup)
 }
 
-export const validateUser = (
-  email: string,
-  password: string
-): UserImpl | null => {
+export const validateUser = (email: string, password: string): User | null => {
   return users.validate(email, password)
 }
 
-export const signUpForEvent = (meetup: Meetup, user: UserImpl) => {
+export const signUpForEvent = (meetup: Meetup, user: User) => {
   user.addAttending(meetup.id)
   meetup.attending++
   updateMeetupInLocalStorage(meetup)
 }
 
-export const cancelSignUpForEvent = (meetup: Meetup, user: UserImpl) => {
+export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
   user.cancelAttending(meetup.id)
   meetup.attending--
   updateMeetupInLocalStorage(meetup)
@@ -99,7 +96,7 @@ export const storeUser = (userId: string) => {
   }
 }
 
-export const getStoredUser = (): UserImpl | null => {
+export const getStoredUser = (): User | null => {
   const storedUserId = localStorage.getItem('user')
 
   if (storedUserId) {
@@ -115,7 +112,7 @@ export const clearStoredUser = () => {
   localStorage.removeItem('user')
 }
 
-export const getUserById = (id: string): UserImpl | undefined => {
+export const getUserById = (id: string): User | undefined => {
   return users.getById(id)
 }
 

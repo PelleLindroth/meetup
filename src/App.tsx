@@ -9,12 +9,12 @@ import Login from './views/Login'
 import SingleMeetup from './views/SingleMeetup'
 import CreateMeetup from './views/CreateMeetup'
 import Profile from './views/Profile'
-import { UserImpl } from './db/models/User'
+import { User } from './db/models/User'
 import styles from './App/App.module.scss'
 
 function App() {
   const [meetups, setMeetups] = useState<Meetup[]>([])
-  const [user, setUser] = useState<UserImpl | null>(null)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const dbMeetups = getAllMeetups()

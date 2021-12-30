@@ -1,5 +1,5 @@
 import { meetups, Meetup } from '../models/Meetup'
-import { UserImpl, UserDetails } from '../models/User'
+import { User, UserDetails } from '../models/User'
 import { users } from '../seed'
 import { sortMeetupsChronologically } from '../../utils/db-utils'
 
@@ -31,10 +31,7 @@ export const addMeetup = (meetup: Meetup) => {
 //   }
 // }
 
-export const validateUser = (
-  email: string,
-  password: string
-): UserImpl | null => {
+export const validateUser = (email: string, password: string): User | null => {
   return users.validate(email, password)
 }
 
@@ -43,12 +40,12 @@ export const validateUser = (
 //   meetup.attending++
 // }
 
-export const signUpForEvent = (meetup: Meetup, user: UserImpl) => {
+export const signUpForEvent = (meetup: Meetup, user: User) => {
   user.addAttending(meetup.id)
   meetup.attending++
 }
 
-export const cancelSignUpForEvent = (meetup: Meetup, user: UserImpl) => {
+export const cancelSignUpForEvent = (meetup: Meetup, user: User) => {
   // user.attending = user.attending.filter((item) => item !== meetup.id)
   user.cancelAttending(meetup.id)
   meetup.attending--
@@ -60,7 +57,7 @@ export const getStoredUser = jest.fn()
 
 export const clearStoredUser = jest.fn()
 
-export const getUserById = (id: string): UserImpl | undefined => {
+export const getUserById = (id: string): User | undefined => {
   // return users.find((user) => user.id === id)
   return users.getById(id)
 }

@@ -9,17 +9,7 @@ type UserDetailsCollection = {
   [key: string]: UserDetails
 }
 
-interface User {
-  id: string
-  firstName: string
-  lastName: string
-  email: string
-  password: string
-  attending: string[]
-  reviewed: string[]
-}
-
-export class UserImpl implements User {
+export class User {
   firstName: string
   lastName: string
   email: string
@@ -46,12 +36,12 @@ export class UserImpl implements User {
     localStorage.setItem('user', this.id)
   }
 
-  saveDetailsToLocalStorage = () => {
+  saveDetailsToLocalStorage = (): void => {
     const storedUserDetails: UserDetailsCollection | null = JSON.parse(
       localStorage.getItem('details')!
     )
 
-    const currentUserDetails = {
+    const currentUserDetails: UserDetails = {
       attending: this.attending,
       reviewed: this.reviewed,
     }
@@ -105,13 +95,13 @@ export class UserImpl implements User {
 }
 
 export class UserBank {
-  users: UserImpl[]
+  users: User[]
 
   constructor() {
     this.users = []
   }
 
-  getById = (id: string): UserImpl | undefined => {
+  getById = (id: string): User | undefined => {
     return this.users.find((user) => user.id === id)
   }
 
@@ -119,11 +109,11 @@ export class UserBank {
     return this.users
   }
 
-  add = (user: UserImpl) => {
+  add = (user: User) => {
     this.users.push(user)
   }
 
-  validate = (email: string, password: string): UserImpl | null => {
+  validate = (email: string, password: string): User | null => {
     const user = this.users.find((user) => user.email === email)
 
     if (user) {

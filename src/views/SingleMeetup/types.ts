@@ -1,29 +1,29 @@
-import { UserImpl } from '../../db/models/User'
+import { User } from '../../db/models/User'
 import { Meetup } from '../../db/models/Meetup'
 
 export type SingleMeetupProps = {
   meetups: Meetup[]
-  user: UserImpl | null
+  user: User | null
 }
 
 export type MeetupHeaderProps = {
   attending: boolean
   setAttending: React.Dispatch<React.SetStateAction<boolean>>
   meetup: Meetup
-  user: UserImpl | null
+  user: User | null
   isUpcomingEvent: boolean
 }
 
 export type ReviewsSectionProps = {
   meetup: Meetup
-  user: UserImpl | null
+  user: User | null
 }
 
 export type DetailsSectionProps = {
   attending: boolean
   setAttending: React.Dispatch<React.SetStateAction<boolean>>
   meetup: Meetup
-  user: UserImpl | null
+  user: User | null
   isUpcomingEvent: boolean
 }
 
@@ -38,18 +38,18 @@ export type CapacitySectionProps = {
 
 export type CommentsSectionProps = {
   meetup: Meetup
-  user: UserImpl | null
+  user: User | null
 }
 
 export type CommentFormProps = {
   meetup: Meetup
-  user: UserImpl | null
+  user: User | null
   setShowCommentForm: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export type RatingFormProps = {
   meetup: Meetup
-  user: UserImpl
+  user: User
   setMedianRating: React.Dispatch<React.SetStateAction<number>>
   setShowSelectInput: React.Dispatch<React.SetStateAction<boolean>>
 }

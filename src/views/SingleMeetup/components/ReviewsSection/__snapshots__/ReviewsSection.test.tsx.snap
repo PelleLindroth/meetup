@@ -4,7 +4,7 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
 <ReviewsSection
   meetup={
     Object {
-      "arranger": UserImpl {
+      "arranger": User {
         "addAttending": [Function],
         "addReviewed": [Function],
         "attending": Array [
