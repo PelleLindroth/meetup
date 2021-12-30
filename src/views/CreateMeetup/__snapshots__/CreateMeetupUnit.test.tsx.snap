@@ -39,190 +39,165 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
       onSubmit={[Function]}
     >
       <div
-        className="inputRow"
+        className="detailsArea"
       >
-        <label
-          htmlFor="title"
+        <div
+          className="inputRow"
         >
-          Title
-        </label>
-        <input
-          className="textInput titleInput"
-          id="title"
-          maxLength={30}
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-      <div
-        className="inputRow"
-      >
-        <label
-          htmlFor="description"
+          <label
+            htmlFor="title"
+          >
+            Title
+          </label>
+          <input
+            className="textInput titleInput"
+            id="title"
+            maxLength={30}
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="inputRow"
         >
-          Description
-        </label>
-        <textarea
-          className="textInput"
-          id="description"
-          maxLength={75}
-          onChange={[Function]}
-          value=""
-        />
-      </div>
-      <div
-        className="inputRow"
-      >
-        <label>
-          Date
-        </label>
-        <DateTimePicker
-          calendarIcon={
-            <svg
-              className="react-datetime-picker__calendar-button__icon react-datetime-picker__button__icon"
-              height={19}
-              stroke="black"
-              strokeWidth={2}
-              viewBox="0 0 19 19"
-              width={19}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                fill="none"
-                height="15"
-                width="15"
-                x="2"
-                y="2"
-              />
-              <line
-                x1="6"
-                x2="6"
-                y1="0"
-                y2="4"
-              />
-              <line
-                x1="13"
-                x2="13"
-                y1="0"
-                y2="4"
-              />
-            </svg>
-          }
-          clearIcon={
-            <svg
-              className="react-datetime-picker__clear-button__icon react-datetime-picker__button__icon"
-              height={19}
-              stroke="black"
-              strokeWidth={2}
-              viewBox="0 0 19 19"
-              width={19}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="4"
-                x2="15"
-                y1="4"
-                y2="15"
-              />
-              <line
-                x1="15"
-                x2="4"
-                y1="4"
-                y2="15"
-              />
-            </svg>
-          }
-          closeWidgets={true}
-          disableClock={true}
-          isCalendarOpen={null}
-          isClockOpen={null}
-          maxDetail="minute"
-          minDate={2021-12-24T14:00:00.000Z}
-          nativeInputAriaLabel="Date"
-          onChange={[Function]}
-          openWidgetsOnFocus={true}
-          value={2021-12-24T14:00:00.000Z}
+          <label
+            htmlFor="description"
+          >
+            Description
+          </label>
+          <textarea
+            className="textInput"
+            id="description"
+            maxLength={75}
+            onChange={[Function]}
+            value=""
+          />
+        </div>
+        <div
+          className="inputRow"
         >
-          <div
-            className="react-datetime-picker react-datetime-picker--closed react-datetime-picker--enabled"
-            onFocus={[Function]}
+          <label>
+            Date
+          </label>
+          <DateTimePicker
+            calendarIcon={
+              <svg
+                className="react-datetime-picker__calendar-button__icon react-datetime-picker__button__icon"
+                height={19}
+                stroke="black"
+                strokeWidth={2}
+                viewBox="0 0 19 19"
+                width={19}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="none"
+                  height="15"
+                  width="15"
+                  x="2"
+                  y="2"
+                />
+                <line
+                  x1="6"
+                  x2="6"
+                  y1="0"
+                  y2="4"
+                />
+                <line
+                  x1="13"
+                  x2="13"
+                  y1="0"
+                  y2="4"
+                />
+              </svg>
+            }
+            clearIcon={
+              <svg
+                className="react-datetime-picker__clear-button__icon react-datetime-picker__button__icon"
+                height={19}
+                stroke="black"
+                strokeWidth={2}
+                viewBox="0 0 19 19"
+                width={19}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="4"
+                  x2="15"
+                  y1="4"
+                  y2="15"
+                />
+                <line
+                  x1="15"
+                  x2="4"
+                  y1="4"
+                  y2="15"
+                />
+              </svg>
+            }
+            closeWidgets={true}
+            disableClock={true}
+            isCalendarOpen={null}
+            isClockOpen={null}
+            maxDetail="minute"
+            minDate={2021-12-24T14:00:00.000Z}
+            nativeInputAriaLabel="Date"
+            onChange={[Function]}
+            openWidgetsOnFocus={true}
+            value={2021-12-24T14:00:00.000Z}
           >
             <div
-              className="react-datetime-picker__wrapper"
+              className="react-datetime-picker react-datetime-picker--closed react-datetime-picker--enabled"
+              onFocus={[Function]}
             >
-              <DateTimeInput
-                className="react-datetime-picker__inputGroup"
-                isWidgetOpen={null}
-                maxDetail="minute"
-                minDate={2021-12-24T14:00:00.000Z}
-                name="datetime"
-                nativeInputAriaLabel="Date"
-                onChange={[Function]}
-                value={2021-12-24T14:00:00.000Z}
+              <div
+                className="react-datetime-picker__wrapper"
               >
-                <div
+                <DateTimeInput
                   className="react-datetime-picker__inputGroup"
-                  onClick={[Function]}
+                  isWidgetOpen={null}
+                  maxDetail="minute"
+                  minDate={2021-12-24T14:00:00.000Z}
+                  name="datetime"
+                  nativeInputAriaLabel="Date"
+                  onChange={[Function]}
+                  value={2021-12-24T14:00:00.000Z}
                 >
-                  <NativeInput
-                    ariaLabel="Date"
-                    key="time"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    name="datetime"
-                    onChange={[Function]}
-                    value={2021-12-24T14:00:00.000Z}
-                    valueType="minute"
+                  <div
+                    className="react-datetime-picker__inputGroup"
+                    onClick={[Function]}
                   >
-                    <input
-                      aria-label="Date"
-                      max="275760-09-13T02:00"
-                      min="2021-12-24T15:00"
+                    <NativeInput
+                      ariaLabel="Date"
+                      key="time"
+                      maxDate={+275760-09-13T00:00:00.000Z}
+                      minDate={2021-12-24T14:00:00.000Z}
                       name="datetime"
                       onChange={[Function]}
-                      onFocus={[Function]}
-                      step={60}
-                      style={
-                        Object {
-                          "position": "absolute",
-                          "visibility": "hidden",
-                          "zIndex": "-999",
+                      value={2021-12-24T14:00:00.000Z}
+                      valueType="minute"
+                    >
+                      <input
+                        aria-label="Date"
+                        max="275760-09-13T02:00"
+                        min="2021-12-24T15:00"
+                        name="datetime"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        step={60}
+                        style={
+                          Object {
+                            "position": "absolute",
+                            "visibility": "hidden",
+                            "zIndex": "-999",
+                          }
                         }
-                      }
-                      type="datetime-local"
-                      value="2021-12-24T15:00"
-                    />
-                  </NativeInput>
-                  <MonthInput
-                    className="react-datetime-picker__inputGroup"
-                    inputRef={
-                      Object {
-                        "current": <input
-                          autocomplete="off"
-                          class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__month"
-                          data-input="true"
-                          inputmode="numeric"
-                          max="12"
-                          min="12"
-                          name="month"
-                          placeholder="--"
-                          type="number"
-                          value="12"
-                        />,
-                      }
-                    }
-                    key="month"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    required={null}
-                    value="12"
-                    year="2021"
-                  >
-                    <Input
+                        type="datetime-local"
+                        value="2021-12-24T15:00"
+                      />
+                    </NativeInput>
+                    <MonthInput
                       className="react-datetime-picker__inputGroup"
                       inputRef={
                         Object {
@@ -240,76 +215,74 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
                           />,
                         }
                       }
-                      max={12}
-                      min={12}
-                      name="month"
+                      key="month"
+                      maxDate={+275760-09-13T00:00:00.000Z}
+                      minDate={2021-12-24T14:00:00.000Z}
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       required={null}
                       value="12"
+                      year="2021"
                     >
-                      <input
-                        autoComplete="off"
-                        className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__month"
-                        data-input="true"
-                        inputMode="numeric"
-                        key="input"
+                      <Input
+                        className="react-datetime-picker__inputGroup"
+                        inputRef={
+                          Object {
+                            "current": <input
+                              autocomplete="off"
+                              class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__month"
+                              data-input="true"
+                              inputmode="numeric"
+                              max="12"
+                              min="12"
+                              name="month"
+                              placeholder="--"
+                              type="number"
+                              value="12"
+                            />,
+                          }
+                        }
                         max={12}
                         min={12}
                         name="month"
                         onChange={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onKeyPress={[Function]}
                         onKeyUp={[Function]}
-                        placeholder="--"
                         required={null}
-                        type="number"
                         value="12"
-                      />
-                    </Input>
-                  </MonthInput>
-                  <Divider
-                    key="separator_1"
-                  >
-                    <span
-                      className="react-datetime-picker__inputGroup__divider"
-                    >
-                      /
-                    </span>
-                  </Divider>
-                  <DayInput
-                    autoFocus={false}
-                    className="react-datetime-picker__inputGroup"
-                    inputRef={
-                      Object {
-                        "current": <input
-                          autocomplete="off"
-                          class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__day"
+                      >
+                        <input
+                          autoComplete="off"
+                          className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__month"
                           data-input="true"
-                          inputmode="numeric"
-                          max="31"
-                          min="24"
-                          name="day"
+                          inputMode="numeric"
+                          key="input"
+                          max={12}
+                          min={12}
+                          name="month"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyPress={[Function]}
+                          onKeyUp={[Function]}
                           placeholder="--"
+                          required={null}
                           type="number"
-                          value="24"
-                        />,
-                      }
-                    }
-                    key="day"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    month="12"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    required={null}
-                    value="24"
-                    year="2021"
-                  >
-                    <Input
+                          value="12"
+                        />
+                      </Input>
+                    </MonthInput>
+                    <Divider
+                      key="separator_1"
+                    >
+                      <span
+                        className="react-datetime-picker__inputGroup__divider"
+                      >
+                        /
+                      </span>
+                    </Divider>
+                    <DayInput
                       autoFocus={false}
                       className="react-datetime-picker__inputGroup"
                       inputRef={
@@ -328,77 +301,77 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
                           />,
                         }
                       }
-                      max={31}
-                      min={24}
-                      name="day"
+                      key="day"
+                      maxDate={+275760-09-13T00:00:00.000Z}
+                      minDate={2021-12-24T14:00:00.000Z}
+                      month="12"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       required={null}
                       value="24"
+                      year="2021"
                     >
-                      <input
-                        autoComplete="off"
+                      <Input
                         autoFocus={false}
-                        className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__day"
-                        data-input="true"
-                        inputMode="numeric"
-                        key="input"
+                        className="react-datetime-picker__inputGroup"
+                        inputRef={
+                          Object {
+                            "current": <input
+                              autocomplete="off"
+                              class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__day"
+                              data-input="true"
+                              inputmode="numeric"
+                              max="31"
+                              min="24"
+                              name="day"
+                              placeholder="--"
+                              type="number"
+                              value="24"
+                            />,
+                          }
+                        }
                         max={31}
                         min={24}
                         name="day"
                         onChange={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onKeyPress={[Function]}
                         onKeyUp={[Function]}
-                        placeholder="--"
                         required={null}
-                        type="number"
                         value="24"
-                      />
-                    </Input>
-                  </DayInput>
-                  <Divider
-                    key="separator_2"
-                  >
-                    <span
-                      className="react-datetime-picker__inputGroup__divider"
-                    >
-                      /
-                    </span>
-                  </Divider>
-                  <YearInput
-                    autoFocus={false}
-                    className="react-datetime-picker__inputGroup"
-                    inputRef={
-                      Object {
-                        "current": <input
-                          autocomplete="off"
-                          class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__year"
+                      >
+                        <input
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__day"
                           data-input="true"
-                          inputmode="numeric"
-                          max="275760"
-                          min="2021"
-                          name="year"
-                          placeholder="----"
-                          step="1"
+                          inputMode="numeric"
+                          key="input"
+                          max={31}
+                          min={24}
+                          name="day"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyPress={[Function]}
+                          onKeyUp={[Function]}
+                          placeholder="--"
+                          required={null}
                           type="number"
-                          value="2021"
-                        />,
-                      }
-                    }
-                    key="year"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    required={null}
-                    value="2021"
-                    valueType="day"
-                  >
-                    <Input
+                          value="24"
+                        />
+                      </Input>
+                    </DayInput>
+                    <Divider
+                      key="separator_2"
+                    >
+                      <span
+                        className="react-datetime-picker__inputGroup__divider"
+                      >
+                        /
+                      </span>
+                    </Divider>
+                    <YearInput
                       autoFocus={false}
                       className="react-datetime-picker__inputGroup"
                       inputRef={
@@ -418,80 +391,81 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
                           />,
                         }
                       }
-                      max={275760}
-                      min={2021}
-                      name="year"
+                      key="year"
+                      maxDate={+275760-09-13T00:00:00.000Z}
+                      minDate={2021-12-24T14:00:00.000Z}
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
-                      placeholder="----"
                       required={null}
-                      step={1}
                       value="2021"
+                      valueType="day"
                     >
-                      <input
-                        autoComplete="off"
+                      <Input
                         autoFocus={false}
-                        className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__year"
-                        data-input="true"
-                        inputMode="numeric"
-                        key="input"
+                        className="react-datetime-picker__inputGroup"
+                        inputRef={
+                          Object {
+                            "current": <input
+                              autocomplete="off"
+                              class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__year"
+                              data-input="true"
+                              inputmode="numeric"
+                              max="275760"
+                              min="2021"
+                              name="year"
+                              placeholder="----"
+                              step="1"
+                              type="number"
+                              value="2021"
+                            />,
+                          }
+                        }
                         max={275760}
                         min={2021}
                         name="year"
                         onChange={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onKeyPress={[Function]}
                         onKeyUp={[Function]}
                         placeholder="----"
                         required={null}
                         step={1}
-                        type="number"
                         value="2021"
-                      />
-                    </Input>
-                  </YearInput>
-                  <Divider
-                    key="separator_3"
-                  >
-                    <span
-                      className="react-datetime-picker__inputGroup__divider"
-                    >
-                       
-                    </span>
-                  </Divider>
-                  <Hour12Input
-                    amPm="pm"
-                    autoFocus={false}
-                    className="react-datetime-picker__inputGroup"
-                    inputRef={
-                      Object {
-                        "current": <input
-                          autocomplete="off"
-                          class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__hour"
+                      >
+                        <input
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__year"
                           data-input="true"
-                          inputmode="numeric"
-                          max="12"
-                          min="1"
-                          name="hour12"
-                          placeholder="--"
+                          inputMode="numeric"
+                          key="input"
+                          max={275760}
+                          min={2021}
+                          name="year"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyPress={[Function]}
+                          onKeyUp={[Function]}
+                          placeholder="----"
+                          required={null}
+                          step={1}
                           type="number"
-                          value="3"
-                        />,
-                      }
-                    }
-                    key="hour12"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    required={null}
-                    showLeadingZeros={false}
-                    value="15"
-                  >
-                    <Input
+                          value="2021"
+                        />
+                      </Input>
+                    </YearInput>
+                    <Divider
+                      key="separator_3"
+                    >
+                      <span
+                        className="react-datetime-picker__inputGroup__divider"
+                      >
+                         
+                      </span>
+                    </Divider>
+                    <Hour12Input
+                      amPm="pm"
                       autoFocus={false}
                       className="react-datetime-picker__inputGroup"
                       inputRef={
@@ -510,83 +484,83 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
                           />,
                         }
                       }
-                      max={12}
+                      key="hour12"
                       maxDate={+275760-09-13T00:00:00.000Z}
-                      min={1}
                       minDate={2021-12-24T14:00:00.000Z}
-                      name="hour12"
-                      nameForClass="hour"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       required={null}
                       showLeadingZeros={false}
-                      value="3"
+                      value="15"
                     >
-                      <input
-                        autoComplete="off"
+                      <Input
                         autoFocus={false}
-                        className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__hour"
-                        data-input="true"
-                        inputMode="numeric"
-                        key="input"
+                        className="react-datetime-picker__inputGroup"
+                        inputRef={
+                          Object {
+                            "current": <input
+                              autocomplete="off"
+                              class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__hour"
+                              data-input="true"
+                              inputmode="numeric"
+                              max="12"
+                              min="1"
+                              name="hour12"
+                              placeholder="--"
+                              type="number"
+                              value="3"
+                            />,
+                          }
+                        }
                         max={12}
+                        maxDate={+275760-09-13T00:00:00.000Z}
                         min={1}
+                        minDate={2021-12-24T14:00:00.000Z}
                         name="hour12"
+                        nameForClass="hour"
                         onChange={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onKeyPress={[Function]}
                         onKeyUp={[Function]}
-                        placeholder="--"
                         required={null}
-                        type="number"
+                        showLeadingZeros={false}
                         value="3"
-                      />
-                    </Input>
-                  </Hour12Input>
-                  <Divider
-                    key="separator_4"
-                  >
-                    <span
-                      className="react-datetime-picker__inputGroup__divider"
-                    >
-                      :
-                    </span>
-                  </Divider>
-                  <MinuteInput
-                    autoFocus={false}
-                    className="react-datetime-picker__inputGroup"
-                    hour="15"
-                    inputRef={
-                      Object {
-                        "current": <input
-                          autocomplete="off"
-                          class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__minute react-datetime-picker__inputGroup__input--hasLeadingZero"
+                      >
+                        <input
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__hour"
                           data-input="true"
-                          inputmode="numeric"
-                          max="59"
-                          min="0"
-                          name="minute"
+                          inputMode="numeric"
+                          key="input"
+                          max={12}
+                          min={1}
+                          name="hour12"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyPress={[Function]}
+                          onKeyUp={[Function]}
                           placeholder="--"
+                          required={null}
                           type="number"
-                          value="0"
-                        />,
-                      }
-                    }
-                    key="minute"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    required={null}
-                    showLeadingZeros={true}
-                    value="0"
-                  >
-                    <Input
+                          value="3"
+                        />
+                      </Input>
+                    </Hour12Input>
+                    <Divider
+                      key="separator_4"
+                    >
+                      <span
+                        className="react-datetime-picker__inputGroup__divider"
+                      >
+                        :
+                      </span>
+                    </Divider>
+                    <MinuteInput
                       autoFocus={false}
                       className="react-datetime-picker__inputGroup"
+                      hour="15"
                       inputRef={
                         Object {
                           "current": <input
@@ -603,11 +577,9 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
                           />,
                         }
                       }
-                      max={59}
+                      key="minute"
                       maxDate={+275760-09-13T00:00:00.000Z}
-                      min={0}
                       minDate={2021-12-24T14:00:00.000Z}
-                      name="minute"
                       onChange={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
@@ -615,259 +587,300 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
                       showLeadingZeros={true}
                       value="0"
                     >
-                      <span
-                        className="react-datetime-picker__inputGroup__leadingZero"
-                        key="leadingZero"
-                      >
-                        0
-                      </span>
-                      <input
-                        autoComplete="off"
+                      <Input
                         autoFocus={false}
-                        className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__minute react-datetime-picker__inputGroup__input--hasLeadingZero"
-                        data-input="true"
-                        inputMode="numeric"
-                        key="input"
+                        className="react-datetime-picker__inputGroup"
+                        inputRef={
+                          Object {
+                            "current": <input
+                              autocomplete="off"
+                              class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__minute react-datetime-picker__inputGroup__input--hasLeadingZero"
+                              data-input="true"
+                              inputmode="numeric"
+                              max="59"
+                              min="0"
+                              name="minute"
+                              placeholder="--"
+                              type="number"
+                              value="0"
+                            />,
+                          }
+                        }
                         max={59}
+                        maxDate={+275760-09-13T00:00:00.000Z}
                         min={0}
+                        minDate={2021-12-24T14:00:00.000Z}
                         name="minute"
                         onChange={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onKeyPress={[Function]}
                         onKeyUp={[Function]}
-                        placeholder="--"
                         required={null}
-                        type="number"
+                        showLeadingZeros={true}
                         value="0"
-                      />
-                    </Input>
-                  </MinuteInput>
-                  <Divider
-                    key="separator_5"
-                  >
-                    <span
-                      className="react-datetime-picker__inputGroup__divider"
-                    >
-                       
-                    </span>
-                  </Divider>
-                  <AmPm
-                    autoFocus={false}
-                    className="react-datetime-picker__inputGroup"
-                    inputRef={
-                      Object {
-                        "current": <select
-                          class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__amPm"
-                          data-input="true"
-                          data-select="true"
-                          name="amPm"
+                      >
+                        <span
+                          className="react-datetime-picker__inputGroup__leadingZero"
+                          key="leadingZero"
                         >
-                          <option
-                            value="am"
+                          0
+                        </span>
+                        <input
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__minute react-datetime-picker__inputGroup__input--hasLeadingZero"
+                          data-input="true"
+                          inputMode="numeric"
+                          key="input"
+                          max={59}
+                          min={0}
+                          name="minute"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyPress={[Function]}
+                          onKeyUp={[Function]}
+                          placeholder="--"
+                          required={null}
+                          type="number"
+                          value="0"
+                        />
+                      </Input>
+                    </MinuteInput>
+                    <Divider
+                      key="separator_5"
+                    >
+                      <span
+                        className="react-datetime-picker__inputGroup__divider"
+                      >
+                         
+                      </span>
+                    </Divider>
+                    <AmPm
+                      autoFocus={false}
+                      className="react-datetime-picker__inputGroup"
+                      inputRef={
+                        Object {
+                          "current": <select
+                            class="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__amPm"
+                            data-input="true"
+                            data-select="true"
+                            name="amPm"
                           >
-                            AM
-                          </option>
-                          <option
-                            value="pm"
-                          >
-                            PM
-                          </option>
-                        </select>,
+                            <option
+                              value="am"
+                            >
+                              AM
+                            </option>
+                            <option
+                              value="pm"
+                            >
+                              PM
+                            </option>
+                          </select>,
+                        }
                       }
-                    }
-                    key="ampm"
-                    maxDate={+275760-09-13T00:00:00.000Z}
-                    minDate={2021-12-24T14:00:00.000Z}
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    placeholder="--"
-                    required={null}
-                    value="pm"
-                  >
-                    <select
-                      className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__amPm"
-                      data-input="true"
-                      data-select="true"
-                      name="amPm"
+                      key="ampm"
+                      maxDate={+275760-09-13T00:00:00.000Z}
+                      minDate={2021-12-24T14:00:00.000Z}
                       onChange={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      placeholder="--"
                       required={null}
                       value="pm"
                     >
-                      <option
-                        value="am"
-                      >
-                        AM
-                      </option>
-                      <option
+                      <select
+                        className="react-datetime-picker__inputGroup__input react-datetime-picker__inputGroup__amPm"
+                        data-input="true"
+                        data-select="true"
+                        name="amPm"
+                        onChange={[Function]}
+                        required={null}
                         value="pm"
                       >
-                        PM
-                      </option>
-                    </select>
-                  </AmPm>
-                </div>
-              </DateTimeInput>
-              <button
-                className="react-datetime-picker__clear-button react-datetime-picker__button"
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <svg
-                  className="react-datetime-picker__clear-button__icon react-datetime-picker__button__icon"
-                  height={19}
-                  stroke="black"
-                  strokeWidth={2}
-                  viewBox="0 0 19 19"
-                  width={19}
-                  xmlns="http://www.w3.org/2000/svg"
+                        <option
+                          value="am"
+                        >
+                          AM
+                        </option>
+                        <option
+                          value="pm"
+                        >
+                          PM
+                        </option>
+                      </select>
+                    </AmPm>
+                  </div>
+                </DateTimeInput>
+                <button
+                  className="react-datetime-picker__clear-button react-datetime-picker__button"
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  type="button"
                 >
-                  <line
-                    x1="4"
-                    x2="15"
-                    y1="4"
-                    y2="15"
-                  />
-                  <line
-                    x1="15"
-                    x2="4"
-                    y1="4"
-                    y2="15"
-                  />
-                </svg>
-              </button>
-              <button
-                className="react-datetime-picker__calendar-button react-datetime-picker__button"
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <svg
-                  className="react-datetime-picker__calendar-button__icon react-datetime-picker__button__icon"
-                  height={19}
-                  stroke="black"
-                  strokeWidth={2}
-                  viewBox="0 0 19 19"
-                  width={19}
-                  xmlns="http://www.w3.org/2000/svg"
+                  <svg
+                    className="react-datetime-picker__clear-button__icon react-datetime-picker__button__icon"
+                    height={19}
+                    stroke="black"
+                    strokeWidth={2}
+                    viewBox="0 0 19 19"
+                    width={19}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="4"
+                      x2="15"
+                      y1="4"
+                      y2="15"
+                    />
+                    <line
+                      x1="15"
+                      x2="4"
+                      y1="4"
+                      y2="15"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="react-datetime-picker__calendar-button react-datetime-picker__button"
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  type="button"
                 >
-                  <rect
-                    fill="none"
-                    height="15"
-                    width="15"
-                    x="2"
-                    y="2"
-                  />
-                  <line
-                    x1="6"
-                    x2="6"
-                    y1="0"
-                    y2="4"
-                  />
-                  <line
-                    x1="13"
-                    x2="13"
-                    y1="0"
-                    y2="4"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    className="react-datetime-picker__calendar-button__icon react-datetime-picker__button__icon"
+                    height={19}
+                    stroke="black"
+                    strokeWidth={2}
+                    viewBox="0 0 19 19"
+                    width={19}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      fill="none"
+                      height="15"
+                      width="15"
+                      x="2"
+                      y="2"
+                    />
+                    <line
+                      x1="6"
+                      x2="6"
+                      y1="0"
+                      y2="4"
+                    />
+                    <line
+                      x1="13"
+                      x2="13"
+                      y1="0"
+                      y2="4"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </DateTimePicker>
+          </DateTimePicker>
+        </div>
       </div>
       <div
-        className="checkboxRow"
+        className="addressArea"
       >
-        <label>
-          <input
-            checked={false}
-            name="online"
-            onChange={[Function]}
-            type="checkbox"
-          />
-          Online event
-        </label>
-      </div>
-      <div>
         <h4>
           Address
         </h4>
         <div
-          className="inputRow"
+          className="checkboxRow"
         >
-          <label
-            htmlFor="street"
-          >
-            Street
+          <label>
+            <input
+              checked={false}
+              name="online"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            Online event
           </label>
-          <input
-            id="street"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
+        </div>
+        <div>
+          <div
+            className="inputRow"
+          >
+            <label
+              htmlFor="street"
+            >
+              Street
+            </label>
+            <input
+              id="street"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="inputRow"
+          >
+            <label
+              htmlFor="city"
+            >
+              City
+            </label>
+            <input
+              id="city"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="capacityArea"
+      >
+        <div
+          className="checkboxRow"
+        >
+          <label>
+            <input
+              checked={true}
+              name="capacity-true"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            Max capacity
+          </label>
         </div>
         <div
           className="inputRow"
         >
           <label
-            htmlFor="city"
+            htmlFor="max-capacity"
           >
-            City
+            Maximum number of attendants
           </label>
           <input
-            id="city"
+            aria-label="capacity-input"
+            id="max-capacity"
+            min={0}
             onChange={[Function]}
-            type="text"
-            value=""
+            pattern="[0-9]*"
+            type="number"
+            value={100}
           />
         </div>
-      </div>
-      <div
-        className="checkboxRow"
-      >
-        <label>
-          <input
-            checked={true}
-            name="capacity-true"
-            onChange={[Function]}
-            type="checkbox"
-          />
-          Max capacity
-        </label>
-      </div>
-      <div
-        className="inputRow"
-      >
-        <label
-          htmlFor="max-capacity"
-        >
-          Maximum number of attendants
-        </label>
-        <input
-          aria-label="capacity-input"
-          id="max-capacity"
-          min={0}
-          onChange={[Function]}
-          pattern="[0-9]*"
-          step={10}
-          type="number"
-          value={100}
-        />
       </div>
       <div
         className="buttons"
       >
         <button
+          className="cancelButton"
           onClick={[Function]}
           type="button"
         >
           Cancel
         </button>
         <button
+          className="mainButton"
           disabled={true}
         >
           Create
