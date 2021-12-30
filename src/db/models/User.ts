@@ -32,7 +32,7 @@ export class User {
     this.id = id || uid()
   }
 
-  saveIdToLocalStorage = () => {
+  saveIdToLocalStorage = (): void => {
     localStorage.setItem('user', this.id)
   }
 
@@ -75,17 +75,17 @@ export class User {
     }
   }
 
-  addAttending = (meetupId: string) => {
+  addAttending = (meetupId: string): void => {
     this.attending.push(meetupId)
   }
 
-  cancelAttending = (meetupId: string) => {
+  cancelAttending = (meetupId: string): void => {
     const index = this.attending.findIndex((id) => id === meetupId)
 
     this.attending.splice(index, 0)
   }
 
-  addReviewed = (meetupId: string) => {
+  addReviewed = (meetupId: string): void => {
     this.reviewed.push(meetupId)
   }
 
@@ -105,11 +105,11 @@ export class UserBank {
     return this.users.find((user) => user.id === id)
   }
 
-  getAll = () => {
+  getAll = (): User[] => {
     return this.users
   }
 
-  add = (user: User) => {
+  add = (user: User): void => {
     this.users.push(user)
   }
 
