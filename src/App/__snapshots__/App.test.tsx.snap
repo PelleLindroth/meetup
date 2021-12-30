@@ -66,7 +66,9 @@ exports[`App unit tests renders App correctly 1`] = `
         <Home
           meetups={
             Array [
-              Object {
+              Meetup {
+                "addComment": [Function],
+                "addReview": [Function],
                 "arranger": User {
                   "addAttending": [Function],
                   "addReviewed": [Function],
@@ -111,8 +113,10 @@ exports[`App unit tests renders App correctly 1`] = `
                   },
                 ],
                 "date": 2021-08-28T17:00:00.000Z,
+                "decreaseAttendants": [Function],
                 "description": "We meet in the park with pizzas and hang out all night",
                 "id": "1",
+                "increaseAttendants": [Function],
                 "location": Object {
                   "city": "Stockholm",
                   "street": "Vitabergsparken",
@@ -131,8 +135,11 @@ exports[`App unit tests renders App correctly 1`] = `
                   },
                 ],
                 "title": "Pizza Picnic",
+                "url": null,
               },
-              Object {
+              Meetup {
+                "addComment": [Function],
+                "addReview": [Function],
                 "arranger": User {
                   "addAttending": [Function],
                   "addReviewed": [Function],
@@ -153,8 +160,10 @@ exports[`App unit tests renders App correctly 1`] = `
                 "capacity": 500,
                 "comments": Array [],
                 "date": 2021-10-31T18:00:00.000Z,
+                "decreaseAttendants": [Function],
                 "description": "Halloween party in the street, all night long",
                 "id": "5",
+                "increaseAttendants": [Function],
                 "location": Object {
                   "city": "Stockholm",
                   "street": "Strandvägen",
@@ -162,8 +171,11 @@ exports[`App unit tests renders App correctly 1`] = `
                 "online": false,
                 "reviews": Array [],
                 "title": "Halloween Street Party",
+                "url": null,
               },
-              Object {
+              Meetup {
+                "addComment": [Function],
+                "addReview": [Function],
                 "arranger": User {
                   "addAttending": [Function],
                   "addReviewed": [Function],
@@ -184,14 +196,19 @@ exports[`App unit tests renders App correctly 1`] = `
                 "capacity": null,
                 "comments": Array [],
                 "date": 2022-01-10T10:00:00.000Z,
+                "decreaseAttendants": [Function],
                 "description": "Learn a new programming language from the ground up",
                 "id": "2",
+                "increaseAttendants": [Function],
+                "location": null,
                 "online": true,
                 "reviews": Array [],
                 "title": "Rust course",
                 "url": "https://www.udemy.com/course/rust-lang/",
               },
-              Object {
+              Meetup {
+                "addComment": [Function],
+                "addReview": [Function],
                 "arranger": User {
                   "addAttending": [Function],
                   "addReviewed": [Function],
@@ -216,8 +233,10 @@ exports[`App unit tests renders App correctly 1`] = `
                 "capacity": 43883,
                 "comments": Array [],
                 "date": 2022-05-13T16:00:00.000Z,
+                "decreaseAttendants": [Function],
                 "description": "A classic football match between the south and the north",
                 "id": "3",
+                "increaseAttendants": [Function],
                 "location": Object {
                   "city": "41005 Sevilla",
                   "street": "C. Sevilla Fútbol Club",
@@ -225,8 +244,11 @@ exports[`App unit tests renders App correctly 1`] = `
                 "online": false,
                 "reviews": Array [],
                 "title": "Sevilla - Real Sociedad",
+                "url": "https://www.udemy.com/course/rust-lang/",
               },
-              Object {
+              Meetup {
+                "addComment": [Function],
+                "addReview": [Function],
                 "arranger": User {
                   "addAttending": [Function],
                   "addReviewed": [Function],
@@ -252,8 +274,10 @@ exports[`App unit tests renders App correctly 1`] = `
                 "capacity": null,
                 "comments": Array [],
                 "date": 2022-07-02T15:00:00.000Z,
+                "decreaseAttendants": [Function],
                 "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
                 "id": "4",
+                "increaseAttendants": [Function],
                 "location": Object {
                   "city": "Stockholm",
                   "street": "Gärdet",
@@ -261,6 +285,7 @@ exports[`App unit tests renders App correctly 1`] = `
                 "online": false,
                 "reviews": Array [],
                 "title": "Kite festival",
+                "url": null,
               },
             ]
           }
@@ -324,7 +349,9 @@ exports[`App unit tests renders App correctly 1`] = `
             <MeetupList
               meetups={
                 Array [
-                  Object {
+                  Meetup {
+                    "addComment": [Function],
+                    "addReview": [Function],
                     "arranger": User {
                       "addAttending": [Function],
                       "addReviewed": [Function],
@@ -345,14 +372,19 @@ exports[`App unit tests renders App correctly 1`] = `
                     "capacity": null,
                     "comments": Array [],
                     "date": 2022-01-10T10:00:00.000Z,
+                    "decreaseAttendants": [Function],
                     "description": "Learn a new programming language from the ground up",
                     "id": "2",
+                    "increaseAttendants": [Function],
+                    "location": null,
                     "online": true,
                     "reviews": Array [],
                     "title": "Rust course",
                     "url": "https://www.udemy.com/course/rust-lang/",
                   },
-                  Object {
+                  Meetup {
+                    "addComment": [Function],
+                    "addReview": [Function],
                     "arranger": User {
                       "addAttending": [Function],
                       "addReviewed": [Function],
@@ -377,8 +409,10 @@ exports[`App unit tests renders App correctly 1`] = `
                     "capacity": 43883,
                     "comments": Array [],
                     "date": 2022-05-13T16:00:00.000Z,
+                    "decreaseAttendants": [Function],
                     "description": "A classic football match between the south and the north",
                     "id": "3",
+                    "increaseAttendants": [Function],
                     "location": Object {
                       "city": "41005 Sevilla",
                       "street": "C. Sevilla Fútbol Club",
@@ -386,8 +420,11 @@ exports[`App unit tests renders App correctly 1`] = `
                     "online": false,
                     "reviews": Array [],
                     "title": "Sevilla - Real Sociedad",
+                    "url": "https://www.udemy.com/course/rust-lang/",
                   },
-                  Object {
+                  Meetup {
+                    "addComment": [Function],
+                    "addReview": [Function],
                     "arranger": User {
                       "addAttending": [Function],
                       "addReviewed": [Function],
@@ -413,8 +450,10 @@ exports[`App unit tests renders App correctly 1`] = `
                     "capacity": null,
                     "comments": Array [],
                     "date": 2022-07-02T15:00:00.000Z,
+                    "decreaseAttendants": [Function],
                     "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
                     "id": "4",
+                    "increaseAttendants": [Function],
                     "location": Object {
                       "city": "Stockholm",
                       "street": "Gärdet",
@@ -422,6 +461,7 @@ exports[`App unit tests renders App correctly 1`] = `
                     "online": false,
                     "reviews": Array [],
                     "title": "Kite festival",
+                    "url": null,
                   },
                 ]
               }
@@ -434,7 +474,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 <MeetupCard
                   key="2"
                   meetup={
-                    Object {
+                    Meetup {
+                      "addComment": [Function],
+                      "addReview": [Function],
                       "arranger": User {
                         "addAttending": [Function],
                         "addReviewed": [Function],
@@ -455,8 +497,11 @@ exports[`App unit tests renders App correctly 1`] = `
                       "capacity": null,
                       "comments": Array [],
                       "date": 2022-01-10T10:00:00.000Z,
+                      "decreaseAttendants": [Function],
                       "description": "Learn a new programming language from the ground up",
                       "id": "2",
+                      "increaseAttendants": [Function],
+                      "location": null,
                       "online": true,
                       "reviews": Array [],
                       "title": "Rust course",
@@ -556,7 +601,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 <MeetupCard
                   key="3"
                   meetup={
-                    Object {
+                    Meetup {
+                      "addComment": [Function],
+                      "addReview": [Function],
                       "arranger": User {
                         "addAttending": [Function],
                         "addReviewed": [Function],
@@ -581,8 +628,10 @@ exports[`App unit tests renders App correctly 1`] = `
                       "capacity": 43883,
                       "comments": Array [],
                       "date": 2022-05-13T16:00:00.000Z,
+                      "decreaseAttendants": [Function],
                       "description": "A classic football match between the south and the north",
                       "id": "3",
+                      "increaseAttendants": [Function],
                       "location": Object {
                         "city": "41005 Sevilla",
                         "street": "C. Sevilla Fútbol Club",
@@ -590,6 +639,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "online": false,
                       "reviews": Array [],
                       "title": "Sevilla - Real Sociedad",
+                      "url": "https://www.udemy.com/course/rust-lang/",
                     }
                   }
                   upcoming={true}
@@ -688,7 +738,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 <MeetupCard
                   key="4"
                   meetup={
-                    Object {
+                    Meetup {
+                      "addComment": [Function],
+                      "addReview": [Function],
                       "arranger": User {
                         "addAttending": [Function],
                         "addReviewed": [Function],
@@ -714,8 +766,10 @@ exports[`App unit tests renders App correctly 1`] = `
                       "capacity": null,
                       "comments": Array [],
                       "date": 2022-07-02T15:00:00.000Z,
+                      "decreaseAttendants": [Function],
                       "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
                       "id": "4",
+                      "increaseAttendants": [Function],
                       "location": Object {
                         "city": "Stockholm",
                         "street": "Gärdet",
@@ -723,6 +777,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "online": false,
                       "reviews": Array [],
                       "title": "Kite festival",
+                      "url": null,
                     }
                   }
                   upcoming={true}
@@ -823,7 +878,9 @@ exports[`App unit tests renders App correctly 1`] = `
             <MeetupList
               meetups={
                 Array [
-                  Object {
+                  Meetup {
+                    "addComment": [Function],
+                    "addReview": [Function],
                     "arranger": User {
                       "addAttending": [Function],
                       "addReviewed": [Function],
@@ -868,8 +925,10 @@ exports[`App unit tests renders App correctly 1`] = `
                       },
                     ],
                     "date": 2021-08-28T17:00:00.000Z,
+                    "decreaseAttendants": [Function],
                     "description": "We meet in the park with pizzas and hang out all night",
                     "id": "1",
+                    "increaseAttendants": [Function],
                     "location": Object {
                       "city": "Stockholm",
                       "street": "Vitabergsparken",
@@ -888,8 +947,11 @@ exports[`App unit tests renders App correctly 1`] = `
                       },
                     ],
                     "title": "Pizza Picnic",
+                    "url": null,
                   },
-                  Object {
+                  Meetup {
+                    "addComment": [Function],
+                    "addReview": [Function],
                     "arranger": User {
                       "addAttending": [Function],
                       "addReviewed": [Function],
@@ -910,8 +972,10 @@ exports[`App unit tests renders App correctly 1`] = `
                     "capacity": 500,
                     "comments": Array [],
                     "date": 2021-10-31T18:00:00.000Z,
+                    "decreaseAttendants": [Function],
                     "description": "Halloween party in the street, all night long",
                     "id": "5",
+                    "increaseAttendants": [Function],
                     "location": Object {
                       "city": "Stockholm",
                       "street": "Strandvägen",
@@ -919,6 +983,7 @@ exports[`App unit tests renders App correctly 1`] = `
                     "online": false,
                     "reviews": Array [],
                     "title": "Halloween Street Party",
+                    "url": null,
                   },
                 ]
               }
@@ -930,7 +995,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 <MeetupCard
                   key="1"
                   meetup={
-                    Object {
+                    Meetup {
+                      "addComment": [Function],
+                      "addReview": [Function],
                       "arranger": User {
                         "addAttending": [Function],
                         "addReviewed": [Function],
@@ -975,8 +1042,10 @@ exports[`App unit tests renders App correctly 1`] = `
                         },
                       ],
                       "date": 2021-08-28T17:00:00.000Z,
+                      "decreaseAttendants": [Function],
                       "description": "We meet in the park with pizzas and hang out all night",
                       "id": "1",
+                      "increaseAttendants": [Function],
                       "location": Object {
                         "city": "Stockholm",
                         "street": "Vitabergsparken",
@@ -995,6 +1064,7 @@ exports[`App unit tests renders App correctly 1`] = `
                         },
                       ],
                       "title": "Pizza Picnic",
+                      "url": null,
                     }
                   }
                 >
@@ -1089,7 +1159,9 @@ exports[`App unit tests renders App correctly 1`] = `
                 <MeetupCard
                   key="5"
                   meetup={
-                    Object {
+                    Meetup {
+                      "addComment": [Function],
+                      "addReview": [Function],
                       "arranger": User {
                         "addAttending": [Function],
                         "addReviewed": [Function],
@@ -1110,8 +1182,10 @@ exports[`App unit tests renders App correctly 1`] = `
                       "capacity": 500,
                       "comments": Array [],
                       "date": 2021-10-31T18:00:00.000Z,
+                      "decreaseAttendants": [Function],
                       "description": "Halloween party in the street, all night long",
                       "id": "5",
+                      "increaseAttendants": [Function],
                       "location": Object {
                         "city": "Stockholm",
                         "street": "Strandvägen",
@@ -1119,6 +1193,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "online": false,
                       "reviews": Array [],
                       "title": "Halloween Street Party",
+                      "url": null,
                     }
                   }
                 >

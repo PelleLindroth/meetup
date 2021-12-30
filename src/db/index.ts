@@ -1,6 +1,6 @@
-import { meetups, Meetup, Comment, Review } from './models/Meetup'
+import { Meetup, Comment, Review } from './models/Meetup'
 import { UserDetails, User } from './models/User'
-import { users } from './seed'
+import { users, meetups } from './seed'
 import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
 export const getAllMeetups = (): Meetup[] => {
@@ -12,8 +12,8 @@ export const getAllMeetups = (): Meetup[] => {
 
     returnedMeetups.push(...storedMeetups)
   } else {
-    localStorage.setItem('meetups', JSON.stringify(meetups))
-    returnedMeetups.push(...meetups)
+    localStorage.setItem('meetups', JSON.stringify(meetups.getAll()))
+    returnedMeetups.push(...meetups.getAll())
   }
 
   sortMeetupsChronologically(returnedMeetups)
@@ -22,30 +22,34 @@ export const getAllMeetups = (): Meetup[] => {
 }
 
 export const getMeetupById = (id: string): Meetup | undefined => {
-  return meetups.find((meetup) => meetup.id === id)
+  return meetups.getById(id)
 }
 
 export const addComment = (meetupId: string, comment: Comment) => {
   const meetup = getMeetupById(meetupId)
 
   if (meetup) {
-    meetup.comments.push(comment)
+    meetup.addComment(comment)
     updateMeetupInLocalStorage(meetup)
   }
 }
 
-export const addReview = (meetupId: string, userId: string, review: Review) => {
+export const addReview = (
+  meetupId: string,
+  userId: string,
+  review: Review
+): void => {
   const meetup = getMeetupById(meetupId)
   const user = users.getById(userId)
   if (!meetup || !user) return
 
-  meetup.reviews.push(review)
+  meetup.addReview(review)
   user.addReviewed(meetup.id)
   updateMeetupInLocalStorage(meetup)
 }
 
 export const addMeetup = (meetup: Meetup) => {
-  meetups.push(meetup)
+  meetups.add(meetup)
   saveMeetupToLocalStorage(meetup)
 }
 

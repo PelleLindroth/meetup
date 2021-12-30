@@ -10,7 +10,7 @@ const ArrangerSection = (props: ArrangerSectionprops) => {
         <img src={UserIcon} alt="User icon" />
         <h3>Arranger:</h3>
       </div>
-      <p>{`${meetup.arranger.getFullName()}`}</p>
+      <p>{`${meetup.arranger.firstName} ${meetup.arranger.lastName}`}</p>
       <p>Email: {meetup.arranger.email}</p>
     </section>
   )

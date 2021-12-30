@@ -34,31 +34,17 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const handleCreateMeetup = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    const meetup: Meetup = {
-      id: uid(),
+    const meetup = new Meetup(
       title,
       description,
+      user,
       date,
-      online: isOnlineEvent,
-      capacity: hasMaxCapacity ? maxCapacity : null,
-      attending: 0,
-      arranger: user,
-      reviews: [],
-      comments: [],
-    }
-
-    // if (!meetup.date) {
-    //   meetup.date = customDate
-    // }
-
-    if (isOnlineEvent) {
-      meetup.url = url
-    } else {
-      meetup.location = {
-        street,
-        city,
-      }
-    }
+      isOnlineEvent ? null : { street, city },
+      uid(),
+      isOnlineEvent,
+      isOnlineEvent ? url : null,
+      hasMaxCapacity ? maxCapacity : null
+    )
 
     setMeetups([...meetups, meetup])
     addMeetup(meetup)
