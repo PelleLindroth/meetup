@@ -5,19 +5,26 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
   meetups={Array []}
   setMeetups={[MockFunction]}
   user={
-    Object {
+    User {
+      "addAttending": [Function],
+      "addReviewed": [Function],
       "attending": Array [
         "1",
         "2",
       ],
+      "cancelAttending": [Function],
       "email": "tjalle@yahoo.com",
       "firstName": "Tjalle",
+      "getDetails": [Function],
+      "getFullName": [Function],
       "id": "1",
       "lastName": "Bergkvist",
       "password": "grillkorv",
       "reviewed": Array [
         "1",
       ],
+      "saveDetailsToLocalStorage": [Function],
+      "saveIdToLocalStorage": [Function],
     }
   }
 >

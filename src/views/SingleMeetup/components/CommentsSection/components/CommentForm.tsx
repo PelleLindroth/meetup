@@ -1,6 +1,6 @@
 import { uid } from 'uid'
 import { useState } from 'react'
-import { Comment } from '../../../../../db/meetups'
+import { Comment } from '../../../../../db/models/Meetup'
 import { CommentFormProps } from '../../../types'
 import { addComment } from '../../../../../db'
 import styles from '../../../SingleMeetup.module.scss'

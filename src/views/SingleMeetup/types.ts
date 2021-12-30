@@ -1,5 +1,5 @@
-import { User } from '../../db/users'
-import { Meetup } from '../../db/meetups'
+import { User } from '../../db/models/User'
+import { Meetup } from '../../db/models/Meetup'
 
 export type SingleMeetupProps = {
   meetups: Meetup[]

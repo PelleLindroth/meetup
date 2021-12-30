@@ -3,20 +3,29 @@
 exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test) 1`] = `
 <ReviewsSection
   meetup={
-    Object {
-      "arranger": Object {
+    Meetup {
+      "addComment": [Function],
+      "addReview": [Function],
+      "arranger": User {
+        "addAttending": [Function],
+        "addReviewed": [Function],
         "attending": Array [
           "1",
           "2",
         ],
+        "cancelAttending": [Function],
         "email": "tjalle@yahoo.com",
         "firstName": "Tjalle",
+        "getDetails": [Function],
+        "getFullName": [Function],
         "id": "1",
         "lastName": "Bergkvist",
         "password": "grillkorv",
         "reviewed": Array [
           "1",
         ],
+        "saveDetailsToLocalStorage": [Function],
+        "saveIdToLocalStorage": [Function],
       },
       "attending": 54,
       "capacity": null,
@@ -41,8 +50,10 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
         },
       ],
       "date": 2021-08-28T17:00:00.000Z,
+      "decreaseAttendants": [Function],
       "description": "We meet in the park with pizzas and hang out all night",
       "id": "1",
+      "increaseAttendants": [Function],
       "location": Object {
         "city": "Stockholm",
         "street": "Vitabergsparken",
@@ -61,6 +72,7 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
         },
       ],
       "title": "Pizza Picnic",
+      "url": null,
     }
   }
   user={null}

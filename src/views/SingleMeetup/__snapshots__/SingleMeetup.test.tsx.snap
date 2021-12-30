@@ -4,20 +4,29 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
 <SingleMeetup
   meetups={
     Array [
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 54,
         "capacity": null,
@@ -42,8 +51,10 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           },
         ],
         "date": 2021-08-28T17:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "We meet in the park with pizzas and hang out all night",
         "id": "1",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "Stockholm",
           "street": "Vitabergsparken",
@@ -62,23 +73,35 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
           },
         ],
         "title": "Pizza Picnic",
+        "url": null,
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 356,
         "capacity": 500,
         "comments": Array [],
         "date": 2021-10-31T18:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "Halloween party in the street, all night long",
         "id": "5",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "Stockholm",
           "street": "Strandvägen",
@@ -86,48 +109,72 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Halloween Street Party",
+        "url": null,
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 234,
         "capacity": null,
         "comments": Array [],
         "date": 2022-01-10T10:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "Learn a new programming language from the ground up",
         "id": "2",
+        "increaseAttendants": [Function],
+        "location": null,
         "online": true,
         "reviews": Array [],
         "title": "Rust course",
         "url": "https://www.udemy.com/course/rust-lang/",
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
           ],
+          "cancelAttending": [Function],
           "email": "kenta@yahoo.com",
           "firstName": "Kenta",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "2",
           "lastName": "Andersson",
           "password": "bananpaj",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 23478,
         "capacity": 43883,
         "comments": Array [],
         "date": 2022-05-13T16:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "A classic football match between the south and the north",
         "id": "3",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "41005 Sevilla",
           "street": "C. Sevilla Fútbol Club",
@@ -135,28 +182,40 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Sevilla - Real Sociedad",
+        "url": "https://www.udemy.com/course/rust-lang/",
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 126,
         "capacity": null,
         "comments": Array [],
         "date": 2022-07-02T15:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
         "id": "4",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "Stockholm",
           "street": "Gärdet",
@@ -164,6 +223,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Kite festival",
+        "url": null,
       },
     ]
   }
@@ -176,22 +236,34 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       attending={false}
       isUpcomingEvent={true}
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 234,
           "capacity": null,
           "comments": Array [],
           "date": 2022-01-10T10:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "Learn a new programming language from the ground up",
           "id": "2",
+          "increaseAttendants": [Function],
+          "location": null,
           "online": true,
           "reviews": Array [],
           "title": "Rust course",
@@ -216,22 +288,34 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       attending={false}
       isUpcomingEvent={true}
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 234,
           "capacity": null,
           "comments": Array [],
           "date": 2022-01-10T10:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "Learn a new programming language from the ground up",
           "id": "2",
+          "increaseAttendants": [Function],
+          "location": null,
           "online": true,
           "reviews": Array [],
           "title": "Rust course",
@@ -274,22 +358,34 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     </DetailsSection>
     <ArrangerSection
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 234,
           "capacity": null,
           "comments": Array [],
           "date": 2022-01-10T10:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "Learn a new programming language from the ground up",
           "id": "2",
+          "increaseAttendants": [Function],
+          "location": null,
           "online": true,
           "reviews": Array [],
           "title": "Rust course",
@@ -323,22 +419,34 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     <CapacitySection
       isUpcomingEvent={true}
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 234,
           "capacity": null,
           "comments": Array [],
           "date": 2022-01-10T10:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "Learn a new programming language from the ground up",
           "id": "2",
+          "increaseAttendants": [Function],
+          "location": null,
           "online": true,
           "reviews": Array [],
           "title": "Rust course",
@@ -388,22 +496,34 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
     </CapacitySection>
     <CommentsSection
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [],
+            "cancelAttending": [Function],
             "email": "babsan@yahoo.com",
             "firstName": "Barbro",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "3",
             "lastName": "Lundborg",
             "password": "password123",
             "reviewed": Array [],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 234,
           "capacity": null,
           "comments": Array [],
           "date": 2022-01-10T10:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "Learn a new programming language from the ground up",
           "id": "2",
+          "increaseAttendants": [Function],
+          "location": null,
           "online": true,
           "reviews": Array [],
           "title": "Rust course",
@@ -462,20 +582,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
 <SingleMeetup
   meetups={
     Array [
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 54,
         "capacity": null,
@@ -500,8 +629,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           },
         ],
         "date": 2021-08-28T17:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "We meet in the park with pizzas and hang out all night",
         "id": "1",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "Stockholm",
           "street": "Vitabergsparken",
@@ -520,23 +651,35 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
           },
         ],
         "title": "Pizza Picnic",
+        "url": null,
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 356,
         "capacity": 500,
         "comments": Array [],
         "date": 2021-10-31T18:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "Halloween party in the street, all night long",
         "id": "5",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "Stockholm",
           "street": "Strandvägen",
@@ -544,48 +687,72 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Halloween Street Party",
+        "url": null,
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [],
+          "cancelAttending": [Function],
           "email": "babsan@yahoo.com",
           "firstName": "Barbro",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "3",
           "lastName": "Lundborg",
           "password": "password123",
           "reviewed": Array [],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 234,
         "capacity": null,
         "comments": Array [],
         "date": 2022-01-10T10:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "Learn a new programming language from the ground up",
         "id": "2",
+        "increaseAttendants": [Function],
+        "location": null,
         "online": true,
         "reviews": Array [],
         "title": "Rust course",
         "url": "https://www.udemy.com/course/rust-lang/",
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
           ],
+          "cancelAttending": [Function],
           "email": "kenta@yahoo.com",
           "firstName": "Kenta",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "2",
           "lastName": "Andersson",
           "password": "bananpaj",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 23478,
         "capacity": 43883,
         "comments": Array [],
         "date": 2022-05-13T16:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "A classic football match between the south and the north",
         "id": "3",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "41005 Sevilla",
           "street": "C. Sevilla Fútbol Club",
@@ -593,28 +760,40 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Sevilla - Real Sociedad",
+        "url": "https://www.udemy.com/course/rust-lang/",
       },
-      Object {
-        "arranger": Object {
+      Meetup {
+        "addComment": [Function],
+        "addReview": [Function],
+        "arranger": User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         },
         "attending": 126,
         "capacity": null,
         "comments": Array [],
         "date": 2022-07-02T15:00:00.000Z,
+        "decreaseAttendants": [Function],
         "description": "Classic Kite festival at Gärdet, bring your own kite or just watch the pros",
         "id": "4",
+        "increaseAttendants": [Function],
         "location": Object {
           "city": "Stockholm",
           "street": "Gärdet",
@@ -622,23 +801,31 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Kite festival",
+        "url": null,
       },
     ]
   }
   user={
-    Object {
+    User {
+      "addAttending": [Function],
+      "addReviewed": [Function],
       "attending": Array [
         "1",
         "2",
       ],
+      "cancelAttending": [Function],
       "email": "tjalle@yahoo.com",
       "firstName": "Tjalle",
+      "getDetails": [Function],
+      "getFullName": [Function],
       "id": "1",
       "lastName": "Bergkvist",
       "password": "grillkorv",
       "reviewed": Array [
         "1",
       ],
+      "saveDetailsToLocalStorage": [Function],
+      "saveIdToLocalStorage": [Function],
     }
   }
 >
@@ -649,20 +836,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       attending={true}
       isUpcomingEvent={false}
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -687,8 +883,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "date": 2021-08-28T17:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "We meet in the park with pizzas and hang out all night",
           "id": "1",
+          "increaseAttendants": [Function],
           "location": Object {
             "city": "Stockholm",
             "street": "Vitabergsparken",
@@ -707,23 +905,31 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+          "url": null,
         }
       }
       setAttending={[Function]}
       user={
-        Object {
+        User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         }
       }
     >
@@ -742,20 +948,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       attending={true}
       isUpcomingEvent={false}
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -780,8 +995,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "date": 2021-08-28T17:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "We meet in the park with pizzas and hang out all night",
           "id": "1",
+          "increaseAttendants": [Function],
           "location": Object {
             "city": "Stockholm",
             "street": "Vitabergsparken",
@@ -800,23 +1017,31 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+          "url": null,
         }
       }
       setAttending={[Function]}
       user={
-        Object {
+        User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         }
       }
     >
@@ -858,20 +1083,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     </DetailsSection>
     <ArrangerSection
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -896,8 +1130,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "date": 2021-08-28T17:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "We meet in the park with pizzas and hang out all night",
           "id": "1",
+          "increaseAttendants": [Function],
           "location": Object {
             "city": "Stockholm",
             "street": "Vitabergsparken",
@@ -916,6 +1152,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+          "url": null,
         }
       }
     >
@@ -945,20 +1182,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     <CapacitySection
       isUpcomingEvent={false}
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -983,8 +1229,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "date": 2021-08-28T17:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "We meet in the park with pizzas and hang out all night",
           "id": "1",
+          "increaseAttendants": [Function],
           "location": Object {
             "city": "Stockholm",
             "street": "Vitabergsparken",
@@ -1003,6 +1251,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+          "url": null,
         }
       }
     >
@@ -1026,20 +1275,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     </CapacitySection>
     <ReviewsSection
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -1064,8 +1322,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "date": 2021-08-28T17:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "We meet in the park with pizzas and hang out all night",
           "id": "1",
+          "increaseAttendants": [Function],
           "location": Object {
             "city": "Stockholm",
             "street": "Vitabergsparken",
@@ -1084,22 +1344,30 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+          "url": null,
         }
       }
       user={
-        Object {
+        User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         }
       }
     >
@@ -1133,20 +1401,29 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
     </ReviewsSection>
     <CommentsSection
       meetup={
-        Object {
-          "arranger": Object {
+        Meetup {
+          "addComment": [Function],
+          "addReview": [Function],
+          "arranger": User {
+            "addAttending": [Function],
+            "addReviewed": [Function],
             "attending": Array [
               "1",
               "2",
             ],
+            "cancelAttending": [Function],
             "email": "tjalle@yahoo.com",
             "firstName": "Tjalle",
+            "getDetails": [Function],
+            "getFullName": [Function],
             "id": "1",
             "lastName": "Bergkvist",
             "password": "grillkorv",
             "reviewed": Array [
               "1",
             ],
+            "saveDetailsToLocalStorage": [Function],
+            "saveIdToLocalStorage": [Function],
           },
           "attending": 54,
           "capacity": null,
@@ -1171,8 +1448,10 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "date": 2021-08-28T17:00:00.000Z,
+          "decreaseAttendants": [Function],
           "description": "We meet in the park with pizzas and hang out all night",
           "id": "1",
+          "increaseAttendants": [Function],
           "location": Object {
             "city": "Stockholm",
             "street": "Vitabergsparken",
@@ -1191,22 +1470,30 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
             },
           ],
           "title": "Pizza Picnic",
+          "url": null,
         }
       }
       user={
-        Object {
+        User {
+          "addAttending": [Function],
+          "addReviewed": [Function],
           "attending": Array [
             "1",
             "2",
           ],
+          "cancelAttending": [Function],
           "email": "tjalle@yahoo.com",
           "firstName": "Tjalle",
+          "getDetails": [Function],
+          "getFullName": [Function],
           "id": "1",
           "lastName": "Bergkvist",
           "password": "grillkorv",
           "reviewed": Array [
             "1",
           ],
+          "saveDetailsToLocalStorage": [Function],
+          "saveIdToLocalStorage": [Function],
         }
       }
     >

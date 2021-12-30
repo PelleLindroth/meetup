@@ -11,7 +11,50 @@
   form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    margin-bottom: 2rem;
+    width: 90%;
+
+    .checkboxRow {
+      input {
+        background-color: #fff;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 0.5rem;
+        margin-right: 0.3rem;
+
+        &:checked {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .detailsArea {
+      background-color: #dcddde;
+      border-radius: 5px;
+      color: #333;
+      padding: 1.5rem 0.5rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .addressArea {
+      background-color: #dcddde;
+      border-radius: 5px;
+      color: #333;
+      padding: 1.5rem 0.5rem 1rem;
+      margin-bottom: 1rem;
+
+      h4 {
+        margin: 0 0 0.5rem 0;
+      }
+    }
+
+    .capacityArea {
+      background-color: #dcddde;
+      border-radius: 5px;
+      color: #333;
+      padding: 1rem 0.5rem;
+      margin-bottom: 1rem;
+    }
 
     .inputRow {
       display: flex;
@@ -42,6 +85,36 @@
       textarea {
         height: 3rem;
         resize: none;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        border: none;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        margin: 0 0.2rem;
+        outline: none;
+        padding: 0.3rem 0.6rem;
+      }
+
+      .mainButton {
+        background-color: #0e81c9;
+        border: 1px solid transparent;
+        color: #fff;
+
+        &:disabled {
+          background-color: #d9d9d9;
+        }
+      }
+
+      .cancelButton {
+        background-color: transparent;
+        color: #333;
+        border: 1px solid #333;
       }
     }
   }

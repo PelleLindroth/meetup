@@ -1,4 +1,4 @@
-import { User } from '../db/users'
+import { User } from '../db/models/User'
 
 export type HeaderProps = {
   user: User | null

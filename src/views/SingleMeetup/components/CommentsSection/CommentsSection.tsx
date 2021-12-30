@@ -27,7 +27,7 @@ const CommentsSection = (props: CommentsSectionProps) => {
               signature = 'You'
             } else {
               if (author) {
-                signature = `${author!.firstName} ${author!.lastName}`
+                signature = `${author!.getFullName()}`
               }
             }
 
