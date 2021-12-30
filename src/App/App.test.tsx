@@ -147,4 +147,32 @@ describe('Happy paths', () => {
       name: /sevilla - real sociedad/i,
     })
   })
+  test('Happy path for adding a comment', async () => {
+    renderWithRouter(<App />)
+
+    // Click on upcoming Meetup link
+    const upcomingMeetupsList = await screen.findByTestId('upcoming-events')
+    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[0])
+
+    // Add comment
+    const addCommentButton = await screen.findByRole('button', {
+      name: /add comment/i,
+    })
+
+    userEvent.click(addCommentButton)
+
+    const textInput = screen.getByRole('textbox')
+
+    userEvent.type(textInput, 'This is a comment')
+
+    const submitButton = screen.getByRole('button', { name: /submit/i })
+
+    userEvent.click(submitButton)
+
+    // Find comment
+
+    const comment = screen.getByRole('listitem')
+
+    expect(comment).toHaveTextContent('This is a comment')
+  })
 })
