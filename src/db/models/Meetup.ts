@@ -73,10 +73,6 @@ export class Meetup {
   decreaseAttendants = () => {
     this.attending--
   }
-
-  // update in local storage
-
-  // save in local storage
 }
 
 export class MeetupBank {
