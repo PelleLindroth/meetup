@@ -19,8 +19,7 @@ const CommentForm = (props: CommentFormProps) => {
       submittedAt: new Date(),
     }
 
-    meetup.comments.push(comment)
-    addComment(meetup.id, comment)
+    addComment(meetup, comment)
     setShowCommentForm(false)
   }
 
