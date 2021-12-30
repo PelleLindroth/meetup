@@ -25,13 +25,9 @@ export const getMeetupById = (id: string): Meetup | undefined => {
   return meetups.getById(id)
 }
 
-export const addComment = (meetupId: string, comment: Comment) => {
-  const meetup = getMeetupById(meetupId)
-
-  if (meetup) {
-    meetup.addComment(comment)
-    updateMeetupInLocalStorage(meetup)
-  }
+export const addComment = (meetup: Meetup, comment: Comment) => {
+  meetup.comments.push(comment)
+  updateMeetupInLocalStorage(meetup)
 }
 
 export const addReview = (

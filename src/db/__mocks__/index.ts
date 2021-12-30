@@ -1,4 +1,4 @@
-import { Meetup } from '../models/Meetup'
+import { Meetup, Comment } from '../models/Meetup'
 import { User, UserDetails } from '../models/User'
 import { users, meetups } from '../seed'
 import { sortMeetupsChronologically } from '../../utils/db-utils'
@@ -13,7 +13,9 @@ export const getMeetupById = (id: string): Meetup | undefined => {
   return meetups.getById(id)
 }
 
-export const addComment = jest.fn()
+export const addComment = (meetup: Meetup, comment: Comment) => {
+  meetup.comments.push(comment)
+}
 
 export const addReview = jest.fn()
 

@@ -19,11 +19,7 @@ const CommentForm = (props: CommentFormProps) => {
       submittedAt: new Date(),
     }
 
-    // NOT REALLY WORKING (first comment added twice):
-
-    meetup.comments.push(comment)
-
-    addComment(meetup.id, comment)
+    addComment(meetup, comment)
     setShowCommentForm(false)
   }
 
