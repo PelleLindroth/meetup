@@ -126,6 +126,15 @@
     margin: auto;
     padding: 1.5rem 0;
 
+    .pickerWrapper {
+      display: 'flex';
+      justify-content: 'center';
+      width: '100%';
+
+      .picker {
+        width: fit-content;
+      }
+    }
     label {
       font-weight: 700;
       margin-bottom: 0.8rem;

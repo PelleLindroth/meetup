@@ -1,12 +1,15 @@
 .react-datetime-picker {
   background-color: #fff;
+  width: fit-content;
 
   .react-datetime-picker__wrapper {
     border: none;
     border-radius: 0.5rem;
     height: 2rem;
+    width: fit-content;
   }
   .react-datetime-picker__inputGroup__input {
     outline: none;
+    width: fit-content;
   }
 }

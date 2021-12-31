@@ -1,6 +1,7 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { createMeetupList, list } from '../../utils'
 import { DateContext } from '../../contexts/DateContext'
+import { Meetup } from '../../db/models/Meetup'
 import SearchArea from './components/SearchArea/SearchArea'
 import MeetupList from './components/MeetupList'
 import { HomeProps } from './types'
@@ -10,6 +11,23 @@ const Home = (props: HomeProps) => {
   const { customDate } = useContext(DateContext)!
   const [searchPhrase, setSearchPhrase] = useState<string>('')
   const [searchFilter, setSearchFilter] = useState<list>('all')
+  const [upcomingMeetups, setUpcomingMeetups] = useState<Meetup[]>([])
+  const [pastMeetups, setPastMeetups] = useState<Meetup[]>([])
+
+  useEffect(() => {
+    setUpcomingMeetups(
+      createMeetupList(
+        meetups,
+        'upcoming',
+        searchPhrase,
+        searchFilter,
+        customDate
+      )
+    )
+    setPastMeetups(
+      createMeetupList(meetups, 'past', searchPhrase, searchFilter, customDate)
+    )
+  }, [customDate, meetups, searchFilter, searchPhrase])
 
   return (
     <>
@@ -23,29 +41,19 @@ const Home = (props: HomeProps) => {
         {(searchFilter === 'upcoming' || searchFilter === 'all') && (
           <h2>UPCOMING EVENTS</h2>
         )}
-        <MeetupList
-          meetups={createMeetupList(
-            meetups,
-            'upcoming',
-            searchPhrase,
-            searchFilter,
-            customDate
-          )}
-          upcoming
-        />
+        {upcomingMeetups.length ? (
+          <MeetupList meetups={upcomingMeetups} upcoming />
+        ) : (
+          <p>There are no upcoming events</p>
+        )}
         {(searchFilter === 'past' || searchFilter === 'all') && (
           <h2>PAST EVENTS</h2>
         )}
-
-        <MeetupList
-          meetups={createMeetupList(
-            meetups,
-            'past',
-            searchPhrase,
-            searchFilter,
-            customDate
-          )}
-        />
+        {pastMeetups.length ? (
+          <MeetupList meetups={pastMeetups} />
+        ) : (
+          <p>There are no past events</p>
+        )}
       </section>
     </>
   )

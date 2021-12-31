@@ -17,12 +17,15 @@ const SetTimeModal = (props: SetTimeModalProps) => {
   return (
     <section className={styles.setTimeModal}>
       <label>Set a custom date and time</label>
-      <DateTimePicker
-        disableClock={true}
-        onChange={setDate}
-        value={date!}
-        nativeInputAriaLabel="Date"
-      />
+      <div className={styles.pickerWrapper}>
+        <DateTimePicker
+          className={styles.picker}
+          disableClock={true}
+          onChange={setDate}
+          value={date!}
+          nativeInputAriaLabel="Date"
+        />
+      </div>
       <div className={styles.modalButtons}>
         <button
           className={styles.cancelButton}

@@ -54,7 +54,7 @@ const Header = (props: HeaderProps) => {
           </div>
         </div>
       )}
-      {showSetTimeModal && (
+      {showSetTimeModal && location.pathname === '/' && (
         <SetTimeModal setShowSetTimeModal={setShowSetTimeModal} />
       )}
     </header>
