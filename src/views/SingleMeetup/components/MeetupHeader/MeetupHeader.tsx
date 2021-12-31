@@ -7,7 +7,14 @@ import { MeetupHeaderProps } from '../../types'
 import styles from '../../SingleMeetup.module.scss'
 
 const MeetupHeader = (props: MeetupHeaderProps) => {
-  const { meetup, user, isUpcomingEvent, attending, setAttending } = props
+  const {
+    meetup,
+    user,
+    isUpcomingEvent,
+    isFullyBooked,
+    attending,
+    setAttending,
+  } = props
 
   const handleSignUp = () => {
     signUpForEvent(meetup, user!)
@@ -29,16 +36,22 @@ const MeetupHeader = (props: MeetupHeaderProps) => {
         {meetup.title}
       </h1>
       <h2>{meetup.description}</h2>
-      {isUpcomingEvent && user && !attending && (
-        <button onClick={handleSignUp} className={styles.signUpButton}>
-          Sign up for this event
-        </button>
-      )}
-      {isUpcomingEvent && user && attending && (
-        <div className={styles.signedUpMessage}>
-          <p>You have signed up for this event!</p>
-          <button onClick={handleCancel}>Cancel</button>
-        </div>
+      {isFullyBooked ? (
+        <p className={styles.red}>This event is fully booked</p>
+      ) : (
+        <>
+          {isUpcomingEvent && user && !attending && (
+            <button onClick={handleSignUp} className={styles.signUpButton}>
+              Sign up for this event
+            </button>
+          )}
+          {isUpcomingEvent && user && attending && (
+            <div className={styles.signedUpMessage}>
+              <p>You have signed up for this event!</p>
+              <button onClick={handleCancel}>Cancel</button>
+            </div>
+          )}
+        </>
       )}
     </section>
   )

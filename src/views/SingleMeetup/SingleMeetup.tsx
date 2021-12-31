@@ -19,10 +19,16 @@ const SingleMeetup = (props: SingleMeetupProps) => {
   const { id } = useParams()
   const meetup = meetups.find((item) => item.id === id)
   const [attending, setAttending] = useState<boolean>(false)
+  const [isFullyBooked, setIsFullyBooked] = useState<boolean>(false)
 
   useEffect(() => {
     if (user && meetup) {
       setAttending(user.attending.includes(meetup.id))
+    }
+    if (meetup && meetup.capacity) {
+      if (meetup.capacity - meetup.attending < 1) {
+        setIsFullyBooked(true)
+      }
     }
   }, [meetup, meetup?.id, user])
 
@@ -36,10 +42,11 @@ const SingleMeetup = (props: SingleMeetupProps) => {
     <main className={styles.meetup}>
       <MeetupHeader
         meetup={meetup}
-        isUpcomingEvent={isUpcomingEvent}
         user={user}
         attending={attending}
         setAttending={setAttending}
+        isUpcomingEvent={isUpcomingEvent}
+        isFullyBooked={isFullyBooked}
       />
       <DetailsSection
         meetup={meetup}
@@ -49,7 +56,11 @@ const SingleMeetup = (props: SingleMeetupProps) => {
         setAttending={setAttending}
       />
       <ArrangerSection meetup={meetup} />
-      <CapacitySection meetup={meetup} isUpcomingEvent={isUpcomingEvent} />
+      <CapacitySection
+        meetup={meetup}
+        isUpcomingEvent={isUpcomingEvent}
+        isFullyBooked={isFullyBooked}
+      />
       {!isUpcomingEvent && <ReviewsSection user={user} meetup={meetup} />}
       <CommentsSection meetup={meetup} user={user} />
       {!user && <LoginInfoSection />}

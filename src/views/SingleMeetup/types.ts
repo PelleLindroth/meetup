@@ -12,6 +12,7 @@ export type MeetupHeaderProps = {
   meetup: Meetup
   user: User | null
   isUpcomingEvent: boolean
+  isFullyBooked: boolean
 }
 
 export type ReviewsSectionProps = {
@@ -34,6 +35,7 @@ export type ArrangerSectionprops = {
 export type CapacitySectionProps = {
   meetup: Meetup
   isUpcomingEvent: boolean
+  isFullyBooked: boolean
 }
 
 export type CommentsSectionProps = {

@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
 
+  .red {
+    color: #c80000;
+  }
+
   button {
     background-color: #0e81c9;
     border: none;
@@ -102,6 +106,10 @@
       .attendedRow {
         align-items: center;
         display: flex;
+
+        .red {
+          color: #c80000;
+        }
 
         img {
           margin-right: 0.3rem;

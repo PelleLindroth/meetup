@@ -4,7 +4,7 @@ import { CapacitySectionProps } from '../types'
 import styles from '../SingleMeetup.module.scss'
 
 const CapacitySection = (props: CapacitySectionProps) => {
-  const { meetup, isUpcomingEvent } = props
+  const { meetup, isUpcomingEvent, isFullyBooked } = props
   return (
     <section className={styles.capacity}>
       {isUpcomingEvent && (
@@ -27,7 +27,11 @@ const CapacitySection = (props: CapacitySectionProps) => {
             {isUpcomingEvent ? (
               <p>
                 <strong>Attending: </strong> {` ${meetup.attending}, `}
-                <span className={styles.available}>
+                <span
+                  className={`${styles.available} ${
+                    isFullyBooked && styles.red
+                  }`}
+                >
                   <em>{` ${meetup.capacity - meetup.attending} available`}</em>
                 </span>
               </p>

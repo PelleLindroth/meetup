@@ -18,6 +18,7 @@ describe('MeetupHeader unit tests (anonymous)', () => {
         user={null}
         meetup={upcomingOnlineEvent!}
         isUpcomingEvent={true}
+        isFullyBooked={false}
       />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
@@ -36,6 +37,7 @@ describe('MeetupHeader unit tests (anonymous)', () => {
         user={null}
         meetup={upcomingOnlineEvent!}
         isUpcomingEvent={true}
+        isFullyBooked={false}
       />,
       `/meetup/${upcomingOnlineEvent!.id}`,
       'meetup/:id'
@@ -62,6 +64,7 @@ describe('MeetupHeader unit tests (logged in)', () => {
         user={user!}
         meetup={upcomingIRLEvent!}
         isUpcomingEvent={true}
+        isFullyBooked={false}
       />,
       `/meetup/${upcomingIRLEvent!.id}`,
       'meetup/:id'
@@ -79,6 +82,7 @@ describe('MeetupHeader unit tests (logged in)', () => {
         user={user!}
         meetup={pastEvent!}
         isUpcomingEvent={false}
+        isFullyBooked={false}
       />,
       `/meetup/${pastEvent!.id}`,
       'meetup/:id'
@@ -96,6 +100,7 @@ describe('MeetupHeader unit tests (logged in)', () => {
         user={user!}
         meetup={fullyBookedEvent!}
         isUpcomingEvent={true}
+        isFullyBooked={true}
       />,
       `/meetup/${fullyBookedEvent!.id}`,
       'meetup/:id'
@@ -113,6 +118,7 @@ describe('MeetupHeader unit tests (logged in)', () => {
         user={user!}
         meetup={fullyBookedEvent!}
         isUpcomingEvent={true}
+        isFullyBooked={true}
       />,
       `/meetup/${fullyBookedEvent!.id}`,
       'meetup/:id'

@@ -270,6 +270,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
   >
     <MeetupHeader
       attending={false}
+      isFullyBooked={false}
       isUpcomingEvent={true}
       meetup={
         Meetup {
@@ -453,6 +454,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
       </section>
     </ArrangerSection>
     <CapacitySection
+      isFullyBooked={false}
       isUpcomingEvent={true}
       meetup={
         Meetup {
@@ -906,6 +908,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
   >
     <MeetupHeader
       attending={true}
+      isFullyBooked={false}
       isUpcomingEvent={false}
       meetup={
         Meetup {
@@ -1252,6 +1255,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
       </section>
     </ArrangerSection>
     <CapacitySection
+      isFullyBooked={false}
       isUpcomingEvent={false}
       meetup={
         Meetup {
