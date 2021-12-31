@@ -159,6 +159,25 @@ for (let i = 0; i < 356; i++) {
   meetup5.increaseAttendants()
 }
 
+const meetup6 = new Meetup(
+  'Small party',
+  'A small party',
+  user3,
+  new Date(1647363600000),
+  {
+    street: 'Storgatan 101',
+    city: 'Stockholm',
+  },
+  '6',
+  false,
+  null,
+  5
+)
+
+for (let i = 0; i < 4; i++) {
+  meetup6.increaseAttendants()
+}
+
 const meetups = new MeetupBank()
 
 meetups.add(meetup1)
@@ -166,5 +185,6 @@ meetups.add(meetup2)
 meetups.add(meetup3)
 meetups.add(meetup4)
 meetups.add(meetup5)
+meetups.add(meetup6)
 
 export { users, meetups }

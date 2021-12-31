@@ -212,6 +212,42 @@ exports[`App unit tests renders App correctly 1`] = `
                 "arranger": User {
                   "addAttending": [Function],
                   "addReviewed": [Function],
+                  "attending": Array [],
+                  "cancelAttending": [Function],
+                  "email": "babsan@yahoo.com",
+                  "firstName": "Barbro",
+                  "getDetails": [Function],
+                  "getFullName": [Function],
+                  "id": "3",
+                  "lastName": "Lundborg",
+                  "password": "password123",
+                  "reviewed": Array [],
+                  "saveDetailsToLocalStorage": [Function],
+                  "saveIdToLocalStorage": [Function],
+                },
+                "attending": 4,
+                "capacity": 5,
+                "comments": Array [],
+                "date": 2022-03-15T17:00:00.000Z,
+                "decreaseAttendants": [Function],
+                "description": "A small party",
+                "id": "6",
+                "increaseAttendants": [Function],
+                "location": Object {
+                  "city": "Stockholm",
+                  "street": "Storgatan 101",
+                },
+                "online": false,
+                "reviews": Array [],
+                "title": "Small party",
+                "url": null,
+              },
+              Meetup {
+                "addComment": [Function],
+                "addReview": [Function],
+                "arranger": User {
+                  "addAttending": [Function],
+                  "addReviewed": [Function],
                   "attending": Array [
                     "1",
                   ],
@@ -381,6 +417,42 @@ exports[`App unit tests renders App correctly 1`] = `
                     "reviews": Array [],
                     "title": "Rust course",
                     "url": "https://www.udemy.com/course/rust-lang/",
+                  },
+                  Meetup {
+                    "addComment": [Function],
+                    "addReview": [Function],
+                    "arranger": User {
+                      "addAttending": [Function],
+                      "addReviewed": [Function],
+                      "attending": Array [],
+                      "cancelAttending": [Function],
+                      "email": "babsan@yahoo.com",
+                      "firstName": "Barbro",
+                      "getDetails": [Function],
+                      "getFullName": [Function],
+                      "id": "3",
+                      "lastName": "Lundborg",
+                      "password": "password123",
+                      "reviewed": Array [],
+                      "saveDetailsToLocalStorage": [Function],
+                      "saveIdToLocalStorage": [Function],
+                    },
+                    "attending": 4,
+                    "capacity": 5,
+                    "comments": Array [],
+                    "date": 2022-03-15T17:00:00.000Z,
+                    "decreaseAttendants": [Function],
+                    "description": "A small party",
+                    "id": "6",
+                    "increaseAttendants": [Function],
+                    "location": Object {
+                      "city": "Stockholm",
+                      "street": "Storgatan 101",
+                    },
+                    "online": false,
+                    "reviews": Array [],
+                    "title": "Small party",
+                    "url": null,
                   },
                   Meetup {
                     "addComment": [Function],
@@ -584,6 +656,139 @@ exports[`App unit tests renders App correctly 1`] = `
                         >
                           <a
                             href="/meetup/2"
+                            onClick={[Function]}
+                          >
+                            <img
+                              alt="Arrow icon"
+                              className="arrowIcon"
+                              src="arrow.png"
+                              title="See meetup details"
+                            />
+                          </a>
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
+                </MeetupCard>
+                <MeetupCard
+                  key="6"
+                  meetup={
+                    Meetup {
+                      "addComment": [Function],
+                      "addReview": [Function],
+                      "arranger": User {
+                        "addAttending": [Function],
+                        "addReviewed": [Function],
+                        "attending": Array [],
+                        "cancelAttending": [Function],
+                        "email": "babsan@yahoo.com",
+                        "firstName": "Barbro",
+                        "getDetails": [Function],
+                        "getFullName": [Function],
+                        "id": "3",
+                        "lastName": "Lundborg",
+                        "password": "password123",
+                        "reviewed": Array [],
+                        "saveDetailsToLocalStorage": [Function],
+                        "saveIdToLocalStorage": [Function],
+                      },
+                      "attending": 4,
+                      "capacity": 5,
+                      "comments": Array [],
+                      "date": 2022-03-15T17:00:00.000Z,
+                      "decreaseAttendants": [Function],
+                      "description": "A small party",
+                      "id": "6",
+                      "increaseAttendants": [Function],
+                      "location": Object {
+                        "city": "Stockholm",
+                        "street": "Storgatan 101",
+                      },
+                      "online": false,
+                      "reviews": Array [],
+                      "title": "Small party",
+                      "url": null,
+                    }
+                  }
+                  upcoming={true}
+                >
+                  <li
+                    aria-label="meetup-card"
+                    className="cardWrapper"
+                  >
+                    <div
+                      className="cardHeader"
+                      style={
+                        Object {
+                          "backgroundColor": "#0E81C9",
+                        }
+                      }
+                      title="upcoming-event-header"
+                    >
+                      <h2>
+                        Small party
+                      </h2>
+                    </div>
+                    <div
+                      className="cardBody"
+                    >
+                      <div
+                        className="leftColumn"
+                      >
+                        <div
+                          className="dateRow"
+                        >
+                          <img
+                            alt="Time icon"
+                            className="icon"
+                            src="time.png"
+                          />
+                          <h3
+                            title="date"
+                          >
+                            15 March 2022, 18:00
+                             CET
+                          </h3>
+                        </div>
+                        <div
+                          className="locationRow"
+                        >
+                          <img
+                            alt="Map pin icon"
+                            className="icon"
+                            src="pin.png"
+                          />
+                          <h3
+                            title="location"
+                          >
+                            Storgatan 101, Stockholm
+                          </h3>
+                        </div>
+                        <p
+                          className="capacityRow"
+                          title="capacity"
+                        >
+                          <strong>
+                            Capacity: 
+                          </strong>
+                          <span>
+                            5, 
+                          </span>
+                          <span
+                            className="available"
+                          >
+                            1 available
+                          </span>
+                        </p>
+                      </div>
+                      <div
+                        className="rightColumn"
+                      >
+                        <Link
+                          to="/meetup/6"
+                        >
+                          <a
+                            href="/meetup/6"
                             onClick={[Function]}
                           >
                             <img

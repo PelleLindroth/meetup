@@ -19,7 +19,7 @@ describe('Home', () => {
 
     const meetupList = screen.getAllByRole('listitem')
 
-    expect(meetupList).toHaveLength(5)
+    expect(meetupList).toHaveLength(6)
   })
   it('renders upcoming meetups chronologically (ascending)', async () => {
     renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
@@ -27,7 +27,7 @@ describe('Home', () => {
     const dates = screen.getAllByTitle('date')
 
     expect(dates[0]).toHaveTextContent('10 January 2022')
-    expect(dates[2]).toHaveTextContent('02 July 2022')
+    expect(dates[3]).toHaveTextContent('02 July 2022')
   })
   it('renders an Upcoming Events list and a Past Events list according to current date', () => {
     renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
@@ -37,7 +37,7 @@ describe('Home', () => {
 
     expect(upcomingEventsList).toBeInTheDocument()
     expect(pastEventsList).toBeInTheDocument()
-    expect(upcomingEventsList.childNodes).toHaveLength(3)
+    expect(upcomingEventsList.childNodes).toHaveLength(4)
     expect(pastEventsList.childNodes).toHaveLength(2)
   })
   it('separates upcoming and past events by background color on card headers', () => {
@@ -114,7 +114,7 @@ describe('Home', () => {
 
     const meetupList = screen.getAllByRole('listitem')
 
-    expect(meetupList).toHaveLength(3)
+    expect(meetupList).toHaveLength(4)
     expect(meetupList[0]).toHaveTextContent(/rust/i)
   })
 })

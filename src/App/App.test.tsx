@@ -31,7 +31,7 @@ describe('App unit tests', () => {
     )
 
     expect(wrapper.find(Home).find('ul')).toHaveLength(2)
-    expect(wrapper.find(Home).find('li')).toHaveLength(5)
+    expect(wrapper.find(Home).find('li')).toHaveLength(6)
   })
 })
 
@@ -125,7 +125,7 @@ describe('Happy paths', () => {
 
     // Click on third upcoming Meetup link
     const upcomingMeetupsList = await screen.findByTestId('upcoming-events')
-    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[1])
+    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[2])
 
     // // Click on Sign up for this event button
     userEvent.click(screen.getByRole('button', { name: /sign up/i }))
