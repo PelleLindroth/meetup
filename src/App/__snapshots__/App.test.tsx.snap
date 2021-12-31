@@ -225,7 +225,7 @@ exports[`App unit tests renders App correctly 1`] = `
                   "saveDetailsToLocalStorage": [Function],
                   "saveIdToLocalStorage": [Function],
                 },
-                "attending": 4,
+                "attending": 5,
                 "capacity": 5,
                 "comments": Array [],
                 "date": 2022-03-15T17:00:00.000Z,
@@ -437,7 +437,7 @@ exports[`App unit tests renders App correctly 1`] = `
                       "saveDetailsToLocalStorage": [Function],
                       "saveIdToLocalStorage": [Function],
                     },
-                    "attending": 4,
+                    "attending": 5,
                     "capacity": 5,
                     "comments": Array [],
                     "date": 2022-03-15T17:00:00.000Z,
@@ -692,7 +692,7 @@ exports[`App unit tests renders App correctly 1`] = `
                         "saveDetailsToLocalStorage": [Function],
                         "saveIdToLocalStorage": [Function],
                       },
-                      "attending": 4,
+                      "attending": 5,
                       "capacity": 5,
                       "comments": Array [],
                       "date": 2022-03-15T17:00:00.000Z,
@@ -775,9 +775,9 @@ exports[`App unit tests renders App correctly 1`] = `
                             5, 
                           </span>
                           <span
-                            className="available"
+                            className="unavailable"
                           >
-                            1 available
+                            0 available
                           </span>
                         </p>
                       </div>

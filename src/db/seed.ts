@@ -174,7 +174,7 @@ const meetup6 = new Meetup(
   5
 )
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 5; i++) {
   meetup6.increaseAttendants()
 }
 
