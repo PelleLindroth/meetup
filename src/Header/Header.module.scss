@@ -62,6 +62,10 @@
         position: fixed;
         width: 6.5rem;
 
+        @media (max-width: 644px) {
+          margin-top: 6rem;
+        }
+
         .linkButton,
         .logoutButton {
           font-size: 0.9rem;
