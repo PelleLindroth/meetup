@@ -51,6 +51,7 @@ describe('MeetupHeader unit tests (anonymous)', () => {
 describe('MeetupHeader unit tests (logged in)', () => {
   const pastEvent = getMeetupById('1')
   const upcomingIRLEvent = getMeetupById('4')
+  const fullyBookedEvent = getMeetupById('6')
   const user = getUserById('1')
 
   it('renders a "Sign up for Event" button on upcoming events', () => {
@@ -86,6 +87,40 @@ describe('MeetupHeader unit tests (logged in)', () => {
     const signUpButton = screen.queryByRole('button', { name: /sign up/i })
 
     expect(signUpButton).not.toBeInTheDocument()
+  })
+  it('does not render sign up button if event is fully booked', () => {
+    renderWithPath(
+      <MeetupHeader
+        attending={false}
+        setAttending={jest.fn()}
+        user={user!}
+        meetup={fullyBookedEvent!}
+        isUpcomingEvent={true}
+      />,
+      `/meetup/${fullyBookedEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const signUpButton = screen.queryByRole('button', { name: /sign up/i })
+
+    expect(signUpButton).not.toBeInTheDocument()
+  })
+  it('renders "fully booked" message is event is fully booked', () => {
+    renderWithPath(
+      <MeetupHeader
+        attending={false}
+        setAttending={jest.fn()}
+        user={user!}
+        meetup={fullyBookedEvent!}
+        isUpcomingEvent={true}
+      />,
+      `/meetup/${fullyBookedEvent!.id}`,
+      'meetup/:id'
+    )
+
+    const fullyBookedMessage = screen.getByText(/fully booked/i)
+
+    expect(fullyBookedMessage).toBeInTheDocument()
   })
 })
 
