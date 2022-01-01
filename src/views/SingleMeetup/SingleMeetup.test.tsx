@@ -17,6 +17,7 @@ describe('SingleMeetup unit tests for anonymous user', () => {
   const upcomingIRLEvent = getMeetupById('4')
   const upcomingLimitedCapacityEvent = getMeetupById('3')
   const pastEvent = getMeetupById('1')
+  const fullyBookedEvent = getMeetupById('6')
   const meetups = getAllMeetups()
 
   it('renders Single Meetup view correctly for anonymous user (smoke test)', () => {
@@ -51,6 +52,15 @@ describe('SingleMeetup unit tests for anonymous user', () => {
         upcomingIRLEvent!.location!.city
       }`
     )
+  })
+  it('shows a message if event is fully booked', () => {
+    renderWithPath(
+      <SingleMeetup meetups={meetups} user={null} />,
+      `/meetup/${fullyBookedEvent!.id}`,
+      'meetup/:id'
+    )
+
+    expect(screen.getByText(/fully booked/i)).toBeInTheDocument()
   })
   it('renders upcoming online event with correct location information', () => {
     renderWithPath(
