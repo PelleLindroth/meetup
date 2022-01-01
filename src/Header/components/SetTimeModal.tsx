@@ -20,7 +20,7 @@ const SetTimeModal = (props: SetTimeModalProps) => {
   }
 
   return (
-    <section className={styles.setTimeModal}>
+    <section title="Set a custom date and time" className={styles.setTimeModal}>
       <label>Set a custom date and time</label>
       <div className={styles.pickerWrapper}>
         <DateTimePicker

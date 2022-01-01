@@ -57,3 +57,41 @@ describe('Header unit tests', () => {
     expect(disappearedProfileMenu).not.toBeInTheDocument()
   })
 })
+
+describe('Header integration tests', () => {
+  it('renders TimeBanner correctly', () => {
+    renderWithRouter(<Header user={null} setUser={jest.fn()} />)
+
+    const timeBanner = screen.getByTitle(/custom time/i)
+
+    expect(timeBanner).toBeInTheDocument()
+  })
+  it('shows SetTimeModal with datepicker and two buttons when TimeBanner is clicked', () => {
+    renderWithRouter(<Header user={null} setUser={jest.fn()} />)
+
+    const timeBanner = screen.getByTitle(/custom time/i)
+
+    userEvent.click(timeBanner)
+
+    expect(screen.getByTitle(/set a custom date/i)).toBeInTheDocument()
+    expect(screen.getByLabelText('Date')).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: 'Use real time' })
+    ).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Set time' })).toBeInTheDocument()
+  })
+  it('closes SetTimeModal when "Use real time" button is clicked', () => {
+    renderWithRouter(<Header user={null} setUser={jest.fn()} />)
+
+    const timeBanner = screen.getByTitle(/custom time/i)
+
+    userEvent.click(timeBanner)
+
+    expect(screen.getByTitle(/set a custom date/i)).toBeInTheDocument()
+    expect(screen.getByLabelText('Date')).toBeInTheDocument()
+
+    userEvent.click(screen.getByRole('button', { name: 'Use real time' }))
+
+    expect(screen.queryByLabelText('Date')).not.toBeInTheDocument()
+  })
+})
