@@ -1,5 +1,6 @@
 import { uid } from 'uid'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { DateContext } from '../../../../../contexts/DateContext'
 import { Comment } from '../../../../../db/models/Meetup'
 import { CommentFormProps } from '../../../types'
 import { addComment } from '../../../../../db'
@@ -8,6 +9,7 @@ import styles from '../../../SingleMeetup.module.scss'
 const CommentForm = (props: CommentFormProps) => {
   const { user, meetup, setShowCommentForm } = props
   const [commentBody, setCommentBody] = useState<string>('')
+  const { customDate, realDate } = useContext(DateContext)!
 
   const handleSubmitComment = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -16,7 +18,7 @@ const CommentForm = (props: CommentFormProps) => {
       id: uid(),
       userId: user ? user.id : null,
       text: commentBody,
-      submittedAt: new Date(),
+      submittedAt: customDate || realDate,
     }
 
     addComment(meetup, comment)

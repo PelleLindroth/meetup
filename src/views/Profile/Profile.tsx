@@ -8,13 +8,13 @@ import MeetupList from '../Home/components/MeetupList'
 import styles from './Profile.module.scss'
 
 const Profile = (props: { meetups: Meetup[] }) => {
-  const { customDate } = useContext(DateContext)!
+  const { customDate, realDate } = useContext(DateContext)!
   const { id } = useParams()
   const user = getUserById(id!)
   const { meetups } = props
 
   const { ownUpcoming, ownPast, upcomingAttending, pastAttended } =
-    createUserLists(user!, meetups, customDate)
+    createUserLists(user!, meetups, customDate || realDate)
 
   return (
     <main>

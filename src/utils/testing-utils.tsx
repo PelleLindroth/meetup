@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router'
 
 const mockDateContext: DateContextInterface = {
   customDate: new Date(1640354400000),
+  realDate: new Date(1640354400000),
   setCustomDate: jest.fn(),
 }
 

@@ -21,11 +21,17 @@ const Home = (props: HomeProps) => {
         'upcoming',
         searchPhrase,
         searchFilter,
-        customDate
+        customDate || new Date()
       )
     )
     setPastMeetups(
-      createMeetupList(meetups, 'past', searchPhrase, searchFilter, customDate)
+      createMeetupList(
+        meetups,
+        'past',
+        searchPhrase,
+        searchFilter,
+        customDate || new Date()
+      )
     )
   }, [customDate, meetups, searchFilter, searchPhrase])
 

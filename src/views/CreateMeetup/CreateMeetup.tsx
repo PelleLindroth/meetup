@@ -12,10 +12,10 @@ import './create-meetup.scss'
 const CreateMeetup = (props: CreateMeetupProps) => {
   const { user, meetups, setMeetups } = props
   const navigate = useNavigate()
-  const { customDate } = useContext(DateContext)!
+  const { customDate, realDate } = useContext(DateContext)!
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
-  const [date, setDate] = useState<Date>(customDate)
+  const [date, setDate] = useState<Date>(customDate || realDate)
   const [url, setUrl] = useState<string>('')
   const [street, setStreet] = useState<string>('')
   const [city, setCity] = useState<string>('')
@@ -85,7 +85,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
             <label>Date</label>
             <DateTimePicker
               disableClock={true}
-              minDate={customDate}
+              minDate={customDate || realDate}
               onChange={setDate}
               value={date!}
               nativeInputAriaLabel="Date"

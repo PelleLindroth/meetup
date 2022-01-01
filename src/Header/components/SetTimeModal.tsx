@@ -14,6 +14,11 @@ const SetTimeModal = (props: SetTimeModalProps) => {
     setShowSetTimeModal(false)
   }
 
+  const handleUseRealTime = () => {
+    setCustomDate(null)
+    setShowSetTimeModal(false)
+  }
+
   return (
     <section className={styles.setTimeModal}>
       <label>Set a custom date and time</label>
@@ -30,9 +35,9 @@ const SetTimeModal = (props: SetTimeModalProps) => {
         <button
           className={styles.cancelButton}
           type="button"
-          onClick={() => setShowSetTimeModal(false)}
+          onClick={handleUseRealTime}
         >
-          Cancel
+          Use real time
         </button>
         <button
           className={styles.mainButton}

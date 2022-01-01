@@ -13,7 +13,7 @@ import styles from './Header.module.scss'
 import '../views/CreateMeetup/create-meetup.scss'
 
 const Header = (props: HeaderProps) => {
-  const { customDate } = useContext(DateContext)!
+  const { customDate, realDate } = useContext(DateContext)!
   const { user, setUser } = props
   const [showSetTimeModal, setShowSetTimeModal] = useState<boolean>(false)
   const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false)
@@ -50,7 +50,7 @@ const Header = (props: HeaderProps) => {
         >
           <div className={styles.innerContainer}>
             <img src={TimeIcon} alt="Time icon" />
-            <p>{formatDate(customDate)}</p>
+            <p>{formatDate(customDate || realDate)}</p>
           </div>
         </div>
       )}

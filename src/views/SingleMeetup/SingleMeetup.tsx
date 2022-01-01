@@ -15,7 +15,7 @@ import styles from './SingleMeetup.module.scss'
 
 const SingleMeetup = (props: SingleMeetupProps) => {
   const { user, meetups } = props
-  const { customDate } = useContext(DateContext)!
+  const { customDate, realDate } = useContext(DateContext)!
   const { id } = useParams()
   const meetup = meetups.find((item) => item.id === id)
   const [attending, setAttending] = useState<boolean>(false)
@@ -36,7 +36,8 @@ const SingleMeetup = (props: SingleMeetupProps) => {
     return <h2 className={styles.meetup}>Meetup not found</h2>
   }
 
-  const isUpcomingEvent = meetup.date.getTime() > customDate.getTime()
+  const isUpcomingEvent =
+    meetup.date.getTime() > (customDate?.getTime() || realDate.getTime())
 
   return (
     <main className={styles.meetup}>
