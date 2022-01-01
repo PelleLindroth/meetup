@@ -43,23 +43,27 @@ exports[`App unit tests renders App correctly 1`] = `
               </a>
             </Link>
           </div>
-          <div
-            className="timeBar"
-            onClick={[Function]}
-            title="Set custom time"
+          <TimeBanner
+            setShowSetTimeModal={[Function]}
           >
             <div
-              className="innerContainer"
+              className="timeBar"
+              onClick={[Function]}
+              title="Set custom time"
             >
-              <img
-                alt="Time icon"
-                src="time-white.png"
-              />
-              <p>
-                24 December 2021, 00:00
-              </p>
+              <div
+                className="innerContainer"
+              >
+                <img
+                  alt="Time icon"
+                  src="time-white.png"
+                />
+                <p>
+                  24 December 2021, 00:00
+                </p>
+              </div>
             </div>
-          </div>
+          </TimeBanner>
         </header>
       </Header>
       <Routes>

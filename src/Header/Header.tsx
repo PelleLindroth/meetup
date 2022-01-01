@@ -1,22 +1,17 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import { HeaderProps } from './types'
-import { DateContext } from '../contexts/DateContext'
-import { formatDate } from '../utils'
-import SubMenu from './components/SubMenu'
+import ProfileMenuItem from './components/ProfileMenuItem'
+import TimeBanner from './components/TimeBanner'
 import SetTimeModal from './components/SetTimeModal'
 import Logo from '../assets/logo.png'
-import TimeIcon from '../assets/icons/time-white.png'
-import UserIcon from '../assets/icons/user.png'
 import styles from './Header.module.scss'
 import '../views/CreateMeetup/create-meetup.scss'
 
 const Header = (props: HeaderProps) => {
-  const { customDate, realDate } = useContext(DateContext)!
   const { user, setUser } = props
   const [showSetTimeModal, setShowSetTimeModal] = useState<boolean>(false)
-  const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false)
   const location = useLocation()
 
   return (
@@ -30,29 +25,10 @@ const Header = (props: HeaderProps) => {
             <button className={styles.loginButton}>Log in</button>
           </Link>
         )}
-        {user && (
-          <div
-            className={styles.profileWrapper}
-            title="Profile menu"
-            onClick={() => setShowProfileMenu(!showProfileMenu)}
-          >
-            <img src={UserIcon} alt="User profile icon" />
-            <p>{`${user.getFullName()}`}</p>
-            {showProfileMenu && <SubMenu user={user} setUser={setUser} />}
-          </div>
-        )}
+        {user && <ProfileMenuItem user={user} setUser={setUser} />}
       </div>
       {location.pathname === '/' && (
-        <div
-          className={styles.timeBar}
-          onClick={() => setShowSetTimeModal(true)}
-          title="Set custom time"
-        >
-          <div className={styles.innerContainer}>
-            <img src={TimeIcon} alt="Time icon" />
-            <p>{formatDate(customDate || realDate)}</p>
-          </div>
-        </div>
+        <TimeBanner setShowSetTimeModal={setShowSetTimeModal} />
       )}
       {showSetTimeModal && location.pathname === '/' && (
         <SetTimeModal setShowSetTimeModal={setShowSetTimeModal} />
