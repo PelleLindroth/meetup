@@ -10,6 +10,8 @@ av Pelle Lindroth
 **Publicerad app:**
 https://meetup-e53f4.firebaseapp.com/
 
+Seedas med fyra users och sex meetups. Inloggad user och ändringar i meetups sparas i localStorage.
+
 **Inloggningar**
 
 1. Email: tjalle@yahoo.com<br/>
@@ -21,62 +23,66 @@ https://meetup-e53f4.firebaseapp.com/
 4. Email: loffe@yahoo.com<br/>
    Password: storstark
 
+**Ställa in tid:**<br/>
+Riktig tid används som default. Klicka på bannern under Headern för att ställa in valfri tid
+
 **Test med verbose och coverage:**<br/>
 ```npm run test:full```
+
 <hr>
 
 ## **User stories**
-### All users
-- As a user I want to<br/>
-**<em>see a chronological list of upcoming and past events</em>**<br/>
-so I can<br/>
-**<em>get an overview of what's happening in the near future and what has happened in the past</em>**
+### Alla användare
+- Som en användare vill jag<br/>
+**<em>se en kronologisk lista över kommande och tidigare evenemang</em>**<br/>
+så att jag kan<br/>
+**<em>få en överblick över vad som är på gång och vad som hänt på senaste tiden</em>**
 
-- As a user I want to<br/>
-**<em>be able to click on an event to see its details</em>**<br/>
-so I can<br/>
-**<em>investigate the event further and sign up</em>**
+- Som en användare vill jag<br/>
+**<em>kunna klicka på ett evenemang för att se fler detaljer</em>**<br/>
+så att jag kan<br/>
+**<em>bilda mig en tydligare uppfattning om evenemanget</em>**
 
-- As a user I want to<br/> 
-**<em>clearly see what events have already occured</em>**<br/>
-so I don’t have to<br/>
-**<em>check the details of the date or try to sign up to past events</em>**
+- Som en användare vill jag<br/> 
+**<em>tydligt kunna se vilka evenemang som redan ägt rum</em>**<br/>
+så att jag inte behöver<br/>
+**<em>titta på varje evenemangs datum</em>**
 
-- As a user I want to<br/> 
-**<em>be able to filter and search events</em>**<br/>
-so I can<br/>
-**<em>find meetups that meet my interests and my location</em>**
+- Som en användare vill jag<br/> 
+**<em>kunna filtrera och söka bland evenemang</em>**<br/>
+så att jag<br/>
+**<em>lättare kan hitta evenemang som intresserar mig</em>**
 
-- As a user I want to<br/> 
-**<em>be able to sign up for events</em>**<br/>
-so I can<br/>
-**<em>let the arrangers know I'm coming and attend the event on the given date</em>**
+- Som en användare vill jag<br/>
+**<em>kunna kommentera evenemang</em>**<br/>
+så att jag kan<br/>
+**<em>uttrycka min åsikt och diskutera evenemanget med andra intresserade användare</em>**
 
-- As a user I want to<br/>
-**<em>be able to comment on an event I have attended</em>**<br/>
-so i can<br/>
-**<em>voice my opinion and communicate wth other attendees</em>**
+- Som en användare vill jag<br/> 
+**<em>kunna logga in</em>**<br/>
+så att jag kan<br/> 
+**<em>få utökad funktionalitet i appen</em>**
 
-- As a user I want to<br/> 
-**<em>be able to log in</em>**<br/>
-so I can<br/> 
-**<em>get extended functionality</em>**
+### Inloggade användare
+- Som en inloggad användare vill jag<br/>
+**<em>kunna betygsätta evenmang jag deltagit i</em>**<br/>
+så att jag kan<br/>
+**<em>lämna feedback till arrangören</em>**
 
-### Logged in users
-- As a logged in user I want to<br/>
-**<em>be able to rate an event I have attended</em>**<br/>
-so i can<br/>
-**<em>give feedback to the arranger and guide other users</em>**
+- Som en inloggad användare vill jag<br/> 
+**<em>kunna anmäla mig till evenemang</em>**<br/>
+så att jag kan<br/>
+**<em>låta arrangören veta att jag kommer och själv hålla reda på evenemanget</em>**
 
-- As a logged in user I want to<br/>
-**<em>be able to create my own event</em>**<br/>
-so i can<br/>
-**<em>show it to other people that might be interested</em>**
+- Som en inloggad användare vill jag<br/>
+**<em>kunna skapa mina egna evenemang</em>**<br/>
+så att jag kan<br/>
+**<em>visa det för andra användare som kan tänkas vara intresserade</em>**
 
-- As a logged in user I want to<br/>
-**<em>be able to log out</em>**<br/>
-so i can<br/>
-**<em>log in with another account</em>**
+- Som en inloggad användare vill jag<br/>
+**<em>kunnna logga ut</em>**<br/>
+så att jag kan<br/>
+**<em>logga in med ett annat konto</em>**
 <hr>
 
 ## **Use Case Diagram**
