@@ -32,9 +32,13 @@ const MeetupCard = (props: MeetupCardProps) => {
               <>
                 <img src={CloudIcon} alt="Cloud icon" className={styles.icon} />
                 <h3 title="location">
-                  {location.pathname.match(/^\/profile\/[0-9]$/)
-                    ? meetup.url
-                    : 'Online event'}
+                  {location.pathname.match(/^\/profile\/[0-9]$/) ? (
+                    <a target="_blank" rel="noreferrer" href={meetup.url!}>
+                      {meetup.url}
+                    </a>
+                  ) : (
+                    'Online event'
+                  )}
                 </h3>
               </>
             ) : (
