@@ -2,7 +2,7 @@ import { getUserById } from '../../db'
 import { renderWithRouter } from '../../utils/testing-utils'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import App from '../../App'
+import App from '../../App/App'
 
 jest.mock('../../db')
 

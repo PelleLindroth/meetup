@@ -3,7 +3,7 @@ import { screen, within } from '@testing-library/react'
 import { getUserById } from '../db'
 import { renderWithRouter } from '../utils/testing-utils'
 import { MemoryRouter } from 'react-router'
-import App from '../App'
+import App from './App'
 import Home from '../views/Home'
 import userEvent from '@testing-library/user-event'
 
