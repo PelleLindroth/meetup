@@ -4,7 +4,7 @@ import { users, meetups } from './seed'
 import { parseDates, sortMeetupsChronologically } from '../utils/db-utils'
 
 export const getAllMeetups = (): Meetup[] => {
-  const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
+  const storedMeetups: Meetup[] | null = getMeetupsFromLocalStorage()
   const returnedMeetups: Meetup[] = []
 
   if (storedMeetups) {
@@ -12,13 +12,21 @@ export const getAllMeetups = (): Meetup[] => {
 
     returnedMeetups.push(...storedMeetups)
   } else {
-    localStorage.setItem('meetups', JSON.stringify(meetups.getAll()))
+    setMeetupsInLocalStorage(meetups.getAll())
     returnedMeetups.push(...meetups.getAll())
   }
 
   sortMeetupsChronologically(returnedMeetups)
 
   return returnedMeetups
+}
+
+const getMeetupsFromLocalStorage = (): Meetup[] | null => {
+  return JSON.parse(localStorage.getItem('meetups')!)
+}
+
+const setMeetupsInLocalStorage = (meetups: Meetup[]): void => {
+  localStorage.setItem('meetups', JSON.stringify(meetups))
 }
 
 export const getMeetupById = (id: string): Meetup | undefined => {
@@ -55,6 +63,8 @@ export const validateUser = (email: string, password: string): User | null => {
 
 export const signUpForEvent = (meetup: Meetup, user: User) => {
   user.addAttending(meetup.id)
+  console.log(meetup)
+
   meetup.attending++
   updateMeetupInLocalStorage(meetup)
 }
@@ -72,18 +82,18 @@ const updateMeetupInLocalStorage = (meetup: Meetup) => {
 
   meetups.splice(index, 1, meetup)
 
-  localStorage.setItem('meetups', JSON.stringify(meetups))
+  setMeetupsInLocalStorage(meetups)
 }
 
 const saveMeetupToLocalStorage = (meetup: Meetup) => {
-  const storedMeetups: Meetup[] = JSON.parse(localStorage.getItem('meetups')!)
+  const storedMeetups: Meetup[] | null = getMeetupsFromLocalStorage()
 
   if (storedMeetups) {
     storedMeetups.push(meetup)
 
-    localStorage.setItem('meetups', JSON.stringify(storedMeetups))
+    setMeetupsInLocalStorage(storedMeetups)
   } else {
-    localStorage.setItem('meetups', JSON.stringify([meetup]))
+    setMeetupsInLocalStorage([meetup])
   }
 }
 
