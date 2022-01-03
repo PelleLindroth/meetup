@@ -51,9 +51,16 @@ exports[`ReviewsSection unit tests renders ReviewsSection correctly (smoke test)
       ],
       "date": 2021-08-28T17:00:00.000Z,
       "decreaseAttendants": [Function],
-      "description": "We meet in the park with pizzas and hang out all night",
+      "description": "We meet in the park with pizzas and eat them",
       "id": "1",
       "increaseAttendants": [Function],
+      "keywords": Array [
+        "food",
+        "pizza",
+        "picnic",
+        "park",
+        "stockholm",
+      ],
       "location": Object {
         "city": "Stockholm",
         "street": "Vitabergsparken",

@@ -36,7 +36,7 @@ users.add(user4)
 
 const meetup1 = new Meetup(
   'Pizza Picnic',
-  'We meet in the park with pizzas and hang out all night',
+  'We meet in the park with pizzas and eat them',
   user1,
   new Date(1630170000000),
   {
@@ -46,7 +46,8 @@ const meetup1 = new Meetup(
   '1',
   false,
   null,
-  null
+  null,
+  ['food', 'pizza', 'picnic', 'park', 'stockholm']
 )
 
 for (let i = 0; i < 54; i++) {
@@ -95,7 +96,8 @@ const meetup2 = new Meetup(
   '2',
   true,
   'https://www.udemy.com/course/rust-lang/',
-  null
+  null,
+  ['programming', 'it', 'learn', 'rust', 'tech']
 )
 
 for (let i = 0; i < 234; i++) {
@@ -114,7 +116,8 @@ const meetup3 = new Meetup(
   '3',
   false,
   'https://www.udemy.com/course/rust-lang/',
-  43883
+  43883,
+  ['football', 'spain', 'sevilla', 'sports']
 )
 
 for (let i = 0; i < 23478; i++) {
@@ -123,7 +126,7 @@ for (let i = 0; i < 23478; i++) {
 
 const meetup4 = new Meetup(
   'Kite festival',
-  'Classic Kite festival at Gärdet, bring your own kite or just watch the pros',
+  'Classic Kite festival at Gärdet, bring your own kite!',
   user1,
   new Date(1656774000000),
   {
@@ -133,7 +136,8 @@ const meetup4 = new Meetup(
   '4',
   false,
   null,
-  null
+  null,
+  ['kite', 'picnic', 'hobby', 'stockholm', 'park', 'festival']
 )
 
 for (let i = 0; i < 126; i++) {
@@ -142,7 +146,7 @@ for (let i = 0; i < 126; i++) {
 
 const meetup5 = new Meetup(
   'Halloween Street Party',
-  'Halloween party in the street, all night long',
+  'Halloween party in the street',
   user3,
   new Date(1635703200000),
   {
@@ -152,7 +156,8 @@ const meetup5 = new Meetup(
   '5',
   false,
   null,
-  500
+  500,
+  ['halloween', 'masquerade', 'street', 'party', 'scary']
 )
 
 for (let i = 0; i < 356; i++) {
@@ -171,7 +176,8 @@ const meetup6 = new Meetup(
   '6',
   false,
   null,
-  5
+  5,
+  ['small', 'safe', 'party', 'babsan', 'limited']
 )
 
 for (let i = 0; i < 5; i++) {

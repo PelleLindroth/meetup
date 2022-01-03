@@ -1,4 +1,4 @@
-import { Meetup } from '../../../../db/models/Meetup'
+import { Meetup } from '../../../db/models/Meetup'
 
 export type MeetupListProps = {
   meetups: Meetup[]

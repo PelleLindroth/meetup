@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import { Link } from 'react-router-dom'
 import { renderWithRouter, mountWithRouter } from '../../utils/testing-utils'
 import Home from './Home'
-import MeetupCard from './components/MeetupCard'
+import MeetupCard from '../components/MeetupCard'
 import { getAllMeetups } from '../../db'
 import userEvent from '@testing-library/user-event'
 

@@ -4,7 +4,7 @@ import { getUserById } from '../../db'
 import { createUserLists } from '../../utils'
 import { DateContext } from '../../contexts/DateContext'
 import { Meetup } from '../../db/models/Meetup'
-import MeetupList from '../Home/components/MeetupList'
+import MeetupList from '../components/MeetupList'
 import styles from './Profile.module.scss'
 
 const Profile = (props: { meetups: Meetup[] }) => {

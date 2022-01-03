@@ -22,6 +22,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const [isOnlineEvent, setIsOnlineEvent] = useState<boolean>(false)
   const [hasMaxCapacity, setHasMaxCapacity] = useState<boolean>(true)
   const [maxCapacity, setMaxCapacity] = useState<number>(100)
+  const keywords: string[] = []
 
   const emptyFields = () => {
     const noLocationFields = () => {
@@ -43,7 +44,8 @@ const CreateMeetup = (props: CreateMeetupProps) => {
       uid(),
       isOnlineEvent,
       isOnlineEvent ? url : null,
-      hasMaxCapacity ? maxCapacity : null
+      hasMaxCapacity ? maxCapacity : null,
+      keywords
     )
 
     setMeetups([...meetups, meetup])

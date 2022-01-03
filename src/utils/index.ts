@@ -28,13 +28,15 @@ export const createMeetupList = (
     if (listType === 'past') {
       return (
         meetup.date.getTime() <= customDate.getTime() &&
-        meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
+        (meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) ||
+          matchesKeyword(meetup, searchPhrase)) &&
         (searchFilter === listType || searchFilter === 'all')
       )
     } else {
       return (
         meetup.date.getTime() > customDate.getTime() &&
-        meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) &&
+        (meetup.title.toLowerCase().includes(searchPhrase.toLowerCase()) ||
+          matchesKeyword(meetup, searchPhrase)) &&
         (searchFilter === listType || searchFilter === 'all')
       )
     }
@@ -78,4 +80,17 @@ export const createUserLists = (
       )
     ),
   }
+}
+
+const matchesKeyword = (meetup: Meetup, searchPhrase: string): boolean => {
+  if (!searchPhrase.length) return true
+  let matchesKeyword = false
+
+  meetup.keywords.forEach((keyword) => {
+    if (keyword.includes(searchPhrase.toLowerCase())) {
+      matchesKeyword = true
+    }
+  })
+
+  return matchesKeyword
 }

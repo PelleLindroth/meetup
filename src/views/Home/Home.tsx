@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from 'react'
 import { createMeetupList, list } from '../../utils'
 import { DateContext } from '../../contexts/DateContext'
 import { Meetup } from '../../db/models/Meetup'
-import SearchArea from './components/SearchArea/SearchArea'
-import MeetupList from './components/MeetupList'
+import SearchArea from './components/SearchArea'
+import MeetupList from '../components/MeetupList'
 import { HomeProps } from './types'
 
 const Home = (props: HomeProps) => {
@@ -35,6 +35,28 @@ const Home = (props: HomeProps) => {
     )
   }, [customDate, meetups, searchFilter, searchPhrase])
 
+  const MeetupSection = (props: { meetups: Meetup[]; filter: string }) => {
+    const { meetups, filter } = props
+    return (
+      <section>
+        {(searchFilter === filter || searchFilter === 'all') && (
+          <h2>{`${filter.toUpperCase()} EVENTS`}</h2>
+        )}
+        {meetups.length ? (
+          <MeetupList meetups={meetups} upcoming={filter === 'upcoming'} />
+        ) : (
+          (searchFilter === filter || searchFilter === 'all') && (
+            <p>
+              {searchPhrase.length
+                ? `No ${filter} events matches your search`
+                : `There are no ${filter} events`}
+            </p>
+          )
+        )}
+      </section>
+    )
+  }
+
   return (
     <>
       <SearchArea
@@ -43,24 +65,8 @@ const Home = (props: HomeProps) => {
         searchFilter={searchFilter}
         setSearchFilter={setSearchFilter}
       />
-      <section>
-        {(searchFilter === 'upcoming' || searchFilter === 'all') && (
-          <h2>UPCOMING EVENTS</h2>
-        )}
-        {upcomingMeetups.length ? (
-          <MeetupList meetups={upcomingMeetups} upcoming />
-        ) : (
-          <p>There are no upcoming events</p>
-        )}
-        {(searchFilter === 'past' || searchFilter === 'all') && (
-          <h2>PAST EVENTS</h2>
-        )}
-        {pastMeetups.length ? (
-          <MeetupList meetups={pastMeetups} />
-        ) : (
-          <p>There are no past events</p>
-        )}
-      </section>
+      <MeetupSection meetups={upcomingMeetups} filter="upcoming" />
+      <MeetupSection meetups={pastMeetups} filter="past" />
     </>
   )
 }

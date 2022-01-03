@@ -30,6 +30,7 @@ export class Meetup {
   online: boolean
   capacity: number | null
   attending: number
+  keywords: string[]
   reviews: Review[]
   comments: Comment[]
 
@@ -42,7 +43,8 @@ export class Meetup {
     id: string | null,
     online: boolean,
     url: string | null,
-    capacity: number | null
+    capacity: number | null,
+    keywords: string[]
   ) {
     this.id = id || uid()
     this.title = title
@@ -54,6 +56,7 @@ export class Meetup {
     this.url = url || null
     this.capacity = capacity || null
     this.attending = 0
+    this.keywords = keywords
     this.reviews = []
     this.comments = []
   }
