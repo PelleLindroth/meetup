@@ -82,7 +82,7 @@ export class User {
   cancelAttending = (meetupId: string): void => {
     const index = this.attending.findIndex((id) => id === meetupId)
 
-    this.attending.splice(index, 0)
+    this.attending.splice(index, 1)
   }
 
   addReviewed = (meetupId: string): void => {
