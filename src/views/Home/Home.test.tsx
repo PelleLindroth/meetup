@@ -81,7 +81,7 @@ describe('Home', () => {
     expect(selectInput).toBeInTheDocument()
     expect(selectInput).toHaveValue('all')
   })
-  it('shows filtered events when typing in search field', () => {
+  it('shows filtered events with matching title correctly when typing in search field', () => {
     renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
 
     const searchBox = screen.getByRole('searchbox')
@@ -92,6 +92,25 @@ describe('Home', () => {
 
     expect(meetupList).toHaveLength(1)
     expect(meetupList[0]).toHaveTextContent(/pizza/i)
+  })
+  it('shows filtered events with matching keyword correctly when typing in search field', () => {
+    renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
+
+    const searchBox = screen.getByRole('searchbox')
+
+    userEvent.type(searchBox, 'foo')
+
+    const meetupList = screen.getAllByRole('listitem')
+
+    expect(meetupList).toHaveLength(2)
+    expect(meetupList[0]).toHaveTextContent(/sevilla/i)
+    expect(meetupList[1]).toHaveTextContent(/pizza/i)
+
+    userEvent.type(searchBox, 't')
+
+    expect(screen.getAllByRole('listitem')).toHaveLength(1)
+
+    expect(screen.getAllByRole('listitem')[0]).toHaveTextContent(/sevilla/i)
   })
   it('shows only past events when pastEvents filter is active', () => {
     renderWithRouter(<Home meetups={getAllMeetups()} setMeetups={jest.fn()} />)
