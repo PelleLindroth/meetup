@@ -1887,22 +1887,33 @@ exports[`Home renders separate meetup card for every meetup with title, date, lo
 <MeetupCard
   key="2"
   meetup={
-    Object {
-      "arranger": Object {
+    Meetup {
+      "addComment": [Function],
+      "addReview": [Function],
+      "arranger": User {
+        "addAttending": [Function],
+        "addReviewed": [Function],
         "attending": Array [],
+        "cancelAttending": [Function],
         "email": "babsan@yahoo.com",
         "firstName": "Barbro",
+        "getDetails": [Function],
+        "getFullName": [Function],
         "id": "3",
         "lastName": "Lundborg",
         "password": "password123",
         "reviewed": Array [],
+        "saveDetailsToLocalStorage": [Function],
+        "saveIdToLocalStorage": [Function],
       },
       "attending": 234,
       "capacity": null,
       "comments": Array [],
       "date": 2022-01-10T10:00:00.000Z,
+      "decreaseAttendants": [Function],
       "description": "Learn a new programming language from the ground up",
       "id": "2",
+      "increaseAttendants": [Function],
       "keywords": Array [
         "programming",
         "it",

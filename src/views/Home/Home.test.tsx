@@ -6,6 +6,8 @@ import MeetupCard from '../components/MeetupCard'
 import { getAllMeetups } from '../../db'
 import userEvent from '@testing-library/user-event'
 
+jest.mock('../../db')
+
 describe('Home', () => {
   it('mounts Home view correctly with meetups', () => {
     const wrapper = mountWithRouter(
