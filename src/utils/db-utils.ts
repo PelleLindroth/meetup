@@ -10,13 +10,5 @@ export const parseDates = (meetups: Meetup[]) => {
 }
 
 export const sortMeetupsChronologically = (meetups: Meetup[]) => {
-  meetups.sort((a, b) => {
-    if (a.date.getTime() > b.date.getTime()) {
-      return 1
-    } else if (b.date.getTime() > a.date.getTime()) {
-      return -1
-    } else {
-      return 0
-    }
-  })
+  meetups.sort((a, b) => a.date.getTime() - b.date.getTime())
 }
