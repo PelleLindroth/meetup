@@ -118,6 +118,23 @@ describe('Create Meetup unit tests', () => {
     expect(keywords).toHaveLength(1)
     expect(keywords[0]).toHaveTextContent('basketball')
   })
+  it('renders separate keywords if many keywords are entered with spaces between them', () => {
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
+
+    const keywordInput = screen.getByRole('textbox', { name: /keyword/i })
+
+    userEvent.type(keywordInput, 'one   two three   four')
+
+    userEvent.click(screen.getByRole('button', { name: /add/i }))
+
+    const keywords = screen.getAllByRole('listitem', { name: /keyword/i })
+
+    expect(keywords).toHaveLength(4)
+    expect(keywords[0]).toHaveTextContent('one')
+    expect(keywords[3]).toHaveTextContent('four')
+  })
   it('renders an enabled cancel button and a disabled create button', () => {
     renderWithRouter(
       <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
