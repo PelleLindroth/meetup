@@ -1,6 +1,6 @@
-import { Meetup } from '../db/models/Meetup'
+import { Meetup, IMeetup } from '../db/models/Meetup'
 
-export const parseDates = (meetups: Meetup[]) => {
+export const parseDates = (meetups: IMeetup[]) => {
   meetups.forEach((meetup) => {
     meetup.date = new Date(meetup.date)
     meetup.comments.forEach((comment) => {

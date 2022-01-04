@@ -3,7 +3,7 @@ import { uid } from 'uid'
 import { useNavigate } from 'react-router'
 import { DateContext } from '../../contexts/DateContext'
 import { addMeetup } from '../../db'
-import { Meetup } from '../../db/models/Meetup'
+import { IAddress, IMeetup, Meetup } from '../../db/models/Meetup'
 import { CreateMeetupProps } from './types'
 import DateTimePicker from 'react-datetime-picker'
 import styles from './CreateMeetup.module.scss'
@@ -17,8 +17,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const [description, setDescription] = useState<string>('')
   const [date, setDate] = useState<Date>(customDate || realDate)
   const [url, setUrl] = useState<string>('')
-  const [street, setStreet] = useState<string>('')
-  const [city, setCity] = useState<string>('')
+  const [address, setAddress] = useState<IAddress>({ street: '', city: '' })
   const [isOnlineEvent, setIsOnlineEvent] = useState<boolean>(false)
   const [hasMaxCapacity, setHasMaxCapacity] = useState<boolean>(true)
   const [maxCapacity, setMaxCapacity] = useState<number>(100)
@@ -26,7 +25,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
 
   const emptyFields = () => {
     const noLocationFields = () => {
-      return !url.length && (!street.length || !city.length)
+      return !url.length && (!address.street.length || !address.city.length)
     }
 
     return !title.length || !description.length || noLocationFields() || !date
@@ -35,18 +34,23 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const handleCreateMeetup = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    const meetup = new Meetup(
+    const newMeetup: IMeetup = {
       title,
       description,
-      user,
+      arranger: user,
       date,
-      isOnlineEvent ? null : { street, city },
-      uid(),
-      isOnlineEvent,
-      isOnlineEvent ? url : null,
-      hasMaxCapacity ? maxCapacity : null,
-      keywords
-    )
+      location: isOnlineEvent ? null : address,
+      id: uid(),
+      online: isOnlineEvent,
+      url: isOnlineEvent ? url : null,
+      capacity: hasMaxCapacity ? maxCapacity : null,
+      attending: 0,
+      keywords,
+      comments: [],
+      reviews: [],
+    }
+
+    const meetup = new Meetup(newMeetup)
 
     setMeetups([...meetups, meetup])
     addMeetup(meetup)
@@ -124,8 +128,10 @@ const CreateMeetup = (props: CreateMeetupProps) => {
               <div className={styles.inputRow}>
                 <label htmlFor="street">Street</label>
                 <input
-                  value={street}
-                  onChange={(e) => setStreet(e.currentTarget.value)}
+                  value={address.street}
+                  onChange={(e) =>
+                    setAddress({ ...address, street: e.currentTarget.value })
+                  }
                   id="street"
                   type="text"
                 />
@@ -133,8 +139,10 @@ const CreateMeetup = (props: CreateMeetupProps) => {
               <div className={styles.inputRow}>
                 <label htmlFor="city">City</label>
                 <input
-                  value={city}
-                  onChange={(e) => setCity(e.currentTarget.value)}
+                  value={address.city}
+                  onChange={(e) =>
+                    setAddress({ ...address, city: e.currentTarget.value })
+                  }
                   id="city"
                   type="text"
                 />

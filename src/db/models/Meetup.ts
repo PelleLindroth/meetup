@@ -1,71 +1,56 @@
 import { User } from './User'
-import { uid } from 'uid'
 
-interface Address {
-  street: string
-  city: string
-}
-
-export interface Review {
-  id: string
-  meetupId: string
-  rating: number
-}
-
-export interface Comment {
-  id: string
-  userId: string | null
-  text: string
-  submittedAt: Date
-}
-
-export class Meetup {
+export interface IMeetup {
   id: string
   title: string
   description: string
   arranger: User
   date: Date
-  location: Address | null
+  location: IAddress | null
   url: string | null
   online: boolean
   capacity: number | null
   attending: number
   keywords: string[]
-  reviews: Review[]
-  comments: Comment[]
+  comments: IComment[]
+  reviews: IReview[]
+}
+export class Meetup implements IMeetup {
+  id: string
+  title: string
+  description: string
+  arranger: User
+  date: Date
+  location: IAddress | null
+  url: string | null
+  online: boolean
+  capacity: number | null
+  attending: number
+  keywords: string[]
+  comments: IComment[]
+  reviews: IReview[]
 
-  constructor(
-    title: string,
-    description: string,
-    arranger: User,
-    date: Date,
-    location: Address | null,
-    id: string | null,
-    online: boolean,
-    url: string | null,
-    capacity: number | null,
-    keywords: string[]
-  ) {
-    this.id = id || uid()
-    this.title = title
-    this.description = description
-    this.arranger = arranger
-    this.date = date
-    this.location = location
-    this.online = online || false
-    this.url = url || null
-    this.capacity = capacity || null
-    this.attending = 0
-    this.keywords = keywords
-    this.reviews = []
-    this.comments = []
+  constructor(meetup: IMeetup) {
+    this.id = meetup.id
+    this.title = meetup.title
+    this.description = meetup.description
+    this.arranger = meetup.arranger
+    this.date = meetup.date
+    this.location = meetup.location
+    this.online = meetup.online
+    this.url = meetup.url
+    this.capacity = meetup.capacity
+    this.attending = meetup.attending
+    this.keywords = meetup.keywords
+    this.reviews = meetup.reviews
+    this.comments = meetup.comments
   }
 
-  addComment = (comment: Comment) => {
+  addComment = (comment: IComment) => {
     this.comments.push(comment)
   }
 
-  addReview = (review: Review) => {
+  addReview = (review: IReview) => {
     this.reviews.push(review)
   }
 
@@ -78,11 +63,32 @@ export class Meetup {
   }
 }
 
-export class MeetupBank {
-  meetups: Meetup[]
+export interface IAddress {
+  street: string
+  city: string
+}
 
-  constructor() {
-    this.meetups = []
+export interface IReview {
+  id: string
+  meetupId: string
+  rating: number
+}
+
+export interface IComment {
+  id: string
+  userId: string | null
+  text: string
+  submittedAt: Date
+}
+
+export class MeetupBank {
+  private meetups: Meetup[] = []
+
+  constructor(meetupArray: IMeetup[]) {
+    meetupArray.forEach((meetup) => {
+      const newMeetup = new Meetup(meetup)
+      this.meetups.push(newMeetup)
+    })
   }
 
   getById = (id: string): Meetup | undefined => {

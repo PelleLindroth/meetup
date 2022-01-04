@@ -1,7 +1,7 @@
 import { uid } from 'uid'
 import { useContext, useState } from 'react'
 import { DateContext } from '../../../../../contexts/DateContext'
-import { Comment } from '../../../../../db/models/Meetup'
+import { IComment } from '../../../../../db/models/Meetup'
 import { CommentFormProps } from '../../../types'
 import { addComment } from '../../../../../db'
 import styles from '../../../SingleMeetup.module.scss'
@@ -14,7 +14,7 @@ const CommentForm = (props: CommentFormProps) => {
   const handleSubmitComment = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    const comment: Comment = {
+    const comment: IComment = {
       id: uid(),
       userId: user ? user.id : null,
       text: commentBody,

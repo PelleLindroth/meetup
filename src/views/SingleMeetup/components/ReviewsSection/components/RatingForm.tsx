@@ -1,6 +1,6 @@
 import { uid } from 'uid'
 import { useState } from 'react'
-import { Review } from '../../../../../db/models/Meetup'
+import { IReview } from '../../../../../db/models/Meetup'
 import { addReview, storeUserDetails } from '../../../../../db'
 import styles from '../../../SingleMeetup.module.scss'
 import { RatingFormProps } from '../../../types'
@@ -12,15 +12,14 @@ const RatingForm = (props: RatingFormProps) => {
   const handleRateEvent = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    const review: Review = {
+    const review: IReview = {
       id: uid(),
       meetupId: meetup.id,
       rating,
     }
 
-    addReview(meetup.id, user!.id, review)
-    meetup.reviews.push(review)
-    storeUserDetails(user!.id)
+    addReview(meetup, user, review)
+    storeUserDetails(user)
 
     setMedianRating(
       meetup.reviews.reduce((acc, curr) => acc + curr.rating, 0) /

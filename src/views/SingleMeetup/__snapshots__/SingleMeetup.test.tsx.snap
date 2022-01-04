@@ -252,7 +252,7 @@ exports[`SingleMeetup unit tests for anonymous user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Sevilla - Real Sociedad",
-        "url": "https://www.udemy.com/course/rust-lang/",
+        "url": null,
       },
       Meetup {
         "addComment": [Function],
@@ -945,7 +945,7 @@ exports[`SingleMeetup unit tests for logged in user renders Single Meetup view c
         "online": false,
         "reviews": Array [],
         "title": "Sevilla - Real Sociedad",
-        "url": "https://www.udemy.com/course/rust-lang/",
+        "url": null,
       },
       Meetup {
         "addComment": [Function],

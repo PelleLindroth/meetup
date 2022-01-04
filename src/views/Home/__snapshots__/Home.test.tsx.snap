@@ -252,7 +252,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         "online": false,
         "reviews": Array [],
         "title": "Sevilla - Real Sociedad",
-        "url": "https://www.udemy.com/course/rust-lang/",
+        "url": null,
       },
       Meetup {
         "addComment": [Function],
@@ -489,7 +489,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
           "online": false,
           "reviews": Array [],
           "title": "Sevilla - Real Sociedad",
-          "url": "https://www.udemy.com/course/rust-lang/",
+          "url": null,
         },
         Meetup {
           "addComment": [Function],
@@ -677,7 +677,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
               "online": false,
               "reviews": Array [],
               "title": "Sevilla - Real Sociedad",
-              "url": "https://www.udemy.com/course/rust-lang/",
+              "url": null,
             },
             Meetup {
               "addComment": [Function],
@@ -1057,7 +1057,7 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
                 "online": false,
                 "reviews": Array [],
                 "title": "Sevilla - Real Sociedad",
-                "url": "https://www.udemy.com/course/rust-lang/",
+                "url": null,
               }
             }
             upcoming={true}
