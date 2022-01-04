@@ -6,3 +6,8 @@ export type CreateMeetupProps = {
   meetups: Meetup[]
   setMeetups: React.Dispatch<React.SetStateAction<Meetup[]>>
 }
+
+export type KeywordSectionProps = {
+  keywords: string[]
+  setKeywords: React.Dispatch<React.SetStateAction<string[]>>
+}

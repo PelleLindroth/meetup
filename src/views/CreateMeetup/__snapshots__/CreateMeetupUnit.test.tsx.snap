@@ -869,6 +869,41 @@ exports[`Create Meetup unit tests renders Create Meetup page correctly (smoke te
           />
         </div>
       </div>
+      <KeywordSection
+        keywords={Array []}
+        setKeywords={[Function]}
+      >
+        <section
+          className="keywordArea"
+        >
+          <h4>
+            Keywords
+          </h4>
+          <ul
+            aria-label="keywords"
+            className="keywordList"
+          />
+          <div
+            className="inputRow"
+          >
+            <input
+              aria-label="Add new keyword"
+              id="keyword"
+              onChange={[Function]}
+              placeholder="New keyword"
+              type="text"
+              value=""
+            />
+            <button
+              disabled={true}
+              onClick={[Function]}
+              type="button"
+            >
+              Add
+            </button>
+          </div>
+        </section>
+      </KeywordSection>
       <div
         className="buttons"
       >

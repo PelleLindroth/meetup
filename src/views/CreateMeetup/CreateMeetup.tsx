@@ -8,6 +8,7 @@ import { CreateMeetupProps } from './types'
 import DateTimePicker from 'react-datetime-picker'
 import styles from './CreateMeetup.module.scss'
 import './create-meetup.scss'
+import KeywordSection from './components/KeywordSection'
 
 const CreateMeetup = (props: CreateMeetupProps) => {
   const { user, meetups, setMeetups } = props
@@ -21,7 +22,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const [isOnlineEvent, setIsOnlineEvent] = useState<boolean>(false)
   const [hasMaxCapacity, setHasMaxCapacity] = useState<boolean>(true)
   const [maxCapacity, setMaxCapacity] = useState<number>(100)
-  const keywords: string[] = []
+  const [keywords, setKeywords] = useState<string[]>([])
 
   const emptyFields = () => {
     const noLocationFields = () => {
@@ -181,6 +182,7 @@ const CreateMeetup = (props: CreateMeetupProps) => {
             </p>
           )}
         </div>
+        <KeywordSection keywords={keywords} setKeywords={setKeywords} />
         <div className={styles.buttons}>
           <button
             className={styles.cancelButton}
