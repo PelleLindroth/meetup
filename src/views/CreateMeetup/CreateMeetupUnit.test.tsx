@@ -83,6 +83,41 @@ describe('Create Meetup unit tests', () => {
 
     expect(maxCapacityInput).toHaveValue(100)
   })
+  it('renders an empty keyword list and an empty input with a disabled button for adding keywords', () => {
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
+
+    expect(screen.getByLabelText('keywords')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /keywords/i })
+    ).toBeInTheDocument()
+    const keywordInput = screen.getByRole('textbox', { name: /keyword/i })
+
+    expect(keywordInput).toHaveTextContent('')
+
+    expect(screen.getByRole('button', { name: /add/i })).toBeDisabled()
+  })
+  it('updates keyword list when submitting new keyword', () => {
+    renderWithRouter(
+      <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
+    )
+
+    expect(
+      screen.queryAllByRole('listitem', { name: /keyword/i })
+    ).toHaveLength(0)
+
+    const keywordInput = screen.getByRole('textbox', { name: /keyword/i })
+
+    userEvent.type(keywordInput, 'basketball')
+
+    userEvent.click(screen.getByRole('button', { name: /add/i }))
+
+    const keywords = screen.getAllByRole('listitem', { name: /keyword/i })
+
+    expect(keywords).toHaveLength(1)
+    expect(keywords[0]).toHaveTextContent('basketball')
+  })
   it('renders an enabled cancel button and a disabled create button', () => {
     renderWithRouter(
       <CreateMeetup meetups={[]} setMeetups={jest.fn()} user={user!} />
