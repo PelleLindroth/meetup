@@ -1,14 +1,12 @@
 import { uid } from 'uid'
 
-export type UserDetails = {
-  attending: string[]
-  reviewed: string[]
+export interface IUser {
+  id?: string
+  firstName: string
+  lastName: string
+  email: string
+  password: string
 }
-
-type UserDetailsCollection = {
-  [key: string]: UserDetails
-}
-
 export class User {
   firstName: string
   lastName: string
@@ -18,18 +16,12 @@ export class User {
   reviewed: string[] = []
   id: string
 
-  constructor(
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
-    id?: string
-  ) {
-    this.firstName = firstName
-    this.lastName = lastName
-    this.email = email
-    this.password = password
-    this.id = id || uid()
+  constructor(user: IUser) {
+    this.firstName = user.firstName
+    this.lastName = user.lastName
+    this.email = user.email
+    this.password = user.password
+    this.id = user.id || uid()
   }
 
   saveIdToLocalStorage = (): void => {
@@ -94,8 +86,17 @@ export class User {
   }
 }
 
+export type UserDetails = {
+  attending: string[]
+  reviewed: string[]
+}
+
+type UserDetailsCollection = {
+  [key: string]: UserDetails
+}
+
 export class UserBank {
-  users: User[]
+  private users: User[]
 
   constructor() {
     this.users = []

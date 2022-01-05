@@ -25,7 +25,7 @@ describe('Header unit tests', () => {
 
     const header = screen.getByRole('banner')
     const logo = screen.getByRole('img', { name: /logo/i })
-    const profileLink = screen.getByText(`${user.firstName} ${user.lastName}`)
+    const profileLink = screen.getByText(`${user.getFullName()}`)
 
     expect(header).toBeInTheDocument()
     expect(logo).toBeInTheDocument()
@@ -34,7 +34,7 @@ describe('Header unit tests', () => {
   it('displays a menu with a link and a logout button when Profile link is clicked', () => {
     renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
-    const profile = screen.getByText(`${user.firstName} ${user.lastName}`)
+    const profile = screen.getByText(`${user.getFullName()}`)
 
     userEvent.click(profile)
 
@@ -49,7 +49,7 @@ describe('Header unit tests', () => {
   it('hides menu when Profile link is clicked twice', () => {
     renderWithRouter(<Header user={user} setUser={jest.fn()} />)
 
-    const profile = screen.getByText(`${user.firstName} ${user.lastName}`)
+    const profile = screen.getByText(`${user.getFullName()}`)
 
     userEvent.click(profile)
     userEvent.click(profile)

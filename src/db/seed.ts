@@ -1,30 +1,46 @@
-import { UserBank, User } from './models/User'
+import { UserBank, IUser, User } from './models/User'
 import { MeetupBank, Meetup, IMeetup } from './models/Meetup'
 
-const user1 = new User(
-  'Tjalle',
-  'Bergkvist',
-  'tjalle@yahoo.com',
-  'grillkorv',
-  '1'
-)
+const tjalle: IUser = {
+  id: '1',
+  firstName: 'Tjalle',
+  lastName: 'Bergkvist',
+  email: 'tjalle@yahoo.com',
+  password: 'grillkorv',
+}
+const user1 = new User(tjalle)
 user1.addAttending('1')
 user1.addAttending('2')
 user1.addReviewed('1')
 
-const user2 = new User('Kenta', 'Andersson', 'kenta@yahoo.com', 'bananpaj', '2')
+const kenta: IUser = {
+  id: '2',
+  firstName: 'Kenta',
+  lastName: 'Andersson',
+  email: 'kenta@yahoo.com',
+  password: 'bananpaj',
+}
+const user2 = new User(kenta)
 user2.addAttending('1')
 user2.addReviewed('1')
 
-const user3 = new User(
-  'Barbro',
-  'Lundborg',
-  'babsan@yahoo.com',
-  'password123',
-  '3'
-)
+const babsan: IUser = {
+  id: '3',
+  firstName: 'Barbro',
+  lastName: 'Lundborg',
+  email: 'babsan@yahoo.com',
+  password: 'password123',
+}
+const user3 = new User(babsan)
 
-const user4 = new User('Janne', 'Karlsson', 'loffe@yahoo.com', 'storstark', '4')
+const loffe: IUser = {
+  id: '4',
+  firstName: 'Janne',
+  lastName: 'Karlsson',
+  email: 'loffe@yahoo.com',
+  password: 'storstark',
+}
+const user4 = new User(loffe)
 user4.addAttending('1')
 
 const users = new UserBank()
@@ -35,6 +51,7 @@ users.add(user3)
 users.add(user4)
 
 const pizzaPicnic: IMeetup = {
+  id: '1',
   title: 'Pizza Picnic',
   description: 'We meet in the park with pizzas and eat them',
   arranger: user1,
@@ -43,7 +60,6 @@ const pizzaPicnic: IMeetup = {
     street: 'Vitabergsparken',
     city: 'Stockholm',
   },
-  id: '1',
   attending: 54,
   online: false,
   url: null,
@@ -84,12 +100,12 @@ const pizzaPicnic: IMeetup = {
 }
 
 const rustCourse: IMeetup = {
+  id: '2',
   title: 'Rust course',
   description: 'Learn a new programming language from the ground up',
   arranger: user3,
   date: new Date(1641808800000),
   location: null,
-  id: '2',
   online: true,
   url: 'https://www.udemy.com/course/rust-lang/',
   capacity: null,
@@ -100,6 +116,7 @@ const rustCourse: IMeetup = {
 }
 
 const footballGame: IMeetup = {
+  id: '3',
   title: 'Sevilla - Real Sociedad',
   description: 'A classic football match between the south and the north',
   arranger: user2,
@@ -108,7 +125,6 @@ const footballGame: IMeetup = {
     street: 'C. Sevilla Fútbol Club',
     city: '41005 Sevilla',
   },
-  id: '3',
   online: false,
   url: null,
   capacity: 43883,
@@ -119,6 +135,7 @@ const footballGame: IMeetup = {
 }
 
 const kiteFestival: IMeetup = {
+  id: '4',
   title: 'Kite festival',
   description: 'Classic Kite festival at Gärdet, bring your own kite!',
   arranger: user1,
@@ -127,7 +144,6 @@ const kiteFestival: IMeetup = {
     street: 'Gärdet',
     city: 'Stockholm',
   },
-  id: '4',
   online: false,
   url: null,
   capacity: null,
@@ -138,6 +154,7 @@ const kiteFestival: IMeetup = {
 }
 
 const halloweenParty: IMeetup = {
+  id: '5',
   title: 'Halloween Street Party',
   description: 'Halloween party in the street',
   arranger: user3,
@@ -146,7 +163,6 @@ const halloweenParty: IMeetup = {
     street: 'Strandvägen',
     city: 'Stockholm',
   },
-  id: '5',
   online: false,
   url: null,
   capacity: 500,
@@ -157,6 +173,7 @@ const halloweenParty: IMeetup = {
 }
 
 const smallParty: IMeetup = {
+  id: '6',
   title: 'Small party',
   description: 'A small party',
   arranger: user3,
@@ -165,7 +182,6 @@ const smallParty: IMeetup = {
     street: 'Storgatan 101',
     city: 'Stockholm',
   },
-  id: '6',
   online: false,
   url: null,
   capacity: 5,
