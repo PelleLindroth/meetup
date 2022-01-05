@@ -29,14 +29,6 @@ const CreateMeetup = (props: CreateMeetupProps) => {
   const [maxCapacity, setMaxCapacity] = useState<number>(100)
   const [keywords, setKeywords] = useState<string[]>([])
 
-  const emptyFields = () => {
-    const noLocationFields = () => {
-      return !url.length && (!address.street.length || !address.city.length)
-    }
-
-    return !title.length || !description.length || noLocationFields() || !date
-  }
-
   const handleCreateMeetup = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
@@ -61,6 +53,14 @@ const CreateMeetup = (props: CreateMeetupProps) => {
     setMeetups([...meetups, meetup])
     addMeetup(meetup)
     navigate(`/profile/${user.id}`)
+  }
+
+  const emptyFields = () => {
+    return !title.length || !description.length || noLocationFields() || !date
+  }
+
+  const noLocationFields = () => {
+    return !url.length && (!address.street.length || !address.city.length)
   }
 
   const handleCancel = () => {
