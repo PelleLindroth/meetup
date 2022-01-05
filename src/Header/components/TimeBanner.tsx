@@ -1,12 +1,9 @@
 import { useContext } from 'react'
-import { DateContext } from '../../contexts/DateContext'
-import TimeIcon from '../../assets/icons/time-white.png'
 import { formatDate } from '../../utils'
+import { DateContext } from '../../contexts/DateContext'
+import { TimeBannerProps } from '../types'
+import TimeIcon from '../../assets/icons/time-white.png'
 import styles from '../Header.module.scss'
-
-type TimeBannerProps = {
-  setShowSetTimeModal: React.Dispatch<React.SetStateAction<boolean>>
-}
 
 const TimeBanner = (props: TimeBannerProps) => {
   const { setShowSetTimeModal } = props

@@ -1,13 +1,8 @@
 import { useState } from 'react'
-import { User } from '../../db/models/User'
 import SubMenu from './SubMenu'
 import UserIcon from '../../assets/icons/user.png'
+import { ProfileMenuItemProps } from '../types'
 import styles from '../Header.module.scss'
-
-type ProfileMenuItemProps = {
-  user: User
-  setUser: React.Dispatch<React.SetStateAction<User | null>>
-}
 
 const ProfileMenuItem = (props: ProfileMenuItemProps) => {
   const { user, setUser } = props
