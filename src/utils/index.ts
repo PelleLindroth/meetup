@@ -1,22 +1,6 @@
 import { User } from '../db/models/User'
 import { Meetup } from '../db/models/Meetup'
 
-export const formatDate = (date: Date) => {
-  return `${new Intl.DateTimeFormat('en-GB', {
-    year: 'numeric',
-    month: 'long',
-    day: '2-digit',
-    hour: 'numeric',
-    minute: 'numeric',
-  }).format(date)}`
-}
-
-const sortAndReturnMeetupsChronologically = (meetups: Meetup[]) => {
-  return meetups.sort((a, b) => a.date.getTime() - b.date.getTime())
-}
-
-export type ListType = 'upcoming' | 'past' | 'all'
-
 export const createMeetupList = (
   meetups: Meetup[],
   listType: ListType,
@@ -44,6 +28,8 @@ export const createMeetupList = (
 
   return sortAndReturnMeetupsChronologically(meetupList)
 }
+
+export type ListType = 'upcoming' | 'past' | 'all'
 
 export const createUserLists = (
   user: User,
@@ -80,6 +66,20 @@ export const createUserLists = (
       )
     ),
   }
+}
+
+const sortAndReturnMeetupsChronologically = (meetups: Meetup[]) => {
+  return meetups.sort((a, b) => a.date.getTime() - b.date.getTime())
+}
+
+export const formatDate = (date: Date) => {
+  return `${new Intl.DateTimeFormat('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: '2-digit',
+    hour: 'numeric',
+    minute: 'numeric',
+  }).format(date)}`
 }
 
 const matchesKeyword = (meetup: Meetup, searchPhrase: string): boolean => {
