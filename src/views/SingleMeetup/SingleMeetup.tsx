@@ -20,6 +20,7 @@ const SingleMeetup = (props: SingleMeetupProps) => {
   const meetup = meetups.find((item) => item.id === id)
   const [attending, setAttending] = useState<boolean>(false)
   const [isFullyBooked, setIsFullyBooked] = useState<boolean>(false)
+  const [isUpcomingEvent, setIsUpcomingEvent] = useState<boolean>(false)
 
   useEffect(() => {
     if (user && meetup) {
@@ -32,12 +33,17 @@ const SingleMeetup = (props: SingleMeetupProps) => {
     }
   }, [meetup, meetup?.id, user])
 
+  useEffect(() => {
+    if (meetup) {
+      setIsUpcomingEvent(
+        meetup.date.getTime() > (customDate?.getTime() || realDate.getTime())
+      )
+    }
+  }, [meetup, customDate, realDate])
+
   if (!meetup) {
     return <h2 className={styles.meetup}>Meetup not found</h2>
   }
-
-  const isUpcomingEvent =
-    meetup.date.getTime() > (customDate?.getTime() || realDate.getTime())
 
   return (
     <main className={styles.meetup}>
