@@ -1,8 +1,10 @@
 import { renderWithRouter } from '../utils/testing-utils'
 import { screen } from '@testing-library/react'
-import Header from '.'
 import { getUsers } from '../db'
+import Header from '.'
 import userEvent from '@testing-library/user-event'
+
+jest.mock('../db')
 
 describe('Header unit tests', () => {
   const users = getUsers()
