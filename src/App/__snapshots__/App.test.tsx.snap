@@ -608,6 +608,8 @@ exports[`App unit tests renders App correctly 1`] = `
                 },
               ]
             }
+            searchFilter="all"
+            searchPhrase=""
           >
             <section>
               <h2>
@@ -1493,6 +1495,8 @@ exports[`App unit tests renders App correctly 1`] = `
                 },
               ]
             }
+            searchFilter="all"
+            searchPhrase=""
           >
             <section>
               <h2>

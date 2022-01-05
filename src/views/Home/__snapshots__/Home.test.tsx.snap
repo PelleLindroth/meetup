@@ -542,6 +542,8 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         },
       ]
     }
+    searchFilter="all"
+    searchPhrase=""
   >
     <section>
       <h2>
@@ -1427,6 +1429,8 @@ exports[`Home mounts Home view correctly with meetups 1`] = `
         },
       ]
     }
+    searchFilter="all"
+    searchPhrase=""
   >
     <section>
       <h2>

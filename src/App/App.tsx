@@ -22,10 +22,7 @@ function App() {
       <DateContextProvider>
         <Header user={user} setUser={setUser} />
         <Routes>
-          <Route
-            path="/"
-            element={<Home meetups={meetups} setMeetups={setMeetups} />}
-          />
+          <Route path="/" element={<Home meetups={meetups} />} />
           <Route
             path="/meetup/:id"
             element={<SingleMeetup meetups={meetups} user={user} />}

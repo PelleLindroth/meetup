@@ -1,6 +1,13 @@
 import { Meetup } from '../../db/models/Meetup'
+import { ListType } from '../../utils'
 
 export type HomeProps = {
   meetups: Meetup[]
-  setMeetups: React.Dispatch<React.SetStateAction<Meetup[]>>
+}
+
+export type MeetupSectionProps = {
+  meetups: Meetup[]
+  filter: ListType
+  searchFilter: ListType
+  searchPhrase: string
 }

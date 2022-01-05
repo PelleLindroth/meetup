@@ -1,16 +1,16 @@
 import { useContext, useEffect, useState } from 'react'
-import { createMeetupList, list } from '../../utils'
+import { createMeetupList, ListType } from '../../utils'
 import { DateContext } from '../../contexts/DateContext'
 import { Meetup } from '../../db/models/Meetup'
 import SearchArea from './components/SearchArea'
-import MeetupList from '../components/MeetupList'
+import MeetupSection from './components/MeetupSection'
 import { HomeProps } from './types'
 
 const Home = (props: HomeProps) => {
   const { meetups } = props
   const { customDate } = useContext(DateContext)!
   const [searchPhrase, setSearchPhrase] = useState<string>('')
-  const [searchFilter, setSearchFilter] = useState<list>('all')
+  const [searchFilter, setSearchFilter] = useState<ListType>('all')
   const [upcomingMeetups, setUpcomingMeetups] = useState<Meetup[]>([])
   const [pastMeetups, setPastMeetups] = useState<Meetup[]>([])
 
@@ -35,28 +35,6 @@ const Home = (props: HomeProps) => {
     )
   }, [customDate, meetups, searchFilter, searchPhrase])
 
-  const MeetupSection = (props: { meetups: Meetup[]; filter: string }) => {
-    const { meetups, filter } = props
-    return (
-      <section>
-        {(searchFilter === filter || searchFilter === 'all') && (
-          <h2>{`${filter.toUpperCase()} EVENTS`}</h2>
-        )}
-        {meetups.length ? (
-          <MeetupList meetups={meetups} upcoming={filter === 'upcoming'} />
-        ) : (
-          (searchFilter === filter || searchFilter === 'all') && (
-            <p>
-              {searchPhrase.length
-                ? `No ${filter} events matches your search`
-                : `There are no ${filter} events`}
-            </p>
-          )
-        )}
-      </section>
-    )
-  }
-
   return (
     <>
       <SearchArea
@@ -65,8 +43,18 @@ const Home = (props: HomeProps) => {
         searchFilter={searchFilter}
         setSearchFilter={setSearchFilter}
       />
-      <MeetupSection meetups={upcomingMeetups} filter="upcoming" />
-      <MeetupSection meetups={pastMeetups} filter="past" />
+      <MeetupSection
+        meetups={upcomingMeetups}
+        filter="upcoming"
+        searchFilter={searchFilter}
+        searchPhrase={searchPhrase}
+      />
+      <MeetupSection
+        meetups={pastMeetups}
+        filter="past"
+        searchFilter={searchFilter}
+        searchPhrase={searchPhrase}
+      />
     </>
   )
 }
