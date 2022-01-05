@@ -371,7 +371,6 @@ exports[`App unit tests renders App correctly 1`] = `
               },
             ]
           }
-          setMeetups={[Function]}
         >
           <SearchArea
             searchFilter="all"
@@ -386,19 +385,23 @@ exports[`App unit tests renders App correctly 1`] = `
                 className="searchBox"
               >
                 <div
-                  className="imageWrapper"
+                  className="searchInputWrapper"
                 >
-                  <img
-                    alt="Search icon"
-                    src="search.png"
+                  <div
+                    className="imageWrapper"
+                  >
+                    <img
+                      alt="Search icon"
+                      src="search.png"
+                    />
+                  </div>
+                  <input
+                    onChange={[Function]}
+                    placeholder="What do you want to do?"
+                    type="search"
+                    value=""
                   />
                 </div>
-                <input
-                  onChange={[Function]}
-                  placeholder="What do you want to do?"
-                  type="search"
-                  value=""
-                />
               </div>
               <select
                 id="search-filter"

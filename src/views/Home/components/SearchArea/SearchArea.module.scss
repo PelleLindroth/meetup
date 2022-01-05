@@ -1,21 +1,25 @@
 .searchArea {
   .searchBox {
-    align-items: center;
-    display: flex;
     margin: 7.5rem 0 0.5rem;
     width: 100%;
 
-    .imageWrapper {
+    .searchInputWrapper {
       align-items: center;
       background-color: #fff;
-      height: 2rem;
       display: flex;
-      justify-content: center;
-      padding: 0 0.2rem;
 
-      img {
-        height: 1.3rem;
-        width: 1.3rem;
+      .imageWrapper {
+        align-items: center;
+        background-color: #fff;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        padding: 0 0.2rem;
+
+        img {
+          height: 1.3rem;
+          width: 1.3rem;
+        }
       }
     }
 

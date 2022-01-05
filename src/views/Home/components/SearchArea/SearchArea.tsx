@@ -9,15 +9,17 @@ const SearchArea = (props: SearchAreaProps) => {
   return (
     <section className={styles.searchArea}>
       <div className={styles.searchBox}>
-        <div className={styles.imageWrapper}>
-          <img src={Search} alt="Search icon" />
+        <div className={styles.searchInputWrapper}>
+          <div className={styles.imageWrapper}>
+            <img src={Search} alt="Search icon" />
+          </div>
+          <input
+            type="search"
+            placeholder="What do you want to do?"
+            value={searchPhrase}
+            onChange={(e) => setSearchPhrase(e.currentTarget.value)}
+          />
         </div>
-        <input
-          type="search"
-          placeholder="What do you want to do?"
-          value={searchPhrase}
-          onChange={(e) => setSearchPhrase(e.currentTarget.value)}
-        />
       </div>
       <select
         value={searchFilter}
