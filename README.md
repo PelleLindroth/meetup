@@ -87,4 +87,4 @@ så att jag kan<br/>
 
 ## **Use Case Diagram**
 
-![Alt text](/src/assets/meetup_ucdiagram.png?raw=true "Use case diagram for Meetup app")
+![Alt text](/src/assets/meetup_ucd.png?raw=true "Use case diagram for Meetup app")
