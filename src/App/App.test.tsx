@@ -123,9 +123,9 @@ describe('Happy paths', () => {
     userEvent.type(screen.getByLabelText('password'), user!.password)
     userEvent.click(screen.getByRole('button', { name: /submit/i }))
 
-    // Click on third upcoming Meetup link
+    // Click on second upcoming Meetup link
     const upcomingMeetupsList = await screen.findByTestId('upcoming-events')
-    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[2])
+    userEvent.click(within(upcomingMeetupsList).getAllByRole('link')[1])
 
     // // Click on Sign up for this event button
     userEvent.click(screen.getByRole('button', { name: /sign up/i }))
@@ -136,7 +136,9 @@ describe('Happy paths', () => {
     ).toBeInTheDocument()
 
     // Click on profile name in Header
-    userEvent.click(screen.getByText(`${user!.firstName} ${user!.lastName}`))
+    userEvent.click(
+      screen.getAllByText(`${user!.firstName} ${user!.lastName}`)[0]
+    )
 
     // Click on View Profile
     userEvent.click(screen.getByText(/view profile/i))
